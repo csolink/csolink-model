@@ -6,7 +6,7 @@ layout: default
 
 # Csolink Model
 
-A high level datamodel of biological entities ([genes](docs/Gene), [diseases](docs/Disease),
+A high level datamodel of compulogical entities ([genes](docs/Gene), [diseases](docs/Disease),
 [phenotypes](docs/Phenotype), [pathways](docs/Pathway), [individuals](docs/IndividualOrganism), [substances](docs/ChemicalSubstance), etc) and their
 [associations](docs/Association).
 

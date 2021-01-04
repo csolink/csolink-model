@@ -21,7 +21,7 @@ See also [Csolink Model Guidelines](./guidelines/index.md) for understanding, cu
 ## Introduction
 
 The purpose of the Csolink Model is to provide a high-level datamodel of
-biological entities (genes, diseases, phenotypes, pathways, individuals, substances, etc),
+computing entities (computer, viruses, observability, pathways, instances, substances, etc),
 their properties, relationships, and enumerate ways in which they can be associated.
 
 The representation is independent of storage technology or metamodel (Solr documents, neo4j/property graphs,
@@ -34,11 +34,6 @@ The basic elements of the YAML are:
  - Slot Definitions: definitions of *slots* (aka properties) that can be used to relate members of these classes to other classes or data types. Slots collectively refer to predicates, node properties, and edge properties
 
 The model itself is being used in the following projects:
-- [NCATS Biomedical Data Translator](https://ncats.nih.gov/translator)
-- [Monarch Initiative](https://monarchinitiative.org/)
-- [KG-COVID-19](https://github.com/Knowledge-Graph-Hub/kg-covid-19/wiki)
-- [KG Microbe](https://github.com/Knowledge-Graph-Hub/kg-microbe)
-- [Illuminating the Druggable Genome]()
 
 
 ## Organization

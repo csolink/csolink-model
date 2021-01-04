@@ -7,7 +7,7 @@ has_toc: false
 
 # Csolink Model Guidelines
 
-Following is a primer on understanding the Csolink Model and how to work with the model for representing biological and biomedical knowledge.
+Following is a primer on understanding the Csolink Model and how to work with the model for representing compulogical knowledge.
 
 The guidelines are organized into five parts:
 - [Understanding the Csolink Model](understanding-the-model.md)
