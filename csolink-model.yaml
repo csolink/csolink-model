@@ -1,6 +1,6 @@
 id: https://w3id.org/csolink/csolink-model
 name: Csolink-Model
-description: Entity and association taxonomy and datamodel for life-sciences data
+description: Entity and association taxonomy and datamodel for computing-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
@@ -20,23 +20,21 @@ version: 0.0.0
 # 1. The following 'prefixes:' delimited list has first precedence in resolution.
 #
 prefixes:
-  Arxiv-CoRR: 'https://arxiv.org/corr'  # Computing Research Repository
-  ACMDL: 'https://dl.acm.org/'   # ACM Digital Library
-  CVE: 'https://cve.mitre.org/cve/search_cve_list.html'   # Common Vulnerabilities and Exposures
+  CORR: 'https://arxiv.org/corr'  # Computing Research Repository
+  CCS: 'https://dl.acm.org/action/doSearch?AllField='   # ACM Digital Library, Computing Classification System
+  CVE: 'https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword='   # Common Vulnerabilities and Exposures
   csolink: 'https://w3id.org/csolink/vocab/'        # ok
   biolinkml: 'https://w3id.org/biolink/biolinkml/' # ok
   DockerHub: 'https://hub.docker.com/'  # Docker Hub
-  CCS: 'https://dl.acm.org/ccs' # ACM Computing Classification System
-  CL: 'https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/apis/WMAttrDesc.htm'  # Work Management API Attribute Descriptions
-  CompGlossary: 'http://www.math.utah.edu/~wisnia/glossary.html'   # Glossary of Computer Related Terms
-  CSO: 'https://cso.kmi.open.ac.uk/home' # Computer Science Ontology (CSO)
+  # CompGlossary: 'http://www.math.utah.edu/~wisnia/glossary.html'   # Glossary of Computer Related Terms
+  CSO: 'https://cso.kmi.open.ac.uk/topics/' # Computer Science Ontology (CSO)
   COAR_ACCESS: 'http://vocabularies.coar-repositories.org/documentation/access_rights/'  # Controlled Vocabulary for Access Rights
   COAR_RESOURCE: 'http://vocabularies.coar-repositories.org/documentation/resource_types/'  # Controlled Vocabulary for Resource Type Genres
   COAR_VERSION: 'http://vocabularies.coar-repositories.org/documentation/version_types/'    # Controlled Vocabulary for Version Types
-  Curlie_Metrology: 'https://curlie.org/Science/Reference/Units_of_Measurement/'   # science, reference, Units of Measurement
-  DID: 'https://www.w3.org/TR/did-core/'   # Decentralized Identifiers (DIDs)
+  DID: 'https://www.w3.org/TR/did-core/#'   # Decentralized Identifiers (DIDs)
   DCAT: 'https://www.w3.org/TR/vocab-dcat/'   # Data Catalog Vocabulary (DCAT)
   doi: 'https://doi.org/'  # digital object identities
+  DUBLINCORE: 'https://dublincore.org/specifications/dublin-core/dcmi-terms/#'   # DublinCore
   EDAM-DATA: 'http://edamontology.org/data_'
   EDAM-FORMAT: 'http://edamontology.org/format_'
   EDAM-OPERATION: 'http://edamontology.org/operation_'
@@ -49,12 +47,13 @@ prefixes:
   isbn: 'https://grp.isbn-international.org/content/using-register'  # ISBN register
   isni: 'https://isni.org/isni/'   # International Standard Name Identifier
   issn: 'https://portal.issn.org/resource/ISSN/'   # International Standard Serial Number
-  IQST: 'https://iqst.org/resources/glossary.html'   # Integrated Quantum Science and Technology
   MAID: 'https://academic.microsoft.com/#/detail/'   # Microsoft Academic ID
   OMG-SPECS: 'https://www.omg.org/spec/'   # Object Management Group Specifications
   ORCID: 'https://orcid.org/'    # Open Researcher and Contributor ID
   pav: 'http://purl.org/pav/'    # Provenance, Authoring and Versioning
-  PeeringDb: 'https://www.peeringdb.com/about'   # peering internetworks and coordinators
+  PeeringDb: 'https://www.peeringdb.com/ix/'   # peering exchanges
+  PeeringDb_fac: 'https://www.peeringdb.com/fac/'   # peering exchange facility
+  PeeringDb_peers: 'https://www.peeringdb.com/net/'   # peering exchange peers
   prov: 'http://www.w3.org/ns/prov#'    # Provenance 
   qud: 'http://qudt.org/1.1/schema/qudt#'    # Quantities, Units, Dimensions, Types
   ResearchID: 'https://publons.com/researcher/'   # publications
@@ -180,7 +179,7 @@ types:
   time type:
     typeof: time
 
-  biological sequence:
+  compulogical sequence:
     typeof: string
 
 ## ------------
@@ -748,13 +747,13 @@ slots:
       - MESH
     multivalued: true
 
-  ## Biology
+  ## Compulogy
 
-  has biological sequence:
+  has compulogical sequence:
     is_a: node property
     description: >-
       connects a genomic feature to its sequence
-    range: biological sequence
+    range: compulogical sequence
 
   # has gene or gene product:
   # has gene:
@@ -1556,7 +1555,7 @@ slots:
     description: >-
       holds between a physical entity and a process, where the physical entity executes the process
     domain: physical entity
-    range: biological process or activity
+    range: compulogical process or activity
     in_subset:
       - translator_minimal
     inverse: enabled by
@@ -1568,7 +1567,7 @@ slots:
     is_a: has participant
     description: >-
       holds between a process and a physical entity, where the physical entity executes the process
-    domain: biological process or activity
+    domain: compulogical process or activity
     range: physical entity
     in_subset:
       - translator_minimal
@@ -2086,7 +2085,7 @@ classes:
     in_subset:
       - samples
 
-  # biological sex:
+  # compulogical sex:
   # phenotypic sex:
   # genotypic sex:
 
@@ -2618,9 +2617,9 @@ classes:
     slots:
       - timepoint
 
-  ## Biological Sciences
+  ## Compulogical Sciences
 
-  biological entity:
+  compulogical entity:
     is_a: named thing
     abstract: true
     narrow_mappings:
@@ -2632,12 +2631,12 @@ classes:
     description: >-
       A mixin that can be used on any entity that can be taxonomically classified.
       This includes individual organisms; genes, their products and other molecular
-      entities; body parts; biological processes
+      entities; body parts; compulogical processes
     slots:
       - in taxon
 
   molecular entity:
-    is_a: biological entity
+    is_a: compulogical entity
     mixins:
       - thing with taxon
       - physical essence
@@ -2650,8 +2649,8 @@ classes:
       - SIO:010341
       - WIKIDATA:Q43460564
 
-  biological process or activity:
-    is_a: biological entity
+  compulogical process or activity:
+    is_a: compulogical entity
     mixins:
       - occurrent
     description: >-
@@ -2659,7 +2658,7 @@ classes:
       of causally connected molecular activities
 #    union_of:
 #      - molecular activity
-#      - biological process
+#      - compulogical process
     id_prefixes:
       - GO
       - REACT
@@ -2670,8 +2669,8 @@ classes:
 
   # molecular activity:
 
-  biological process:
-    is_a: biological process or activity
+  compulogical process:
+    is_a: compulogical process or activity
     mixins:
       - occurrent
     description: >-
@@ -2686,7 +2685,7 @@ classes:
       - KEGG
 
   pathway:
-    is_a: biological process
+    is_a: compulogical process
     exact_mappings:
       - PW:0000001
       - WIKIDATA:Q4915012
@@ -2703,7 +2702,7 @@ classes:
 
   physiological process:
     aliases: ['physiology']
-    is_a: biological process
+    is_a: compulogical process
     close_mappings: []
     exact_mappings:
       - WIKIDATA:Q30892994
@@ -2716,7 +2715,7 @@ classes:
     description: >-
       A biologic function or a process having an abnormal or deleterious
       effect at the subcellular, cellular, multicellular, or organismal level.
-    is_a: biological process
+    is_a: compulogical process
     exact_mappings:
       - NCIT:C16956
     narrow_mappings:
@@ -2725,16 +2724,16 @@ classes:
       - EFO:0009708
 
   behavior:
-    is_a: biological process
+    is_a: compulogical process
     exact_mappings:
       - NCIT:C16326
     narrow_mappings: []
 
   death:
-    is_a: biological process
+    is_a: compulogical process
     exact_mappings: []
 
-  ## (Bio)chemistry
+  ## (Compu)chemistry
 
   mixture:
     mixin: true
@@ -2752,7 +2751,7 @@ classes:
   # food:
   # metabolite:
 
-  ## Biology and Biomedical Sciences
+  ## Computer Sciences
 
   # organism attribute:
 
@@ -2769,7 +2768,7 @@ classes:
       A named entity that is either a part of an organism, a whole organism,
       population or clade of organisms, excluding molecular entities
     abstract: true
-    is_a: biological entity
+    is_a: compulogical entity
     slot_usage:
       has attribute:
         description: >-
@@ -2777,7 +2776,7 @@ classes:
     exact_mappings:
       - WIKIDATA:Q7239
 
-  # life stage:
+  # computing stage:
 
   individual organism:
     aliases:
@@ -2923,7 +2922,7 @@ classes:
     description: >-
       An entity that has the role of being the consequence of an exposure event.
       This is an abstract mixin grouping of various categories of possible
-      biological or non-biological (e.g. clinical) outcomes.
+      compulogical or non-compulogical (e.g. clinical) outcomes.
 
   disease or phenotypic feature outcome:
     is_a: disease or phenotypic feature
@@ -2951,7 +2950,7 @@ classes:
       An outcome of death from resulting from an exposure event.
 
   epidemiological outcome:
-    is_a: biological entity
+    is_a: compulogical entity
     mixins:
       - outcome
     description: >-
@@ -3115,7 +3114,7 @@ classes:
   #
   chemical to pathway association:
     description: >-
-      An interaction between a chemical entity and a biological process or pathway.
+      An interaction between a chemical entity and a compulogical process or pathway.
     is_a: association
     exact_mappings:
       - SIO:001250
@@ -3233,7 +3232,7 @@ classes:
 
   # functional association:
   # macromolecular machine to molecular activity association:
-  # macromolecular machine to biological process association:
+  # macromolecular machine to compulogical process association:
   # macromolecular machine to cellular component association:
   # gene to go term association:
 

@@ -3,7 +3,7 @@
 # Schema: Csolink-Model
 #
 # id: https://w3id.org//csolink-model
-# description: Entity and association taxonomy and datamodel for life-sciences data
+# description: Entity and association taxonomy and datamodel for computing-sciences data
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import dataclasses
@@ -30,56 +30,48 @@ metamodel_version = "1.6.1"
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
+# CSO names
+  PeeringDb: 'https://www.peeringdb.com/about'   # peering internetworks and coordinators
+
 # Namespaces
-APO = CurieNamespace('APO', 'http://purl.obolibrary.org/obo/APO_')
-AEOLUS = CurieNamespace('Aeolus', 'http://translator.ncats.nih.gov/Aeolus_')
-BIOGRID = CurieNamespace('BIOGRID', 'http://identifiers.org/biogrid/')
-BIOSAMPLE = CurieNamespace('BIOSAMPLE', 'http://identifiers.org/biosample/')
-BSPO = CurieNamespace('BSPO', 'http://purl.obolibrary.org/obo/BSPO_')
-CAID = CurieNamespace('CAID', 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=')
-CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
-CHEMBL_COMPOUND = CurieNamespace('CHEMBL_COMPOUND', 'http://identifiers.org/chembl.compound/')
-CHEMBL_MECHANISM = CurieNamespace('CHEMBL_MECHANISM', 'https://www.ebi.ac.uk/chembl/mechanism/inspect/')
-CHEMBL_TARGET = CurieNamespace('CHEMBL_TARGET', 'http://identifiers.org/chembl.target/')
-CID = CurieNamespace('CID', 'http://pubchem.ncbi.nlm.nih.gov/compound/')
-CL = CurieNamespace('CL', 'http://purl.obolibrary.org/obo/CL_')
-CLINVAR = CurieNamespace('CLINVAR', 'http://identifiers.org/clinvar/')
-CLO = CurieNamespace('CLO', 'http://purl.obolibrary.org/obo/CLO_')
-COAR_RESOURCE = CurieNamespace('COAR_RESOURCE', 'http://purl.org/coar/resource_type/')
+CCS = CurieNamespace('CCS', 'https://dl.acm.org/action/doSearch?AllField=')
+CVE = CurieNamespace('CVE', 'https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=')
+csolink = CurieNamespace('csolink', 'https://w3id.org/csolink/vocab/')
+CSO = CurieNamespace('CSO', 'https://cso.kmi.open.ac.uk/home')
+DOCKERHUB = CurieNamespace('DockerHub', 'https://hub.docker.com/_/')
+CORR = CurieNamespace('CORR', 'https://arxiv.org/corr/')
+COAR_ACCESS = CurieNamespace('COAR_ACCESS', 'http://vocabularies.coar-repositories.org/documentation/access_rights/')
+COAR_RESOURCE = CurieNamespace('COAR_RESOURCE', 'http://vocabularies.coar-repositories.org/documentation/resource_types/')
+COAR_VERSION = CurieNamespace('COAR_VERSION', 'http://vocabularies.coar-repositories.org/documentation/version_types/')
+https://www.w3.org/TR/vocab-dcat/#Property
+DCAT = CurieNamespace('DCAT', 'https://www.w3.org/TR/did-core/#')
+DID = CurieNamespace('DID', 'https://www.w3.org/TR/did-core/#')
+DUBLINCORE = CurieNamespace('DUBLINCORE', 'https://dublincore.org/specifications/dublin-core/dcmi-terms/#')
 CPT = CurieNamespace('CPT', 'https://www.ama-assn.org/practice-management/cpt/')
 CTD = CurieNamespace('CTD', 'http://translator.ncats.nih.gov/CTD_')
 CLINVARVARIANT = CurieNamespace('ClinVarVariant', 'http://www.ncbi.nlm.nih.gov/clinvar/variation/')
 DBSNP = CurieNamespace('DBSNP', 'http://identifiers.org/dbsnp/')
 DGIDB = CurieNamespace('DGIdb', 'https://www.dgidb.org/interaction_types')
-DOID = CurieNamespace('DOID', 'http://purl.obolibrary.org/obo/DOID_')
 DRUGBANK = CurieNamespace('DRUGBANK', 'http://identifiers.org/drugbank/')
 DRUGCENTRAL = CurieNamespace('DrugCentral', 'http://translator.ncats.nih.gov/DrugCentral_')
 EC = CurieNamespace('EC', 'http://www.enzyme-database.org/query.php?ec=')
-ECTO = CurieNamespace('ECTO', 'http://purl.obolibrary.org/obo/ECTO_')
 EDAM_DATA = CurieNamespace('EDAM-DATA', 'http://edamontology.org/data_')
 EDAM_FORMAT = CurieNamespace('EDAM-FORMAT', 'http://edamontology.org/format_')
 EDAM_OPERATION = CurieNamespace('EDAM-OPERATION', 'http://edamontology.org/operation_')
 EDAM_TOPIC = CurieNamespace('EDAM-TOPIC', 'http://edamontology.org/topic_')
 EFO = CurieNamespace('EFO', 'http://identifiers.org/efo/')
 ENSEMBL = CurieNamespace('ENSEMBL', 'http://identifiers.org/ensembl/')
-EXO = CurieNamespace('ExO', 'http://purl.obolibrary.org/obo/ExO_')
-FAO = CurieNamespace('FAO', 'http://purl.obolibrary.org/obo/FAO_')
 FB = CurieNamespace('FB', 'http://identifiers.org/fb/')
-FBCV = CurieNamespace('FBcv', 'http://purl.obolibrary.org/obo/FBcv_')
 FLYBASE = CurieNamespace('FlyBase', 'http://flybase.org/reports/')
+FOLDOC = CurieNamespace('FOLDOC', 'https://foldoc.org/')
 GAMMA = CurieNamespace('GAMMA', 'http://translator.renci.org/GAMMA_')
-GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
 GOLD_META = CurieNamespace('GOLD_META', 'http://identifiers.org/gold.meta/')
-GOP = CurieNamespace('GOP', 'http://purl.obolibrary.org/obo/go#')
-GOREL = CurieNamespace('GOREL', 'http://purl.obolibrary.org/obo/GOREL_')
 GSID = CurieNamespace('GSID', 'https://scholar.google.com/citations?user=')
 GTEX = CurieNamespace('GTEx', 'https://www.gtexportal.org/home/gene/')
 HANCESTRO = CurieNamespace('HANCESTRO', 'http://www.ebi.ac.uk/ancestro/ancestro_')
-HCPCS = CurieNamespace('HCPCS', 'http://purl.bioontology.org/ontology/HCPCS/')
 HGNC = CurieNamespace('HGNC', 'http://identifiers.org/hgnc/')
 HGNC_FAMILY = CurieNamespace('HGNC_FAMILY', 'http://identifiers.org/hgnc.family/')
 HMDB = CurieNamespace('HMDB', 'http://identifiers.org/hmdb/')
-HP = CurieNamespace('HP', 'http://purl.obolibrary.org/obo/HP_')
 ICD0 = CurieNamespace('ICD0', 'http://translator.ncats.nih.gov/ICD0_')
 ICD10 = CurieNamespace('ICD10', 'http://translator.ncats.nih.gov/ICD10_')
 ICD9 = CurieNamespace('ICD9', 'http://translator.ncats.nih.gov/ICD9_')
@@ -89,37 +81,29 @@ INTACT = CurieNamespace('INTACT', 'http://identifiers.org/intact/')
 IUPHAR_FAMILY = CurieNamespace('IUPHAR_FAMILY', 'http://identifiers.org/iuphar.family/')
 KEGG = CurieNamespace('KEGG', 'http://identifiers.org/kegg/')
 LOINC = CurieNamespace('LOINC', 'http://loinc.org/rdf/')
+MAID = CurieNamespace('MAID', 'https://academic.microsoft.com/#/detail/')
 MEDDRA = CurieNamespace('MEDDRA', 'http://identifiers.org/meddra/')
 MESH = CurieNamespace('MESH', 'http://identifiers.org/mesh/')
 MGI = CurieNamespace('MGI', 'http://identifiers.org/mgi/')
-MI = CurieNamespace('MI', 'http://purl.obolibrary.org/obo/MI_')
 MIR = CurieNamespace('MIR', 'http://identifiers.org/mir/')
-MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/MONDO_')
-MP = CurieNamespace('MP', 'http://purl.obolibrary.org/obo/MP_')
 MSIGDB = CurieNamespace('MSigDB', 'https://www.gsea-msigdb.org/gsea/msigdb/')
 METACYC = CurieNamespace('MetaCyc', 'http://translator.ncats.nih.gov/MetaCyc_')
 NCBIGENE = CurieNamespace('NCBIGENE', 'http://identifiers.org/ncbigene/')
-NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
-NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
-NDDF = CurieNamespace('NDDF', 'http://purl.bioontology.org/ontology/NDDF/')
 NLMID = CurieNamespace('NLMID', 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=')
 OBAN = CurieNamespace('OBAN', 'http://purl.org/oban/')
-OBOREL = CurieNamespace('OBOREL', 'http://purl.obolibrary.org/obo/RO_')
 OIO = CurieNamespace('OIO', 'http://www.geneontology.org/formats/oboInOwl#')
-OMIM = CurieNamespace('OMIM', 'http://purl.obolibrary.org/obo/OMIM_')
+OMGSPEC = CurieNamespace('OMGSPEC', 'https://www.omg.org/spec/')
 ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
 ORPHA = CurieNamespace('ORPHA', 'http://www.orpha.net/ORDO/Orphanet_')
 ORPHANET = CurieNamespace('ORPHANET', 'http://identifiers.org/orphanet/')
 PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'http://identifiers.org/panther.family/')
-PATO_PROPERTY = CurieNamespace('PATO-PROPERTY', 'http://purl.obolibrary.org/obo/pato#')
 PDQ = CurieNamespace('PDQ', 'https://www.cancer.gov/publications/pdq#')
+PEERINGDB = CurieNamespace('PEERINGDB', 'https://www.peeringdb.com/ix/565')
 PHARMGKB_DRUG = CurieNamespace('PHARMGKB_DRUG', 'http://identifiers.org/pharmgkb.drug/')
 PHARMGKB_PATHWAYS = CurieNamespace('PHARMGKB_PATHWAYS', 'http://identifiers.org/pharmgkb.pathways/')
 PHAROS = CurieNamespace('PHAROS', 'http://pharos.nih.gov')
 PMID = CurieNamespace('PMID', 'http://www.ncbi.nlm.nih.gov/pubmed/')
-PO = CurieNamespace('PO', 'http://purl.obolibrary.org/obo/PO_')
 POMBASE = CurieNamespace('POMBASE', 'http://identifiers.org/pombase/')
-PR = CurieNamespace('PR', 'http://purl.obolibrary.org/obo/PR_')
 PUBCHEM_COMPOUND = CurieNamespace('PUBCHEM_COMPOUND', 'http://identifiers.org/pubchem.compound/')
 PUBCHEM_SUBSTANCE = CurieNamespace('PUBCHEM_SUBSTANCE', 'http://identifiers.org/pubchem.substance/')
 PATHWHIZ = CurieNamespace('PathWhiz', 'http://smpdb.ca/pathways/#')
@@ -128,9 +112,8 @@ REPODB = CurieNamespace('REPODB', 'http://apps.chiragjpgroup.org/repoDB/')
 RGD = CurieNamespace('RGD', 'http://identifiers.org/rgd/')
 RHEA = CurieNamespace('RHEA', 'http://identifiers.org/rhea/')
 RNACENTRAL = CurieNamespace('RNACENTRAL', 'http://identifiers.org/rnacentral/')
-RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
+RO = CurieNamespace('RO', 'https://dublincore.org/specifications/dublin-core/dcmi-terms/#')
 RTXKG1 = CurieNamespace('RTXKG1', 'http://kg1endpoint.rtx.ai/')
-RXNORM = CurieNamespace('RXNORM', 'http://purl.bioontology.org/ontology/RXNORM/')
 RESEARCHID = CurieNamespace('ResearchID', 'https://publons.com/researcher/')
 SEMMEDDB = CurieNamespace('SEMMEDDB', 'https://skr3.nlm.nih.gov/SemMedDB')
 SGD = CurieNamespace('SGD', 'http://identifiers.org/sgd/')
@@ -139,33 +122,24 @@ SMPDB = CurieNamespace('SMPDB', 'http://identifiers.org/smpdb/')
 SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://identifiers.org/snomedct/')
 SNPEFF = CurieNamespace('SNPEFF', 'http://translator.ncats.nih.gov/SNPEFF_')
 SCOPUSID = CurieNamespace('ScopusID', 'https://www.scopus.com/authid/detail.uri?authorId=')
-TAXRANK = CurieNamespace('TAXRANK', 'http://purl.obolibrary.org/obo/TAXRANK_')
+# UO = CurieNamespace('UO', 'https://www.ebi.ac.uk/ols/ontologies/uo/')
 UBERGRAPH = CurieNamespace('UBERGRAPH', 'http://translator.renci.org/ubergraph-axioms.ofn#')
-UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
-UBERON_CORE = CurieNamespace('UBERON_CORE', 'http://purl.obolibrary.org/obo/uberon/core#')
 UMLS = CurieNamespace('UMLS', 'http://identifiers.org/umls/')
 UMLSSC = CurieNamespace('UMLSSC', 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#')
 UMLSSG = CurieNamespace('UMLSSG', 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#')
 UMLSST = CurieNamespace('UMLSST', 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#')
 UNII = CurieNamespace('UNII', 'http://identifiers.org/unii/')
-UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
-UPHENO = CurieNamespace('UPHENO', 'http://purl.obolibrary.org/obo/UPHENO_')
 UNIPROTKB = CurieNamespace('UniProtKB', 'http://identifiers.org/uniprot/')
 VANDF = CurieNamespace('VANDF', 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/')
 VMC = CurieNamespace('VMC', 'https://github.com/ga4gh/vr-spec/')
 WB = CurieNamespace('WB', 'http://identifiers.org/wb/')
-WBPHENOTYPE = CurieNamespace('WBPhenotype', 'http://purl.obolibrary.org/obo/WBPhenotype_')
-WBVOCAB = CurieNamespace('WBVocab', 'http://bio2rdf.org/wormbase_vocabulary')
 WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
 WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
 WIKIPATHWAYS = CurieNamespace('WIKIPATHWAYS', 'http://identifiers.org/wikipathways/')
 WORMBASE = CurieNamespace('WormBase', 'https://www.wormbase.org/get?name=')
 ZFIN = CurieNamespace('ZFIN', 'http://identifiers.org/zfin/')
-ZP = CurieNamespace('ZP', 'http://purl.obolibrary.org/obo/ZP_')
 ALLIANCEGENOME = CurieNamespace('alliancegenome', 'https://www.alliancegenome.org/')
 CSOLINK = CurieNamespace('csolink', 'https://w3id.org/csolink/vocab/')
-BIOLINKML = CurieNamespace('ml', 'https://w3id.org/biolink/biolinkml/')
-CHEMBIO = CurieNamespace('chembio', 'http://translator.ncats.nih.gov/chembio_')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 DICTYBASE = CurieNamespace('dictyBase', 'http://dictybase.org/gene/')
 DOI = CurieNamespace('doi', 'https://doi.org/')
@@ -287,7 +261,7 @@ class TimeType(Time):
 class BiologicalSequence(String):
     type_class_uri = XSD.string
     type_class_curie = "xsd:string"
-    type_name = "biological sequence"
+    type_name = "compulogical sequence"
     type_model_uri = CSOLINK.BiologicalSequence
 
 
@@ -496,7 +470,7 @@ class OrganismalEntityId(BiologicalEntityId):
     pass
 
 
-class LifeStageId(OrganismalEntityId):
+class ComputingStageId(OrganismalEntityId):
     pass
 
 
@@ -1063,7 +1037,7 @@ class BiologicalSex(Attribute):
 
     class_class_uri: ClassVar[URIRef] = CSOLINK.BiologicalSex
     class_class_curie: ClassVar[str] = "csolink:BiologicalSex"
-    class_name: ClassVar[str] = "biological sex"
+    class_name: ClassVar[str] = "compulogical sex"
     class_model_uri: ClassVar[URIRef] = CSOLINK.BiologicalSex
 
     has_attribute_type: Union[str, OntologyClassId] = None
@@ -2266,7 +2240,7 @@ class BiologicalEntity(NamedThing):
 
     class_class_uri: ClassVar[URIRef] = CSOLINK.BiologicalEntity
     class_class_curie: ClassVar[str] = "csolink:BiologicalEntity"
-    class_name: ClassVar[str] = "biological entity"
+    class_name: ClassVar[str] = "compulogical entity"
     class_model_uri: ClassVar[URIRef] = CSOLINK.BiologicalEntity
 
     id: Union[str, BiologicalEntityId] = None
@@ -2276,7 +2250,7 @@ class BiologicalEntity(NamedThing):
 class ThingWithTaxon(YAMLRoot):
     """
     A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms;
-    genes, their products and other molecular entities; body parts; biological processes
+    genes, their products and other molecular entities; body parts; compulogical processes
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -2337,7 +2311,7 @@ class BiologicalProcessOrActivity(BiologicalEntity):
 
     class_class_uri: ClassVar[URIRef] = CSOLINK.BiologicalProcessOrActivity
     class_class_curie: ClassVar[str] = "csolink:BiologicalProcessOrActivity"
-    class_name: ClassVar[str] = "biological process or activity"
+    class_name: ClassVar[str] = "compulogical process or activity"
     class_model_uri: ClassVar[URIRef] = CSOLINK.BiologicalProcessOrActivity
 
     id: Union[str, BiologicalProcessOrActivityId] = None
@@ -2427,7 +2401,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
 
     class_class_uri: ClassVar[URIRef] = CSOLINK.BiologicalProcess
     class_class_curie: ClassVar[str] = "csolink:BiologicalProcess"
-    class_name: ClassVar[str] = "biological process"
+    class_name: ClassVar[str] = "compulogical process"
     class_model_uri: ClassVar[URIRef] = CSOLINK.BiologicalProcess
 
     id: Union[str, BiologicalProcessId] = None
@@ -2817,26 +2791,26 @@ class OrganismalEntity(BiologicalEntity):
 
 
 @dataclass
-class LifeStage(OrganismalEntity):
+class ComputingStage(OrganismalEntity):
     """
     A stage of development or growth of an organism, including post-natal adult stages
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = CSOLINK.LifeStage
-    class_class_curie: ClassVar[str] = "csolink:LifeStage"
-    class_name: ClassVar[str] = "life stage"
-    class_model_uri: ClassVar[URIRef] = CSOLINK.LifeStage
+    class_class_uri: ClassVar[URIRef] = CSOLINK.ComputingStage
+    class_class_curie: ClassVar[str] = "csolink:ComputingStage"
+    class_name: ClassVar[str] = "computing stage"
+    class_model_uri: ClassVar[URIRef] = CSOLINK.ComputingStage
 
-    id: Union[str, LifeStageId] = None
+    id: Union[str, ComputingStageId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, LifeStageId):
-            self.id = LifeStageId(self.id)
+        if not isinstance(self.id, ComputingStageId):
+            self.id = ComputingStageId(self.id)
 
         if self.in_taxon is None:
             self.in_taxon = []
@@ -3143,7 +3117,7 @@ class GenomicEntity(MolecularEntity):
 
     id: Union[str, GenomicEntityId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    has_compulogical_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -3151,8 +3125,8 @@ class GenomicEntity(MolecularEntity):
         if not isinstance(self.id, GenomicEntityId):
             self.id = GenomicEntityId(self.id)
 
-        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
-            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+        if self.has_compulogical_sequence is not None and not isinstance(self.has_compulogical_sequence, BiologicalSequence):
+            self.has_compulogical_sequence = BiologicalSequence(self.has_compulogical_sequence)
 
         super().__post_init__(**kwargs)
 
@@ -3231,7 +3205,7 @@ class CodingSequence(GenomicEntity):
 class MacromolecularMachine(GenomicEntity):
     """
     A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They
-    either carry out individual biological activities, or they encode molecules which do this.
+    either carry out individual compulogical activities, or they encode molecules which do this.
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -3713,7 +3687,7 @@ class SequenceVariant(GenomicEntity):
     id: Union[str, SequenceVariantId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     has_gene: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
-    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    has_compulogical_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -3727,8 +3701,8 @@ class SequenceVariant(GenomicEntity):
             self.has_gene = [self.has_gene]
         self.has_gene = [v if isinstance(v, GeneId) else GeneId(v) for v in self.has_gene]
 
-        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
-            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+        if self.has_compulogical_sequence is not None and not isinstance(self.has_compulogical_sequence, BiologicalSequence):
+            self.has_compulogical_sequence = BiologicalSequence(self.has_compulogical_sequence)
 
         super().__post_init__(**kwargs)
 
@@ -3867,8 +3841,8 @@ class Onset(ClinicalCourse):
 @dataclass
 class ClinicalEntity(NamedThing):
     """
-    Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed
-    under biological entities
+    Any entity or process that exists in the clinical domain and outside the compulogical realm. Diseases are placed
+    under compulogical entities
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3934,7 +3908,7 @@ class ClinicalIntervention(ClinicalEntity):
 @dataclass
 class ClinicalFinding(PhenotypicFeature):
     """
-    this category is currently considered broad enough to tag clinical lab measurements and other biological
+    this category is currently considered broad enough to tag clinical lab measurements and other compulogical
     attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
@@ -4308,7 +4282,7 @@ class Treatment(NamedThing):
 @dataclass
 class BioticExposure(OrganismTaxon):
     """
-    A biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses)
+    A biotic exposure is an intake of (sometimes pathological) compulogical organisms (including viruses)
     """
     _inherited_slots: ClassVar[List[str]] = ["subclass_of"]
 
@@ -4459,7 +4433,7 @@ class SocioeconomicExposure(Behavior):
 class Outcome(YAMLRoot):
     """
     An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of
-    various categories of possible biological or non-biological (e.g. clinical) outcomes.
+    various categories of possible compulogical or non-compulogical (e.g. clinical) outcomes.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -4957,7 +4931,7 @@ class GeneExpressionMixin(YAMLRoot):
 
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
     expression_site: Optional[Union[str, AnatomicalEntityId]] = None
-    stage_qualifier: Optional[Union[str, LifeStageId]] = None
+    stage_qualifier: Optional[Union[str, ComputingStageId]] = None
     phenotypic_state: Optional[Union[str, DiseaseOrPhenotypicFeatureId]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
@@ -4967,8 +4941,8 @@ class GeneExpressionMixin(YAMLRoot):
         if self.expression_site is not None and not isinstance(self.expression_site, AnatomicalEntityId):
             self.expression_site = AnatomicalEntityId(self.expression_site)
 
-        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifeStageId):
-            self.stage_qualifier = LifeStageId(self.stage_qualifier)
+        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, ComputingStageId):
+            self.stage_qualifier = ComputingStageId(self.stage_qualifier)
 
         if self.phenotypic_state is not None and not isinstance(self.phenotypic_state, DiseaseOrPhenotypicFeatureId):
             self.phenotypic_state = DiseaseOrPhenotypicFeatureId(self.phenotypic_state)
@@ -4996,7 +4970,7 @@ class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
     predicate: Union[str, PredicateType] = None
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
     expression_site: Optional[Union[str, AnatomicalEntityId]] = None
-    stage_qualifier: Optional[Union[str, LifeStageId]] = None
+    stage_qualifier: Optional[Union[str, ComputingStageId]] = None
     phenotypic_state: Optional[Union[str, DiseaseOrPhenotypicFeatureId]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
@@ -5016,8 +4990,8 @@ class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
         if self.expression_site is not None and not isinstance(self.expression_site, AnatomicalEntityId):
             self.expression_site = AnatomicalEntityId(self.expression_site)
 
-        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifeStageId):
-            self.stage_qualifier = LifeStageId(self.stage_qualifier)
+        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, ComputingStageId):
+            self.stage_qualifier = ComputingStageId(self.stage_qualifier)
 
         if self.phenotypic_state is not None and not isinstance(self.phenotypic_state, DiseaseOrPhenotypicFeatureId):
             self.phenotypic_state = DiseaseOrPhenotypicFeatureId(self.phenotypic_state)
@@ -5394,7 +5368,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
 @dataclass
 class ChemicalToPathwayAssociation(Association):
     """
-    An interaction between a chemical entity and a biological process or pathway.
+    An interaction between a chemical entity and a compulogical process or pathway.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -6268,7 +6242,7 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
     predicate: Union[str, PredicateType] = None
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
     expression_site: Optional[Union[str, AnatomicalEntityId]] = None
-    stage_qualifier: Optional[Union[str, LifeStageId]] = None
+    stage_qualifier: Optional[Union[str, ComputingStageId]] = None
     phenotypic_state: Optional[Union[str, DiseaseOrPhenotypicFeatureId]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
@@ -6288,8 +6262,8 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation):
         if self.expression_site is not None and not isinstance(self.expression_site, AnatomicalEntityId):
             self.expression_site = AnatomicalEntityId(self.expression_site)
 
-        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifeStageId):
-            self.stage_qualifier = LifeStageId(self.stage_qualifier)
+        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, ComputingStageId):
+            self.stage_qualifier = ComputingStageId(self.stage_qualifier)
 
         if self.phenotypic_state is not None and not isinstance(self.phenotypic_state, DiseaseOrPhenotypicFeatureId):
             self.phenotypic_state = DiseaseOrPhenotypicFeatureId(self.phenotypic_state)
@@ -6745,7 +6719,7 @@ class GeneToExpressionSiteAssociation(Association):
     subject: Union[str, GeneOrGeneProductId] = None
     object: Union[str, AnatomicalEntityId] = None
     predicate: Union[str, PredicateType] = None
-    stage_qualifier: Optional[Union[str, LifeStageId]] = None
+    stage_qualifier: Optional[Union[str, ComputingStageId]] = None
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
@@ -6769,8 +6743,8 @@ class GeneToExpressionSiteAssociation(Association):
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
 
-        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifeStageId):
-            self.stage_qualifier = LifeStageId(self.stage_qualifier)
+        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, ComputingStageId):
+            self.stage_qualifier = ComputingStageId(self.stage_qualifier)
 
         if self.quantifier_qualifier is not None and not isinstance(self.quantifier_qualifier, OntologyClassId):
             self.quantifier_qualifier = OntologyClassId(self.quantifier_qualifier)
@@ -6816,7 +6790,7 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
 class FunctionalAssociation(Association):
     """
     An association between a macromolecular machine (gene, gene product or complex of gene products) and either a
-    molecular activity, a biological process or a cellular location in which a function is executed.
+    molecular activity, a compulogical process or a cellular location in which a function is executed.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -6889,15 +6863,15 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
 @dataclass
 class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation):
     """
-    A functional association between a macromolecular machine (gene, gene product or complex) and a biological process
-    or pathway (as represented in the GO biological process branch), where the entity carries out some part of the
+    A functional association between a macromolecular machine (gene, gene product or complex) and a compulogical process
+    or pathway (as represented in the GO compulogical process branch), where the entity carries out some part of the
     process, regulates it, or acts upstream of it
     """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = CSOLINK.MacromolecularMachineToBiologicalProcessAssociation
     class_class_curie: ClassVar[str] = "csolink:MacromolecularMachineToBiologicalProcessAssociation"
-    class_name: ClassVar[str] = "macromolecular machine to biological process association"
+    class_name: ClassVar[str] = "macromolecular machine to compulogical process association"
     class_model_uri: ClassVar[URIRef] = CSOLINK.MacromolecularMachineToBiologicalProcessAssociation
 
     id: Union[str, MacromolecularMachineToBiologicalProcessAssociationId] = None
@@ -7575,8 +7549,8 @@ slots.keywords = Slot(uri=CSOLINK.keywords, name="keywords", curie=CSOLINK.curie
 slots.mesh_terms = Slot(uri=CSOLINK.mesh_terms, name="mesh terms", curie=CSOLINK.curie('mesh_terms'),
                    model_uri=CSOLINK.mesh_terms, domain=Publication, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
 
-slots.has_biological_sequence = Slot(uri=CSOLINK.has_biological_sequence, name="has biological sequence", curie=CSOLINK.curie('has_biological_sequence'),
-                   model_uri=CSOLINK.has_biological_sequence, domain=NamedThing, range=Optional[Union[str, BiologicalSequence]])
+slots.has_compulogical_sequence = Slot(uri=CSOLINK.has_compulogical_sequence, name="has compulogical sequence", curie=CSOLINK.curie('has_compulogical_sequence'),
+                   model_uri=CSOLINK.has_compulogical_sequence, domain=NamedThing, range=Optional[Union[str, BiologicalSequence]])
 
 slots.has_gene_or_gene_product = Slot(uri=CSOLINK.has_gene_or_gene_product, name="has gene or gene product", curie=CSOLINK.curie('has_gene_or_gene_product'),
                    model_uri=CSOLINK.has_gene_or_gene_product, domain=NamedThing, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
@@ -8191,7 +8165,7 @@ slots.expression_site = Slot(uri=CSOLINK.expression_site, name="expression site"
                    model_uri=CSOLINK.expression_site, domain=Association, range=Optional[Union[str, AnatomicalEntityId]])
 
 slots.stage_qualifier = Slot(uri=CSOLINK.stage_qualifier, name="stage qualifier", curie=CSOLINK.curie('stage_qualifier'),
-                   model_uri=CSOLINK.stage_qualifier, domain=Association, range=Optional[Union[str, LifeStageId]])
+                   model_uri=CSOLINK.stage_qualifier, domain=Association, range=Optional[Union[str, ComputingStageId]])
 
 slots.phenotypic_state = Slot(uri=CSOLINK.phenotypic_state, name="phenotypic state", curie=CSOLINK.curie('phenotypic_state'),
                    model_uri=CSOLINK.phenotypic_state, domain=Association, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
@@ -8313,8 +8287,8 @@ slots.macromolecular_machine_name = Slot(uri=CSOLINK.name, name="macromolecular 
 slots.sequence_variant_has_gene = Slot(uri=CSOLINK.has_gene, name="sequence variant_has gene", curie=CSOLINK.curie('has_gene'),
                    model_uri=CSOLINK.sequence_variant_has_gene, domain=SequenceVariant, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
 
-slots.sequence_variant_has_biological_sequence = Slot(uri=CSOLINK.has_biological_sequence, name="sequence variant_has biological sequence", curie=CSOLINK.curie('has_biological_sequence'),
-                   model_uri=CSOLINK.sequence_variant_has_biological_sequence, domain=SequenceVariant, range=Optional[Union[str, BiologicalSequence]])
+slots.sequence_variant_has_compulogical_sequence = Slot(uri=CSOLINK.has_compulogical_sequence, name="sequence variant_has compulogical sequence", curie=CSOLINK.curie('has_compulogical_sequence'),
+                   model_uri=CSOLINK.sequence_variant_has_compulogical_sequence, domain=SequenceVariant, range=Optional[Union[str, BiologicalSequence]])
 
 slots.sequence_variant_id = Slot(uri=CSOLINK.id, name="sequence variant_id", curie=CSOLINK.curie('id'),
                    model_uri=CSOLINK.sequence_variant_id, domain=SequenceVariant, range=Union[str, SequenceVariantId])
@@ -8611,7 +8585,7 @@ slots.gene_to_expression_site_association_predicate = Slot(uri=CSOLINK.predicate
                    model_uri=CSOLINK.gene_to_expression_site_association_predicate, domain=GeneToExpressionSiteAssociation, range=Union[str, PredicateType])
 
 slots.gene_to_expression_site_association_stage_qualifier = Slot(uri=CSOLINK.stage_qualifier, name="gene to expression site association_stage qualifier", curie=CSOLINK.curie('stage_qualifier'),
-                   model_uri=CSOLINK.gene_to_expression_site_association_stage_qualifier, domain=GeneToExpressionSiteAssociation, range=Optional[Union[str, LifeStageId]])
+                   model_uri=CSOLINK.gene_to_expression_site_association_stage_qualifier, domain=GeneToExpressionSiteAssociation, range=Optional[Union[str, ComputingStageId]])
 
 slots.gene_to_expression_site_association_quantifier_qualifier = Slot(uri=CSOLINK.quantifier_qualifier, name="gene to expression site association_quantifier qualifier", curie=CSOLINK.curie('quantifier_qualifier'),
                    model_uri=CSOLINK.gene_to_expression_site_association_quantifier_qualifier, domain=GeneToExpressionSiteAssociation, range=Optional[Union[str, OntologyClassId]])
@@ -8631,8 +8605,8 @@ slots.functional_association_object = Slot(uri=CSOLINK.object, name="functional 
 slots.macromolecular_machine_to_molecular_activity_association_object = Slot(uri=CSOLINK.object, name="macromolecular machine to molecular activity association_object", curie=CSOLINK.curie('object'),
                    model_uri=CSOLINK.macromolecular_machine_to_molecular_activity_association_object, domain=MacromolecularMachineToMolecularActivityAssociation, range=Union[str, MolecularActivityId])
 
-slots.macromolecular_machine_to_biological_process_association_object = Slot(uri=CSOLINK.object, name="macromolecular machine to biological process association_object", curie=CSOLINK.curie('object'),
-                   model_uri=CSOLINK.macromolecular_machine_to_biological_process_association_object, domain=MacromolecularMachineToBiologicalProcessAssociation, range=Union[str, BiologicalProcessId])
+slots.macromolecular_machine_to_compulogical_process_association_object = Slot(uri=CSOLINK.object, name="macromolecular machine to compulogical process association_object", curie=CSOLINK.curie('object'),
+                   model_uri=CSOLINK.macromolecular_machine_to_compulogical_process_association_object, domain=MacromolecularMachineToBiologicalProcessAssociation, range=Union[str, BiologicalProcessId])
 
 slots.macromolecular_machine_to_cellular_component_association_object = Slot(uri=CSOLINK.object, name="macromolecular machine to cellular component association_object", curie=CSOLINK.curie('object'),
                    model_uri=CSOLINK.macromolecular_machine_to_cellular_component_association_object, domain=MacromolecularMachineToCellularComponentAssociation, range=Union[str, CellularComponentId])

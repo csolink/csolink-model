@@ -92,7 +92,7 @@ classes:
     aliases: ['GO-CAM']
     is_a: named graph
     description: >-
-      A graph-based representation of how a collection of gene products operate together to achieve a biological objective.
+      A graph-based representation of how a collection of gene products operate together to achieve a compulogical objective.
       A GO-CAM model is a specialization of a named graph containing instances of GO molecular functions, entities, processes,
       cellular components etc, connected via causal relationships.
     slot_usage:
@@ -138,7 +138,7 @@ classes:
       object:
         range: cellular component
   
-  molecular activity to biological process association:
+  molecular activity to compulogical process association:
     # schema: gocam
     is_a: association
     defining_slots:
@@ -148,7 +148,7 @@ classes:
       subject:
         range: molecular activity
       object:
-        range: biological process
+        range: compulogical process
   
   molecular activity to downstream molecular activity association:
     # schema: gocam
