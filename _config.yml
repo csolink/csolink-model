@@ -1,0 +1,31 @@
+title: Csolink Model
+email: noel.mcloughlin@gmail.com
+description: A high level datamodel for representing computer science ontology entities and their associations.
+
+logo: "/assets/images/csolink-logo.png"
+
+remote_theme: deepakunni3/just-the-docs
+
+aux_links:
+  "Csolink Model on GitHub":
+    - "//github.com/csolink/csolink-model"
+
+ga_tracking: UA-157380109-1
+
+search_enabled: true
+heading_anchors: true
+
+# footer_content: "CsoLink Model"
+
+collections:
+  docs:
+    output: true
+  about:
+    output: true
+  guidelines:
+    output: true
+
+includes:
+- about
+- guidelines
+- index.md
