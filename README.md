@@ -9,10 +9,10 @@
 
 Quickstart docs:
 
-- Browse the model: [https://noelmcloughlin.github.io/csolink-model](https://noelmcloughlin.github.io/csolink-model)
-  - [named thing](https://noelmcloughlin.github.io/csolink-model/docs/NamedThing.html)
-  - [association](https://noelmcloughlin.github.io/csolink-model/docs/Association.html)
-  - [predicate](https://noelmcloughlin.github.io/csolink-model/docs/predicates.html)
+- Browse the model: [https://csolink.github.io/csolink-model](https://csolink.github.io/csolink-model)
+  - [named thing](https://csolink.github.io/csolink-model/docs/NamedThing.html)
+  - [association](https://csolink.github.io/csolink-model/docs/Association.html)
+  - [predicate](https://csolink.github.io/csolink-model/docs/predicates.html)
 
 See also [Csolink Model Guidelines](./guidelines/index.md) for understanding, curating, and working with the model.
 
@@ -20,7 +20,7 @@ See also [Csolink Model Guidelines](./guidelines/index.md) for understanding, cu
 ## Introduction
 
 The purpose of the Csolink Model is to provide a high-level datamodel of
-computing entities (computer, viruses, observability, pathways, instances, substances, etc),
+computing entities (computer, errors, observability, networks, instances, directors, etc),
 their properties, relationships, and enumerate ways in which they can be associated.
 
 The representation is independent of storage technology or metamodel (Solr documents, neo4j/property graphs,
@@ -123,6 +123,12 @@ Apart from Csolink prefixes, other useful links are:
 * [AI Lit. Panorama](http://aipano.cse.ust.hk/p9sw2ndt) viewer
 * [Gensim](https://radimrehurek.com/gensim/models/ldaseqmodel.html) modeling
 * [Wikiverse](http://wikiverse.io) visualizer.
+* [Industry 4.0 Standards](https://i40-tools.github.io/StandardOntologyVisualization) visualizer.
+* [VocReg](https://www.vocoreg.com/documentation/NOSQL/master) NoSQL
+* [LOV](https://lov.linkeddata.es/dataset/lov) Linked Open Vocabs
+* [OpenLink](https://www.openlinksw.com/describe/?url=http%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23Ontology&graph=urn%3Aontology%3Asemantic%3Amapping&graph=urn%3Aontology%3Acartridges%3Amapping&graph=urn%3Aopl%3Ashop%3Aoffering%3Asponging%3Acache%3Aofficial&graph=urn%3Aopenlink%3Aschema%3Ageneral%3Amappings&graph=urn%3Aopenlink%3Aschema%3Aoplweb%3Amappings&graph=urn%3Acartridges%3Amapping&graph=urn%3Adata%3Aopenlink%3Aproducts&graph=urn%3Adata%3Aopenlink%3Aglossary&graph=urn%3Adata%3Aopenlink%3Awebsites) OLS ontologies
+* [Knowledge-Base Projects, Groups, and Related Materia](https://www.cs.utexas.edu/users/mfkb/related.html)
+* [WordNet](http://wordnetweb.princeton.edu/perl/webwn)
  
 ### Other useful fragments?
 
