@@ -5,7 +5,7 @@
 
 <img src="images/csolink-logo.png" width="20%">
 
-# Csolink Model
+# Csolink Model (Experimental)
 
 Quickstart docs:
 
@@ -15,7 +15,6 @@ Quickstart docs:
   - [predicate](https://noelmcloughlin.github.io/csolink-model/docs/predicates.html)
 
 See also [Csolink Model Guidelines](./guidelines/index.md) for understanding, curating, and working with the model.
-
 
 
 ## Introduction
@@ -57,8 +56,6 @@ The yaml definition is currently used to derive:
     - these can be compiled down to Solr XML schemas
     - these are also intermediate targets used within the BBOP/AmiGO framework
   - [Markdown documentation](docs)
-
-
 
 
 ## Make and build instructions
@@ -115,3 +112,23 @@ See [GraphViz site](https://graphviz.org/) for installation in your operating sy
 ## How do I use Csolink Model YAML programatically?
 
 For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [csolink-model-toolkit](https://github.com/csolink/csolink-model-toolkit/). It provides a convenience methods for traversing Csolink Model.
+
+## External Weblinks
+
+### Useful links
+
+Apart from Csolink prefixes, other useful links are:
+
+* [AMiner Dataset](https://www.aminer.cn/data/) categorizer
+* [AI Lit. Panorama](http://aipano.cse.ust.hk/p9sw2ndt) viewer
+* [Gensim](https://radimrehurek.com/gensim/models/ldaseqmodel.html) modeling
+* [Wikiverse](http://wikiverse.io) visualizer.
+ 
+### Other useful fragments?
+
+* [Prakort](https://github.com/Prakort/Research-Enrich-Computer-Science-Ontology)
+* [csoclassifier](https://github.com/angelosalatino/cso-classifier)
+* [WikiOnto](https://github.com/MarcelH91/WikiOnto)
+* [CSIHO](https://github.com/moreiragb/csiho), Computer Security Incident Handling Ontology (owl)
+* [BibliOnto](https://github.com/nizarfahmi/BibliOnto)
+* [hcio](https://github.com/sidornellas/hcio) Human-Comp interaction
