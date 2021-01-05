@@ -1,4 +1,4 @@
-id: https://w3id.org/csolink/csolink-model
+EUPATH:0001001id: https://w3id.org/csolink/csolink-model
 name: Csolink-Model
 description: Entity and association taxonomy and datamodel for computer-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -11,6 +11,12 @@ version: 0.0.0
 ##
 ## g-ene = c-omponent
 ## g-ene product = c-omponent s-ervice
+## b-iological sequence = c-omputing a-lgorithm
+## B-iological = C-omputing
+## S-equence = a-lgorithm
+## G-enomic = C-omponent e-ntity
+## Z-ygosity = h-omogeneity
+## has Z-ygosity = has h-omogeneity
 ## ------------
 
 ## ------------
@@ -44,10 +50,8 @@ prefixes:
   DCAT: 'https://www.w3.org/TR/vocab-dcat/'   # Data Catalog Vocabulary (DCAT)
   doi: 'https://doi.org/'  # digital object identities
   DUBLINCORE: 'https://dublincore.org/specifications/dublin-core/dcmi-terms/#'   # DublinCore
-  EDAM-DATA: 'http://edamontology.org/data_'
-  EDAM-FORMAT: 'http://edamontology.org/format_'
-  EDAM-OPERATION: 'http://edamontology.org/operation_'
-  EDAM-TOPIC: 'http://edamontology.org/topic_'
+  ECO: 'https://evidenceontology.org/term/'     # Evidence Conclusion ontology
+  EFO: 'http://www.ebi.ac.uk/efo/'      # Experimental Facors ontology
   fabio: 'https://sparontologies.github.io/fabio/current/fabio.html'    # FaBiO, the FRBR-aligned Bibliographic Ontology
   foaf: 'http://xmlns.com/foaf/0.1/'   # FOAF Vocabulary Specification
   foldoc: 'https://foldoc.org/'     # Free Online Dictionary of Computing
@@ -65,8 +69,8 @@ prefixes:
   PeeringDb_peers: 'https://www.peeringdb.com/net/'   # peering exchange peers
   prov: 'http://www.w3.org/ns/prov#'    # Provenance
   qud: 'http://qudt.org/1.1/schema/qudt#'    # Quantities, Units, Dimensions, Types
+  REPR: 'https://w3id.org/reproduceme#'      # reproduce me
   ResearchID: 'https://publons.com/researcher/'   # publications
-  RO: 'http://purl.obolibrary.org/obo/RO_'        # Relation Ontology
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='    # database of peer-reviewed literature
   SIO: 'http://semanticscience.org/resource/SIO_'   # Semanticscience Integrated Ontology
   UO: 'https://www.ebi.ac.uk/ols/ontologies/uo'  # Units of measurement ontology
@@ -81,6 +85,7 @@ prefixes:
   doi: 'https://doi.org/'
   DrugCentral: 'http://translator.ncats.nih.gov/DrugCentral_'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
+  EDAM: 'http://edamontology.org/'
   EDAM-DATA: 'http://edamontology.org/data_'
   EDAM-FORMAT: 'http://edamontology.org/format_'
   EDAM-OPERATION: 'http://edamontology.org/operation_'
@@ -92,8 +97,6 @@ prefixes:
   GAMMA: 'http://translator.renci.org/GAMMA_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
   GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
-  # GOP: Component Ontology Property (not really a GO term but an associated metadatum)
-  GOP: 'http://purl.obolibrary.org/obo/go#'
   GSID: 'https://scholar.google.com/citations?user='
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
@@ -142,7 +145,7 @@ prefixes:
   UMLSST: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#'
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
   # The "Variation Modelling Collaboration" (VMC) is not (yet) a conventional namespace so we point to its Github repo
-  # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and
+  # See also: https://www.ga4gh.org/work_stream/geomic-knowledge-standards/#existing-standards and
   # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
   VMC: 'https://github.com/ga4gh/vr-spec/'
   WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
@@ -243,16 +246,22 @@ types:
 
   frequency:
     typeof: string
-    uri: UO:0000105
+    uri: UO:0000105    # frequency unit
+    exact_mappings:
+      - SIO:001367
 
   percentage frequency value:
     typeof: double
-    uri: UO:0000187
+    uri: UO:0000187    # percent
+    exact_mappings:
+      - SIO:001413     # percent
 
   quotient:
     aliases: ['ratio']
     typeof: double
     uri: UO:0010006
+    close_mappings:
+      - SIO:001018    # ratio
 
   unit:
     typeof: string
@@ -261,11 +270,13 @@ types:
       - UO
     exact_mappings:
       - qud:Unit
+    close_mappings:
+      - SIO:000074    # unit of measurement
 
   time type:
     typeof: time
 
-  biological sequence:
+  computing algorithm:
     typeof: string
 
 ## ------------
@@ -285,91 +296,111 @@ slots:
     multivalued: true
     in_subset:
       - samples
-    close_mappings:
-      # RTX term meaning 'specifies value of' tagged as inverse of 'csolink:has attribute'
-      - OBI:0001927
     exact_mappings:
       - SIO:000008
+    broad_mappings:
+      - CDAO:0000178    # has
     narrow_mappings:
       # if 'has attribute' annotates a NamedThing as subject or
-      # object of an association, these OBAN mappings may apply
-      - OBAN:association_has_subject_property
-      - OBAN:association_has_object_property
-      - CPT:has_possibly_included_panel_element
-      - DRUGBANK:category
-      # RTX contributed terms. Could perhaps review for more semantically precise mappings?
-      - EFO:is_executed_in
-      - HANCESTRO:0301
-      - LOINC:has_action_guidance
-      - LOINC:has_adjustment
-      - LOINC:has_aggregation_view
-      - LOINC:has_approach_guidance
-      - LOINC:has_divisor
-      - LOINC:has_exam
-      - LOINC:has_method
-      - LOINC:has_modality_subtype
-      - LOINC:has_object_guidance
-      - LOINC:has_scale
-      - LOINC:has_suffix
-      - LOINC:has_time_aspect
-      - LOINC:has_time_modifier
-      - LOINC:has_timing_of
-      - NCIT:disease_is_grade
-      - NCIT:disease_is_stage
-      - NCIT:eo_disease_has_property_or_attribute
-      - NCIT:has_data_element
-      - NCIT:has_pharmaceutical_administration_method
-      - NCIT:has_pharmaceutical_basic_dose_form
-      - NCIT:has_pharmaceutical_intended_site
-      - NCIT:has_pharmaceutical_release_characteristics
-      - NCIT:has_pharmaceutical_state_of_matter
-      - NCIT:has_pharmaceutical_transformation
+      # object of an association, these mappings may apply
+      - CSO:is_success_model
+      - CIO:has_confidence:element
+      - CIO:has_confidence:level
+      - dcterms:hasFormat
+      - dcterms:hasPart
+      - dcterms:hasVersion
+      - dcterms:isFormatOf
+      - dcterms:isPartOf
+      - dcterms:isReferencedBy
+      - dcterms:isReplacedBy
+      - dcterms:isRequiredBy
+      - dcterms:isVersionOf
+      - IAO:0000039   # has measurement unit label
+      - IAO:0000407   # has coordinate unit label
+      - NCIT:C62618   # Computer Programming Object Attribute
       - NCIT:is_qualified_by
       - NCIT:qualifier_applies_to
       - NCIT:role_has_domain
       - NCIT:role_has_range
-      - OBO:INO_0000154
-      - OBO:hancestro_0308
-      - OMIM:has_inheritance_type
-      - ORPHA:C016
-      - ORPHA:C017
-      - RO:0000053
-      # RTX tagged a few RO terms as 'csolink:related_to' but semantics suggest a better mapping here
-      - RO:0000086
-      - RO:0000087
-      - SNOMED:has_access
-      - SNOMED:has_clinical_course
-      - SNOMED:has_count_of_base_of_active_ingredient
-      - SNOMED:has_dose_form_administration_method
-      - SNOMED:has_dose_form_release_characteristic
-      - SNOMED:has_dose_form_transformation
-      - SNOMED:has_finding_context
-      - SNOMED:has_finding_informer
-      - SNOMED:has_inherent_attribute
-      - SNOMED:has_intent
-      - SNOMED:has_interpretation
-      - SNOMED:has_laterality
-      - SNOMED:has_measurement_method
-      - SNOMED:has_method
-      - SNOMED:has_priority
-      - SNOMED:has_procedure_context
-      - SNOMED:has_process_duration
-      - SNOMED:has_property
-      - SNOMED:has_revision_status
-      - SNOMED:has_scale_type
-      - SNOMED:has_severity
-      - SNOMED:has_specimen
-      - SNOMED:has_state_of_matter
-      - SNOMED:has_subject_relationship_context
-      - SNOMED:has_surgical_approach
-      - SNOMED:has_technique
-      - SNOMED:has_temporal_context
-      - SNOMED:has_time_aspect
-      - SNOMED:has_units
-      - UMLS:has_structural_class
-      - UMLS:has_supported_concept_property
-      - UMLS:has_supported_concept_relationship
-      - UMLS:may_be_qualified_by
+      - OBI:0000295   # is specified input of
+      - RO:0002002    # has boundary
+      - RO:0000053    # bearer of
+      - RO:0000086    # has quality
+      - RO:0000087    # has role
+      - RO:0012003    # acts on population of
+      - RO:0002520    # is consecutive sequence of
+      - RO:0002018    # has component process
+      - RO:0002521    # is sequentially aligned with
+      - RO:0002348    # results in commitment to
+      - RO:0002566    # causally influences
+      - SIO:000011    # is attribute of
+      - SIO:001277    # has data item
+      - SIO:000586    # has capability
+      - SIO:000671    # has identifier 
+      - SIO:000312    # has product
+      - SIO:000552    # has parameter
+      - SIO:000420    # has expression
+      - SIO:000253    # has source
+      - SIO:000132    # has participant
+      - SIO:000255    # has annotation
+      - SIO:000008    # has attribute
+      - SIO:000364    # has creator
+      - SIO:000230    # has input
+      - SIO:000235    # has disposition
+      - SIO:000234    # has implementation
+      - SIO:000228    # has role  
+      - SIO:000229    # has output
+      - SIO:000900    # has frequency
+      - SIO:000905    # has substrate
+      - SIO:000221    # has unit
+      - SIO:000225    # has function
+      - SIO:000223    # has property
+      - SIO:000217    # has quality
+      - SIO:000291    # has target
+      - SIO:000054    # has boundary
+      - SIO:000059    # has member
+      - SIO:000028    # has part
+      - SIO:000139    # has agent
+      - SIO:000772    # has evidence
+      - SIO:000641    # has basis
+      - SIO:000635    # has trigger
+      - SIO:000066    # has provider
+      - SIO:001279    # has phenotype
+      - SIO:000300    # has value
+      - SIO:001278    # is data item in
+      - SIO:000680    # has start time
+      - SIO:000681    # has end time
+      - SIO:000679    # has time boundary
+      - SIO:000673    # has unique identifier
+      - SIO:000369    # has component part
+      - SIO:000216    # has measurement value
+      - SIO:000053    # has proper part
+      - SIO:000972    # has last part
+      - SIO:000971    # has first part
+      - SIO:000273    # has direct part
+      - SIO:000644    # has realizable property
+      - SIO:000974    # has ordered part
+      - SIO:000553    # is parameter in
+      - SIO:000248    # precedes
+      - SIO:000774    # is refuted by
+      - SIO:000207    # is disputed by
+      - SIO:000202    # contains
+      - SIO:000699    # is greater than or equal to
+      - SIO:000145    # is location of
+      - SIO:000734    # is greater than
+      - SIO:000735    # is lesser than
+      - SIO:000733    # is lesser than or equal t
+      - SWO:9001002   # has clause
+      - SWO:0004001   # has interface
+      - SWO:0004000   # has version
+      - SWO:9000067   # has declared status
+      - SWO:0004002   # has format specification
+      - SWO:0000087   # has specified data output
+      - SWO:0000086   # has specified data input
+      - SWO:0004004   # is published by
+      - SWO:0000741   # is encoded by
+      - SWO:0004002   # has format specification
+      - SWO:3000054   # is alternate format of
 
   has attribute type:
     description: >-
@@ -380,9 +411,12 @@ slots:
     required: true
     in_subset:
       - samples
+    broad_mappings:
+      - SWO:type
+      - NCIT:C25284    # type
+      - dcterms:type
     narrow_mappings:
-      - LOINC:has_modality_type
-      - LOINC:has_view_type
+      - EDAM-DATA:data:0976      # Identifier (by type of data)
 
   # TRAPI Attribute schema alignment:
   # value: NamedThing.name
@@ -409,10 +443,10 @@ slots:
     multivalued: true
     exact_mappings:
       - qud:quantityValue
-    narrow_mappings:
-      - SNOMED:has_concentration_strength_numerator_value
-      - SNOMED:has_presentation_strength_denominator_value
-      - SNOMED:has_presentation_strength_numerator_value
+    narrow_mappings: []
+    broad_mappings:
+      - SIO:000300    # has value
+      - OM:hasValue
     in_subset:
       - samples
 
@@ -435,17 +469,14 @@ slots:
     multivalued: false
     close_mappings:
       # These RTX contributed terms mean "is unit of" which is the semantic inverse of this csolink:has_unit term
-      - EFO:0001697
-      - OBO:uo#is_unit_of
+      - EFO:0001697    # is unit of
+      - UO:is_unit_of
     exact_mappings:
       - qud:unit
       - IAO:0000039
-    narrow_mappings:
-      - SNOMED:has_concentration_strength_denominator_unit
-      - SNOMED:has_concentration_strength_numerator_unit
-      - SNOMED:has_presentation_strength_denominator_unit
-      - SNOMED:has_presentation_strength_numerator_unit
-      - SNOMED:has_unit_of_presentation
+      - SIO:000221
+      - OM:hasUnit
+    narrow_mappings: []
     in_subset:
       - samples
 
@@ -467,10 +498,34 @@ slots:
     in_subset:
       - translator_minimal
     required: true
+    broad_mappings:
+      - IAO:0000603    # is allocated id range
+      - IAO:0000119    # definition source
     exact_mappings:
-      - alliancegenome:primaryId
+      - REPR:id
       - gff3:ID
+      - EFO:id
+      - EDAM-DATA:data:0842    # identifier
       - gpi:DB_Object_ID
+      - dcterms:identifier
+      - SIO:000115     # identifier
+      - SIO:000729    # record identifier
+    narrow_mappings:
+      - CSO:bicm-id
+      - CSO:encryption_key
+      - CSO:group_key
+      - CSO:session_key
+      - CSO:secret_key
+      - CSO:private_key
+      - CSO:cryptographic_key
+      - SIO:000672    # is identifier for
+      - SIO:000674    # is unique identifier for
+      - ERO:0000044   # has inventory number
+      - EDAM:is_identifier:of
+      - ERO:0000480   # has_url
+      - REPR:doi
+      - SIO:000328    # positional identifier
+      - SIO:000729    # record identifier
 
   iri:
     description: >-
@@ -479,15 +534,35 @@ slots:
     in_subset:
       - translator_minimal
       - samples
+    broad_mappings:
+      - NCIT:C165071        # resource identifier
+      - NCIT:C94069         # resource provider identifier
+      - SIO:000115          # identifier
+      - EDAM-DATA:data0842  # identifier
     exact_mappings:
       - WIKIDATA_PROPERTY:P854
+    narrow_mappings:
+      - RO:0002617    # is representative IRI for equivalence set
 
   type:
     slot_uri: rdf:type
+    broad_mappings:
+      - SIO:000011    # is attribute of
+      - RO:0002473    # composed primarily of
+      - IAO:0006011   # may be identical to
     exact_mappings:
-      - alliancegenome:soTermId
+      - dcterms:type
+      - SWO:type
+      - NCIT:C25284  # type 
       - gff3:type
       - gpi:DB_Object_Type
+      - IAO:0000219    # denotes
+    narrow_mappings:
+      - IAO:0000411   # is denotator type
+      - IAO:0000221   # is quality measurement of
+      - BFO:0000055   # realizes
+      - SIO:001279    # has phenotype
+      - EDAM:media_type
 
   category:
     is_a: type
@@ -508,6 +583,9 @@ slots:
     in_subset:
       - translator_minimal
     required: true
+    narrow_mappings:
+      - CSO:access_category
+      - SIO:000255
 
   name:
     aliases: [ 'label', 'display name', 'title' ]
@@ -523,11 +601,19 @@ slots:
     # required: true
     slot_uri: rdfs:label
     exact_mappings:
+      - WIKIDATA_PROPERTY:P2561
+      - CSO:named_entity
+      - IAO:0000111  # editor preferred term
+      - SIO:000116
       - gff3:Name
+      - OM:name
+      - REPR:name
       - gpi:DB_Object_Name
     narrow_mappings:
       - dcterms:title
-      - WIKIDATA_PROPERTY:P1476
+      - IAO:0000118    # alternative term
+      - WIKIDATA_PROPERTY:P1476   # title
+      - NCIT:P386    # subsource name
 
   source:
     description: >-
@@ -536,6 +622,10 @@ slots:
     range: label type
     in_subset:
       - translator_minimal
+    narrow_mappings:
+      - CSO:noise_source
+      - CSO:source_address
+      - SWO:0004004    # is published by
 
   filler:
     is_a: node property
@@ -549,8 +639,13 @@ slots:
     description: >-
       Symbol for a particular thing
     exact_mappings:
-      - alliancegenome:symbol
+      - SIO:000105
+      - IAO:0000028
       - gpi:DB_Object_Symbol
+      - OM:alternativeSymbol
+    narrow_mappings:
+      - OM:LaTeXSymbol
+      - OM:alternativeLaTeXSymbol
 
   synonym:
     is_a: node property
@@ -562,29 +657,33 @@ slots:
     multivalued: true
     in_subset:
       - translator_minimal
+    broad_mappings:
+      - dcterms:alternative
+      - SIO:000001    # is related to
+    exact_mappings:
+      - NCIT:C52469
     narrow_mappings:
       # there is an interesting debate here: are these terms "narrower" a.k.a. more specialized instances of
       # 'csolink:synonym' or should they be binned into their respective namesake class of mappings?
       # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
       - skos:altLabel
       - gff3:Alias
-      - alliancegenome:synonyms
       - gpi:DB_Object_Synonyms
-      - oboInOwl:hasExactSynonym
-      - oboInOwl:hasNarrowSynonym
-      - oboInOwl:hasBroadSynonym
-      - oboInOwl:hasRelatedSynonym
-      # TODO: RTX contributed terms mapped here... May need review?
-      - HANCESTRO:0330
       - IAO:0000136
-      - RXNORM:has_tradename
+      - OM:unofficialLabel
+      - OM:unofficialAbbreviation
 
   has topic:
     aliases: ['topic', 'descriptors']
     is_a: node property
     range: ontology class
     exact_mappings:
+      - EDAM:has_topic
       - foaf:topic
+    broad_mappings:
+      - CIO:has_confidence_level
+      - EDAM:is_topic_of
+      - SIO:000420    # has expression
     description: >-
       Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred.
 
@@ -601,6 +700,8 @@ slots:
     narrow_mappings:
       - gff3:Dbxref
       - gpi:DB_Xrefs
+      - NCIT:hasDbXref
+      - EDAM:repository
 
   full name:
     is_a: node property
@@ -622,15 +723,20 @@ slots:
       - skos:definitions
     narrow_mappings:
       - gff3:Description
+      - CSO:architecture_description
+      - CSO:shape_description
+      - CSO:web_service_description
+      - CSO:concept_description
+      - OM:longcomment
 
   systematic synonym:
     is_a: node property
     domain: named thing
     range: label type
     multivalued: true
-    slot_uri: GOP:systematic_synonym
+    slot_uri: SIO:000122    # synonym
     description: >-
-      more commonly used for component symbols in yeast
+       a word with the same or very similar meanings
 
   affiliation:
     is_a: node property
@@ -640,6 +746,11 @@ slots:
     domain: agent
     range: uriorcurie
     multivalued: true
+    exact_mapping:
+      - SIO:000173
+      - GSSO:affiliation
+    narrow_mappings:
+      - CSO:open_source_software
 
   address:
     is_a: node property
@@ -699,10 +810,21 @@ slots:
   has count:
     description: >-
       number of things with a particular property
-    is_a: aggregate statistic
+    is_open_source_softwareopen_source_softwarea: aggregate statistic
     range: integer
+    broad_mappings:
+      - SIO:000699    # is greater than or equal to
+      - SIO:000733    # is lesser than or equal to
+      - SIO:000734    # is greater than
+      - SIO:000735    # is lesser than
     exact_mappings:
-      - LOINC:has_count
+      - OM:hasQuantity
+      - SIO:000216    # has measurement value
+    narrow_mappings:
+      - IAO:0000596   # has id digit count
+      - SIO:000900    # has frequency
+      - OM:hasBaseQuantity
+      - OM:hasDerivedQuantity
 
   has total:
     description: >-
@@ -726,13 +848,24 @@ slots:
     is_a: node property
     domain: data set version
     range: data file
+    exact_mappings:
+      - EUPATH:0001001   # data file (source)
+      - MS:1000577       # source data file
     broad_mappings:
       - dcterms:source
+      - STATO:0000002    # digital file
+    narrow_mappings:
+      - NCIT:C142663   # raw data
+      - SWO:3000034    # java file
 
   source web page:
     is_a: node property
     domain: data set summary
+    exact_mappings:
+      - NCIT:C142749  # web page
+      - SIO:000302    # web page
     broad_mappings:
+      - NCIT:C67518   # web page
       - dcterms:source
 
   retrieved on:
@@ -773,9 +906,21 @@ slots:
   format:
     is_a: node property
     domain: information content entity
+    broad_mappings:
+      - CSO:information_theory
+      - CSO:syntactic_information
     exact_mappings:
       - dcterms:format
       - WIKIDATA_PROPERTY:P2701
+      - NCIT:C42761
+    narrow_mappings:
+      - SWO:0004002    # has format specification
+      - EDAM:has_format
+      - REPR:ImageFormat
+      - EDAM:format_3750    # yaml
+      - EDAM:format_3464    # json
+      - EDAM:format_2332    # json
+      - EDAM:format_3752    # csv
 
   created_with:
     is_a: node property
@@ -788,6 +933,8 @@ slots:
     domain: distribution level
     exact_mappings:
       - dcterms:downloadURL
+    narrow_mappings:
+      - APOLLO_SV_00000488   # source code repository url
 
   distribution:
     aliases: ['dataset']
@@ -797,6 +944,9 @@ slots:
     exact_mappings:
       - void:Dataset
       - dctypes:Dataset
+      - SIO:000089
+    narrow_mappings:
+      - CSO:spatial_datasets
 
   published in:
     is_a: node property
@@ -811,6 +961,8 @@ slots:
       - isbn
     exact_mappings:
       - WIKIDATA_PROPERTY:P1433
+    narrow_mappings:
+      - GSSO:bookEdition
 
   iso abbreviation:
     is_a: node property
@@ -898,13 +1050,13 @@ slots:
       - MESH
     multivalued: true
 
-  ## Biology
+  ## Computing
 
-  has biological sequence:
+  has computing algorithm:
     is_a: node property
     description: >-
-      connects a genomic feature to its sequence
-    range: biological sequence
+      connects a component type feature to its sequence
+    range: computing algorithm
 
   has component or component service:
     is_a: node property
@@ -920,10 +1072,10 @@ slots:
     range: component
     multivalued: true
 
-  has zygosity:
+  has homogeneity:
     is_a: node property
-    domain: genomic entity
-    range: zygosity
+    domain: component entity type
+    range: homogeneity
 
   ## Chemistry, drugs and food
 
@@ -1614,7 +1766,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: molecular entity
-    range: genomic entity
+    range: component entity type
     exact_mappings:
       - CTD:affects_expression_of
 
@@ -1625,7 +1777,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: molecular entity
-    range: genomic entity
+    range: component entity type
     close_mappings: []
       # Agent of the action or effect, not the relationship itelf
       # mechanism:releasing_agent
@@ -1639,7 +1791,7 @@ slots:
     in_subset:
       - translator_minimal
     domain: molecular entity
-    range: genomic entity
+    range: component entity type
     related_mappings:
       - DGIdb:antisense
       - DGIdb:antisense_oligonucleotide
@@ -1976,12 +2128,12 @@ slots:
 
   affects mutation rate of:
     description: >-
-      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
+      holds between a molecular entity and a component entity type where the action or effect of the molecular entity impacts the rate of mutation of the component entity type within a system of interest
     is_a: affects
     in_subset:
       - translator_minimal
     domain: molecular entity
-    range: genomic entity
+    range: component entity type
     exact_mappings:
       - CTD:affects_mutation_rate_of
     broad_mappings:
@@ -1990,12 +2142,12 @@ slots:
 
   increases mutation rate of:
     description: >-
-      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest
+      holds between a molecular entity and a component entity type where the action or effect of the molecular entity increases the rate of mutation of the component entity type within a system of interest
     is_a: affects mutation rate of
     in_subset:
       - translator_minimal
     domain: molecular entity
-    range: genomic entity
+    range: component entity type
     exact_mappings:
       - CTD:increases_mutation_rate_of
     broad_mappings:
@@ -2004,12 +2156,12 @@ slots:
 
   decreases mutation rate of:
     description: >-
-      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest
+      holds between a molecular entity and a component entity type where the action or effect of the molecular entity decreases the rate of mutation of the component entity type within a system of interest
     is_a: affects mutation rate of
     in_subset:
       - translator_minimal
     domain: molecular entity
-    range: genomic entity
+    range: component entity type
     exact_mappings:
       - CTD:decreases_mutation_rate_of
     broad_mappings:
@@ -3345,11 +3497,11 @@ slots:
   has sequence location:
     is_a: related to
     description: >-
-      holds between two genomic entities when the subject can be localized
+      holds between two component type entities when the subject can be localized
       in sequence coordinates on the object. For example, between
       an exon and a chromosome/contig.
-    domain: genomic entity
-    range: genomic entity
+    domain: component entity type
+    range: component entity type
     exact_mappings:
       - faldo:location
 
@@ -3901,7 +4053,7 @@ slots:
 
   has variant part:
     is_a: has part
-    description: holds between a genomic entity and a genotypic entity that is a sub-component of it
+    description: holds between a component entity type and a genotypic entity that is a sub-component of it
     exact_mappings:
       - GENO:0000382
 
@@ -3914,9 +4066,9 @@ slots:
 
   is sequence variant of:
     is_a: related to
-    description: holds between a sequence variant and a genomic entity
+    description: holds between a sequence variant and a component entity type
     domain: sequence variant
-    range: genomic entity
+    range: component entity type
     narrow_mappings:
       # RTX contributed term mappings tagged elsewhere but mapped better here
       - NCIT:component_product_sequence_variation_encoded_by_component_mutant
@@ -3994,7 +4146,7 @@ slots:
   is nearby variant of:
     is_a: is sequence variant of
     description: holds between a sequence variant and a component sequence that the variant
-      is genomically close to.
+      is component typeally close to.
     domain: sequence variant
     range: component
     exact_mappings:
@@ -4447,10 +4599,10 @@ slots:
 
   sequence localization attribute:
     is_a: association slot
-    domain: genomic sequence localization
+    domain: component type sequence localization
     description: >-
       An attribute that can be applied to a genome sequence localization edge. These edges
-      connect a genomic entity such as an exon to an entity such as a chromosome. Edge properties are used
+      connect a component entity type such as an exon to an entity such as a chromosome. Edge properties are used
       to ascribe specific positional information and other metadata to the localization. In pragmatic terms
       this can be thought of as columns in a GFF3 line.
 
@@ -4463,13 +4615,13 @@ slots:
   start interbase coordinate:
     is_a: interbase coordinate
     description: >-
-      The position at which the subject genomic entity starts
+      The position at which the subject component entity type starts
       on the chromosome or other entity to which it is located on.
 
   end interbase coordinate:
     is_a: interbase coordinate
     description: >-
-      The position at which the subject genomic entity ends
+      The position at which the subject component entity type ends
       on the chromosome or other entity to which it is located on.
 
   genome build:
@@ -4938,7 +5090,7 @@ classes:
     values_from:
       - eco
     exact_mappings:
-      - ECO:0000000
+      - ECO:0000000    # evidence
 
   ## Publications
 
@@ -5201,7 +5353,7 @@ classes:
       # Therapeutic or Preventive Procedure
       - UMLSSC:T061
       - UMLSST:topp
-      # Molecular Biology Research Technique
+      # Molecular Computology Research Technique
       - UMLSSC:T063
       - UMLSST:mbrt
 
@@ -5679,7 +5831,7 @@ classes:
     exact_mappings:
       - CHEBI:25212
 
-  ## Biology and Biomedical Sciences
+  ## Computology and Biomedical Sciences
 
   organism attribute:
     is_a: attribute
@@ -5999,14 +6151,14 @@ classes:
       - PO
       - FAO
 
-  genomic entity:
+  component entity type:
     is_a: molecular entity
     aliases: ['sequence feature']
     description: >-
       an entity that can either be directly located on a genome (component,
       transcript, exon, regulatory region) or is encoded in a genome (protein)
     slots:
-      - has biological sequence
+      - has computing algorithm
     exact_mappings:
       # UMLS Semantic Group "Genes & Molecular Sequences"
       - UMLSSG:GENE
@@ -6023,7 +6175,7 @@ classes:
       - model_organism_database
 
   genome:
-    is_a: genomic entity
+    is_a: component entity type
     description: >-
       A genome is the sum of genetic material within a cell or virion.
     exact_mappings:
@@ -6048,7 +6200,7 @@ classes:
       - model_organism_database
 
   exon:
-    is_a: genomic entity
+    is_a: component entity type
     description: >-
       A region of the transcript sequence within a component which is not
       removed from the primary RNA transcript by RNA splicing
@@ -6058,13 +6210,13 @@ classes:
       - WIKIDATA:Q373027
 
   coding sequence:
-    is_a: genomic entity
+    is_a: component entity type
     exact_mappings:
       - SO:0000316
       - SIO:001390
 
   macromolecular machine:
-    is_a: genomic entity
+    is_a: component entity type
     union_of:
       - component
       - component service
@@ -6300,21 +6452,21 @@ classes:
     in_subset:
       - model_organism_database
 
-  zygosity:
+  homogeneity:
     is_a: attribute
     exact_mappings:
       - GENO:0000133
 
   genotype:
-    is_a: genomic entity
+    is_a: component entity type
     description: >-
       An information content entity that describes a genome by specifying the
-      total variation in genomic sequence and/or component expression, relative to
+      total variation in component type sequence and/or component expression, relative to
       some established background
     comments:
       - Consider renaming as genotypic entity
     slots:
-      - has zygosity
+      - has homogeneity
     exact_mappings:
       - GENO:0000536
       - SIO:001079
@@ -6325,7 +6477,7 @@ classes:
       - model_organism_database
 
   haplotype:
-    is_a: genomic entity
+    is_a: component entity type
     description: >-
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
 #    slots:
@@ -6339,7 +6491,7 @@ classes:
     aliases: ['allele']
     local_names:
       agr: allele
-    is_a: genomic entity
+    is_a: component entity type
     description: >-
       An allele that varies in its sequence from what is considered
       the reference allele at that locus.
@@ -6386,7 +6538,7 @@ classes:
       has component:
         multivalued: true
         description: Each allele can be associated with any number of components
-      has biological sequence:
+      has computing algorithm:
         description: >-
           The state of the sequence w.r.t a reference sequence
       id:
@@ -6402,13 +6554,13 @@ classes:
     aliases: ['single nucleotide variant','single nucleotide polymorphism', 'snp']
     is_a: sequence variant
     description: >-
-      SNVs are single nucleotide positions in genomic DNA at
+      SNVs are single nucleotide positions in component type DNA at
       which different sequence alternatives exist
     exact_mappings:
       - SO:0001483
 
   reagent targeted component:
-    is_a: genomic entity
+    is_a: component entity type
     description: >-
       A component altered in its expression level in the context of some
       experiment as a result of being targeted by component-knockdown
@@ -6573,14 +6725,14 @@ classes:
     in_subset:
       - model_organism_database
 
-  genomic background exposure:
-    is_a: genomic entity
+  component type background exposure:
+    is_a: component entity type
     mixins:
       - exposure event
       - component grouping mixin
     description: >-
-      A genomic background exposure is where an individual's specific genomic background
-      of components, sequence variants or other pre-existing genomic conditions constitute
+      A component type background exposure is where an individual's specific component type background
+      of components, sequence variants or other pre-existing component type conditions constitute
       a kind of 'exposure' to the organism, leading to or influencing an outcome.
     #exact_mappings:
     #  -
@@ -8009,21 +8161,21 @@ classes:
   sequence association:
     is_a: association
     description: >-
-      An association between a sequence feature and a genomic entity it is localized to.
+      An association between a sequence feature and a component entity type it is localized to.
 
-  genomic sequence localization:
+  component type sequence localization:
     is_a: sequence association
     description: >-
-      A relationship between a sequence feature and a genomic entity
+      A relationship between a sequence feature and a component entity type
       it is localized to. The reference entity may be a chromosome,
       chromosome region or information entity such as a contig.
     slot_usage:
       subject:
         aliases: ['sequence feature']
-        range: genomic entity  ## todo protein
+        range: component entity type  ## todo protein
       object:
         aliases: ['reference']
-        range: genomic entity ## typically a chromosome use monochrom
+        range: component entity type ## typically a chromosome use monochrom
       predicate:
         subproperty_of: has sequence location
     slots:
@@ -8042,9 +8194,9 @@ classes:
       For example, a particular exon is part of a particular transcript or component
     slot_usage:
       subject:
-        range: genomic entity  ## todo protein
+        range: component entity type  ## todo protein
       object:
-        range: genomic entity ## typically a chromosome
+        range: component entity type ## typically a chromosome
 
   transcript to component relationship:
     is_a: sequence feature relationship

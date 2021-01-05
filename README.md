@@ -9,10 +9,10 @@
 
 Quickstart docs:
 
-- Browse the model: [https://noelmcloughlin.github.io/csolink-model](https://noelmcloughlin.github.io/csolink-model)
-  - [named thing](https://noelmcloughlin.github.io/csolink-model/docs/NamedThing.html)
-  - [association](https://noelmcloughlin.github.io/csolink-model/docs/Association.html)
-  - [predicate](https://noelmcloughlin.github.io/csolink-model/docs/predicates.html)
+- Browse the model: [https://csolink.github.io/csolink-model](https://csolink.github.io/csolink-model)
+  - [named thing](https://csolink.github.io/csolink-model/docs/NamedThing.html)
+  - [association](https://csolink.github.io/csolink-model/docs/Association.html)
+  - [predicate](https://csolink.github.io/csolink-model/docs/predicates.html)
 
 See also [Csolink Model Guidelines](./guidelines/index.md) for understanding, curating, and working with the model.
 
