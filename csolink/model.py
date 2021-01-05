@@ -2686,7 +2686,7 @@ class Food(MolecularEntity):
 
     id: Union[str, FoodId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_nutrient: Optional[Union[Union[str, ChemicalSubstanceId], List[Union[str, ChemicalSubstanceId]]]] = empty_list()
+    has_update: Optional[Union[Union[str, ChemicalSubstanceId], List[Union[str, ChemicalSubstanceId]]]] = empty_list()
     has_constituent: Optional[Union[Union[str, ChemicalSubstanceId], List[Union[str, ChemicalSubstanceId]]]] = empty_list()
 
     def __post_init__(self, **kwargs: Dict[str, Any]):
@@ -2695,11 +2695,11 @@ class Food(MolecularEntity):
         if not isinstance(self.id, FoodId):
             self.id = FoodId(self.id)
 
-        if self.has_nutrient is None:
-            self.has_nutrient = []
-        if not isinstance(self.has_nutrient, list):
-            self.has_nutrient = [self.has_nutrient]
-        self.has_nutrient = [v if isinstance(v, ChemicalSubstanceId) else ChemicalSubstanceId(v) for v in self.has_nutrient]
+        if self.has_update is None:
+            self.has_update = []
+        if not isinstance(self.has_update, list):
+            self.has_update = [self.has_update]
+        self.has_update = [v if isinstance(v, ChemicalSubstanceId) else ChemicalSubstanceId(v) for v in self.has_update]
 
         if self.has_constituent is None:
             self.has_constituent = []
@@ -7582,8 +7582,8 @@ slots.has_active_ingredient = Slot(uri=CSOLINK.has_active_ingredient, name="has 
 slots.has_excipient = Slot(uri=CSOLINK.has_excipient, name="has excipient", curie=CSOLINK.curie('has_excipient'),
                    model_uri=CSOLINK.has_excipient, domain=Drug, range=Optional[Union[Union[str, ChemicalSubstanceId], List[Union[str, ChemicalSubstanceId]]]])
 
-slots.has_nutrient = Slot(uri=CSOLINK.has_nutrient, name="has nutrient", curie=CSOLINK.curie('has_nutrient'),
-                   model_uri=CSOLINK.has_nutrient, domain=Food, range=Optional[Union[Union[str, ChemicalSubstanceId], List[Union[str, ChemicalSubstanceId]]]])
+slots.has_update = Slot(uri=CSOLINK.has_update, name="has update", curie=CSOLINK.curie('has_update'),
+                   model_uri=CSOLINK.has_update, domain=Food, range=Optional[Union[Union[str, ChemicalSubstanceId], List[Union[str, ChemicalSubstanceId]]]])
 
 slots.has_receptor = Slot(uri=CSOLINK.has_receptor, name="has receptor", curie=CSOLINK.curie('has_receptor'),
                    model_uri=CSOLINK.has_receptor, domain=None, range=Optional[Union[str, OrganismalEntityId]])
