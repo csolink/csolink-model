@@ -6,18 +6,16 @@ layout: default
 
 # Csolink Model
 
-A high level datamodel of compulogical entities ([genes](docs/Gene), [diseases](docs/Disease),
-[phenotypes](docs/Phenotype), [pathways](docs/Pathway), [individuals](docs/IndividualOrganism), [substances](docs/ChemicalSubstance), etc) and their
-[associations](docs/Association).
+A high level datamodel of computing entities ([services](docs/Service), [errors](docs/Error), [observable features](docs/Observable Features), [networks](docs/Network), [individuals](docs/IndividualSystem), [directors](docs/Service Directors), etc) and their [associations](docs/Association).
 
 Csolink Model is designed as a way of standardizing types and relational structures in knowledge graphs (KGs), 
 where the KG may be either a property graph or RDF triple store.
 
 The schema is expressed as a [YAML](https://github.com/noelmcloughin/csolink-model/blob/master/csolink-model.yaml), which is translated to:
 
- * Individual pages for each class in the model, e.g [https://w3id.org/csolink/vocab/Gene](https://w3id.org/csolink/vocab/Gene)
- * An [OWL ontology](csolink-model.owl), also available on [BioPortal](https://bioportal.bioontology.org/ontologies/BLM)
- * [Python dataclasses](csolink/model.py), also available on [PyPI](https://pypi.org/project/csolink-model/)
+ * Individual pages for each class in the model, e.g [https://w3id.org/csolink/vocab/Service](https://w3id.org/csolink/vocab/Service)
+ * An [OWL ontology](csolink-model.owl).
+ * [Python dataclasses](csolink/model.py).
  * [ShEx](csolink-model.shex) (RDF shape constraints)
  * [graphql](csolink-model.graphql) (Experimental)
  * [protobuf](csolink-model.proto) (Experimental)
@@ -86,7 +84,7 @@ See [Csolink Model JSON-LD context](context.jsonld) for a list of CURIE prefix m
 These include prefix expansions such as:
 
       "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
-      "NCBIGene": "http://www.ncbi.nlm.nih.gov/gene/",
+      "NCBIService": "http://www.ncbi.nlm.nih.gov/gene/",
       "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
 
 
