@@ -70,6 +70,6 @@ LinkML consumes the Csolink Model YAML and also generates Markdown for all the c
 
 This step is automated as part of [GitHub Actions](https://github.com/csolink/csolink-model/actions) where changes in Markdown content are pushed to the `gh-pages` branch. 
 
-The [Csolink Model Documentation](https://noelmcloughlin.github.io/csolink-model/) site is driven from the `gh-pages` branch.
+The [Csolink Model Documentation](https://csolink.github.io/csolink-model/) site is driven from the `gh-pages` branch.
 
 That means no pull request to the Csolink Model repo should include generated Markdown. It is advised to ensure that [GitHub Actions](https://github.com/csolink/csolink-model/actions) remain disabled in the fork from which pull requests are made back to the main Csolink repository.

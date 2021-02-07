@@ -28,7 +28,7 @@ All these classes are arranged in a hierarchy with the root of all entities bein
 To add an entity class to Csolink Model you need to determine the following,
   - What is an appropriate name for this entity?
     - The name for an entity should be clear and concise. It should describe instances of this class
-  - Where in the [`named thing` hierarchy](https://noelmcloughlin.github.io/csolink-model/docs/NamedThing) does the new class fit?
+  - Where in the [`named thing` hierarchy](https://csolink.github.io/csolink-model/docs/NamedThing) does the new class fit?
     - Determine what the immediate parent for this class is going to be
   - What are the slots that this class can have (in addition to its inherited slots)?
     - Determine what additional properties that this class ought to have
@@ -173,7 +173,7 @@ To add a predicate to Csolink Model you need to determine the following,
   - What is an appropriate name for this predicate?
     - A human readable name for this predicate. It should capture the nature of the relationship
   - Where in the hierarchy does the new slot fit?
-    - Determine where in the [`related to` hierarchy](https://noelmcloughlin.github.io/csolink-model/docs/related_to) does this new predicate slot fit
+    - Determine where in the [`related to` hierarchy](https://csolink.github.io/csolink-model/docs/related_to) does this new predicate slot fit
   - What are the domain and range constraints (if any)?
     - Determine which type of entity classes can this predicate link
   - What are the mapping(s) for this slot?
@@ -219,8 +219,8 @@ To add a node/edge property to Csolink Model you need to determine the following
     - Determine whether the property is a node or an edge property
   - Where in the hierarchy does the new property fit?
     - Determine where in the property hierarchy does this new property fit
-    - If you want to add a node property then it should be added as part of the [`node property` hierarchy](https://noelmcloughlin.github.io/csolink-model/docs/node_property)
-    - If you want to add an edge property then it should be added as part of the [`association slot` hierarchy](https://noelmcloughlin.github.io/csolink-model/docs/association_slot)
+    - If you want to add a node property then it should be added as part of the [`node property` hierarchy](https://csolink.github.io/csolink-model/docs/node_property)
+    - If you want to add an edge property then it should be added as part of the [`association slot` hierarchy](https://csolink.github.io/csolink-model/docs/association_slot)
   - Is this a required property?
     - Determine whether all instances of a class must have a value for this property
   - What are the domain and range constraints (if any)?
