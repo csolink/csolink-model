@@ -30,7 +30,7 @@ Refer to [Working with the Model[working-with-the-model.md] for an example on ho
 
 ### What is the difference between `predicate`, `relation`, `association_type`?
 
-- `predicate` is an association slot and must have a value from the [`related to` hierarchy](https://noelmcloughlin.github.io/csolink-model/docs/related_to)
+- `predicate` is an association slot and must have a value from the [`related to` hierarchy](https://csolink.github.io/csolink-model/docs/related_to)
 - `relation` is an association slot and can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy
-- `association_type` (or `rdf:type`) is an association slot and must have a value from the [`association` hierarchy](https://noelmcloughlin.github.io/csolink-model/docs/Association)
+- `association_type` (or `rdf:type`) is an association slot and must have a value from the [`association` hierarchy](https://csolink.github.io/csolink-model/docs/Association)
 

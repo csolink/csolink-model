@@ -65,7 +65,7 @@ NCBIGene:2081	ERN1	csolink:Gene	STRING	ENSEMBL:ENSG00000178607	SO:0001217	NCBITa
 
 There are three ways of attaching semantics to a node:
 - using Csolink node property slot `category`
-  - the value of the `category` must be from the [`named thing` hierarchy](https://noelmcloughlin.github.io/csolink-model/docs/NamedThing)
+  - the value of the `category` must be from the [`named thing` hierarchy](https://csolink.github.io/csolink-model/docs/NamedThing)
 - using Csolink node property slot `type`
   - can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy
 - using Csolink predicate slot `subclass_of` (or `rdfs:subClassOf`)
@@ -100,11 +100,11 @@ fe5f9383-c5f6-4eba-9dc4-185e6d331459	NCBIGene:23229	csolink:has_gene_product	Uni
 
 There are 3 ways of attaching the semantics to an edge:
 - using the Csolink association slot `predicate`
-  - must have a value from the [`related to` hierarchy](https://noelmcloughlin.github.io/csolink-model/docs/related_to)
+  - must have a value from the [`related to` hierarchy](https://csolink.github.io/csolink-model/docs/related_to)
 - using the Csolink association slot `relation`
   - can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy
 - using the Csolink association slot `association_type` (or `rdf:type`)
-  - must have a value from the [`association` hierarchy](https://noelmcloughlin.github.io/csolink-model/docs/Association)
+  - must have a value from the [`association` hierarchy](https://csolink.github.io/csolink-model/docs/Association)
 
 
 ## Csolink Model representation in Neo4j
