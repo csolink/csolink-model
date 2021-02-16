@@ -3,7 +3,7 @@ name: Csolink-Model
 description: Entity and association taxonomy and datamodel for computer services data
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
-# todo: rr, XAPI, gpi
+# todo: rr, XAPI
 
 # Version should be kept in sync with primary Git repository release tag
 version: 0.0.0
@@ -181,6 +181,7 @@ prefixes:
   openvocab: 'https://vocab.org/open/#'    # Open Vocab
   OSO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/software%23'  # Openlink sw Ontology
   OMG-SPECS: 'https://www.omg.org/spec/'   # Object Management Group Specifications
+  OM: 'http://www.ontology-of-units-of-measure.org/resource/om-2/'
   ORCID: 'https://orcid.org/'    # Open Researcher and Contributor ID
   PATO: 'http://purl.obolibrary.org/obo/pato#'  # Observable Quality: properties
   pav: 'http://purl.org/pav/'    # Provenance, Authoring and Versioning
@@ -553,7 +554,6 @@ slots:
       - CDAO:has_Remaining_Coordinate_List
       - CDAO:has_State
       - CDAO:has_Element
-      - CIO:has_confidence:element
       - CTRL:hasApplicationLogic
       - CTRL:hasInput
       - CTRL:hasMedium
@@ -948,7 +948,7 @@ slots:
       - dct:identifier
       - EDAM-DATA:0842  # identifier
       - EFO:id
-      - gpi:DB_Object_ID
+      # DB_Object_ID
       - MAID:154504017
       - REPR:id
       - schema:identifier
@@ -1015,7 +1015,7 @@ slots:
       - IAO:0006011   # may be identical to
     exact_mappings:
       - dct:type
-      - gpi:DB_Object_Type
+      # DB_Object_Type
       - IAO:0000219    # denotes
       - NCIT:C25284  # type
       - OCRM:type
@@ -1080,7 +1080,7 @@ slots:
       - CSO:named_entity
     exact_mappings:
       - CSO:named_entity
-      - gpi:DB_Object_Name
+      # DB_Object_Name
       - gr:name
       - OM:name
       - REPR:name
@@ -1144,7 +1144,7 @@ slots:
     exact_mappings:
       - SIO:000105    # symbol
       - IAO:0000028   # symbol
-      - gpi:DB_Object_Symbol
+      # DB_Object_Symbol
       - gvp:Symbol
       - MAID:128361363   # symbol
       - OM:alternativeSymbol
@@ -1171,7 +1171,7 @@ slots:
       - NCIT:C52469    # synonym
       - WIKIDATA_PROPERTY:P1420   # taxon synonym
     narrow_mappings:
-      - gpi:DB_Object_Synonyms
+      # DB_Object_Synonyms
       - EXO:hasExactSynonym
       - EXO:hasRelatedSynonym
       - IAO:0000136    # is about
@@ -1218,7 +1218,7 @@ slots:
       - WIKIDATA:Q1302249    # cross-reference
     narrow_mappings:
       - dwc:identificationReferences
-      - gpi:DB_Xrefs
+      # DB_Xrefs
       - gr:relatedWebService
       - NCIT:hasDbXref
       - EDAM:repository
@@ -1575,7 +1575,7 @@ slots:
       - WIKIDATA_PROPERTY:P1433
       - sumo:Publication
     narrow_mappings:
-      - GSSO:bookEdition
+      # bookEdition
       - schema:PublicationIssue
 
   iso abbreviation:
@@ -1704,7 +1704,7 @@ slots:
     multivalued: true
 
   has homogeneity:
-    # alias: ['effectively homogeneous']
+    # effectively homogeneous
     is_a: node property
     domain: workload entity
     range: homogeneity
@@ -2188,7 +2188,6 @@ slots:
       - WIKIDATA:Q42415624    # inexact match
     narrow_mappings:
       - OBO:xref
-      - oboformat:xref
       - sumo:sibling
 
   exact match:
@@ -2260,10 +2259,10 @@ slots:
       - csrc:Provider
       - schema:provider
     narrow_mappings:
-      - Service_Provider
-      - Third_party_Providers
-      - computer_provider_or_provider
-      - computer_Service_Provider
+      - CSO:Service_Provider
+      - CSO:Third_party_Providers
+      - CSO:computer_provider_or_provider
+      - CSO:computer_Service_Provider
 
   publisher:
     is_a: contributor
@@ -3929,7 +3928,6 @@ slots:
     exact_mappings: []
       # occurs_in
     narrow_mappings:
-      # occurs_in
       - geolink:isProgramOf
       # :site_of
       - LOINC:has_imaged_location
@@ -4629,8 +4627,8 @@ slots:
     narrow_mappings:
       - gr:availabilityStarts
       - gr:availabilityEnds
-      - schema:schema:availabilityStarts
-      - schema:schema:availabilityEnds
+      - schema:availabilityStarts
+      - schema:availabilityEnds
 
   has variant part:
     is_a: has part
@@ -4742,8 +4740,8 @@ slots:
     is_a: related to
     related_mappings:
       - RO:0004019    # disease has basis in
-    broad_mappings:
-      - APOLLO_SV:00000543    # has basis in
+    broad_mappings: []
+      # 00000543    # has basis in
     narrow_mappings: []
 
   # These may be pushable to causal relationships, but seem important for clarity
@@ -4759,7 +4757,6 @@ slots:
     broad_mappings:
       - csrc:adverse_consequence
     exact_mappings:
-      - Aeolus:0000001
       - OAE:0002616    # adverse event preceded by
 
   contraindicated for:
@@ -4836,7 +4833,7 @@ slots:
     broad_mappings:
       - sumo:lacks
     exact_mappings:
-      - INO:0000139    # lacks part
+      - OBO:INO_0000139    # lacks part
     narrow_mappings:
       - CSO:incomplete_information_systems
 
@@ -5362,6 +5359,8 @@ classes:
       - EDAM-FORMAT
       - EDAM-OPERATION
       - EDAM-TOPIC
+    in_subset:
+      - samples
     exact_mappings:
       - csrc:attribute
       - SIO:000614    # attribute
@@ -5439,8 +5438,6 @@ classes:
       - sumo:publishes
       - sumo:validityPeriod
       - sumo:VirtualAddress
-    in_subset:
-      - samples
 
   attribute type:
     ### split from 'has attribute type'  ####
@@ -6551,7 +6548,7 @@ classes:
       - csrc:Behavioral_Outcome
       - SAN:ActuatorInput
       - SAN:ActuatorOutput
-      - TEDDY:0000083    # temporal behaviour
+      # 0000083    # temporal behaviour
 
   death:
     is_a: computational process
@@ -6644,7 +6641,7 @@ classes:
   power:
     is_a: control actor
     broad_mappings:
-      - SRAO:0000252    # power engineering
+      # SRAO:0000252    # power engineering
       - ssn-system:OperatingPowerRange
       - sumo:PowerGeneration
     exact_mappings:
@@ -6680,10 +6677,10 @@ classes:
     related_mappings:
       - dwc:resourceID
       - SAN:isConsumedBy
-    broad_mappings:
-      - SDGIO:00010059   # resource consumption
+    broad_mappings: []
+      # SDGIO:00010059   # resource consumption
     exact_mappings:
-      - SDGIO:00000011   # use of a resource
+      # SDGIO:00000011   # use of a resource
     narrow_mappings:
       - CSO:power_consumed
       - csrc:cyber_resource
@@ -6696,7 +6693,7 @@ classes:
       - csrc:Storage
       - MAID:70437156  # pooling
       - NCIT:C19012    # resource sharing
-      - SDGIO:00010055    # domestic resource consumption
+      # SDGIO:00010055    # domestic resource consumption
 
   administrative operation:
     is_a: operational entity
