@@ -60,7 +60,7 @@ The yaml definition is currently used to derive:
 
 ## Make and build instructions
 
-Prerequisites: Python 3.7+ and pipenv
+Prerequisites: Python 3.7+, make, graphiz, python3-pip, and pipenv
 
 To install pipenv,
 
