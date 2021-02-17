@@ -11,9 +11,9 @@ A high level datamodel of Computer Systems ([Component](docs/Component), [Compon
 Csolink Model is designed as a way of standardizing types and relational structures in knowledge graphs (KGs), 
 where the KG may be either a property graph or RDF triple store.
 
-The schema is expressed as a [YAML](https://github.com/noelmcloughin/csolink-model/blob/master/csolink-model.yaml), which is translated to:
+The schema is expressed as a [YAML](https://github.com/csolink/csolink-model/blob/master/csolink-model.yaml), which is translated to:
 
- * Individual pages for each class in the model, e.g [https://w3id.org/csolink/vocab/Service](https://w3id.org/csolink/vocab/Serviceunit)
+ * Individual pages for each class in the model, e.g [https://w3id.org/csolink/vocab/Serviceunit](https://w3id.org/csolink/vocab/Serviceunit)
  * An [OWL ontology](csolink-model.owl).
  * [Python dataclasses](csolink/model.py).
  * [ShEx](csolink-model.shex) (RDF shape constraints)
