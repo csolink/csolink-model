@@ -15,7 +15,7 @@ URI: [csolink:WorkloadEntity](https://w3id.org/csolink/vocab/WorkloadEntity)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceFeatureRelationship]-%20object%201..1%3E[WorkloadEntity%7Chas_computational_sequence:computational_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[SequenceFeatureRelationship]-%20subject%201..1%3E[WorkloadEntity],[ServiceSequenceLocalization]-%20object%201..1%3E[WorkloadEntity],[ServiceSequenceLocalization]-%20subject%201..1%3E[WorkloadEntity],[WorkloadEntity]%5E-[Workload],[WorkloadEntity]%5E-[Variantcomponentservicetype],[WorkloadEntity]%5E-[Serviceunittype],[WorkloadEntity]%5E-[Serviceinstance],[WorkloadEntity]%5E-[ServiceBackgroundExposure],[WorkloadEntity]%5E-[SequenceVariant],[WorkloadEntity]%5E-[ReagentTargetedComponentservice],[WorkloadEntity]%5E-[Daemon],[WorkloadEntity]%5E-[Componentserviceinstance],[WorkloadEntity]%5E-[CodingSequence],[OperationalEntity]%5E-[WorkloadEntity],[Workload],[Variantcomponentservicetype],[SystemTaxon],[Serviceunittype],[Serviceinstance],[ServiceSequenceLocalization],[ServiceBackgroundExposure],[SequenceVariant],[SequenceFeatureRelationship],[ReagentTargetedComponentservice],[OperationalEntity],[NamedThing],[Daemon],[Componentserviceinstance],[CodingSequence],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ComponentserviceSequenceLocalization]-%20object%201..1%3E[WorkloadEntity%7Chas_computational_sequence:computational_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[ComponentserviceSequenceLocalization]-%20subject%201..1%3E[WorkloadEntity],[SequenceFeatureRelationship]-%20object%201..1%3E[WorkloadEntity],[SequenceFeatureRelationship]-%20subject%201..1%3E[WorkloadEntity],[WorkloadEntity]%5E-[Workload],[WorkloadEntity]%5E-[Variantcomponentservicetype],[WorkloadEntity]%5E-[Serviceunittype],[WorkloadEntity]%5E-[Serviceinstance],[WorkloadEntity]%5E-[SequenceVariant],[WorkloadEntity]%5E-[ReagentTargetedComponentservice],[WorkloadEntity]%5E-[Daemon],[WorkloadEntity]%5E-[Componentserviceinstance],[WorkloadEntity]%5E-[ComponentserviceBackgroundExposure],[WorkloadEntity]%5E-[CodingSequence],[OperationalEntity]%5E-[WorkloadEntity],[Workload],[Variantcomponentservicetype],[SystemTaxon],[Serviceunittype],[Serviceinstance],[SequenceVariant],[SequenceFeatureRelationship],[ReagentTargetedComponentservice],[OperationalEntity],[NamedThing],[Daemon],[Componentserviceinstance],[ComponentserviceSequenceLocalization],[ComponentserviceBackgroundExposure],[CodingSequence],[Attribute],[Agent])
 
 ---
 
@@ -27,11 +27,11 @@ URI: [csolink:WorkloadEntity](https://w3id.org/csolink/vocab/WorkloadEntity)
 ## Children
 
  * [CodingSequence](CodingSequence.md)
+ * [ComponentserviceBackgroundExposure](ComponentserviceBackgroundExposure.md) - A service background exposure is where an individual's specific service background of serviceunits, sequence variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or influencing an outcome.
  * [Componentserviceinstance](Componentserviceinstance.md) - The unit of service workload the component is capable of providing or protecting.
  * [Daemon](Daemon.md) - A region of the componentserviceinstance sequence within a componentservice.
  * [ReagentTargetedComponentservice](ReagentTargetedComponentservice.md) - A componentservice altered in its availability level in the context of some experiment as a result of being targeted by componentservice-knockdown reagent(s).
  * [SequenceVariant](SequenceVariant.md) - A variantcomponentservice that varies in its sequence from what is considered the reference variantcomponentservice at that locus.
- * [ServiceBackgroundExposure](ServiceBackgroundExposure.md) - A service background exposure is where an individual's specific service background of serviceunits, sequence variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or influencing an outcome.
  * [Serviceinstance](Serviceinstance.md) - A servicetype that is composed of a chain of instruction sequences and is produced by translation of kernel message
  * [Serviceunittype](Serviceunittype.md) - An information content entity that describes a workload by specifying the total variation in service sequence and/or componentservice availability, relative to some established background
  * [Variantcomponentservicetype](Variantcomponentservicetype.md) - A set of zero or more variantcomponentservices on a single instance of a Sequence
@@ -41,6 +41,8 @@ URI: [csolink:WorkloadEntity](https://w3id.org/csolink/vocab/WorkloadEntity)
 
  *  **[OperationalEntity](OperationalEntity.md)** *[affects availability of](affects_availability_of.md)*  <sub>0..*</sub>  **[WorkloadEntity](WorkloadEntity.md)**
  *  **[OperationalEntity](OperationalEntity.md)** *[affects updates rate of](affects_updates_rate_of.md)*  <sub>0..*</sub>  **[WorkloadEntity](WorkloadEntity.md)**
+ *  **[ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md)** *[componentservice sequence localization➞object](componentservice_sequence_localization_object.md)*  <sub>REQ</sub>  **[WorkloadEntity](WorkloadEntity.md)**
+ *  **[ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md)** *[componentservice sequence localization➞subject](componentservice_sequence_localization_subject.md)*  <sub>REQ</sub>  **[WorkloadEntity](WorkloadEntity.md)**
  *  **[OperationalEntity](OperationalEntity.md)** *[decreases availability of](decreases_availability_of.md)*  <sub>0..*</sub>  **[WorkloadEntity](WorkloadEntity.md)**
  *  **[OperationalEntity](OperationalEntity.md)** *[decreases updates rate of](decreases_updates_rate_of.md)*  <sub>0..*</sub>  **[WorkloadEntity](WorkloadEntity.md)**
  *  **[WorkloadEntity](WorkloadEntity.md)** *[has sequence location](has_sequence_location.md)*  <sub>0..*</sub>  **[WorkloadEntity](WorkloadEntity.md)**
@@ -49,8 +51,6 @@ URI: [csolink:WorkloadEntity](https://w3id.org/csolink/vocab/WorkloadEntity)
  *  **[SequenceVariant](SequenceVariant.md)** *[is sequence variant of](is_sequence_variant_of.md)*  <sub>0..*</sub>  **[WorkloadEntity](WorkloadEntity.md)**
  *  **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[sequence feature relationship➞object](sequence_feature_relationship_object.md)*  <sub>REQ</sub>  **[WorkloadEntity](WorkloadEntity.md)**
  *  **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[sequence feature relationship➞subject](sequence_feature_relationship_subject.md)*  <sub>REQ</sub>  **[WorkloadEntity](WorkloadEntity.md)**
- *  **[ServiceSequenceLocalization](ServiceSequenceLocalization.md)** *[service sequence localization➞object](service_sequence_localization_object.md)*  <sub>REQ</sub>  **[WorkloadEntity](WorkloadEntity.md)**
- *  **[ServiceSequenceLocalization](ServiceSequenceLocalization.md)** *[service sequence localization➞subject](service_sequence_localization_subject.md)*  <sub>REQ</sub>  **[WorkloadEntity](WorkloadEntity.md)**
 
 ## Attributes
 

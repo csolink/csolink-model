@@ -14,7 +14,7 @@ URI: [csolink:interbase_coordinate](https://w3id.org/csolink/vocab/interbase_coo
 
 ## Domain and Range
 
-[ServiceSequenceLocalization](ServiceSequenceLocalization.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
+[ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
 
 ## Parents
 

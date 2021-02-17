@@ -21,7 +21,7 @@ URI: [csolink:condition_associated_with_componentservice](https://w3id.org/csoli
 
 ## Parents
 
- *  is_a: [service association](service_association.md)
+ *  is_a: [componentservice association](componentservice_association.md)
 
 ## Children
 

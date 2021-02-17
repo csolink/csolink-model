@@ -22,7 +22,7 @@ URI: [csolink:VariantToEntityAssociationMixin](https://w3id.org/csolink/vocab/Va
 
 ## Mixin for
 
- * [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md) (mixin)  - An association between a variant and a componentservice, where the variant has a service association with the componentservice (i.e. is in linkage disequilibrium)
+ * [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md) (mixin)  - An association between a variant and a componentservice, where the variant has a componentservice association with the componentservice (i.e. is in linkage disequilibrium)
  * [VariantToErrorAssociation](VariantToErrorAssociation.md) (mixin) 
  * [VariantToObservableFeatureAssociation](VariantToObservableFeatureAssociation.md) (mixin) 
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) (mixin)  - An association between a variant and a population, where the variant has particular frequency in the population

@@ -14,7 +14,7 @@ URI: [csolink:end_interbase_coordinate](https://w3id.org/csolink/vocab/end_inter
 
 ## Domain and Range
 
-[ServiceSequenceLocalization](ServiceSequenceLocalization.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
+[ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
 
 ## Parents
 
@@ -25,4 +25,4 @@ URI: [csolink:end_interbase_coordinate](https://w3id.org/csolink/vocab/end_inter
 
 ## Used by
 
- * [ServiceSequenceLocalization](ServiceSequenceLocalization.md)
+ * [ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md)

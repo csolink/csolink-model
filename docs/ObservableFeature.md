@@ -27,7 +27,7 @@ URI: [csolink:ObservableFeature](https://w3id.org/csolink/vocab/ObservableFeatur
 ## Children
 
  * [BehavioralFeature](BehavioralFeature.md) - A observable feature which is behavioral in nature.
- * [EmpiricalFinding](EmpiricalFinding.md) - this category is currently considered broad enough to tag empirical lab measurements and other computational attributes taken as 'empirical traits' with some statistical score, for example, a p value in service associations.
+ * [EmpiricalFinding](EmpiricalFinding.md) - this category is currently considered broad enough to tag empirical lab measurements and other computational attributes taken as 'empirical traits' with some statistical score, for example, a p value in componentservice associations.
 
 ## Referenced by class
 

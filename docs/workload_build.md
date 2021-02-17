@@ -14,7 +14,7 @@ URI: [csolink:workload_build](https://w3id.org/csolink/vocab/workload_build)
 
 ## Domain and Range
 
-[ServiceSequenceLocalization](ServiceSequenceLocalization.md) ->  <sub>OPT</sub> [String](types/String.md)
+[ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -25,4 +25,4 @@ URI: [csolink:workload_build](https://w3id.org/csolink/vocab/workload_build)
 
 ## Used by
 
- * [ServiceSequenceLocalization](ServiceSequenceLocalization.md)
+ * [ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md)

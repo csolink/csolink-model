@@ -1,21 +1,21 @@
 ---
 parent: Entities
-title: csolink:ServiceBackgroundExposure
+title: csolink:ComponentserviceBackgroundExposure
 grand_parent: Classes
 layout: default
 ---
 
-# Class: ServiceBackgroundExposure
+# Class: ComponentserviceBackgroundExposure
 
 
 A service background exposure is where an individual's specific service background of serviceunits, sequence variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or influencing an outcome.
 
-URI: [csolink:ServiceBackgroundExposure](https://w3id.org/csolink/vocab/ServiceBackgroundExposure)
+URI: [csolink:ComponentserviceBackgroundExposure](https://w3id.org/csolink/vocab/ComponentserviceBackgroundExposure)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[WorkloadEntity],[SystemTaxon],[ServiceBackgroundExposure%7Ctimepoint:time_type%20%3F;has_computational_sequence(i):computational_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[ServiceBackgroundExposure]uses%20-.-%3E[ComponentserviceGroupingMixin],[WorkloadEntity]%5E-[ServiceBackgroundExposure],[NamedThing],[ExposureEvent],[ComponentserviceGroupingMixin],[Componentservice],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[WorkloadEntity],[SystemTaxon],[NamedThing],[ExposureEvent],[ComponentserviceGroupingMixin],[ComponentserviceBackgroundExposure%7Ctimepoint:time_type%20%3F;has_computational_sequence(i):computational_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]uses%20-.-%3E[ExposureEvent],[ComponentserviceBackgroundExposure]uses%20-.-%3E[ComponentserviceGroupingMixin],[WorkloadEntity]%5E-[ComponentserviceBackgroundExposure],[Componentservice],[Attribute],[Agent])
 
 ---
 

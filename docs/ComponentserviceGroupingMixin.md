@@ -15,7 +15,7 @@ URI: [csolink:ComponentserviceGroupingMixin](https://w3id.org/csolink/vocab/Comp
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Componentservice]%3Chas%20componentservice%20or%20servicetype%200..%2A-++[ComponentserviceGroupingMixin],[ServiceBackgroundExposure]uses%20-.-%3E[ComponentserviceGroupingMixin],[ComponentserviceFamily]uses%20-.-%3E[ComponentserviceGroupingMixin],[AdministrativeOperationalToComponentserviceInteractionExposure]uses%20-.-%3E[ComponentserviceGroupingMixin],[ServiceBackgroundExposure],[ComponentserviceFamily],[Componentservice],[AdministrativeOperationalToComponentserviceInteractionExposure])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Componentservice]%3Chas%20componentservice%20or%20servicetype%200..%2A-++[ComponentserviceGroupingMixin],[ComponentserviceFamily]uses%20-.-%3E[ComponentserviceGroupingMixin],[ComponentserviceBackgroundExposure]uses%20-.-%3E[ComponentserviceGroupingMixin],[AdministrativeOperationalToComponentserviceInteractionExposure]uses%20-.-%3E[ComponentserviceGroupingMixin],[ComponentserviceFamily],[ComponentserviceBackgroundExposure],[Componentservice],[AdministrativeOperationalToComponentserviceInteractionExposure])
 
 ---
 
@@ -23,8 +23,8 @@ URI: [csolink:ComponentserviceGroupingMixin](https://w3id.org/csolink/vocab/Comp
 ## Mixin for
 
  * [AdministrativeOperationalToComponentserviceInteractionExposure](AdministrativeOperationalToComponentserviceInteractionExposure.md) (mixin)  - administrative operational to componentservice interaction exposure is a administrative operational exposure is where the interactions of the administrative operational with specific componentservices are known to constitute an 'exposure' to the system, leading to or influencing an outcome.
+ * [ComponentserviceBackgroundExposure](ComponentserviceBackgroundExposure.md) (mixin)  - A service background exposure is where an individual's specific service background of serviceunits, sequence variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or influencing an outcome.
  * [ComponentserviceFamily](ComponentserviceFamily.md) (mixin)  - any grouping of multiple componentservices or servicetypes related by common descent
- * [ServiceBackgroundExposure](ServiceBackgroundExposure.md) (mixin)  - A service background exposure is where an individual's specific service background of serviceunits, sequence variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or influencing an outcome.
 
 ## Referenced by class
 

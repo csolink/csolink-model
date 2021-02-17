@@ -25,4 +25,4 @@ URI: [csolink:phase](https://w3id.org/csolink/vocab/phase)
 
 ## Used by
 
- * [ServiceSequenceLocalization](ServiceSequenceLocalization.md)
+ * [ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md)

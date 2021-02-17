@@ -22,7 +22,7 @@ URI: [csolink:VariantToComponentserviceAvailabilityAssociation](https://w3id.org
 
 ## Parents
 
- *  is_a: [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md) - An association between a variant and a componentservice, where the variant has a service association with the componentservice (i.e. is in linkage disequilibrium)
+ *  is_a: [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md) - An association between a variant and a componentservice, where the variant has a componentservice association with the componentservice (i.e. is in linkage disequilibrium)
 
 ## Uses Mixins
 

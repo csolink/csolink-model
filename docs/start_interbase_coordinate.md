@@ -14,7 +14,7 @@ URI: [csolink:start_interbase_coordinate](https://w3id.org/csolink/vocab/start_i
 
 ## Domain and Range
 
-[ServiceSequenceLocalization](ServiceSequenceLocalization.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
+[ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
 
 ## Parents
 
@@ -25,4 +25,4 @@ URI: [csolink:start_interbase_coordinate](https://w3id.org/csolink/vocab/start_i
 
 ## Used by
 
- * [ServiceSequenceLocalization](ServiceSequenceLocalization.md)
+ * [ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md)

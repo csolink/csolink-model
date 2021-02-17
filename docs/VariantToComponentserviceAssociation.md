@@ -8,7 +8,7 @@ layout: default
 # Class: VariantToComponentserviceAssociation
 
 
-An association between a variant and a componentservice, where the variant has a service association with the componentservice (i.e. is in linkage disequilibrium)
+An association between a variant and a componentservice, where the variant has a componentservice association with the componentservice (i.e. is in linkage disequilibrium)
 
 URI: [csolink:VariantToComponentserviceAssociation](https://w3id.org/csolink/vocab/VariantToComponentserviceAssociation)
 

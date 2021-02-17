@@ -132,7 +132,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [variant to error association➞subject](variant_to_error_association_subject.md)  <sub>REQ</sub>
     * Description: a sequence variant in which the variantcomponentservice state is associated in some way with the error state
     * range: [NamedThing](NamedThing.md)
-    * Example:    
  * [variant to error association➞predicate](variant_to_error_association_predicate.md)  <sub>REQ</sub>
     * Description: E.g. is pathogenic for
     * range: [PredicateType](types/PredicateType.md)

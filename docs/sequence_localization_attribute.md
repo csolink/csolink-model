@@ -14,7 +14,7 @@ URI: [csolink:sequence_localization_attribute](https://w3id.org/csolink/vocab/se
 
 ## Domain and Range
 
-[ServiceSequenceLocalization](ServiceSequenceLocalization.md) ->  <sub>OPT</sub> [String](types/String.md)
+[ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 

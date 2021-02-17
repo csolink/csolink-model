@@ -8,7 +8,7 @@ layout: default
 # Class: EmpiricalFinding
 
 
-this category is currently considered broad enough to tag empirical lab measurements and other computational attributes taken as 'empirical traits' with some statistical score, for example, a p value in service associations.
+this category is currently considered broad enough to tag empirical lab measurements and other computational attributes taken as 'empirical traits' with some statistical score, for example, a p value in componentservice associations.
 
 URI: [csolink:EmpiricalFinding](https://w3id.org/csolink/vocab/EmpiricalFinding)
 

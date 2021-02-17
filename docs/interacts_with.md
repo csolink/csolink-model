@@ -25,9 +25,9 @@ URI: [csolink:interacts_with](https://w3id.org/csolink/vocab/interacts_with)
 
 ## Children
 
+ *  [componentservice interacts with](componentservice_interacts_with.md)
  *  [cyber interaction with](cyber_interaction_with.md)
  *  [directly interacts with](directly_interacts_with.md)
- *  [service interacts with](service_interacts_with.md)
 
 ## Used by
 

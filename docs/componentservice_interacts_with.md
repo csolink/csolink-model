@@ -1,11 +1,11 @@
 ---
 parent: Predicates
-title: csolink:service_interacts_with
+title: csolink:componentservice_interacts_with
 grand_parent: Slots
 layout: default
 ---
 
-# Relation: service_interacts_with
+# Relation: componentservice_interacts_with
 
 translator_minimal
 {: .translator_minimal-subset-label }
@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two componentservices whose observable effects are dependent on each other in some way - such that their combined observable effects are the result of some interaction between the activity of their servicetypes. Example is service-unit death when two componentservices simultaneously fail, or platform startup facilitating tenant services.
 
-URI: [csolink:service_interacts_with](https://w3id.org/csolink/vocab/service_interacts_with)
+URI: [csolink:componentservice_interacts_with](https://w3id.org/csolink/vocab/componentservice_interacts_with)
 
 ## Domain and Range
 

@@ -51,6 +51,7 @@ URI: [csolink:NamedThing](https://w3id.org/csolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[close match](close_match.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[coexists with](coexists_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[colocalizes with](colocalizes_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[componentservice association](componentservice_association.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[contributes to](contributes_to.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[correlated with](correlated_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[cyber interaction with](cyber_interaction_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
@@ -102,7 +103,6 @@ URI: [csolink:NamedThing](https://w3id.org/csolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[related to](related_to.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[ResourceSampleDerivationAssociation](ResourceSampleDerivationAssociation.md)** *[resource sample derivation association➞object](resource_sample_derivation_association_object.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[same as](same_as.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
- *  **[NamedThing](NamedThing.md)** *[service association](service_association.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[ServiceunittypeToErrorAssociation](ServiceunittypeToErrorAssociation.md)** *[serviceunittype to error association➞object](serviceunittype_to_error_association_object.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[ServiceunittypeToErrorAssociation](ServiceunittypeToErrorAssociation.md)** *[serviceunittype to error association➞subject](serviceunittype_to_error_association_subject.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[similar to](similar_to.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**

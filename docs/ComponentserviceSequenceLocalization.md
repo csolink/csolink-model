@@ -1,21 +1,21 @@
 ---
 parent: Associations
-title: csolink:ServiceSequenceLocalization
+title: csolink:ComponentserviceSequenceLocalization
 grand_parent: Classes
 layout: default
 ---
 
-# Class: ServiceSequenceLocalization
+# Class: ComponentserviceSequenceLocalization
 
 
 A relationship between a sequence feature and a workload entity it is localized to. The reference entity may be a container, componentservice or information entity such as a namespace.
 
-URI: [csolink:ServiceSequenceLocalization](https://w3id.org/csolink/vocab/ServiceSequenceLocalization)
+URI: [csolink:ComponentserviceSequenceLocalization](https://w3id.org/csolink/vocab/ComponentserviceSequenceLocalization)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[WorkloadEntity],[WorkloadEntity]%3Cobject%201..1-%20[ServiceSequenceLocalization%7Cstart_interbase_coordinate:integer%20%3F;end_interbase_coordinate:integer%20%3F;workload_build:string%20%3F;strand:string%20%3F;phase:string%20%3F;predicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[WorkloadEntity]%3Csubject%201..1-%20[ServiceSequenceLocalization],[SequenceAssociation]%5E-[ServiceSequenceLocalization],[SequenceAssociation],[Publication],[OntologyClass],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[WorkloadEntity],[SequenceAssociation],[Publication],[OntologyClass],[WorkloadEntity]%3Cobject%201..1-%20[ComponentserviceSequenceLocalization%7Cstart_interbase_coordinate:integer%20%3F;end_interbase_coordinate:integer%20%3F;workload_build:string%20%3F;strand:string%20%3F;phase:string%20%3F;predicate:predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[WorkloadEntity]%3Csubject%201..1-%20[ComponentserviceSequenceLocalization],[SequenceAssociation]%5E-[ComponentserviceSequenceLocalization],[Attribute],[Association],[Agent])
 
 ---
 
@@ -32,15 +32,15 @@ URI: [csolink:ServiceSequenceLocalization](https://w3id.org/csolink/vocab/Servic
 
 ### Own
 
+ * [componentservice sequence localization➞object](componentservice_sequence_localization_object.md)  <sub>REQ</sub>
+    * range: [WorkloadEntity](WorkloadEntity.md)
+ * [componentservice sequence localization➞predicate](componentservice_sequence_localization_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)
+ * [componentservice sequence localization➞subject](componentservice_sequence_localization_subject.md)  <sub>REQ</sub>
+    * range: [WorkloadEntity](WorkloadEntity.md)
  * [end interbase coordinate](end_interbase_coordinate.md)  <sub>OPT</sub>
     * Description: The position at which the subject workload entity ends on the container or other entity to which it is located on.
     * range: [Integer](types/Integer.md)
- * [service sequence localization➞object](service_sequence_localization_object.md)  <sub>REQ</sub>
-    * range: [WorkloadEntity](WorkloadEntity.md)
- * [service sequence localization➞predicate](service_sequence_localization_predicate.md)  <sub>REQ</sub>
-    * range: [PredicateType](types/PredicateType.md)
- * [service sequence localization➞subject](service_sequence_localization_subject.md)  <sub>REQ</sub>
-    * range: [WorkloadEntity](WorkloadEntity.md)
  * [start interbase coordinate](start_interbase_coordinate.md)  <sub>OPT</sub>
     * Description: The position at which the subject workload entity starts on the container or other entity to which it is located on.
     * range: [Integer](types/Integer.md)
@@ -124,15 +124,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
+ * [componentservice sequence localization➞object](componentservice_sequence_localization_object.md)  <sub>REQ</sub>
+    * range: [WorkloadEntity](WorkloadEntity.md)
+ * [componentservice sequence localization➞predicate](componentservice_sequence_localization_predicate.md)  <sub>REQ</sub>
+    * range: [PredicateType](types/PredicateType.md)
+ * [componentservice sequence localization➞subject](componentservice_sequence_localization_subject.md)  <sub>REQ</sub>
+    * range: [WorkloadEntity](WorkloadEntity.md)
  * [end interbase coordinate](end_interbase_coordinate.md)  <sub>OPT</sub>
     * Description: The position at which the subject workload entity ends on the container or other entity to which it is located on.
     * range: [Integer](types/Integer.md)
- * [service sequence localization➞object](service_sequence_localization_object.md)  <sub>REQ</sub>
-    * range: [WorkloadEntity](WorkloadEntity.md)
- * [service sequence localization➞predicate](service_sequence_localization_predicate.md)  <sub>REQ</sub>
-    * range: [PredicateType](types/PredicateType.md)
- * [service sequence localization➞subject](service_sequence_localization_subject.md)  <sub>REQ</sub>
-    * range: [WorkloadEntity](WorkloadEntity.md)
  * [start interbase coordinate](start_interbase_coordinate.md)  <sub>OPT</sub>
     * Description: The position at which the subject workload entity starts on the container or other entity to which it is located on.
     * range: [Integer](types/Integer.md)

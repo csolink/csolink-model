@@ -30,6 +30,7 @@ URI: [csolink:Componentservice](https://w3id.org/csolink/vocab/Componentservice)
 
 ## Referenced by class
 
+ *  **[Componentservice](Componentservice.md)** *[componentservice interacts with](componentservice_interacts_with.md)*  <sub>0..*</sub>  **[Componentservice](Componentservice.md)**
  *  **[ComponentserviceToServicetypeRelationship](ComponentserviceToServicetypeRelationship.md)** *[componentservice to servicetype relationship➞subject](componentservice_to_servicetype_relationship_subject.md)*  <sub>REQ</sub>  **[Componentservice](Componentservice.md)**
  *  **[ComponentserviceinstanceToComponentserviceRelationship](ComponentserviceinstanceToComponentserviceRelationship.md)** *[componentserviceinstance to componentservice relationship➞object](componentserviceinstance_to_componentservice_relationship_object.md)*  <sub>REQ</sub>  **[Componentservice](Componentservice.md)**
  *  **[ErrorOrObservableFeature](ErrorOrObservableFeature.md)** *[condition associated with componentservice](condition_associated_with_componentservice.md)*  <sub>0..*</sub>  **[Componentservice](Componentservice.md)**
@@ -43,7 +44,6 @@ URI: [csolink:Componentservice](https://w3id.org/csolink/vocab/Componentservice)
  *  **[SequenceVariant](SequenceVariant.md)** *[is splice site variant of](is_splice_site_variant_of.md)*  <sub>0..*</sub>  **[Componentservice](Componentservice.md)**
  *  **[SequenceVariant](SequenceVariant.md)** *[is synonymous variant of](is_synonymous_variant_of.md)*  <sub>0..*</sub>  **[Componentservice](Componentservice.md)**
  *  **[SequenceVariant](SequenceVariant.md)** *[sequence variant➞has componentservice](sequence_variant_has_componentservice.md)*  <sub>0..*</sub>  **[Componentservice](Componentservice.md)**
- *  **[Componentservice](Componentservice.md)** *[service interacts with](service_interacts_with.md)*  <sub>0..*</sub>  **[Componentservice](Componentservice.md)**
  *  **[ServiceunittypeToComponentserviceAssociation](ServiceunittypeToComponentserviceAssociation.md)** *[serviceunittype to componentservice association➞object](serviceunittype_to_componentservice_association_object.md)*  <sub>REQ</sub>  **[Componentservice](Componentservice.md)**
  *  **[VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md)** *[variant to componentservice association➞object](variant_to_componentservice_association_object.md)*  <sub>REQ</sub>  **[Componentservice](Componentservice.md)**
 

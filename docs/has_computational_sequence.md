@@ -26,6 +26,7 @@ URI: [csolink:has_computational_sequence](https://w3id.org/csolink/vocab/has_com
 ## Used by
 
  * [CodingSequence](CodingSequence.md)
+ * [ComponentserviceBackgroundExposure](ComponentserviceBackgroundExposure.md)
  * [Componentserviceinstance](Componentserviceinstance.md)
  * [Daemon](Daemon.md)
  * [KernelInterrupt](KernelInterrupt.md)
@@ -34,7 +35,6 @@ URI: [csolink:has_computational_sequence](https://w3id.org/csolink/vocab/has_com
  * [KernelServicetypeIsoform](KernelServicetypeIsoform.md)
  * [NoncodingKernelServicetype](NoncodingKernelServicetype.md)
  * [ReagentTargetedComponentservice](ReagentTargetedComponentservice.md)
- * [ServiceBackgroundExposure](ServiceBackgroundExposure.md)
  * [Serviceinstance](Serviceinstance.md)
  * [ServiceinstanceIsoform](ServiceinstanceIsoform.md)
  * [Serviceunittype](Serviceunittype.md)

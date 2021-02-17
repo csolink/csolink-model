@@ -14,7 +14,7 @@ URI: [csolink:strand](https://w3id.org/csolink/vocab/strand)
 
 ## Domain and Range
 
-[ServiceSequenceLocalization](ServiceSequenceLocalization.md) ->  <sub>OPT</sub> [String](types/String.md)
+[ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -25,4 +25,4 @@ URI: [csolink:strand](https://w3id.org/csolink/vocab/strand)
 
 ## Used by
 
- * [ServiceSequenceLocalization](ServiceSequenceLocalization.md)
+ * [ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md)

@@ -15,7 +15,7 @@ URI: [csolink:SequenceAssociation](https://w3id.org/csolink/vocab/SequenceAssoci
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ServiceSequenceLocalization],[SequenceAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[ServiceSequenceLocalization],[Association]%5E-[SequenceAssociation],[Publication],[OntologyClass],[NamedThing],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[ComponentserviceSequenceLocalization],[Association]%5E-[SequenceAssociation],[Publication],[OntologyClass],[NamedThing],[ComponentserviceSequenceLocalization],[Attribute],[Association],[Agent])
 
 ---
 
@@ -26,7 +26,7 @@ URI: [csolink:SequenceAssociation](https://w3id.org/csolink/vocab/SequenceAssoci
 
 ## Children
 
- * [ServiceSequenceLocalization](ServiceSequenceLocalization.md) - A relationship between a sequence feature and a workload entity it is localized to. The reference entity may be a container, componentservice or information entity such as a namespace.
+ * [ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md) - A relationship between a sequence feature and a workload entity it is localized to. The reference entity may be a container, componentservice or information entity such as a namespace.
 
 ## Referenced by class
 

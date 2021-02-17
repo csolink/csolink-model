@@ -1,16 +1,16 @@
 ---
 parent: Predicates
-title: csolink:service_association
+title: csolink:componentservice_association
 grand_parent: Slots
 layout: default
 ---
 
-# Relation: service_association
+# Relation: componentservice_association
 
 
 Co-occurrence of a certain variantcomponentservice marker and the observability of interest in the same individuals at above-chance level
 
-URI: [csolink:service_association](https://w3id.org/csolink/vocab/service_association)
+URI: [csolink:componentservice_association](https://w3id.org/csolink/vocab/componentservice_association)
 
 ## Domain and Range
 

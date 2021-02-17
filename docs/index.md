@@ -148,7 +148,7 @@ Entity and association taxonomy and datamodel for computer services data
     * [ResourceSampleDerivationAssociation](ResourceSampleDerivationAssociation.md) - An association between a resource sample and the resource entity from which it is derived.
     * [ResourceSampleToErrorOrObservableFeatureAssociation](ResourceSampleToErrorOrObservableFeatureAssociation.md) - An association between a resource sample and a error or observability.
     * [SequenceAssociation](SequenceAssociation.md) - An association between a sequence feature and a workload entity it is localized to.
-       * [ServiceSequenceLocalization](ServiceSequenceLocalization.md) - A relationship between a sequence feature and a workload entity it is localized to. The reference entity may be a container, componentservice or information entity such as a namespace.
+       * [ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md) - A relationship between a sequence feature and a workload entity it is localized to. The reference entity may be a container, componentservice or information entity such as a namespace.
     * [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular daemon is part of a particular componentserviceinstance or componentservice
        * [ComponentserviceToServicetypeRelationship](ComponentserviceToServicetypeRelationship.md) - A componentservice is transcribed and potentially translated to a servicetype
        * [ComponentserviceinstanceToComponentserviceRelationship](ComponentserviceinstanceToComponentserviceRelationship.md) - A componentservice is a collection of componentserviceinstances
@@ -161,7 +161,7 @@ Entity and association taxonomy and datamodel for computer services data
     * [ServiceunittypeToServiceunittypePartAssociation](ServiceunittypeToServiceunittypePartAssociation.md) - Any association between one serviceunittype and a microservice entity that is a subset of it
     * [ServiceunittypeToVariantAssociation](ServiceunittypeToVariantAssociation.md) - Any association between a serviceunittype and a sequence variant.
     * [SystemicEntityAsAModelOfErrorAssociation](SystemicEntityAsAModelOfErrorAssociation.md)
-    * [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md) - An association between a variant and a componentservice, where the variant has a service association with the componentservice (i.e. is in linkage disequilibrium)
+    * [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md) - An association between a variant and a componentservice, where the variant has a componentservice association with the componentservice (i.e. is in linkage disequilibrium)
        * [VariantToComponentserviceAvailabilityAssociation](VariantToComponentserviceAvailabilityAssociation.md) - An association between a variant and availability of a componentservice (i.e. e-QTL)
     * [VariantToErrorAssociation](VariantToErrorAssociation.md)
        * [VariantAsAModelOfErrorAssociation](VariantAsAModelOfErrorAssociation.md)
@@ -187,6 +187,7 @@ Entity and association taxonomy and datamodel for computer services data
  * [Component](Component.md) - The component is the smallest system entity, located in or around a serviceunit It can be deployed, isolated, and repaired independently. Each component belongs to one, and only one, serviceunit.
  * [ComponentType](ComponentType.md) - A component type defines the set of components running the same software and sharing the same configuration. It's a single point of configuration control.
  * [ComponentserviceAvailabilityMixin](ComponentserviceAvailabilityMixin.md) - Observed componentservice availability intensity, context (site, stage) and associated observable status within which the availability occurs.
+ * [ComponentserviceBackgroundExposure](ComponentserviceBackgroundExposure.md) - A service background exposure is where an individual's specific service background of serviceunits, sequence variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or influencing an outcome.
  * [ComponentserviceFamily](ComponentserviceFamily.md) - any grouping of multiple componentservices or servicetypes related by common descent
  * [ComponentserviceOntologyClass](ComponentserviceOntologyClass.md) - an ontology class that describes a controlling aspect of a componentservice, servicetype or complex
  * [Componentserviceinstance](Componentserviceinstance.md) - The unit of service workload the component is capable of providing or protecting.
@@ -218,7 +219,7 @@ Entity and association taxonomy and datamodel for computer services data
        * [ErrorOrObservableFeatureOutcome](ErrorOrObservableFeatureOutcome.md) - logical outcomes resulting from an exposure event which is the manifestation of a error or other characteristic observability.
        * [ObservableFeature](ObservableFeature.md)
           * [BehavioralFeature](BehavioralFeature.md) - A observable feature which is behavioral in nature.
-          * [EmpiricalFinding](EmpiricalFinding.md) - this category is currently considered broad enough to tag empirical lab measurements and other computational attributes taken as 'empirical traits' with some statistical score, for example, a p value in service associations.
+          * [EmpiricalFinding](EmpiricalFinding.md) - this category is currently considered broad enough to tag empirical lab measurements and other computational attributes taken as 'empirical traits' with some statistical score, for example, a p value in componentservice associations.
     * [OperationalEntity](OperationalEntity.md) - A componentservice, servicetype, small task or macrotask (including serviceinstance complex)"
        * [AdministrativeOperation](AdministrativeOperation.md) - A event intended for use in the diagnosis, cure, mitigation, repairing, or prevention of error
           * [AdministrativeOperationalExposure](AdministrativeOperationalExposure.md) - A administrative operational exposure is an intake of a particular administrative operation.
@@ -240,6 +241,7 @@ Entity and association taxonomy and datamodel for computer services data
        * [Notification](Notification.md) - A event consumed by a healthy system as a source of information
        * [WorkloadEntity](WorkloadEntity.md) - An entity that can either be directly located on a workload (componentservice, componentserviceinstance, daemon, regulatory region) or is encoded in a workload (serviceinstance)
           * [CodingSequence](CodingSequence.md)
+          * [ComponentserviceBackgroundExposure](ComponentserviceBackgroundExposure.md) - A service background exposure is where an individual's specific service background of serviceunits, sequence variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or influencing an outcome.
           * [Componentserviceinstance](Componentserviceinstance.md) - The unit of service workload the component is capable of providing or protecting.
              * [KernelServicetype](KernelServicetype.md)
                 * [KernelServicetypeIsoform](KernelServicetypeIsoform.md) - Represents a serviceinstance that is a specific isoform of the canonical or reference kernel
@@ -250,7 +252,6 @@ Entity and association taxonomy and datamodel for computer services data
           * [ReagentTargetedComponentservice](ReagentTargetedComponentservice.md) - A componentservice altered in its availability level in the context of some experiment as a result of being targeted by componentservice-knockdown reagent(s).
           * [SequenceVariant](SequenceVariant.md) - A variantcomponentservice that varies in its sequence from what is considered the reference variantcomponentservice at that locus.
              * [MonomericVariant](MonomericVariant.md) - A single monomeric position in the service monomeric variants are single monomeric positions in service DNA at which different sequence alternatives exist
-          * [ServiceBackgroundExposure](ServiceBackgroundExposure.md) - A service background exposure is where an individual's specific service background of serviceunits, sequence variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or influencing an outcome.
           * [Serviceinstance](Serviceinstance.md) - A servicetype that is composed of a chain of instruction sequences and is produced by translation of kernel message
              * [ServiceinstanceIsoform](ServiceinstanceIsoform.md) - Represents a serviceinstance that is a specific isoform of the canonical or reference serviceinstance.
           * [Serviceunittype](Serviceunittype.md) - An information content entity that describes a workload by specifying the total variation in service sequence and/or componentservice availability, relative to some established background
@@ -327,7 +328,7 @@ Entity and association taxonomy and datamodel for computer services data
        * [ResourceSampleDerivationAssociation](ResourceSampleDerivationAssociation.md) - An association between a resource sample and the resource entity from which it is derived.
        * [ResourceSampleToErrorOrObservableFeatureAssociation](ResourceSampleToErrorOrObservableFeatureAssociation.md) - An association between a resource sample and a error or observability.
        * [SequenceAssociation](SequenceAssociation.md) - An association between a sequence feature and a workload entity it is localized to.
-          * [ServiceSequenceLocalization](ServiceSequenceLocalization.md) - A relationship between a sequence feature and a workload entity it is localized to. The reference entity may be a container, componentservice or information entity such as a namespace.
+          * [ComponentserviceSequenceLocalization](ComponentserviceSequenceLocalization.md) - A relationship between a sequence feature and a workload entity it is localized to. The reference entity may be a container, componentservice or information entity such as a namespace.
        * [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular daemon is part of a particular componentserviceinstance or componentservice
           * [ComponentserviceToServicetypeRelationship](ComponentserviceToServicetypeRelationship.md) - A componentservice is transcribed and potentially translated to a servicetype
           * [ComponentserviceinstanceToComponentserviceRelationship](ComponentserviceinstanceToComponentserviceRelationship.md) - A componentservice is a collection of componentserviceinstances
@@ -340,7 +341,7 @@ Entity and association taxonomy and datamodel for computer services data
        * [ServiceunittypeToServiceunittypePartAssociation](ServiceunittypeToServiceunittypePartAssociation.md) - Any association between one serviceunittype and a microservice entity that is a subset of it
        * [ServiceunittypeToVariantAssociation](ServiceunittypeToVariantAssociation.md) - Any association between a serviceunittype and a sequence variant.
        * [SystemicEntityAsAModelOfErrorAssociation](SystemicEntityAsAModelOfErrorAssociation.md)
-       * [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md) - An association between a variant and a componentservice, where the variant has a service association with the componentservice (i.e. is in linkage disequilibrium)
+       * [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md) - An association between a variant and a componentservice, where the variant has a componentservice association with the componentservice (i.e. is in linkage disequilibrium)
           * [VariantToComponentserviceAvailabilityAssociation](VariantToComponentserviceAvailabilityAssociation.md) - An association between a variant and availability of a componentservice (i.e. e-QTL)
        * [VariantToErrorAssociation](VariantToErrorAssociation.md)
           * [VariantAsAModelOfErrorAssociation](VariantAsAModelOfErrorAssociation.md)
@@ -373,7 +374,7 @@ Entity and association taxonomy and datamodel for computer services data
              * [ErrorOrObservableFeatureOutcome](ErrorOrObservableFeatureOutcome.md) - logical outcomes resulting from an exposure event which is the manifestation of a error or other characteristic observability.
              * [ObservableFeature](ObservableFeature.md)
                 * [BehavioralFeature](BehavioralFeature.md) - A observable feature which is behavioral in nature.
-                * [EmpiricalFinding](EmpiricalFinding.md) - this category is currently considered broad enough to tag empirical lab measurements and other computational attributes taken as 'empirical traits' with some statistical score, for example, a p value in service associations.
+                * [EmpiricalFinding](EmpiricalFinding.md) - this category is currently considered broad enough to tag empirical lab measurements and other computational attributes taken as 'empirical traits' with some statistical score, for example, a p value in componentservice associations.
           * [OperationalEntity](OperationalEntity.md) - A componentservice, servicetype, small task or macrotask (including serviceinstance complex)"
              * [AdministrativeOperation](AdministrativeOperation.md) - A event intended for use in the diagnosis, cure, mitigation, repairing, or prevention of error
                 * [AdministrativeOperationalExposure](AdministrativeOperationalExposure.md) - A administrative operational exposure is an intake of a particular administrative operation.
@@ -395,6 +396,7 @@ Entity and association taxonomy and datamodel for computer services data
              * [Notification](Notification.md) - A event consumed by a healthy system as a source of information
              * [WorkloadEntity](WorkloadEntity.md) - An entity that can either be directly located on a workload (componentservice, componentserviceinstance, daemon, regulatory region) or is encoded in a workload (serviceinstance)
                 * [CodingSequence](CodingSequence.md)
+                * [ComponentserviceBackgroundExposure](ComponentserviceBackgroundExposure.md) - A service background exposure is where an individual's specific service background of serviceunits, sequence variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or influencing an outcome.
                 * [Componentserviceinstance](Componentserviceinstance.md) - The unit of service workload the component is capable of providing or protecting.
                    * [KernelServicetype](KernelServicetype.md)
                       * [KernelServicetypeIsoform](KernelServicetypeIsoform.md) - Represents a serviceinstance that is a specific isoform of the canonical or reference kernel
@@ -405,7 +407,6 @@ Entity and association taxonomy and datamodel for computer services data
                 * [ReagentTargetedComponentservice](ReagentTargetedComponentservice.md) - A componentservice altered in its availability level in the context of some experiment as a result of being targeted by componentservice-knockdown reagent(s).
                 * [SequenceVariant](SequenceVariant.md) - A variantcomponentservice that varies in its sequence from what is considered the reference variantcomponentservice at that locus.
                    * [MonomericVariant](MonomericVariant.md) - A single monomeric position in the service monomeric variants are single monomeric positions in service DNA at which different sequence alternatives exist
-                * [ServiceBackgroundExposure](ServiceBackgroundExposure.md) - A service background exposure is where an individual's specific service background of serviceunits, sequence variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or influencing an outcome.
                 * [Serviceinstance](Serviceinstance.md) - A servicetype that is composed of a chain of instruction sequences and is produced by translation of kernel message
                    * [ServiceinstanceIsoform](ServiceinstanceIsoform.md) - Represents a serviceinstance that is a specific isoform of the canonical or reference serviceinstance.
                 * [Serviceunittype](Serviceunittype.md) - An information content entity that describes a workload by specifying the total variation in service sequence and/or componentservice availability, relative to some established background
@@ -616,6 +617,10 @@ Entity and association taxonomy and datamodel for computer services data
     * [in serviceunit population with](in_serviceunit_population_with.md) - holds between two componentservice or servicetypes that are available in the same serviceunit type or population
  * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
  * [componentservice associated with condition](componentservice_associated_with_condition.md) - holds between a componentservice and a error or observable feature that the componentservice or its variantcomponentservice may influence, contribute to, or correlate with
+ * [componentservice association](componentservice_association.md) - Co-occurrence of a certain variantcomponentservice marker and the observability of interest in the same individuals at above-chance level
+    * [componentservice associated with condition](componentservice_associated_with_condition.md) - holds between a componentservice and a error or observable feature that the componentservice or its variantcomponentservice may influence, contribute to, or correlate with
+    * [condition associated with componentservice](condition_associated_with_componentservice.md) - holds between a componentservice and a error or observable feature that may be influenced, contribute to, or be correlated with the componentservice or its incorrect correct/servicetypes
+ * [componentservice interacts with](componentservice_interacts_with.md) - holds between two componentservices whose observable effects are dependent on each other in some way - such that their combined observable effects are the result of some interaction between the activity of their servicetypes. Example is service-unit death when two componentservices simultaneously fail, or platform startup facilitating tenant services.
  * [condition associated with componentservice](condition_associated_with_componentservice.md) - holds between a componentservice and a error or observable feature that may be influenced, contribute to, or be correlated with the componentservice or its incorrect correct/servicetypes
  * [contraindicated for](contraindicated_for.md) - Holds between a administrative operational and a error or observability, such that a service with that error should not be repaired with the administrative operation.
  * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
@@ -724,12 +729,12 @@ Entity and association taxonomy and datamodel for computer services data
  * [increases updates rate of](increases_updates_rate_of.md) - holds between a operational entity and a workload entity where the action or effect of the operational entity increases the rate of update of the workload entity within a system of interest
  * [increases uptake of](increases_uptake_of.md) - holds between two operational entities where the action or effect of one increases the rate of uptake of the other into of a serviceunit, computehost, or application
  * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
+    * [componentservice interacts with](componentservice_interacts_with.md) - holds between two componentservices whose observable effects are dependent on each other in some way - such that their combined observable effects are the result of some interaction between the activity of their servicetypes. Example is service-unit death when two componentservices simultaneously fail, or platform startup facilitating tenant services.
     * [cyber interaction with](cyber_interaction_with.md) - holds between two entities that make cyber contact as part of some interaction
        * [operationally interacts with](operationally_interacts_with.md)
           * [decreases operational interaction](decreases_operational_interaction.md) - indicates that the source decreases the operationally interaction between the target and some other operational entity
           * [increases operational interaction](increases_operational_interaction.md) - indicates that the source increases the operationally interaction between the target and some other operational entity
     * [directly interacts with](directly_interacts_with.md) - Holds between operational entities that cyberly and directly interact with each other
-    * [service interacts with](service_interacts_with.md) - holds between two componentservices whose observable effects are dependent on each other in some way - such that their combined observable effects are the result of some interaction between the activity of their servicetypes. Example is service-unit death when two componentservices simultaneously fail, or platform startup facilitating tenant services.
  * [is active ingredient of](is_active_ingredient_of.md) - holds between a control actor and a administrative operation, in which the former is a part of the latter, and is a computationally active component
  * [is controller of](is_controller_of.md) - holds between two control actors in which the first one is derived from the second one as a product of supervision
  * [is excipient of](is_excipient_of.md) - holds between a control actor and a administrative operation in which the former is a part of the latter, and is a computationally inactive component
@@ -901,6 +906,9 @@ Entity and association taxonomy and datamodel for computer services data
        * [in complex with](in_complex_with.md) - holds between two componentservices or servicetypes that are part of (or code for servicetypes that are part of) in the same macrooperational complex mixin
        * [in pathway with](in_pathway_with.md) - holds between two componentservice or servicetypes that are part of in the same computational pathway
        * [in serviceunit population with](in_serviceunit_population_with.md) - holds between two componentservice or servicetypes that are available in the same serviceunit type or population
+    * [componentservice association](componentservice_association.md) - Co-occurrence of a certain variantcomponentservice marker and the observability of interest in the same individuals at above-chance level
+       * [componentservice associated with condition](componentservice_associated_with_condition.md) - holds between a componentservice and a error or observable feature that the componentservice or its variantcomponentservice may influence, contribute to, or correlate with
+       * [condition associated with componentservice](condition_associated_with_componentservice.md) - holds between a componentservice and a error or observable feature that may be influenced, contribute to, or be correlated with the componentservice or its incorrect correct/servicetypes
     * [contraindicated for](contraindicated_for.md) - Holds between a administrative operational and a error or observability, such that a service with that error should not be repaired with the administrative operation.
     * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
        * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
@@ -937,12 +945,12 @@ Entity and association taxonomy and datamodel for computer services data
     * [in linkage disequilibrium with](in_linkage_disequilibrium_with.md) - holds between two sequence variants, the presence of which are correlated in a population
     * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
     * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
+       * [componentservice interacts with](componentservice_interacts_with.md) - holds between two componentservices whose observable effects are dependent on each other in some way - such that their combined observable effects are the result of some interaction between the activity of their servicetypes. Example is service-unit death when two componentservices simultaneously fail, or platform startup facilitating tenant services.
        * [cyber interaction with](cyber_interaction_with.md) - holds between two entities that make cyber contact as part of some interaction
           * [operationally interacts with](operationally_interacts_with.md)
              * [decreases operational interaction](decreases_operational_interaction.md) - indicates that the source decreases the operationally interaction between the target and some other operational entity
              * [increases operational interaction](increases_operational_interaction.md) - indicates that the source increases the operationally interaction between the target and some other operational entity
        * [directly interacts with](directly_interacts_with.md) - Holds between operational entities that cyberly and directly interact with each other
-       * [service interacts with](service_interacts_with.md) - holds between two componentservices whose observable effects are dependent on each other in some way - such that their combined observable effects are the result of some interaction between the activity of their servicetypes. Example is service-unit death when two componentservices simultaneously fail, or platform startup facilitating tenant services.
     * [is sequence variant of](is_sequence_variant_of.md) - holds between a sequence variant and a workload entity
        * [is missense variant of](is_missense_variant_of.md) - holds between a componentservice  and a sequence variant, such the sequence variant results in a different instruction sequence but the serviceinstance is preserved.
        * [is nearby variant of](is_nearby_variant_of.md) - holds between a sequence variant and a componentservice sequence that the variant is close to.
@@ -979,9 +987,6 @@ Entity and association taxonomy and datamodel for computer services data
     * [related condition](related_condition.md)
     * [repaired by](repaired_by.md) - holds between a error or observable feature and a therapeutic process or control actor that is used to repair the condition
        * [approved for repairing by](approved_for_repairing_by.md) - TBD
-    * [service association](service_association.md) - Co-occurrence of a certain variantcomponentservice marker and the observability of interest in the same individuals at above-chance level
-       * [componentservice associated with condition](componentservice_associated_with_condition.md) - holds between a componentservice and a error or observable feature that the componentservice or its variantcomponentservice may influence, contribute to, or correlate with
-       * [condition associated with componentservice](condition_associated_with_componentservice.md) - holds between a componentservice and a error or observable feature that may be influenced, contribute to, or be correlated with the componentservice or its incorrect correct/servicetypes
     * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.
        * [homologous to](homologous_to.md) - holds between two computational entities that have common evolutionary service
           * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically componentservices) that diverged after a speciation event.
@@ -1000,10 +1005,6 @@ Entity and association taxonomy and datamodel for computer services data
  * [repairs](repairs.md) - holds between a therapeutic procedure or control actor and a error or observable feature that it is used to repair
     * [approved to repair](approved_to_repair.md) - TBD
  * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
- * [service association](service_association.md) - Co-occurrence of a certain variantcomponentservice marker and the observability of interest in the same individuals at above-chance level
-    * [componentservice associated with condition](componentservice_associated_with_condition.md) - holds between a componentservice and a error or observable feature that the componentservice or its variantcomponentservice may influence, contribute to, or correlate with
-    * [condition associated with componentservice](condition_associated_with_componentservice.md) - holds between a componentservice and a error or observable feature that may be influenced, contribute to, or be correlated with the componentservice or its incorrect correct/servicetypes
- * [service interacts with](service_interacts_with.md) - holds between two componentservices whose observable effects are dependent on each other in some way - such that their combined observable effects are the result of some interaction between the activity of their servicetypes. Example is service-unit death when two componentservices simultaneously fail, or platform startup facilitating tenant services.
  * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.
     * [homologous to](homologous_to.md) - holds between two computational entities that have common evolutionary service
        * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically componentservices) that diverged after a speciation event.

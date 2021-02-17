@@ -27,6 +27,6 @@ URI: [csolink:has_componentservice_or_servicetype](https://w3id.org/csolink/voca
 ## Used by
 
  * [AdministrativeOperationalToComponentserviceInteractionExposure](AdministrativeOperationalToComponentserviceInteractionExposure.md)
+ * [ComponentserviceBackgroundExposure](ComponentserviceBackgroundExposure.md)
  * [ComponentserviceFamily](ComponentserviceFamily.md)
  * [ComponentserviceGroupingMixin](ComponentserviceGroupingMixin.md)
- * [ServiceBackgroundExposure](ServiceBackgroundExposure.md)

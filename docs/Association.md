@@ -60,7 +60,7 @@ URI: [csolink:Association](https://w3id.org/csolink/vocab/Association)
  * [ServiceunittypeToServiceunittypePartAssociation](ServiceunittypeToServiceunittypePartAssociation.md) - Any association between one serviceunittype and a microservice entity that is a subset of it
  * [ServiceunittypeToVariantAssociation](ServiceunittypeToVariantAssociation.md) - Any association between a serviceunittype and a sequence variant.
  * [SystemicEntityAsAModelOfErrorAssociation](SystemicEntityAsAModelOfErrorAssociation.md)
- * [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md) - An association between a variant and a componentservice, where the variant has a service association with the componentservice (i.e. is in linkage disequilibrium)
+ * [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md) - An association between a variant and a componentservice, where the variant has a componentservice association with the componentservice (i.e. is in linkage disequilibrium)
  * [VariantToErrorAssociation](VariantToErrorAssociation.md)
  * [VariantToObservableFeatureAssociation](VariantToObservableFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
