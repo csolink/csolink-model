@@ -16,11 +16,11 @@ This section explores how to go about adding new classes and slots to the model.
 
 ### Adding an Entity class
 
-An entity class represents entities like Genes, Diseases, Chemical Substances, etc.
+An entity class represents entities like Componentservices, Errors, Control Actors, etc.
 
 Instances of these Entity classes are represented as nodes in a graph.
 
-Csolink Model has several entity classes like `gene`, `disease`, `phenotypic feature`, `chemical substance`.
+Csolink Model has several entity classes like `componentservice`, `error`, `observable feature`, `control actor`.
 
 All these classes are arranged in a hierarchy with the root of all entities being the `named thing` class.
 
@@ -41,12 +41,12 @@ To add an entity class to Csolink Model you need to determine the following,
     - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
 
 
-As an example, let's consider the definition of the entity class `gene`:
+As an example, let's consider the definition of the entity class `componentservice`:
 
 ```yaml
-  gene:
-    is_a: gene or gene product
-    aliases: ['locus']
+  componentservice:
+    is_a: componentservice or servicetype
+    aliases: ['locus', 'cs']
     slots:
       - id
       - name
@@ -54,25 +54,12 @@ As an example, let's consider the definition of the entity class `gene`:
       - description
       - synonym
       - xref
-    exact_mappings:
-      - SO:0000704
-      - SIO:010035
-      - WIKIDATA:Q7187
-    id_prefixes:
-      - NCBIGene
-      - ENSEMBL
-      - HGNC
-      - UniProtKB
-      - MGI
-      - ZFIN
-      - dictyBase
-      - WB
-      - WormBase
-      - FlyBase
-      - FB
-      - RGD
-      - SGD
-      - PomBase
+    broad_mappings:
+      - csrc:Resource_Type
+      - OSO:hasComponentType
+      - schema:serviceType
+    exact_mappings: []
+    id_prefixes: []  # todo
 ```
 
 In the above YAML snippet, `is_a`, `aliases`, `slots`, `exact_mappings`, and `id_prefixes` are slots from LinkML where each slot has a specific meaning and they add semantics to the class definition.
@@ -84,15 +71,15 @@ Say you want to use the mixin class `thing with taxon` that defines an `in taxon
 You can achieve that as follows:
 
 ```yaml
-  gene:
-    is_a: gene or gene product
+  componentservice:
+    is_a: componentservice or servicetype
     mixins:
       - thing with taxon
-    aliases: ['locus']
+    aliases: ['locus', 'cs']
     ...
 ```
 
-In the above YAML snippet, we are explicitly defining the entity class `gene` to have `in taxon` as a slot in addition to all its slots, its parent slots, and all of its ancestor slots.
+In the above YAML snippet, we are explicitly defining the entity class `componentservice` to have `in taxon` as a slot in addition to all its slots, its parent slots, and all of its ancestor slots.
 
 There are [other LinkML slots](https://biolink.github.io/biolinkml/docs/ClassDefinition#Attributes) that can be used to define your class and further capture the semantics of your class.
 
@@ -105,7 +92,7 @@ An association represents an assertion (statement) which connects a subject to a
 
 Instances of the Association class are represented as edges in a graph.
 
-Csolink Model has several Association classes like `gene to gene association`, `gene to disease association`, `disease to phenotypic feature association`.
+Csolink Model has several Association classes like `componentservice to componentservice association`, `componentservice to error association`, `error to observable feature association`.
 
 All these classes are arranged in a hierarchy with the root of all associations being the `association` class.
 
@@ -128,34 +115,30 @@ To add an Association class to Csolink Model you need to determine the following
 
 
 
-As an example, let's consider the definition of class  `variant to disease association`:
+As an example, let's consider the definition of class  `variant to error association`:
 
 ```yaml
-  variant to disease association:
+  variant to error association:
     is_a: association
     defining_slots:
       - subject
       - object
     mixins:
       - variant to thing association
-      - entity to disease association
+      - entity to error association
     slot_usage:
       subject:
         description: >-
-          a sequence variant in which the allele state is associated in some way with the disease state
-        examples:
-          - value: ClinVar:52241
-            description: "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)"
+          a sequence variant in which the variantcomponentserice state is associated in some way with the error state
+        examples: []   # todo
       relation:
         description: >-
           E.g. is pathogenic for
         subproperty_of: related condition
       object:
         description: >-
-          a disease that is associated with that variant
-        examples:
-          - value: MONDO:0016419
-            description: hereditary breast cancer
+          a error that is associated with that variant
+        examples: []   # todo
 ```
 
 In the above YAML snippet, `is_a`, `defining_slots`, `mixins`, and `slot_usage` are slots from LinkML where each slot has a specific meaning and they add semantics to the class definition.
@@ -193,13 +176,23 @@ As an example, let's consider the definition of slot `interacts with`:
     in_subset:
       - translator_minimal
     symmetric: true
+    close_mappings:
+      - schema:InteractAction    # act of
     exact_mappings:
-      - RO:0002434
+      - RO:0002434    # interacts with
     narrow_mappings:
-      - RO:0002103
-      - RO:0002120
-      - RO:0002130
-      - SEMMEDDB:complicates
+      - AML:contains
+      - CTRL:isConnectedTo
+      - CTRL:isSupervisedBy
+      - csrc:system
+      - NCIT:has_target
+      - SAN:actsOn
+      - SAN:isPropertyOf
+      - sosa:actsOnProperty
+      - gr:offers
+      - gr:owns
+      - gr:predecessorOf
+      - gr:seeks
 ```
 
 In the above YAML snippet, `domain`, `range`, `description`, `is_a`, `in_subset`, `symmetric`, `exact_mappings` and `narrow_mappings` are slots from LinkML where each slot has a specific meaning and they add semantics to the slot definition.
@@ -244,9 +237,26 @@ As an example, let's consider the slot `name` which is a node property:
       - translator_minimal
     required: true
     slot_uri: rdfs:label
+    broad_mappings:
+      - CSO:named_entity
     exact_mappings:
-      - gff3:Name
-      - gpi:DB_Object_Name
+      - CSO:named_entity
+      # DB_Object_Name
+      - gr:name
+      - OM:name
+      - REPR:name
+      - schema:name
+      - SIO:000116   # name
+      - sumo:Name
+      - WIKIDATA_PROPERTY:P2561   # name
+    close_mappings:
+      - IAO:0000111    # editor preferred term
+      - IAO:0000118    # alternative term
+      - skos:altLabel
+      - sumo:originalTitle
+    narrow_mappings:
+      - AML:hasAttributeName
+      - dct:title
 ```
 
 
