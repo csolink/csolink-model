@@ -6,7 +6,7 @@ layout: default
 
 # Csolink Model
 
-A high level datamodel of Computer Systems ([services](docs/Service), [errors](docs/Error), [observable features](docs/Observable Features), [networks](docs/Network), [individuals](docs/IndividualSystem), [directors](docs/Service Directors), etc) and their [associations](docs/Association).
+A high level datamodel of Computer Systems ([Component](docs/Component), [Component Service](docs/Componentservice), [Controller](docs/Controller), [observable feature](docs/ObservableFeature), [error](docs/Error), [Deployment Entity](docs/DeploymentEntity), [individual system](docs/IndividualSystem), etc, and their [associations](docs/Association).
 
 Csolink Model is designed as a way of standardizing types and relational structures in knowledge graphs (KGs), 
 where the KG may be either a property graph or RDF triple store.
