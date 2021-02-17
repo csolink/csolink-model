@@ -15,7 +15,7 @@ The standard approach is to install Python 3.7+ on your machine (see: [http://py
 
 ## Github Actions
 
-Three `Actions secrets` are used by csolink pull request workflows:
+Three `secrets` are used by csolink pull request workflows:
 
 - API_TOKEN
 - WORKFLOW_EMAIL
