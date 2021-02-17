@@ -5,7 +5,7 @@
 
 <img src="images/csolink-logo.png" width="20%">
 
-# Csolink Model (Experimental translation of biolink-model)
+# Csolink Model (Experimental)
 
 Quickstart docs:
 
