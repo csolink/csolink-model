@@ -9,4 +9,4 @@ biolinkml = ">=1.6.1"
 [dev-packages]
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
