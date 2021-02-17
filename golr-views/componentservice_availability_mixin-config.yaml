@@ -1,0 +1,24 @@
+id: componentservice_availability_mixin
+schema_generating: true
+description: Observed componentservice availability intensity, context (site, stage)
+  and associated observable status within which the availability occurs.
+display_name: componentservice availability mixin
+document_category: componentservice availability mixin
+weight: 20
+fields:
+- id: quantifier_qualifier
+  description: Optional quantitative value indicating degree of availability.
+  display_name: componentservice availability mixin_quantifier qualifier
+- id: availability_site
+  description: location in which componentservice or serviceinstance availability
+    takes place. May be serviceunit, servicegroup/replicaset, or application.
+  display_name: availability site
+- id: stage_qualifier
+  description: stage during which componentservice or serviceinstance availability
+    of takes place.
+  display_name: stage qualifier
+- id: observable_state
+  description: in experiments (e.g. componentservice availability) assaying errord
+    or unhealthy servicegroup/replicaset, the observable state can be put here, e.g.
+    STATE ID. For healthy servicegroup/replicasets, use XXX.
+  display_name: observable state

@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from csolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2021-02-17 00:02\nSchema: Csolink-Model\n\nid: https://w3id.org/csolink/csolink-model\ndescription: Entity and association taxonomy and datamodel for computer services data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from csolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2021-02-17 01:00\nSchema: Csolink-Model\n\nid: https://w3id.org/csolink/csolink-model\ndescription: Entity and association taxonomy and datamodel for computer services data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": {
          "@id": "rdf:type"

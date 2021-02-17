@@ -1,0 +1,21 @@
+digraph {
+	graph [bb="0,0,407.98,123"];
+	node [label="\N"];
+	"error to entity association mixin"	[height=0.5,
+		label="error to entity association mixin",
+		pos="160.54,105",
+		width=4.4593];
+	subject	[height=0.5,
+		pos="160.54,18",
+		width=1.2277];
+	"error to entity association mixin" -> subject	[color=blue,
+		label=subject,
+		lp="186.54,61.5",
+		pos="e,160.54,36.175 160.54,86.799 160.54,75.163 160.54,59.548 160.54,46.237",
+		style=solid];
+	"error to entity association mixin_subject"	[color=blue,
+		height=0.5,
+		label=error,
+		pos="373.54,105",
+		width=0.95686];
+}

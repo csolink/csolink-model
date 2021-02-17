@@ -1,0 +1,23 @@
+id: componentservice
+schema_generating: true
+description: A component service.
+display_name: componentservice
+document_category: componentservice
+weight: 20
+fields:
+- id: name
+  description: componentservices are typically designated by a short symbol and a
+    full name. We map the symbol to the default display name and use an additional
+    slot for full name
+  display_name: macrooperational machine mixin_name
+- id: symbol
+  description: Symbol for a particular thing
+  display_name: symbol
+- id: synonym
+  description: Alternate human-readable names for a thing
+  display_name: synonym
+  cardinality: multi
+- id: xref
+  description: Alternate CURIEs for a thing
+  display_name: xref
+  cardinality: multi

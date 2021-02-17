@@ -1,0 +1,21 @@
+digraph {
+	graph [bb="0,0,644.27,123"];
+	node [label="\N"];
+	"operational entity to entity association mixin"	[height=0.5,
+		label="operational entity to entity association mixin",
+		pos="219.68,105",
+		width=6.1022];
+	subject	[height=0.5,
+		pos="219.68,18",
+		width=1.2277];
+	"operational entity to entity association mixin" -> subject	[color=blue,
+		label=subject,
+		lp="245.68,61.5",
+		pos="e,219.68,36.175 219.68,86.799 219.68,75.163 219.68,59.548 219.68,46.237",
+		style=solid];
+	"operational entity to entity association mixin_subject"	[color=blue,
+		height=0.5,
+		label="operational entity",
+		pos="550.68,105",
+		width=2.5998];
+}

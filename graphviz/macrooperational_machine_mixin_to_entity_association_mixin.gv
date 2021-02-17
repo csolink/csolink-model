@@ -1,0 +1,21 @@
+digraph {
+	graph [bb="0,0,734.12,123"];
+	node [label="\N"];
+	"macrooperational machine mixin to entity association mixin"	[height=0.5,
+		label="macrooperational machine mixin to entity association mixin",
+		pos="288.57,105",
+		width=8.016];
+	subject	[height=0.5,
+		pos="288.57,18",
+		width=1.2277];
+	"macrooperational machine mixin to entity association mixin" -> subject	[color=blue,
+		label=subject,
+		lp="314.57,61.5",
+		pos="e,288.57,36.175 288.57,86.799 288.57,75.163 288.57,59.548 288.57,46.237",
+		style=solid];
+	"macrooperational machine mixin to entity association mixin_subject"	[color=blue,
+		height=0.5,
+		label="named thing",
+		pos="664.57,105",
+		width=1.9318];
+}

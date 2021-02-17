@@ -1,0 +1,18 @@
+digraph {
+	graph [bb="0,0,434.99,123"];
+	node [label="\N"];
+	"componentservice grouping mixin"	[height=0.5,
+		label="componentservice grouping mixin",
+		pos="168.99,105",
+		width=4.694];
+	"has componentservice or servicetype"	[color=blue,
+		height=0.5,
+		label=componentservice,
+		pos="168.99,18",
+		width=2.6359];
+	"componentservice grouping mixin" -> "has componentservice or servicetype"	[color=blue,
+		label="has componentservice or servicetype",
+		lp="301.99,61.5",
+		pos="e,168.99,36.175 168.99,86.799 168.99,75.163 168.99,59.548 168.99,46.237",
+		style=solid];
+}
