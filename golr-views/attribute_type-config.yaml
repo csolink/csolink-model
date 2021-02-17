@@ -1,0 +1,7 @@
+id: attribute_type
+schema_generating: true
+description: A property or characteristic type of an entity. For example, an apple
+  may have properties types such as color type, shape type, age type, crispiness type.
+display_name: attribute type
+document_category: attribute type
+weight: 20

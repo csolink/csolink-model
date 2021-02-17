@@ -1,0 +1,8 @@
+digraph {
+	graph [bb="0,0,193.68,36"];
+	node [label="\N"];
+	"faulty entity mixin"	[height=0.5,
+		label="faulty entity mixin",
+		pos="96.841,18",
+		width=2.69];
+}

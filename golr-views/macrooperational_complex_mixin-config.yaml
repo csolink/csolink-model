@@ -1,0 +1,11 @@
+id: macrooperational_complex_mixin
+schema_generating: true
+display_name: macrooperational complex mixin
+document_category: macrooperational complex mixin
+weight: 20
+fields:
+- id: name
+  description: componentservices are typically designated by a short symbol and a
+    full name. We map the symbol to the default display name and use an additional
+    slot for full name
+  display_name: macrooperational machine mixin_name

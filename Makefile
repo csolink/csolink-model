@@ -125,7 +125,7 @@ csolink-model.proto: csolink-model.yaml env.lock
 # RDF
 # ~~~~~~~~~~~~~~~~~~~~
 csolink-model.ttl: csolink-model.yaml env.lock
-	pipenv run gen-rdf -f ttl --context https://w3id.org/csolink/csolinkml/context.jsonld $<  > $@
+        pipenv run gen-rdf -f ttl --context https://w3id.org/csolink/csolinkml/context.jsonld $<  > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # ShEx
