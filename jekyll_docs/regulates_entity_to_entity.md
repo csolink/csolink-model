@@ -1,0 +1,43 @@
+---
+parent: Predicates
+title: csolink:regulates_entity_to_entity
+grand_parent: Slots
+layout: default
+---
+
+# Relation: regulates_entity_to_entity
+
+translator_minimal
+{: .translator_minimal-subset-label }
+
+
+
+
+URI: [csolink:regulates_entity_to_entity](https://w3id.org/csolink/vocab/regulates_entity_to_entity)
+
+## Domain and Range
+
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
+
+## Parents
+
+ *  is_a: [affects](affects.md)
+
+## Children
+
+ *  [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)
+ *  [positively regulates, entity to entity](positively_regulates_entity_to_entity.md)
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | activity directly regulates activity of |
+| **Local names:** | | regulates (translator) |
+|  | | activity directly regulates activity of (ro) |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002448 |
+

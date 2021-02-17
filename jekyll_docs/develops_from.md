@@ -1,0 +1,41 @@
+---
+parent: Predicates
+title: csolink:develops_from
+grand_parent: Slots
+layout: default
+---
+
+# Relation: develops_from
+
+
+
+
+URI: [csolink:develops_from](https://w3id.org/csolink/vocab/develops_from)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [related to](related_to.md)
+
+## Children
+
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | BTO:develops_from |
+|  | | RO:0002202 |
+|  | | SIO:000657 |
+| **Close Mappings:** | | RO:0002203 |
+| **Narrow Mappings:** | | RO:0002207 |
+|  | | RO:0002225 |
+|  | | RO:0002226 |
+|  | | SIO:000658 |
+
