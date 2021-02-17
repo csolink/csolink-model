@@ -20,7 +20,7 @@ See also [Csolink Model Guidelines](./guidelines/index.md) for understanding, cu
 ## Introduction
 
 The purpose of the Csolink Model is to provide a high-level datamodel of
-computing system entities (computer, errors, observability, networks, instances, directors, etc),
+computing system entities (component, component services, observability, errors, networks, instances, directors, etc),
 their properties, relationships, and enumerate ways in which they can be associated.
 
 The representation is independent of storage technology or metamodel (Solr documents, neo4j/property graphs,
