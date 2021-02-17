@@ -2395,13 +2395,14 @@ slots:
     exact_mappings:
       - sumo:targetInAttack
 
-  service interacts with:
+  componentservice interacts with:
     is_a: interacts with
     description: >-
       holds between two componentservices whose observable effects are dependent on each
       other in some way - such that their combined observable effects are the
       result of some interaction between the activity of their servicetypes.
-      Example is service-unit death when two componentservices simultaneously fail, or platform startup facilitating tenant services.
+      Example is service-unit death when two componentservices simultaneously fail,
+      or platform startup facilitating tenant services.
     domain: componentservice
     range: componentservice
     in_subset:
@@ -3513,7 +3514,7 @@ slots:
 
   # Despite the name, note that this particular entity is
   # NOT a csolink:Association but rather, a csolink:predicate
-  service association:
+  componentservice association:
     is_a: related to
     symmetric: true
     description: >-
@@ -3524,7 +3525,7 @@ slots:
     exact_mappings: []
 
   componentservice associated with condition:
-    is_a: service association
+    is_a: componentservice association
     description: >-
       holds between a componentservice and a error or observable feature that the componentservice or its variantcomponentservice may influence, contribute to, or correlate with
     domain: componentservice
@@ -3539,7 +3540,7 @@ slots:
       # fault...
 
   condition associated with componentservice:
-    is_a: service association
+    is_a: componentservice association
     description: >-
       holds between a componentservice and a error or observable feature that may be influenced, contribute to, or be correlated with the componentservice or its incorrect correct/servicetypes
     domain: error or observable feature
@@ -5261,7 +5262,7 @@ slots:
 
   sequence localization attribute:
     is_a: association slot
-    domain: service sequence localization
+    domain: componentservice sequence localization
     description: >-
       An attribute that can be applied to a workload sequence localization edge. These edges
       connect a workload entity such as an daemon to an entity such as a container. Edge properties are used
@@ -7748,7 +7749,7 @@ classes:
     description: >-
       this category is currently considered broad enough to tag empirical lab
       measurements and other computational attributes taken as 'empirical traits'
-      with some statistical score, for example, a p value in service associations.
+      with some statistical score, for example, a p value in componentservice associations.
     slot_usage:
       has attribute:
         range: empirical attribute
@@ -7827,7 +7828,7 @@ classes:
     in_subset:
       - system_model_database
 
-  service background exposure:
+  componentservice background exposure:
     is_a: workload entity
     mixins:
       - exposure event
@@ -8893,7 +8894,7 @@ classes:
   variant to componentservice association:
     description: >-
       An association between a variant and a componentservice, where the variant has
-      a service association with the componentservice (i.e. is in linkage disequilibrium)
+      a componentservice association with the componentservice (i.e. is in linkage disequilibrium)
     is_a: association
     defining_slots:
       - subject
@@ -8905,7 +8906,7 @@ classes:
       object:
         range: componentservice
       predicate:
-        subproperty_of: service association
+        subproperty_of: componentservice association
 
   variant to componentservice availability association:
     description: >-
@@ -9019,9 +9020,7 @@ classes:
         description: >-
           a sequence variant in which the variantcomponentservice state
           is associated in some way with the error state
-        examples:
-          - value: ClinVar:52241
-            description: "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)"
+        examples: []
       predicate:
         description: >-
           E.g. is pathogenic for
@@ -9325,7 +9324,7 @@ classes:
     description: >-
       An association between a sequence feature and a workload entity it is localized to.
 
-  service sequence localization:
+  componentservice sequence localization:
     is_a: sequence association
     description: >-
       A relationship between a sequence feature and a workload entity

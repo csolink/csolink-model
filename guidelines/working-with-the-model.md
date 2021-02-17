@@ -14,51 +14,43 @@ We can consider a small example and see how it can be represented using the Csol
 
 Example:
 ```
-protein1 protein2
-9606.ENSP00000000233 9606.ENSP00000272298
-9606.ENSP00000000233 9606.ENSP00000253401
-9606.ENSP00000000233 9606.ENSP00000401445
+serviceinstance1 serviceinstance2
+instanceA        instanceB
+instanceA        instanceC
+instanceA        instanceD
 ```
 
-The above lines are from [STRING DB](https://string-db.org/).
-
 The information can be represented using Csolink Model as follows:
-- use Csolink entity class `protein` for protein entities
-- use Csolink entity class `gene` for gene entities
+- use Csolink entity class `serviceinstance` for serviceinstance entities
+- use Csolink entity class `componentservice` for componentservice entities
 - use Csolink predicate slot `interacts with` as the relationship or predicate for representing an edge between interacting partners
-- use Csolink association class `gene to gene association` to type the edge
+- use Csolink association class `componentservice to componentservice association` to type the edge
 
-One modeling consideration we are going to make here is that we will be projecting the interaction between proteins to interaction between genes.
+One modeling consideration we are going to make here is that we will be projecting the interaction between serviceinstances to interaction between componentservices.
 
 
 ## Annotating nodes
 
-Each individual protein and gene can be treated as nodes in a graph.
+Each individual serviceinstance and componentservice can be treated as nodes in a graph.
 
-Each protein node has `protein` as its category.
+Each serviceinstance node has `serviceinstance` as its category.
 
-Each gene node has `gene` as its category.
+Each componentservice node has `componentservice` as its category.
 
-As per the model, protein nodes should have identifiers from `UniProtKB` and gene nodes should have identifiers `NCBIGene`. 
+As per the model, serviceinstance nodes should have identifiers from `TBC1` and componentservice nodes should have identifiers `TBC2`. 
 
 
 
-One can further type the protein and gene entities using the Csolink node property slot `type` (which corresponds to `rdf:type`).
+One can further type the serviceinstance and componentservice entities using the Csolink node property slot `type` (which corresponds to `rdf:type`).
 
 In [KGX serialization format](https://github.com/biolink/kgx/blob/master/data-preparation.md) the nodes can be represented as follows:
 ```tsv
 id	name	category	provided_by	xref	type	in_taxon
-UniProtKB:P84085	ARF5	csolink:Protein	STRING	ENSEMBL:ENSP00000000233		NCBITaxon:9606
-UniProtKB:P0DP24	CALM2	csolink:Protein	STRING	ENSEMBL:ENSP00000272298		NCBITaxon:9606
-UniProtKB:O43307	ARHGEF9	csolink:Protein	STRING	ENSEMBL:ENSP00000253401		NCBITaxon:9606
-UniProtKB:O75460	ERN1	csolink:Protein	STRING	ENSEMBL:ENSP00000401445		NCBITaxon:9606
-NCBIGene:381	ARF5	csolink:Gene	STRING	ENSEMBL:ENSG00000004059	SO:0001217	NCBITaxon:9606
-NCBIGene:805	CALM2	csolink:Gene	STRING	ENSEMBL:ENSG00000143933	SO:0001217	NCBITaxon:9606
-NCBIGene:23229	ARHGEF9	csolink:Gene	STRING	ENSEMBL:ENSG00000131089	SO:0001217	NCBITaxon:9606
-NCBIGene:2081	ERN1	csolink:Gene	STRING	ENSEMBL:ENSG00000178607	SO:0001217	NCBITaxon:9606
+
+   TBC ..
 ```
 
-> **Note:** While the entity classes are defined as `gene` and `protein` in the model, when using them the reference to the class should always be in their CURIE form which includes the `csolink` prefix.
+> **Note:** While the entity classes are defined as `componentservice` and `serviceinstance` in the model, when using them the reference to the class should always be in their CURIE form which includes the `csolink` prefix.
 
 
 ### Node semantics
@@ -74,26 +66,21 @@ There are three ways of attaching semantics to a node:
 
 ## Annotating edges
 
-Each individual interaction between genes can be treated as an edge with,
+Each individual interaction between componentservices can be treated as an edge with,
 - `interacts with` as its `predicate`
 - `RO:0002436` as its `relation`
-- `gene to gene association` as its `association_type`
+- `componentservice to componentservice association` as its `association_type`
 
-And we have additional edges that go from gene to protein to signify that a gene encodes for a protein via the Csolink predicate slot `has gene product`.
+And we have additional edges that go from componentservice to serviceinstance to signify that a componentservice encodes for a serviceinstance via the Csolink predicate slot `has componentservice product`.
 
 In [KGX serialization format](https://github.com/biolink/kgx/blob/master/data-preparation.md) the edges can be represented as follows:
 ```tsv
 id  subject predicate   object  relation    provided_by association_type
-985eb9e6-e0bf-4cef-be0a-3d8ea12d228b	NCBIGene:381	csolink:interacts_with	NCBIGene:805	RO:0002436	STRING	csolink:GeneToGeneAssociation
-5550b653-69ff-48cc-a1ef-638ecdc50ea3	NCBIGene:381	csolink:interacts_with	NCBIGene:23229	RO:0002436	STRING	csolink:GeneToGeneAssociation
-8bff8da0-6da2-4154-b507-a8e9f75c55f8	NCBIGene:381	csolink:interacts_with	NCBIGene:2081	RO:0002436	STRING	csolink:GeneToGeneAssociation
-36e2edf0-d490-4417-9407-7070f4320083	NCBIGene:381	csolink:has_gene_product	UniProtKB:P84085	RO:0002205	STRING	
-0dd21d53-4985-467c-8e6d-0a79c0410016	NCBIGene:805	csolink:has_gene_product	UniProtKB:P0DP24	RO:0002205	STRING	
-fe5f9383-c5f6-4eba-9dc4-185e6d331459	NCBIGene:23229	csolink:has_gene_product	UniProtKB:O43307	RO:0002205	STRING	
-8c60c2b2-ff6c-45d5-a18f-e927ab1dec35	NCBIGene:2081	csolink:has_gene_product	UniProtKB:O75460	RO:0002205	STRING	
+
+   TBC
 ```
 
-> **Note:** While association class is defined as `gene to gene association` and predicate slots are defined as `interacts with` and `has gene product` in the model, when using them the reference to the class should always be in their CURIE form which includes the `csolink` prefix.
+> **Note:** While association class is defined as `componentservice to componentservice association` and predicate slots are defined as `interacts with` and `has componentservice product` in the model, when using them the reference to the class should always be in their CURIE form which includes the `csolink` prefix.
 
 
 ### Edge semantics
@@ -116,28 +103,17 @@ The previous example can be easily converted to a Neo4j compatible TSV using [KG
 `nodes.tsv`:
 
 ```tsv
-id:ID	name	category:LABEL	xref	provided_by:string[]	in_taxon	type
-UniProtKB:P84085	ARF5	csolink:Protein	ENSEMBL:ENSP00000000233	STRING	NCBITaxon:9606	
-UniProtKB:P0DP24	CALM2	csolink:Protein	ENSEMBL:ENSP00000272298	STRING	NCBITaxon:9606	
-UniProtKB:O43307	ARHGEF9	csolink:Protein	ENSEMBL:ENSP00000253401	STRING	NCBITaxon:9606	
-UniProtKB:O75460	ERN1	csolink:Protein	ENSEMBL:ENSP00000401445	STRING	NCBITaxon:9606	
-NCBIGene:381	ARF5	csolink:Gene	ENSEMBL:ENSG00000004059	STRING	NCBITaxon:9606	SO:0001217
-NCBIGene:805	CALM2	csolink:Gene	ENSEMBL:ENSG00000143933	STRING	NCBITaxon:9606	SO:0001217
-NCBIGene:23229	ARHGEF9	csolink:Gene	ENSEMBL:ENSG00000131089	STRING	NCBITaxon:9606	SO:0001217
-NCBIGene:2081	ERN1	csolink:Gene	ENSEMBL:ENSG00000178607	STRING	NCBITaxon:9606	SO:0001217
+id	subject:START_ID	predicate:TYPE	object:END_ID	relation	provided_by:string[]	association_type
+
+  TBC
 ```
 
 
 `edges.tsv`:
 ```tsv
 id	subject:START_ID	predicate:TYPE	object:END_ID	relation	provided_by:string[]	association_type
-985eb9e6-e0bf-4cef-be0a-3d8ea12d228b	NCBIGene:381	csolink:interacts_with	NCBIGene:805	RO:0002436	STRING	csolink:GeneToGeneAssociation
-5550b653-69ff-48cc-a1ef-638ecdc50ea3	NCBIGene:381	csolink:interacts_with	NCBIGene:23229	RO:0002436	STRING	csolink:GeneToGeneAssociation
-8bff8da0-6da2-4154-b507-a8e9f75c55f8	NCBIGene:381	csolink:interacts_with	NCBIGene:2081	RO:0002436	STRING	csolink:GeneToGeneAssociation
-36e2edf0-d490-4417-9407-7070f4320083	NCBIGene:381	csolink:has_gene_product	UniProtKB:P84085	RO:0002205	STRING	
-0dd21d53-4985-467c-8e6d-0a79c0410016	NCBIGene:805	csolink:has_gene_product	UniProtKB:P0DP24	RO:0002205	STRING	
-fe5f9383-c5f6-4eba-9dc4-185e6d331459	NCBIGene:23229	csolink:has_gene_product	UniProtKB:O43307	RO:0002205	STRING	
-8c60c2b2-ff6c-45d5-a18f-e927ab1dec35	NCBIGene:2081	csolink:has_gene_product	UniProtKB:O75460	RO:0002205	STRING	
+
+   TBC
 ```
 
 
@@ -149,71 +125,71 @@ Using reification, the previous example can be easily converted to RDF N-Triples
 
 ```nt
 <http://identifiers.org/uniprot/P84085> <http://www.w3.org/2000/01/rdf-schema#label> "ARF5"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://identifiers.org/uniprot/P84085> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Protein> .
+<http://identifiers.org/uniprot/P84085> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Serviceinstance> .
 <http://identifiers.org/uniprot/P84085> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
 <http://identifiers.org/uniprot/P84085> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSP00000000233> .
 <http://identifiers.org/uniprot/P84085> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
 <http://identifiers.org/uniprot/P0DP24> <http://www.w3.org/2000/01/rdf-schema#label> "CALM2"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://identifiers.org/uniprot/P0DP24> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Protein> .
+<http://identifiers.org/uniprot/P0DP24> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Serviceinstance> .
 <http://identifiers.org/uniprot/P0DP24> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
 <http://identifiers.org/uniprot/P0DP24> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSP00000272298> .
 <http://identifiers.org/uniprot/P0DP24> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
 <http://identifiers.org/uniprot/O43307> <http://www.w3.org/2000/01/rdf-schema#label> "ARHGEF9"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://identifiers.org/uniprot/O43307> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Protein> .
+<http://identifiers.org/uniprot/O43307> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Serviceinstance> .
 <http://identifiers.org/uniprot/O43307> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
 <http://identifiers.org/uniprot/O43307> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSP00000253401> .
 <http://identifiers.org/uniprot/O43307> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
 <http://identifiers.org/uniprot/O75460> <http://www.w3.org/2000/01/rdf-schema#label> "ERN1"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://identifiers.org/uniprot/O75460> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Protein> .
+<http://identifiers.org/uniprot/O75460> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Serviceinstance> .
 <http://identifiers.org/uniprot/O75460> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
 <http://identifiers.org/uniprot/O75460> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSP00000401445> .
 <http://identifiers.org/uniprot/O75460> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
-<http://www.ncbi.nlm.nih.gov/gene/381> <http://www.w3.org/2000/01/rdf-schema#label> "ARF5"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.ncbi.nlm.nih.gov/gene/381> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Gene> .
-<http://www.ncbi.nlm.nih.gov/gene/381> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
-<http://www.ncbi.nlm.nih.gov/gene/381> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000004059> .
-<http://www.ncbi.nlm.nih.gov/gene/381> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
-<http://www.ncbi.nlm.nih.gov/gene/381> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
-<http://www.ncbi.nlm.nih.gov/gene/805> <http://www.w3.org/2000/01/rdf-schema#label> "CALM2"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.ncbi.nlm.nih.gov/gene/805> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Gene> .
-<http://www.ncbi.nlm.nih.gov/gene/805> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
-<http://www.ncbi.nlm.nih.gov/gene/805> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000143933> .
-<http://www.ncbi.nlm.nih.gov/gene/805> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
-<http://www.ncbi.nlm.nih.gov/gene/805> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
-<http://www.ncbi.nlm.nih.gov/gene/23229> <http://www.w3.org/2000/01/rdf-schema#label> "ARHGEF9"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Gene> .
-<http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
-<http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000131089> .
-<http://www.ncbi.nlm.nih.gov/gene/23229> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
-<http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
-<http://www.ncbi.nlm.nih.gov/gene/2081> <http://www.w3.org/2000/01/rdf-schema#label> "ERN1"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Gene> .
-<http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
-<http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000178607> .
-<http://www.ncbi.nlm.nih.gov/gene/2081> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
-<http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
-<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.ncbi.nlm.nih.gov/gene/381> .
+<http://www.ncbi.nlm.nih.gov/componentservice/381> <http://www.w3.org/2000/01/rdf-schema#label> "ARF5"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ncbi.nlm.nih.gov/componentservice/381> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Componentservice> .
+<http://www.ncbi.nlm.nih.gov/componentservice/381> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
+<http://www.ncbi.nlm.nih.gov/componentservice/381> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000004059> .
+<http://www.ncbi.nlm.nih.gov/componentservice/381> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
+<http://www.ncbi.nlm.nih.gov/componentservice/381> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<http://www.ncbi.nlm.nih.gov/componentservice/805> <http://www.w3.org/2000/01/rdf-schema#label> "CALM2"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ncbi.nlm.nih.gov/componentservice/805> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Componentservice> .
+<http://www.ncbi.nlm.nih.gov/componentservice/805> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
+<http://www.ncbi.nlm.nih.gov/componentservice/805> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000143933> .
+<http://www.ncbi.nlm.nih.gov/componentservice/805> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
+<http://www.ncbi.nlm.nih.gov/componentservice/805> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<http://www.ncbi.nlm.nih.gov/componentservice/23229> <http://www.w3.org/2000/01/rdf-schema#label> "ARHGEF9"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ncbi.nlm.nih.gov/componentservice/23229> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Componentservice> .
+<http://www.ncbi.nlm.nih.gov/componentservice/23229> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
+<http://www.ncbi.nlm.nih.gov/componentservice/23229> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000131089> .
+<http://www.ncbi.nlm.nih.gov/componentservice/23229> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
+<http://www.ncbi.nlm.nih.gov/componentservice/23229> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<http://www.ncbi.nlm.nih.gov/componentservice/2081> <http://www.w3.org/2000/01/rdf-schema#label> "ERN1"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://www.ncbi.nlm.nih.gov/componentservice/2081> <https://w3id.org/csolink/vocab/category> <https://w3id.org/csolink/vocab/Componentservice> .
+<http://www.ncbi.nlm.nih.gov/componentservice/2081> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
+<http://www.ncbi.nlm.nih.gov/componentservice/2081> <https://w3id.org/csolink/vocab/xref> <http://identifiers.org/ensembl/ENSG00000178607> .
+<http://www.ncbi.nlm.nih.gov/componentservice/2081> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/SO_0001217> .
+<http://www.ncbi.nlm.nih.gov/componentservice/2081> <https://w3id.org/csolink/vocab/in_taxon> <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.ncbi.nlm.nih.gov/componentservice/381> .
 <https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <https://w3id.org/csolink/vocab/interacts_with> .
-<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.ncbi.nlm.nih.gov/gene/805> .
+<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.ncbi.nlm.nih.gov/componentservice/805> .
 <https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <https://w3id.org/csolink/vocab/relation> <http://purl.obolibrary.org/obo/RO_0002436> .
 <https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
-<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <https://w3id.org/csolink/vocab/association_type> <https://w3id.org/csolink/vocab/GeneToGeneAssociation> .
-<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.ncbi.nlm.nih.gov/gene/381> .
+<https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b> <https://w3id.org/csolink/vocab/association_type> <https://w3id.org/csolink/vocab/ComponentserviceToComponentserviceAssociation> .
+<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.ncbi.nlm.nih.gov/componentservice/381> .
 <https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <https://w3id.org/csolink/vocab/interacts_with> .
-<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.ncbi.nlm.nih.gov/gene/23229> .
+<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.ncbi.nlm.nih.gov/componentservice/23229> .
 <https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <https://w3id.org/csolink/vocab/relation> <http://purl.obolibrary.org/obo/RO_0002436> .
 <https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
-<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <https://w3id.org/csolink/vocab/association_type> <https://w3id.org/csolink/vocab/GeneToGeneAssociation> .
-<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.ncbi.nlm.nih.gov/gene/381> .
+<https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3> <https://w3id.org/csolink/vocab/association_type> <https://w3id.org/csolink/vocab/ComponentserviceToComponentserviceAssociation> .
+<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.ncbi.nlm.nih.gov/componentservice/381> .
 <https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <https://w3id.org/csolink/vocab/interacts_with> .
-<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.ncbi.nlm.nih.gov/gene/2081> .
+<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.ncbi.nlm.nih.gov/componentservice/2081> .
 <https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <https://w3id.org/csolink/vocab/relation> <http://purl.obolibrary.org/obo/RO_0002436> .
 <https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <https://w3id.org/csolink/vocab/provided_by> "STRING" .
-<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <https://w3id.org/csolink/vocab/association_type> <https://w3id.org/csolink/vocab/GeneToGeneAssociation> .
-<http://www.ncbi.nlm.nih.gov/gene/381> <https://w3id.org/csolink/vocab/has_gene_product> <http://identifiers.org/uniprot/P84085> .
-<http://www.ncbi.nlm.nih.gov/gene/805> <https://w3id.org/csolink/vocab/has_gene_product> <http://identifiers.org/uniprot/P0DP24> .
-<http://www.ncbi.nlm.nih.gov/gene/23229> <https://w3id.org/csolink/vocab/has_gene_product> <http://identifiers.org/uniprot/O43307> .
-<http://www.ncbi.nlm.nih.gov/gene/2081> <https://w3id.org/csolink/vocab/has_gene_product> <http://identifiers.org/uniprot/O75460> .
+<https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8> <https://w3id.org/csolink/vocab/association_type> <https://w3id.org/csolink/vocab/ComponentserviceToComponentserviceAssociation> .
+<http://www.ncbi.nlm.nih.gov/componentservice/381> <https://w3id.org/csolink/vocab/has_componentservice_product> <http://identifiers.org/uniprot/P84085> .
+<http://www.ncbi.nlm.nih.gov/componentservice/805> <https://w3id.org/csolink/vocab/has_componentservice_product> <http://identifiers.org/uniprot/P0DP24> .
+<http://www.ncbi.nlm.nih.gov/componentservice/23229> <https://w3id.org/csolink/vocab/has_componentservice_product> <http://identifiers.org/uniprot/O43307> .
+<http://www.ncbi.nlm.nih.gov/componentservice/2081> <https://w3id.org/csolink/vocab/has_componentservice_product> <http://identifiers.org/uniprot/O75460> .
 ```
 
 This RDF can be represented in the Turtle format for better readability:
@@ -226,90 +202,90 @@ This RDF can be represented in the Turtle format for better readability:
 
 <http://identifiers.org/uniprot/P84085>
   rdfs:label "ARF5"^^xsd:string ;
-  csolink:category csolink:Protein ;
+  csolink:category csolink:Serviceinstance ;
   csolink:provided_by "STRING" ;
   csolink:xref <http://identifiers.org/ensembl/ENSP00000000233> ;
   csolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
 
 <http://identifiers.org/uniprot/P0DP24>
   rdfs:label "CALM2"^^xsd:string ;
-  csolink:category csolink:Protein ;
+  csolink:category csolink:Serviceinstance ;
   csolink:provided_by "STRING" ;
   csolink:xref <http://identifiers.org/ensembl/ENSP00000272298> ;
   csolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
 
 <http://identifiers.org/uniprot/O43307>
   rdfs:label "ARHGEF9"^^xsd:string ;
-  csolink:category csolink:Protein ;
+  csolink:category csolink:Serviceinstance ;
   csolink:provided_by "STRING" ;
   csolink:xref <http://identifiers.org/ensembl/ENSP00000253401> ;
   csolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
 
 <http://identifiers.org/uniprot/O75460>
   rdfs:label "ERN1"^^xsd:string ;
-  csolink:category csolink:Protein ;
+  csolink:category csolink:Serviceinstance ;
   csolink:provided_by "STRING" ;
   csolink:xref <http://identifiers.org/ensembl/ENSP00000401445> ;
   csolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
 
-<http://www.ncbi.nlm.nih.gov/gene/381>
+<http://www.ncbi.nlm.nih.gov/componentservice/381>
   rdfs:label "ARF5"^^xsd:string ;
-  csolink:category csolink:Gene ;
+  csolink:category csolink:Componentservice ;
   csolink:provided_by "STRING" ;
   csolink:xref <http://identifiers.org/ensembl/ENSG00000004059> ;
   a <http://purl.obolibrary.org/obo/SO_0001217> ;
   csolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
-  csolink:has_gene_product <http://identifiers.org/uniprot/P84085> .
+  csolink:has_componentservice_product <http://identifiers.org/uniprot/P84085> .
 
-<http://www.ncbi.nlm.nih.gov/gene/805>
+<http://www.ncbi.nlm.nih.gov/componentservice/805>
   rdfs:label "CALM2"^^xsd:string ;
-  csolink:category csolink:Gene ;
+  csolink:category csolink:Componentservice ;
   csolink:provided_by "STRING" ;
   csolink:xref <http://identifiers.org/ensembl/ENSG00000143933> ;
   a <http://purl.obolibrary.org/obo/SO_0001217> ;
   csolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
-  csolink:has_gene_product <http://identifiers.org/uniprot/P0DP24> .
+  csolink:has_componentservice_product <http://identifiers.org/uniprot/P0DP24> .
 
-<http://www.ncbi.nlm.nih.gov/gene/23229>
+<http://www.ncbi.nlm.nih.gov/componentservice/23229>
   rdfs:label "ARHGEF9"^^xsd:string ;
-  csolink:category csolink:Gene ;
+  csolink:category csolink:Componentservice ;
   csolink:provided_by "STRING" ;
   csolink:xref <http://identifiers.org/ensembl/ENSG00000131089> ;
   a <http://purl.obolibrary.org/obo/SO_0001217> ;
   csolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
-  csolink:has_gene_product <http://identifiers.org/uniprot/O43307> .
+  csolink:has_componentservice_product <http://identifiers.org/uniprot/O43307> .
 
-<http://www.ncbi.nlm.nih.gov/gene/2081>
+<http://www.ncbi.nlm.nih.gov/componentservice/2081>
   rdfs:label "ERN1"^^xsd:string ;
-  csolink:category csolink:Gene ;
+  csolink:category csolink:Componentservice ;
   csolink:provided_by "STRING" ;
   csolink:xref <http://identifiers.org/ensembl/ENSG00000178607> ;
   a <http://purl.obolibrary.org/obo/SO_0001217> ;
   csolink:in_taxon <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
-  csolink:has_gene_product <http://identifiers.org/uniprot/O75460> .
+  csolink:has_componentservice_product <http://identifiers.org/uniprot/O75460> .
 
 <https://www.example.org/UNKNOWN/985eb9e6-e0bf-4cef-be0a-3d8ea12d228b>
-  rdf:subject <http://www.ncbi.nlm.nih.gov/gene/381> ;
+  rdf:subject <http://www.ncbi.nlm.nih.gov/componentservice/381> ;
   rdf:predicate csolink:interacts_with ;
-  rdf:object <http://www.ncbi.nlm.nih.gov/gene/805> ;
+  rdf:object <http://www.ncbi.nlm.nih.gov/componentservice/805> ;
   csolink:relation <http://purl.obolibrary.org/obo/RO_0002436> ;
   csolink:provided_by "STRING" ;
-  csolink:association_type csolink:GeneToGeneAssociation .
+  csolink:association_type csolink:ComponentserviceToComponentserviceAssociation .
 
 <https://www.example.org/UNKNOWN/5550b653-69ff-48cc-a1ef-638ecdc50ea3>
-  rdf:subject <http://www.ncbi.nlm.nih.gov/gene/381> ;
+  rdf:subject <http://www.ncbi.nlm.nih.gov/componentservice/381> ;
   rdf:predicate csolink:interacts_with ;
-  rdf:object <http://www.ncbi.nlm.nih.gov/gene/23229> ;
+  rdf:object <http://www.ncbi.nlm.nih.gov/componentservice/23229> ;
   csolink:relation <http://purl.obolibrary.org/obo/RO_0002436> ;
   csolink:provided_by "STRING" ;
-  csolink:association_type csolink:GeneToGeneAssociation .
+  csolink:association_type csolink:ComponentserviceToComponentserviceAssociation .
 
 <https://www.example.org/UNKNOWN/8bff8da0-6da2-4154-b507-a8e9f75c55f8>
-  rdf:subject <http://www.ncbi.nlm.nih.gov/gene/381> ;
+  rdf:subject <http://www.ncbi.nlm.nih.gov/componentservice/381> ;
   rdf:predicate csolink:interacts_with ;
-  rdf:object <http://www.ncbi.nlm.nih.gov/gene/2081> ;
+  rdf:object <http://www.ncbi.nlm.nih.gov/componentservice/2081> ;
   csolink:relation <http://purl.obolibrary.org/obo/RO_0002436> ;
   csolink:provided_by "STRING" ;
-  csolink:association_type csolink:GeneToGeneAssociation .
+  csolink:association_type csolink:ComponentserviceToComponentserviceAssociation .
 ```
 
