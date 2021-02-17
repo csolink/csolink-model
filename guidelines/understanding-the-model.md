@@ -84,7 +84,7 @@ where Entities are disjoint from Associations.
 
 ##### Entities
 
-Entities are classes that represent real world entities such as genes, diseases, chemical substances, etc.
+Entities are classes that represent real world entities such as componentservice, errors, control actors, etc.
 
 In a graph formalism, entities are represented by nodes in a graph.
 
@@ -120,11 +120,11 @@ However, a class `mixin` _**may**_ be given as the `domain` or `range` specifica
 
 Mixins are defined as a way of encouraging reuse of specific slots (properties) while ensuring a clear inheritance chain.
 
-For example, the `entity to feature or disease qualifiers` class is a mixin that defines slots `severity qualifier` and `onset qualifier`. The mixin also inherits the slot `frequency qualifier` from its parent mixin class `frequency qualifier mixin`. 
+For example, the `entity to feature or error qualifiers` class is a mixin that defines slots `severity qualifier` and `onset qualifier`. The mixin also inherits the slot `frequency qualifier` from its parent mixin class `frequency qualifier mixin`. 
 
-The mixin class `entity to feature or disease qualifiers` is used in the `entity to phenotypic feature association` class and thus by design the class will have `severity qualifier`, `onset qualifier`, and `frequency qualifier` in addition to all other slots it inherits from its own parent `association` class.
+The mixin class `entity to feature or error qualifiers` is used in the `entity to observable feature association` class and thus by design the class will have `severity qualifier`, `onset qualifier`, and `frequency qualifier` in addition to all other slots it inherits from its own parent `association` class.
 
-> **Note:** Even though `entity to phenotypic feature association` uses the mixin class `entity to feature or disease qualifiers` that does not mean that `entity to phenotypic feature association` is a child of `entity to feature or disease qualifiers`. i.e. Mixins do not contribute to the inheritance hierarchy of the class that uses them.
+> **Note:** Even though `entity to observable feature association` uses the mixin class `entity to feature or error qualifiers` that does not mean that `entity to observable feature association` is a child of `entity to feature or error qualifiers`. i.e. Mixins do not contribute to the inheritance hierarchy of the class that uses them.
 
 
 
@@ -151,7 +151,7 @@ In a graph formalism, predicates are relationships that link two instances.
 
 In an OWL sense, predicates are similar to `owl:ObjectProperty`.
 
-For example, a predicate `treats` can be used to link an instance of class `chemical substance` with an instance of class `disease`.
+For example, a predicate `repairs` can be used to link an instance of class `control actor` with an instance of class `error`.
 
 
 #### Node Properties
