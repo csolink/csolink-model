@@ -5,7 +5,7 @@
 
 <img src="images/csolink-logo.png" width="20%">
 
-# Csolink Model (Experimental)
+# Csolink Model (Experimental translation of biolink-model)
 
 Quickstart docs:
 
@@ -65,7 +65,14 @@ Prerequisites: Python 3.7+ and pipenv
 To install pipenv,
 
 ```sh
-pip3 install pipenv
+sudo pip3 install pipenv
+```
+
+To set your python version:
+
+```sh
+vi Pipfile    # i.e. requires=3.8
+pipenv --python /usr/bin/python3
 ```
 
 To install the project,

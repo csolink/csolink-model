@@ -1,0 +1,2627 @@
+BASE <https://w3id.org/csolink/vocab/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX metatype: <https://w3id.org/biolink/biolinkml/meta/types/>
+
+
+<ControlPlaneValue> xsd:string
+
+<CategoryType> IRI
+
+<IriType> IRI
+
+<LabelType> xsd:string
+
+<PredicateType> IRI
+
+<NarrativeText> xsd:string
+
+<SymbolType> xsd:string
+
+<Frequency> <https://www.ebi.ac.uk/ols/ontologies/uo0000105>
+
+<PercentageFrequencyValue> <https://www.ebi.ac.uk/ols/ontologies/uo0000187>
+
+<Quotient> <https://www.ebi.ac.uk/ols/ontologies/uo0010006>
+
+<Unit> <https://www.ebi.ac.uk/ols/ontologies/uo0000000>
+
+<TimeType> xsd:dateTime
+
+<ComputationalSequence> xsd:string
+
+metatype:String xsd:string
+
+metatype:Integer xsd:integer
+
+metatype:Boolean xsd:boolean
+
+metatype:Float xsd:float
+
+metatype:Double xsd:double
+
+metatype:Decimal xsd:decimal
+
+metatype:Time xsd:dateTime
+
+metatype:Date xsd:date
+
+metatype:Datetime xsd:dateTime
+
+metatype:Uriorcurie IRI
+
+metatype:Uri IRI
+
+metatype:Ncname xsd:string
+
+metatype:Objectidentifier IRI
+
+metatype:Nodeidentifier NONLITERAL
+
+<Activity> CLOSED {
+    (  $<Activity_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          &<ActivityAndBehavior_tes> ;
+          rdf:type [ <ActivityAndBehavior> ] ?
+       ) ;
+       rdf:type [ <Activity> ]
+    )
+}
+
+<ActivityAndBehavior> {
+    (  $<ActivityAndBehavior_tes> (  &<Occurrent_tes> ;
+          rdf:type [ <Occurrent> ] ?
+       ) ;
+       rdf:type [ <ActivityAndBehavior> ] ?
+    )
+}
+
+<AdministrativeEntity>  (
+    {
+       (  $<AdministrativeEntity_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ?
+          ) ;
+          rdf:type [ <AdministrativeEntity> ]
+       )
+    } OR @<Agent>
+)
+
+<AdministrativeOperation>  (
+    CLOSED {
+       (  $<AdministrativeOperation_tes> (  &<OperationalEntity_tes> ;
+             rdf:type [ <OperationalEntity> ] ? ;
+             &<Cluster_tes> ;
+             rdf:type [ <Cluster> ] ? ;
+             <has_control_actor> @<ControlActor> *
+          ) ;
+          rdf:type [ <AdministrativeOperation> ]
+       )
+    } OR @<AdministrativeOperationalExposure>
+)
+
+<AdministrativeOperationalExposure>  (
+    CLOSED {
+       (  $<AdministrativeOperationalExposure_tes> (  &<AdministrativeOperation_tes> ;
+             rdf:type [ <AdministrativeOperation> ] ? ;
+             &<ExposureEvent_tes> ;
+             rdf:type [ <ExposureEvent> ] ? ;
+             <timepoint> @<TimeType> ?
+          ) ;
+          rdf:type [ <AdministrativeOperationalExposure> ]
+       )
+    } OR @<AdministrativeOperationalToComponentserviceInteractionExposure>
+)
+
+<AdministrativeOperationalToComponentserviceAssociation> CLOSED {
+    (  $<AdministrativeOperationalToComponentserviceAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<AdministrativeOperationalToEntityAssociationMixin_tes> ;
+          rdf:type [ <AdministrativeOperationalToEntityAssociationMixin> ] ? ;
+          <object> @<ComponentserviceOrServicetype>
+       ) ;
+       rdf:type [ <AdministrativeOperationalToComponentserviceAssociation> ]
+    )
+}
+
+<AdministrativeOperationalToComponentserviceInteractionExposure> CLOSED {
+    (  $<AdministrativeOperationalToComponentserviceInteractionExposure_tes> (  &<AdministrativeOperationalExposure_tes> ;
+          rdf:type [ <AdministrativeOperationalExposure> ] ? ;
+          &<ComponentserviceGroupingMixin_tes> ;
+          rdf:type [ <ComponentserviceGroupingMixin> ] ? ;
+          <has_componentservice_or_servicetype> @<Componentservice> *
+       ) ;
+       rdf:type [ <AdministrativeOperationalToComponentserviceInteractionExposure> ]
+    )
+}
+
+<AdministrativeOperationalToEntityAssociationMixin> {
+    (  $<AdministrativeOperationalToEntityAssociationMixin_tes> (  &<OperationalEntityToEntityAssociationMixin_tes> ;
+          rdf:type [ <OperationalEntityToEntityAssociationMixin> ] ? ;
+          <subject> @<AdministrativeOperation>
+       ) ;
+       rdf:type [ <AdministrativeOperationalToEntityAssociationMixin> ] ?
+    )
+}
+
+<Agent> CLOSED {
+    (  $<Agent_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ? ;
+          <affiliation> @metatype:Uriorcurie * ;
+          <address> @metatype:String ? ;
+          <name> @<LabelType> ?
+       ) ;
+       rdf:type [ <Agent> ]
+    )
+}
+
+<Annotation>  (
+    @<Attribute> OR @<QuantityValue>
+)
+
+<Annotation_struct> {
+    (  $<Annotation_tes> rdf:type . * ;
+       rdf:type [ <Annotation> ] ?
+    )
+}
+
+<Article> CLOSED {
+    (  $<Article_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ? ;
+          <published_in> @metatype:Uriorcurie ;
+          <iso_abbreviation> @metatype:String ? ;
+          <volume> @metatype:String ? ;
+          <issue> @metatype:String ?
+       ) ;
+       rdf:type [ <Article> ]
+    )
+}
+
+<Association>  (
+    CLOSED {
+       (  $<Association_tes> (  &<Entity_tes> ;
+             rdf:type [ <Entity> ] ? ;
+             <subject> @<NamedThing> ;
+             <predicate> @<PredicateType> ;
+             <object> @<NamedThing> ;
+             <relation> @metatype:Uriorcurie ;
+             <negated> @metatype:Boolean ? ;
+             <qualifiers> @<OntologyClass> * ;
+             <publications> @<Publication> * ;
+             <type> @metatype:String ? ;
+             <category> @<Association> +
+          ) ;
+          rdf:type [ <Association> ]
+       )
+    } OR @<AdministrativeOperationalToComponentserviceAssociation> OR @<BehaviorToBehavioralFeatureAssociation> OR
+    @<CaseToObservableFeatureAssociation> OR @<ComponentTypeToErrorOrObservableFeatureAssociation> OR
+    @<ComponentserviceRegulatoryRelationship> OR @<ComponentserviceToAvailabilitySiteAssociation> OR
+    @<ComponentserviceToComponentserviceAssociation> OR @<ComponentserviceToErrorAssociation> OR
+    @<ComponentserviceToObservableFeatureAssociation> OR @<ContributorAssociation> OR
+    @<DeploymentEntityToDeploymentEntityAssociation> OR @<ErrorOrObservableFeatureAssociationToLocationAssociation> OR
+    @<ErrorOrObservableFeatureToLocationAssociation> OR @<ErrorToExposureEventAssociation> OR
+    @<ErrorToObservableFeatureAssociation> OR @<ExposureEventToObservableFeatureAssociation> OR
+    @<ExposureEventToOutcomeAssociation> OR @<FunctionalAssociation> OR @<OrchestrationToComponentserviceAssociation> OR
+    @<OrchestrationToErrorOrObservableFeatureAssociation> OR @<OrchestrationToOrchestrationAssociation> OR
+    @<OrchestrationToPathwayAssociation> OR @<PopulationToPopulationAssociation> OR @<ResourceSampleDerivationAssociation> OR
+    @<ResourceSampleToErrorOrObservableFeatureAssociation> OR @<SequenceAssociation> OR @<SequenceFeatureRelationship> OR
+    @<SequenceVariantModulatesRepairingAssociation> OR @<ServiceunittypeToComponentserviceAssociation> OR
+    @<ServiceunittypeToErrorAssociation> OR @<ServiceunittypeToObservableFeatureAssociation> OR
+    @<ServiceunittypeToServiceunittypePartAssociation> OR @<ServiceunittypeToVariantAssociation> OR
+    @<SystemicEntityAsAModelOfErrorAssociation> OR @<VariantToComponentserviceAssociation> OR @<VariantToErrorAssociation> OR
+    @<VariantToObservableFeatureAssociation> OR @<VariantToPopulationAssociation>
+)
+
+<Attribute>  (
+    CLOSED {
+       (  $<Attribute_tes> (  &<Annotation_tes> ;
+             rdf:type [ <Annotation> ] ? ;
+             <name> @<LabelType> ? ;
+             <has_attribute_type> @<OntologyClass> ;
+             <has_quantitative_value> @<QuantityValue> * ;
+             <has_qualitative_value> @<NamedThing> ? ;
+             <iri> @<IriType> ? ;
+             <source> @<LabelType> ?
+          ) ;
+          rdf:type [ <Attribute> ] ?
+       )
+    } OR @<ComputationalArchitecturalStyle> OR @<EmpiricalAttribute> OR @<FrequencyValue> OR @<Homogeneity> OR @<SeverityValue> OR
+    @<SocioeconomicAttribute> OR @<SystemAttribute>
+)
+
+<AttributeType> CLOSED {
+    (  $<AttributeType_tes> rdf:type . * ;
+       rdf:type [ <AttributeType> ] ?
+    )
+}
+
+<Awareness> CLOSED {
+    (  $<Awareness_tes> (  &<NotificationComponent_tes> ;
+          rdf:type [ <NotificationComponent> ] ?
+       ) ;
+       rdf:type [ <Awareness> ]
+    )
+}
+
+<Behavior>  (
+    CLOSED {
+       (  $<Behavior_tes> (  &<ComputationalProcess_tes> ;
+             rdf:type [ <ComputationalProcess> ] ?
+          ) ;
+          rdf:type [ <Behavior> ]
+       )
+    } OR @<BehavioralExposure> OR @<BehavioralOutcome> OR @<SocioeconomicExposure> OR @<SocioeconomicOutcome>
+)
+
+<BehaviorToBehavioralFeatureAssociation> CLOSED {
+    (  $<BehaviorToBehavioralFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToObservableFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToObservableFeatureAssociationMixin> ] ? ;
+          <subject> @<Behavior> ;
+          <object> @<BehavioralFeature> ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ? ;
+          <architectural_style_qualifier> @<ComputationalArchitecturalStyle> ?
+       ) ;
+       rdf:type [ <BehaviorToBehavioralFeatureAssociation> ]
+    )
+}
+
+<BehavioralExposure> CLOSED {
+    (  $<BehavioralExposure_tes> (  &<Behavior_tes> ;
+          rdf:type [ <Behavior> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <BehavioralExposure> ]
+    )
+}
+
+<BehavioralFeature> CLOSED {
+    (  $<BehavioralFeature_tes> (  &<ObservableFeature_tes> ;
+          rdf:type [ <ObservableFeature> ] ?
+       ) ;
+       rdf:type [ <BehavioralFeature> ]
+    )
+}
+
+<BehavioralOutcome> CLOSED {
+    (  $<BehavioralOutcome_tes> (  &<Behavior_tes> ;
+          rdf:type [ <Behavior> ] ? ;
+          &<Outcome_tes> ;
+          rdf:type [ <Outcome> ] ?
+       ) ;
+       rdf:type [ <BehavioralOutcome> ]
+    )
+}
+
+<BioticExposure> CLOSED {
+    (  $<BioticExposure_tes> (  &<SystemTaxon_tes> ;
+          rdf:type [ <SystemTaxon> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <BioticExposure> ]
+    )
+}
+
+<Bitstream>  (
+    CLOSED {
+       (  $<Bitstream_tes> (  &<Data_tes> ;
+             rdf:type [ <Data> ] ?
+          ) ;
+          rdf:type [ <Bitstream> ]
+       )
+    } OR @<MessagePassing>
+)
+
+<Book> CLOSED {
+    (  $<Book_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ? ;
+          <type> @metatype:String
+       ) ;
+       rdf:type [ <Book> ]
+    )
+}
+
+<BookChapter> CLOSED {
+    (  $<BookChapter_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ? ;
+          <published_in> @metatype:Uriorcurie ;
+          <volume> @metatype:String ? ;
+          <chapter> @metatype:String ?
+       ) ;
+       rdf:type [ <BookChapter> ]
+    )
+}
+
+<Case> CLOSED {
+    (  $<Case_tes> (  &<IndividualSystem_tes> ;
+          rdf:type [ <IndividualSystem> ] ?
+       ) ;
+       rdf:type [ <Case> ]
+    )
+}
+
+<CaseToEntityAssociationMixin> {
+    (  $<CaseToEntityAssociationMixin_tes> <subject> @<Case> ;
+       rdf:type [ <CaseToEntityAssociationMixin> ] ?
+    )
+}
+
+<CaseToObservableFeatureAssociation> CLOSED {
+    (  $<CaseToObservableFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToObservableFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToObservableFeatureAssociationMixin> ] ? ;
+          &<CaseToEntityAssociationMixin_tes> ;
+          rdf:type [ <CaseToEntityAssociationMixin> ] ? ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ? ;
+          <architectural_style_qualifier> @<ComputationalArchitecturalStyle> ?
+       ) ;
+       rdf:type [ <CaseToObservableFeatureAssociation> ]
+    )
+}
+
+<Cluster> {
+    (  $<Cluster_tes> <has_control_actor> @<ControlActor> * ;
+       rdf:type [ <Cluster> ] ?
+    )
+}
+
+<CodingSequence> CLOSED {
+    (  $<CodingSequence_tes> (  &<WorkloadEntity_tes> ;
+          rdf:type [ <WorkloadEntity> ] ?
+       ) ;
+       rdf:type [ <CodingSequence> ]
+    )
+}
+
+<Cohort> CLOSED {
+    (  $<Cohort_tes> (  &<StudyPopulation_tes> ;
+          rdf:type [ <StudyPopulation> ] ?
+       ) ;
+       rdf:type [ <Cohort> ]
+    )
+}
+
+<ComplexOrchestrationExposure> CLOSED {
+    (  $<ComplexOrchestrationExposure_tes> (  &<OrchestrationExposure_tes> ;
+          rdf:type [ <OrchestrationExposure> ] ? ;
+          &<Cluster_tes> ;
+          rdf:type [ <Cluster> ] ? ;
+          <has_control_actor> @<ControlActor> *
+       ) ;
+       rdf:type [ <ComplexOrchestrationExposure> ]
+    )
+}
+
+<Component> CLOSED {
+    (  $<Component_tes> (  &<DeploymentEntity_tes> ;
+          rdf:type [ <DeploymentEntity> ] ?
+       ) ;
+       rdf:type [ <Component> ]
+    )
+}
+
+<ComponentType> CLOSED {
+    (  $<ComponentType_tes> (  &<SystemicEntity_tes> ;
+          rdf:type [ <SystemicEntity> ] ?
+       ) ;
+       rdf:type [ <ComponentType> ]
+    )
+}
+
+<ComponentTypeAsAModelOfErrorAssociation> CLOSED {
+    (  $<ComponentTypeAsAModelOfErrorAssociation_tes> (  &<ComponentTypeToErrorOrObservableFeatureAssociation_tes> ;
+          rdf:type [ <ComponentTypeToErrorOrObservableFeatureAssociation> ] ? ;
+          &<ModelToErrorAssociationMixin_tes> ;
+          rdf:type [ <ModelToErrorAssociationMixin> ] ? ;
+          &<EntityToErrorAssociationMixin_tes> ;
+          rdf:type [ <EntityToErrorAssociationMixin> ] ? ;
+          <subject> @<ComponentType> ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ?
+       ) ;
+       rdf:type [ <ComponentTypeAsAModelOfErrorAssociation> ]
+    )
+}
+
+<ComponentTypeToEntityAssociationMixin> {
+    (  $<ComponentTypeToEntityAssociationMixin_tes> <subject> @<ComponentType> ;
+       rdf:type [ <ComponentTypeToEntityAssociationMixin> ] ?
+    )
+}
+
+<ComponentTypeToErrorOrObservableFeatureAssociation>  (
+    CLOSED {
+       (  $<ComponentTypeToErrorOrObservableFeatureAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             &<ComponentTypeToEntityAssociationMixin_tes> ;
+             rdf:type [ <ComponentTypeToEntityAssociationMixin> ] ? ;
+             &<EntityToErrorOrObservableFeatureAssociationMixin_tes> ;
+             rdf:type [ <EntityToErrorOrObservableFeatureAssociationMixin> ] ? ;
+             <subject> @<ErrorOrObservableFeature>
+          ) ;
+          rdf:type [ <ComponentTypeToErrorOrObservableFeatureAssociation> ]
+       )
+    } OR @<ComponentTypeAsAModelOfErrorAssociation>
+)
+
+<Componentservice> CLOSED {
+    (  $<Componentservice_tes> (  &<ComponentserviceOrServicetype_tes> ;
+          rdf:type [ <ComponentserviceOrServicetype> ] ? ;
+          &<ComponentserviceOrServicetype_tes> ;
+          rdf:type [ <ComponentserviceOrServicetype> ] ? ;
+          <symbol> @metatype:String ? ;
+          <synonym> @<LabelType> * ;
+          <xref> @<IriType> *
+       ) ;
+       rdf:type [ <Componentservice> ] ?
+    )
+}
+
+<ComponentserviceAsAModelOfErrorAssociation> CLOSED {
+    (  $<ComponentserviceAsAModelOfErrorAssociation_tes> (  &<ComponentserviceToErrorAssociation_tes> ;
+          rdf:type [ <ComponentserviceToErrorAssociation> ] ? ;
+          &<ModelToErrorAssociationMixin_tes> ;
+          rdf:type [ <ModelToErrorAssociationMixin> ] ? ;
+          &<EntityToErrorAssociationMixin_tes> ;
+          rdf:type [ <EntityToErrorAssociationMixin> ] ? ;
+          <subject> @<ComponentserviceOrServicetype>
+       ) ;
+       rdf:type [ <ComponentserviceAsAModelOfErrorAssociation> ]
+    )
+}
+
+<ComponentserviceAvailabilityMixin> CLOSED {
+    (  $<ComponentserviceAvailabilityMixin_tes> (  <quantifier_qualifier> @<OntologyClass> ? ;
+          <availability_site> @<DeploymentEntity> ? ;
+          <stage_qualifier> @<LifecycleStage> ? ;
+          <observable_state> @<ErrorOrObservableFeature> ?
+       ) ;
+       rdf:type [ <ComponentserviceAvailabilityMixin> ] ?
+    )
+}
+
+<ComponentserviceFamily> CLOSED {
+    (  $<ComponentserviceFamily_tes> (  &<OperationalEntity_tes> ;
+          rdf:type [ <OperationalEntity> ] ? ;
+          &<ComponentserviceGroupingMixin_tes> ;
+          rdf:type [ <ComponentserviceGroupingMixin> ] ? ;
+          <has_componentservice_or_servicetype> @<Componentservice> *
+       ) ;
+       rdf:type [ <ComponentserviceFamily> ]
+    )
+}
+
+<ComponentserviceGroupingMixin> {
+    (  $<ComponentserviceGroupingMixin_tes> <has_componentservice_or_servicetype> @<Componentservice> * ;
+       rdf:type [ <ComponentserviceGroupingMixin> ] ?
+    )
+}
+
+<ComponentserviceHasVariantThatContributesToErrorAssociation> CLOSED {
+    (  $<ComponentserviceHasVariantThatContributesToErrorAssociation_tes> (  &<ComponentserviceToErrorAssociation_tes> ;
+          rdf:type [ <ComponentserviceToErrorAssociation> ] ? ;
+          <sequence_variant_qualifier> @<SequenceVariant> ? ;
+          <subject> @<ComponentserviceOrServicetype>
+       ) ;
+       rdf:type [ <ComponentserviceHasVariantThatContributesToErrorAssociation> ]
+    )
+}
+
+<ComponentserviceOntologyClass> CLOSED {
+    (  $<ComponentserviceOntologyClass_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
+       ) ;
+       rdf:type [ <ComponentserviceOntologyClass> ]
+    )
+}
+
+<ComponentserviceOrServicetype>  (
+    @<Componentservice> OR @<ServicetypeMixin>
+)
+
+<ComponentserviceOrServicetype_struct> {
+    (  $<ComponentserviceOrServicetype_tes> (  &<MacrooperationalMachineMixin_tes> ;
+          rdf:type [ <MacrooperationalMachineMixin> ] ?
+       ) ;
+       rdf:type [ <ComponentserviceOrServicetype> ] ?
+    )
+}
+
+<ComponentserviceRegulatoryRelationship> CLOSED {
+    (  $<ComponentserviceRegulatoryRelationship_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ComponentserviceOrServicetype> ;
+          <object> @<ComponentserviceOrServicetype>
+       ) ;
+       rdf:type [ <ComponentserviceRegulatoryRelationship> ]
+    )
+}
+
+<ComponentserviceToAvailabilitySiteAssociation> CLOSED {
+    (  $<ComponentserviceToAvailabilitySiteAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <stage_qualifier> @<LifecycleStage> ? ;
+          <quantifier_qualifier> @<OntologyClass> ? ;
+          <subject> @<ComponentserviceOrServicetype> ;
+          <object> @<DeploymentEntity> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <ComponentserviceToAvailabilitySiteAssociation> ]
+    )
+}
+
+<ComponentserviceToComponentserviceAssociation>  (
+    @<ComponentserviceToComponentserviceCoavailabilityAssociation> OR @<ComponentserviceToComponentserviceHomologyAssociation> OR
+    @<PairwiseComponentserviceToComponentserviceInteraction>
+)
+
+<ComponentserviceToComponentserviceAssociation_struct> {
+    (  $<ComponentserviceToComponentserviceAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <subject> @<ComponentserviceOrServicetype> ;
+          <object> @<ComponentserviceOrServicetype>
+       ) ;
+       rdf:type [ <ComponentserviceToComponentserviceAssociation> ]
+    )
+}
+
+<ComponentserviceToComponentserviceCoavailabilityAssociation> CLOSED {
+    (  $<ComponentserviceToComponentserviceCoavailabilityAssociation_tes> (  &<ComponentserviceToComponentserviceAssociation_tes> ;
+          rdf:type [ <ComponentserviceToComponentserviceAssociation> ] ? ;
+          &<ComponentserviceAvailabilityMixin_tes> ;
+          rdf:type [ <ComponentserviceAvailabilityMixin> ] ? ;
+          <predicate> @<PredicateType> ;
+          <quantifier_qualifier> @<OntologyClass> ? ;
+          <availability_site> @<DeploymentEntity> ? ;
+          <stage_qualifier> @<LifecycleStage> ? ;
+          <observable_state> @<ErrorOrObservableFeature> ?
+       ) ;
+       rdf:type [ <ComponentserviceToComponentserviceCoavailabilityAssociation> ]
+    )
+}
+
+<ComponentserviceToComponentserviceHomologyAssociation> CLOSED {
+    (  $<ComponentserviceToComponentserviceHomologyAssociation_tes> (  &<ComponentserviceToComponentserviceAssociation_tes> ;
+          rdf:type [ <ComponentserviceToComponentserviceAssociation> ] ? ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <ComponentserviceToComponentserviceHomologyAssociation> ]
+    )
+}
+
+<ComponentserviceToEntityAssociationMixin> {
+    (  $<ComponentserviceToEntityAssociationMixin_tes> <subject> @<ComponentserviceOrServicetype> ;
+       rdf:type [ <ComponentserviceToEntityAssociationMixin> ] ?
+    )
+}
+
+<ComponentserviceToErrorAssociation>  (
+    CLOSED {
+       (  $<ComponentserviceToErrorAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             &<EntityToErrorAssociationMixin_tes> ;
+             rdf:type [ <EntityToErrorAssociationMixin> ] ? ;
+             &<ComponentserviceToEntityAssociationMixin_tes> ;
+             rdf:type [ <ComponentserviceToEntityAssociationMixin> ] ? ;
+             <subject> @<ComponentserviceOrServicetype> ;
+             <frequency_qualifier> @<FrequencyValue> ? ;
+             <severity_qualifier> @<SeverityValue> ? ;
+             <onset_qualifier> @<Onset> ?
+          ) ;
+          rdf:type [ <ComponentserviceToErrorAssociation> ]
+       )
+    } OR @<ComponentserviceAsAModelOfErrorAssociation> OR @<ComponentserviceHasVariantThatContributesToErrorAssociation>
+)
+
+<ComponentserviceToGoTermAssociation> CLOSED {
+    (  $<ComponentserviceToGoTermAssociation_tes> (  &<FunctionalAssociation_tes> ;
+          rdf:type [ <FunctionalAssociation> ] ? ;
+          <subject> @<OperationalEntity> ;
+          <object> @<ComponentserviceOntologyClass>
+       ) ;
+       rdf:type [ <ComponentserviceToGoTermAssociation> ]
+    )
+}
+
+<ComponentserviceToObservableFeatureAssociation> CLOSED {
+    (  $<ComponentserviceToObservableFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToObservableFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToObservableFeatureAssociationMixin> ] ? ;
+          &<ComponentserviceToEntityAssociationMixin_tes> ;
+          rdf:type [ <ComponentserviceToEntityAssociationMixin> ] ? ;
+          <subject> @<ComponentserviceOrServicetype> ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ? ;
+          <architectural_style_qualifier> @<ComputationalArchitecturalStyle> ?
+       ) ;
+       rdf:type [ <ComponentserviceToObservableFeatureAssociation> ]
+    )
+}
+
+<ComponentserviceToServicetypeRelationship> CLOSED {
+    (  $<ComponentserviceToServicetypeRelationship_tes> (  &<SequenceFeatureRelationship_tes> ;
+          rdf:type [ <SequenceFeatureRelationship> ] ? ;
+          <subject> @<Componentservice> ;
+          <object> @<ServicetypeMixin> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <ComponentserviceToServicetypeRelationship> ]
+    )
+}
+
+<Componentserviceinstance>  (
+    CLOSED {
+       (  $<Componentserviceinstance_tes> (  &<WorkloadEntity_tes> ;
+             rdf:type [ <WorkloadEntity> ] ?
+          ) ;
+          rdf:type [ <Componentserviceinstance> ]
+       )
+    } OR @<KernelServicetype>
+)
+
+<ComponentserviceinstanceToComponentserviceRelationship> CLOSED {
+    (  $<ComponentserviceinstanceToComponentserviceRelationship_tes> (  &<SequenceFeatureRelationship_tes> ;
+          rdf:type [ <SequenceFeatureRelationship> ] ? ;
+          <subject> @<Componentserviceinstance> ;
+          <object> @<Componentservice>
+       ) ;
+       rdf:type [ <ComponentserviceinstanceToComponentserviceRelationship> ]
+    )
+}
+
+<ComputationalArchitecturalStyle>  (
+    CLOSED {
+       (  $<ComputationalArchitecturalStyle_tes> (  &<Attribute_tes> ;
+             rdf:type [ <Attribute> ] ?
+          ) ;
+          rdf:type [ <ComputationalArchitecturalStyle> ] ?
+       )
+    } OR @<MicroserviceArchitecturalStyle> OR @<ObservableArchitecturalStyle>
+)
+
+<ComputationalEntity>  (
+    @<ComputationalProcessOrActivity> OR @<EpidemiologicalOutcome> OR @<ErrorOrObservableFeature> OR @<OperationalEntity> OR
+    @<SystemicEntity>
+)
+
+<ComputationalEntity_struct> {
+    (  $<ComputationalEntity_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ?
+       ) ;
+       rdf:type [ <ComputationalEntity> ]
+    )
+}
+
+<ComputationalProcess>  (
+    CLOSED {
+       (  $<ComputationalProcess_tes> (  &<ComputationalProcessOrActivity_tes> ;
+             rdf:type [ <ComputationalProcessOrActivity> ] ? ;
+             &<Occurrent_tes> ;
+             rdf:type [ <Occurrent> ] ?
+          ) ;
+          rdf:type [ <ComputationalProcess> ]
+       )
+    } OR @<Behavior> OR @<CyberProcess> OR @<Death> OR @<FaultyProcess> OR @<Pathway>
+)
+
+<ComputationalProcessOrActivity>  (
+    CLOSED {
+       (  $<ComputationalProcessOrActivity_tes> (  &<ComputationalEntity_tes> ;
+             rdf:type [ <ComputationalEntity> ] ? ;
+             &<Occurrent_tes> ;
+             rdf:type [ <Occurrent> ] ? ;
+             <has_input> @<NamedThing> * ;
+             <has_output> @<NamedThing> * ;
+             <enabled_by> @<CyberEntity> *
+          ) ;
+          rdf:type [ <ComputationalProcessOrActivity> ]
+       )
+    } OR @<ComputationalProcess> OR @<OperationalActivity>
+)
+
+<ConfidenceLevel> CLOSED {
+    (  $<ConfidenceLevel_tes> (  &<InformationContentEntity_tes> ;
+          rdf:type [ <InformationContentEntity> ] ?
+       ) ;
+       rdf:type [ <ConfidenceLevel> ]
+    )
+}
+
+<ConsumedResource> CLOSED {
+    (  $<ConsumedResource_tes> (  &<ControlActor_tes> ;
+          rdf:type [ <ControlActor> ] ? ;
+          &<Cluster_tes> ;
+          rdf:type [ <Cluster> ] ? ;
+          <has_control_actor> @<ControlActor> *
+       ) ;
+       rdf:type [ <ConsumedResource> ]
+    )
+}
+
+<ContributorAssociation> CLOSED {
+    (  $<ContributorAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <subject> @<InformationContentEntity> ;
+          <predicate> @<PredicateType> ;
+          <object> @<Agent> ;
+          <qualifiers> @<OntologyClass> *
+       ) ;
+       rdf:type [ <ContributorAssociation> ]
+    )
+}
+
+<ControlActor>  (
+    CLOSED {
+       (  $<ControlActor_tes> (  &<OperationalEntity_tes> ;
+             rdf:type [ <OperationalEntity> ] ?
+          ) ;
+          rdf:type [ <ControlActor> ]
+       )
+    } OR @<ConsumedResource> OR @<Controller> OR @<NotificationComponent> OR @<OrchestrationExposure> OR @<Power>
+)
+
+<Controller> CLOSED {
+    (  $<Controller_tes> (  &<ControlActor_tes> ;
+          rdf:type [ <ControlActor> ] ? ;
+          <is_controller> @metatype:Boolean ?
+       ) ;
+       rdf:type [ <Controller> ]
+    )
+}
+
+<CyberEntity>  (
+    CLOSED {
+       (  $<CyberEntity_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ? ;
+             &<CyberEssence_tes> ;
+             rdf:type [ <CyberEssence> ] ?
+          ) ;
+          rdf:type [ <CyberEntity> ]
+       )
+    } OR @<ResourceSample>
+)
+
+<CyberEssence> {
+    (  $<CyberEssence_tes> (  &<CyberEssenceOrOccurrent_tes> ;
+          rdf:type [ <CyberEssenceOrOccurrent> ] ?
+       ) ;
+       rdf:type [ <CyberEssence> ] ?
+    )
+}
+
+<CyberEssenceOrOccurrent>  (
+    @<CyberEssence> OR @<Occurrent>
+)
+
+<CyberEssenceOrOccurrent_struct> {
+    (  $<CyberEssenceOrOccurrent_tes> rdf:type . * ;
+       rdf:type [ <CyberEssenceOrOccurrent> ] ?
+    )
+}
+
+<CyberProcess> CLOSED {
+    (  $<CyberProcess_tes> (  &<ComputationalProcess_tes> ;
+          rdf:type [ <ComputationalProcess> ] ?
+       ) ;
+       rdf:type [ <CyberProcess> ]
+    )
+}
+
+<Daemon> CLOSED {
+    (  $<Daemon_tes> (  &<WorkloadEntity_tes> ;
+          rdf:type [ <WorkloadEntity> ] ?
+       ) ;
+       rdf:type [ <Daemon> ]
+    )
+}
+
+<DaemonToComponentserviceinstanceRelationship> CLOSED {
+    (  $<DaemonToComponentserviceinstanceRelationship_tes> (  &<SequenceFeatureRelationship_tes> ;
+          rdf:type [ <SequenceFeatureRelationship> ] ? ;
+          <subject> @<Daemon> ;
+          <object> @<Componentserviceinstance>
+       ) ;
+       rdf:type [ <DaemonToComponentserviceinstanceRelationship> ]
+    )
+}
+
+<Data>  (
+    CLOSED {
+       (  $<Data_tes> (  &<NotificationComponent_tes> ;
+             rdf:type [ <NotificationComponent> ] ?
+          ) ;
+          rdf:type [ <Data> ]
+       )
+    } OR @<Bitstream> OR @<Datastream>
+)
+
+<Dataset>  (
+    CLOSED {
+       (  $<Dataset_tes> (  &<InformationContentEntity_tes> ;
+             rdf:type [ <InformationContentEntity> ] ?
+          ) ;
+          rdf:type [ <Dataset> ]
+       )
+    } OR @<DatasetVersion>
+)
+
+<DatasetDistribution> CLOSED {
+    (  $<DatasetDistribution_tes> (  &<InformationContentEntity_tes> ;
+          rdf:type [ <InformationContentEntity> ] ? ;
+          <distribution_download_url> @metatype:String ?
+       ) ;
+       rdf:type [ <DatasetDistribution> ]
+    )
+}
+
+<DatasetSummary> {
+    (  $<DatasetSummary_tes> (  &<DatasetVersion_tes> ;
+          rdf:type [ <DatasetVersion> ] ? ;
+          <source_web_page> @metatype:String ?
+       ) ;
+       rdf:type [ <DatasetSummary> ]
+    )
+}
+
+<DatasetVersion>  (
+    CLOSED {
+       (  $<DatasetVersion_tes> (  &<Dataset_tes> ;
+             rdf:type [ <Dataset> ] ? ;
+             <has_dataset> @<Dataset> ? ;
+             <ingest_date> @metatype:String ? ;
+             <has_distribution> @<DatasetDistribution> ?
+          ) ;
+          rdf:type [ <DatasetVersion> ]
+       )
+    } OR @<DatasetSummary> OR @<DistributionLevel>
+)
+
+<Datastream> CLOSED {
+    (  $<Datastream_tes> (  &<Data_tes> ;
+          rdf:type [ <Data> ] ?
+       ) ;
+       rdf:type [ <Datastream> ]
+    )
+}
+
+<Death>  (
+    CLOSED {
+       (  $<Death_tes> (  &<ComputationalProcess_tes> ;
+             rdf:type [ <ComputationalProcess> ] ?
+          ) ;
+          rdf:type [ <Death> ]
+       )
+    } OR @<MortalityOutcome>
+)
+
+<DeploymentEntity>  (
+    CLOSED {
+       (  $<DeploymentEntity_tes> (  &<SystemicEntity_tes> ;
+             rdf:type [ <SystemicEntity> ] ? ;
+             &<ThingWithTaxon_tes> ;
+             rdf:type [ <ThingWithTaxon> ] ? ;
+             &<CyberEssence_tes> ;
+             rdf:type [ <CyberEssence> ] ? ;
+             <in_taxon> @<SystemTaxon> *
+          ) ;
+          rdf:type [ <DeploymentEntity> ]
+       )
+    } OR @<Component> OR @<FaultyDeploymentStructure> OR @<GrossDeploymentStructure> OR @<Serviceunit>
+)
+
+<DeploymentEntityToDeploymentEntityAssociation>  (
+    CLOSED {
+       (  $<DeploymentEntityToDeploymentEntityAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             <subject> @<DeploymentEntity> ;
+             <object> @<DeploymentEntity>
+          ) ;
+          rdf:type [ <DeploymentEntityToDeploymentEntityAssociation> ]
+       )
+    } OR @<DeploymentEntityToDeploymentEntityOntogenicAssociation> OR @<DeploymentEntityToDeploymentEntityPartOfAssociation>
+)
+
+<DeploymentEntityToDeploymentEntityOntogenicAssociation> CLOSED {
+    (  $<DeploymentEntityToDeploymentEntityOntogenicAssociation_tes> (  &<DeploymentEntityToDeploymentEntityAssociation_tes> ;
+          rdf:type [ <DeploymentEntityToDeploymentEntityAssociation> ] ? ;
+          <subject> @<DeploymentEntity> ;
+          <object> @<DeploymentEntity> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <DeploymentEntityToDeploymentEntityOntogenicAssociation> ]
+    )
+}
+
+<DeploymentEntityToDeploymentEntityPartOfAssociation> CLOSED {
+    (  $<DeploymentEntityToDeploymentEntityPartOfAssociation_tes> (  &<DeploymentEntityToDeploymentEntityAssociation_tes> ;
+          rdf:type [ <DeploymentEntityToDeploymentEntityAssociation> ] ? ;
+          <subject> @<DeploymentEntity> ;
+          <object> @<DeploymentEntity> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <DeploymentEntityToDeploymentEntityPartOfAssociation> ]
+    )
+}
+
+<Device> CLOSED {
+    (  $<Device_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ?
+       ) ;
+       rdf:type [ <Device> ]
+    )
+}
+
+<DistributionLevel> {
+    (  $<DistributionLevel_tes> (  &<DatasetVersion_tes> ;
+          rdf:type [ <DatasetVersion> ] ? ;
+          <download_url> @metatype:String ?
+       ) ;
+       rdf:type [ <DistributionLevel> ]
+    )
+}
+
+<EmpiricalAttribute>  (
+    CLOSED {
+       (  $<EmpiricalAttribute_tes> (  &<Attribute_tes> ;
+             rdf:type [ <Attribute> ] ?
+          ) ;
+          rdf:type [ <EmpiricalAttribute> ] ?
+       )
+    } OR @<EmpiricalCourse> OR @<EmpiricalMeasurement> OR @<EmpiricalModifier>
+)
+
+<EmpiricalCourse>  (
+    CLOSED {
+       (  $<EmpiricalCourse_tes> (  &<EmpiricalAttribute_tes> ;
+             rdf:type [ <EmpiricalAttribute> ] ?
+          ) ;
+          rdf:type [ <EmpiricalCourse> ] ?
+       )
+    } OR @<Onset>
+)
+
+<EmpiricalEntity>  (
+    CLOSED {
+       (  $<EmpiricalEntity_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ?
+          ) ;
+          rdf:type [ <EmpiricalEntity> ]
+       )
+    } OR @<EmpiricalIntervention> OR @<EmpiricalTrial>
+)
+
+<EmpiricalFinding> CLOSED {
+    (  $<EmpiricalFinding_tes> (  &<ObservableFeature_tes> ;
+          rdf:type [ <ObservableFeature> ] ? ;
+          <has_attribute> @<EmpiricalAttribute> *
+       ) ;
+       rdf:type [ <EmpiricalFinding> ]
+    )
+}
+
+<EmpiricalIntervention>  (
+    CLOSED {
+       (  $<EmpiricalIntervention_tes> (  &<EmpiricalEntity_tes> ;
+             rdf:type [ <EmpiricalEntity> ] ?
+          ) ;
+          rdf:type [ <EmpiricalIntervention> ]
+       )
+    } OR @<OfflineMaintenance>
+)
+
+<EmpiricalMeasurement> CLOSED {
+    (  $<EmpiricalMeasurement_tes> (  &<EmpiricalAttribute_tes> ;
+          rdf:type [ <EmpiricalAttribute> ] ? ;
+          <has_attribute_type> @<OntologyClass>
+       ) ;
+       rdf:type [ <EmpiricalMeasurement> ] ?
+    )
+}
+
+<EmpiricalModifier> CLOSED {
+    (  $<EmpiricalModifier_tes> (  &<EmpiricalAttribute_tes> ;
+          rdf:type [ <EmpiricalAttribute> ] ?
+       ) ;
+       rdf:type [ <EmpiricalModifier> ] ?
+    )
+}
+
+<EmpiricalTrial> CLOSED {
+    (  $<EmpiricalTrial_tes> (  &<EmpiricalEntity_tes> ;
+          rdf:type [ <EmpiricalEntity> ] ?
+       ) ;
+       rdf:type [ <EmpiricalTrial> ]
+    )
+}
+
+<Entity>  (
+    @<Association> OR @<NamedThing>
+)
+
+<Entity_struct> {
+    (  $<Entity_tes> (  <iri> @<IriType> ? ;
+          <category> @<CategoryType> + ;
+          <type> @metatype:String ? ;
+          <name> @<LabelType> ? ;
+          <description> @<NarrativeText> ? ;
+          <source> @<LabelType> ? ;
+          <provided_by> @<Agent> * ;
+          <has_attribute> @<Attribute> *
+       ) ;
+       rdf:type [ <Entity> ]
+    )
+}
+
+<EntityToErrorAssociationMixin> {
+    (  $<EntityToErrorAssociationMixin_tes> (  &<EntityToFeatureOrErrorQualifiersMixin_tes> ;
+          rdf:type [ <EntityToFeatureOrErrorQualifiersMixin> ] ? ;
+          <object> @<Error>
+       ) ;
+       rdf:type [ <EntityToErrorAssociationMixin> ] ?
+    )
+}
+
+<EntityToErrorOrObservableFeatureAssociationMixin> {
+    (  $<EntityToErrorOrObservableFeatureAssociationMixin_tes> <object> @<ErrorOrObservableFeature> ;
+       rdf:type [ <EntityToErrorOrObservableFeatureAssociationMixin> ] ?
+    )
+}
+
+<EntityToExposureEventAssociationMixin> {
+    (  $<EntityToExposureEventAssociationMixin_tes> <object> @<ExposureEvent> ;
+       rdf:type [ <EntityToExposureEventAssociationMixin> ] ?
+    )
+}
+
+<EntityToFeatureOrErrorQualifiersMixin>  (
+    @<EntityToErrorAssociationMixin> OR @<EntityToObservableFeatureAssociationMixin>
+)
+
+<EntityToFeatureOrErrorQualifiersMixin_struct> {
+    (  $<EntityToFeatureOrErrorQualifiersMixin_tes> (  &<FrequencyQualifierMixin_tes> ;
+          rdf:type [ <FrequencyQualifierMixin> ] ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ?
+       ) ;
+       rdf:type [ <EntityToFeatureOrErrorQualifiersMixin> ] ?
+    )
+}
+
+<EntityToObservableFeatureAssociationMixin> {
+    (  $<EntityToObservableFeatureAssociationMixin_tes> (  &<EntityToFeatureOrErrorQualifiersMixin_tes> ;
+          rdf:type [ <EntityToFeatureOrErrorQualifiersMixin> ] ? ;
+          <architectural_style_qualifier> @<ComputationalArchitecturalStyle> ? ;
+          <description> @<NarrativeText> ? ;
+          <object> @<ObservableFeature>
+       ) ;
+       rdf:type [ <EntityToObservableFeatureAssociationMixin> ] ?
+    )
+}
+
+<EntityToOutcomeAssociationMixin> {
+    (  $<EntityToOutcomeAssociationMixin_tes> <object> @<Outcome> ;
+       rdf:type [ <EntityToOutcomeAssociationMixin> ] ?
+    )
+}
+
+<EnvironmentalExposure> CLOSED {
+    (  $<EnvironmentalExposure_tes> (  &<EnvironmentalProcess_tes> ;
+          rdf:type [ <EnvironmentalProcess> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <EnvironmentalExposure> ]
+    )
+}
+
+<EnvironmentalFeature> CLOSED {
+    (  $<EnvironmentalFeature_tes> (  &<PlanetaryEntity_tes> ;
+          rdf:type [ <PlanetaryEntity> ] ?
+       ) ;
+       rdf:type [ <EnvironmentalFeature> ]
+    )
+}
+
+<EnvironmentalNotificationContaminant> CLOSED {
+    (  $<EnvironmentalNotificationContaminant_tes> (  &<NotificationComponent_tes> ;
+          rdf:type [ <NotificationComponent> ] ?
+       ) ;
+       rdf:type [ <EnvironmentalNotificationContaminant> ]
+    )
+}
+
+<EnvironmentalProcess>  (
+    CLOSED {
+       (  $<EnvironmentalProcess_tes> (  &<PlanetaryEntity_tes> ;
+             rdf:type [ <PlanetaryEntity> ] ? ;
+             &<Occurrent_tes> ;
+             rdf:type [ <Occurrent> ] ?
+          ) ;
+          rdf:type [ <EnvironmentalProcess> ]
+       )
+    } OR @<EnvironmentalExposure>
+)
+
+<EpidemiologicalOutcome> CLOSED {
+    (  $<EpidemiologicalOutcome_tes> (  &<ComputationalEntity_tes> ;
+          rdf:type [ <ComputationalEntity> ] ? ;
+          &<Outcome_tes> ;
+          rdf:type [ <Outcome> ] ?
+       ) ;
+       rdf:type [ <EpidemiologicalOutcome> ]
+    )
+}
+
+<Error> CLOSED {
+    (  $<Error_tes> (  &<ErrorOrObservableFeature_tes> ;
+          rdf:type [ <ErrorOrObservableFeature> ] ?
+       ) ;
+       rdf:type [ <Error> ]
+    )
+}
+
+<ErrorOrObservableFeature>  (
+    CLOSED {
+       (  $<ErrorOrObservableFeature_tes> (  &<ComputationalEntity_tes> ;
+             rdf:type [ <ComputationalEntity> ] ? ;
+             &<ThingWithTaxon_tes> ;
+             rdf:type [ <ThingWithTaxon> ] ? ;
+             <in_taxon> @<SystemTaxon> *
+          ) ;
+          rdf:type [ <ErrorOrObservableFeature> ]
+       )
+    } OR @<Error> OR @<ErrorOrObservableFeatureExposure> OR @<ErrorOrObservableFeatureOutcome> OR @<ObservableFeature>
+)
+
+<ErrorOrObservableFeatureAssociationToLocationAssociation> CLOSED {
+    (  $<ErrorOrObservableFeatureAssociationToLocationAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<ErrorOrObservableFeatureToEntityAssociationMixin_tes> ;
+          rdf:type [ <ErrorOrObservableFeatureToEntityAssociationMixin> ] ? ;
+          <object> @<DeploymentEntity>
+       ) ;
+       rdf:type [ <ErrorOrObservableFeatureAssociationToLocationAssociation> ]
+    )
+}
+
+<ErrorOrObservableFeatureExposure> CLOSED {
+    (  $<ErrorOrObservableFeatureExposure_tes> (  &<ErrorOrObservableFeature_tes> ;
+          rdf:type [ <ErrorOrObservableFeature> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <ErrorOrObservableFeatureExposure> ]
+    )
+}
+
+<ErrorOrObservableFeatureOutcome> CLOSED {
+    (  $<ErrorOrObservableFeatureOutcome_tes> (  &<ErrorOrObservableFeature_tes> ;
+          rdf:type [ <ErrorOrObservableFeature> ] ? ;
+          &<Outcome_tes> ;
+          rdf:type [ <Outcome> ] ?
+       ) ;
+       rdf:type [ <ErrorOrObservableFeatureOutcome> ]
+    )
+}
+
+<ErrorOrObservableFeatureToEntityAssociationMixin> {
+    (  $<ErrorOrObservableFeatureToEntityAssociationMixin_tes> <subject> @<ErrorOrObservableFeature> ;
+       rdf:type [ <ErrorOrObservableFeatureToEntityAssociationMixin> ] ?
+    )
+}
+
+<ErrorOrObservableFeatureToLocationAssociation> CLOSED {
+    (  $<ErrorOrObservableFeatureToLocationAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<ErrorOrObservableFeatureToEntityAssociationMixin_tes> ;
+          rdf:type [ <ErrorOrObservableFeatureToEntityAssociationMixin> ] ? ;
+          <object> @<DeploymentEntity>
+       ) ;
+       rdf:type [ <ErrorOrObservableFeatureToLocationAssociation> ]
+    )
+}
+
+<ErrorToEntityAssociationMixin> {
+    (  $<ErrorToEntityAssociationMixin_tes> <subject> @<Error> ;
+       rdf:type [ <ErrorToEntityAssociationMixin> ] ?
+    )
+}
+
+<ErrorToExposureEventAssociation> CLOSED {
+    (  $<ErrorToExposureEventAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<ErrorToEntityAssociationMixin_tes> ;
+          rdf:type [ <ErrorToEntityAssociationMixin> ] ? ;
+          &<EntityToExposureEventAssociationMixin_tes> ;
+          rdf:type [ <EntityToExposureEventAssociationMixin> ] ?
+       ) ;
+       rdf:type [ <ErrorToExposureEventAssociation> ]
+    )
+}
+
+<ErrorToObservableFeatureAssociation> CLOSED {
+    (  $<ErrorToObservableFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToObservableFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToObservableFeatureAssociationMixin> ] ? ;
+          &<ErrorToEntityAssociationMixin_tes> ;
+          rdf:type [ <ErrorToEntityAssociationMixin> ] ? ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ? ;
+          <architectural_style_qualifier> @<ComputationalArchitecturalStyle> ?
+       ) ;
+       rdf:type [ <ErrorToObservableFeatureAssociation> ]
+    )
+}
+
+<EvidenceType> CLOSED {
+    (  $<EvidenceType_tes> (  &<InformationContentEntity_tes> ;
+          rdf:type [ <InformationContentEntity> ] ?
+       ) ;
+       rdf:type [ <EvidenceType> ]
+    )
+}
+
+<ExposureEvent> {
+    (  $<ExposureEvent_tes> <timepoint> @<TimeType> ? ;
+       rdf:type [ <ExposureEvent> ] ?
+    )
+}
+
+<ExposureEventToEntityAssociationMixin> {
+    (  $<ExposureEventToEntityAssociationMixin_tes> <subject> @<ExposureEvent> ;
+       rdf:type [ <ExposureEventToEntityAssociationMixin> ] ?
+    )
+}
+
+<ExposureEventToObservableFeatureAssociation> CLOSED {
+    (  $<ExposureEventToObservableFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToObservableFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToObservableFeatureAssociationMixin> ] ? ;
+          <subject> @<ExposureEvent> ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ? ;
+          <architectural_style_qualifier> @<ComputationalArchitecturalStyle> ?
+       ) ;
+       rdf:type [ <ExposureEventToObservableFeatureAssociation> ]
+    )
+}
+
+<ExposureEventToOutcomeAssociation> CLOSED {
+    (  $<ExposureEventToOutcomeAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<ExposureEventToEntityAssociationMixin_tes> ;
+          rdf:type [ <ExposureEventToEntityAssociationMixin> ] ? ;
+          &<EntityToOutcomeAssociationMixin_tes> ;
+          rdf:type [ <EntityToOutcomeAssociationMixin> ] ? ;
+          <has_population_context> @<PopulationOfIndividualSystems> ? ;
+          <has_temporal_context> @<TimeType> ?
+       ) ;
+       rdf:type [ <ExposureEventToOutcomeAssociation> ]
+    )
+}
+
+<FaultyDeploymentExposure> CLOSED {
+    (  $<FaultyDeploymentExposure_tes> (  &<FaultyDeploymentStructure_tes> ;
+          rdf:type [ <FaultyDeploymentStructure> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <FaultyDeploymentExposure> ]
+    )
+}
+
+<FaultyDeploymentOutcome> CLOSED {
+    (  $<FaultyDeploymentOutcome_tes> (  &<FaultyDeploymentStructure_tes> ;
+          rdf:type [ <FaultyDeploymentStructure> ] ? ;
+          &<Outcome_tes> ;
+          rdf:type [ <Outcome> ] ?
+       ) ;
+       rdf:type [ <FaultyDeploymentOutcome> ]
+    )
+}
+
+<FaultyDeploymentStructure>  (
+    CLOSED {
+       (  $<FaultyDeploymentStructure_tes> (  &<DeploymentEntity_tes> ;
+             rdf:type [ <DeploymentEntity> ] ? ;
+             &<FaultyEntityMixin_tes> ;
+             rdf:type [ <FaultyEntityMixin> ] ?
+          ) ;
+          rdf:type [ <FaultyDeploymentStructure> ]
+       )
+    } OR @<FaultyDeploymentExposure> OR @<FaultyDeploymentOutcome>
+)
+
+<FaultyEntityMixin> {
+    (  $<FaultyEntityMixin_tes> rdf:type . * ;
+       rdf:type [ <FaultyEntityMixin> ] ?
+    )
+}
+
+<FaultyProcess>  (
+    CLOSED {
+       (  $<FaultyProcess_tes> (  &<ComputationalProcess_tes> ;
+             rdf:type [ <ComputationalProcess> ] ?
+          ) ;
+          rdf:type [ <FaultyProcess> ]
+       )
+    } OR @<FaultyProcessExposure> OR @<FaultyProcessOutcome>
+)
+
+<FaultyProcessExposure> CLOSED {
+    (  $<FaultyProcessExposure_tes> (  &<FaultyProcess_tes> ;
+          rdf:type [ <FaultyProcess> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <FaultyProcessExposure> ]
+    )
+}
+
+<FaultyProcessOutcome> CLOSED {
+    (  $<FaultyProcessOutcome_tes> (  &<FaultyProcess_tes> ;
+          rdf:type [ <FaultyProcess> ] ? ;
+          &<Outcome_tes> ;
+          rdf:type [ <Outcome> ] ?
+       ) ;
+       rdf:type [ <FaultyProcessOutcome> ]
+    )
+}
+
+<FrequencyQualifierMixin>  (
+    {
+       (  $<FrequencyQualifierMixin_tes> <frequency_qualifier> @<FrequencyValue> ? ;
+          rdf:type [ <FrequencyQualifierMixin> ] ?
+       )
+    } OR @<EntityToFeatureOrErrorQualifiersMixin>
+)
+
+<FrequencyQuantifier> {
+    (  $<FrequencyQuantifier_tes> (  &<RelationshipQuantifier_tes> ;
+          rdf:type [ <RelationshipQuantifier> ] ? ;
+          <has_count> @metatype:Integer ? ;
+          <has_total> @metatype:Integer ? ;
+          <has_quotient> @metatype:Double ? ;
+          <has_percentage> @metatype:Double ?
+       ) ;
+       rdf:type [ <FrequencyQuantifier> ] ?
+    )
+}
+
+<FrequencyValue> CLOSED {
+    (  $<FrequencyValue_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ?
+       ) ;
+       rdf:type [ <FrequencyValue> ] ?
+    )
+}
+
+<FunctionalAssociation>  (
+    CLOSED {
+       (  $<FunctionalAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             <subject> @<MacrooperationalMachineMixin> ;
+             <object> @<ComponentserviceOntologyClass>
+          ) ;
+          rdf:type [ <FunctionalAssociation> ]
+       )
+    } OR @<ComponentserviceToGoTermAssociation> OR @<MacrooperationalMachineMixinToComponentAssociation> OR
+    @<MacrooperationalMachineMixinToComputationalProcessAssociation> OR
+    @<MacrooperationalMachineMixinToOperationalActivityAssociation>
+)
+
+<GeographicExposure> CLOSED {
+    (  $<GeographicExposure_tes> (  &<GeographicLocation_tes> ;
+          rdf:type [ <GeographicLocation> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <GeographicExposure> ]
+    )
+}
+
+<GeographicLocation>  (
+    CLOSED {
+       (  $<GeographicLocation_tes> (  &<PlanetaryEntity_tes> ;
+             rdf:type [ <PlanetaryEntity> ] ? ;
+             <latitude> @metatype:Float ? ;
+             <longitude> @metatype:Float ?
+          ) ;
+          rdf:type [ <GeographicLocation> ]
+       )
+    } OR @<GeographicExposure> OR @<GeographicLocationAtTime>
+)
+
+<GeographicLocationAtTime> CLOSED {
+    (  $<GeographicLocationAtTime_tes> (  &<GeographicLocation_tes> ;
+          rdf:type [ <GeographicLocation> ] ? ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <GeographicLocationAtTime> ]
+    )
+}
+
+<GrossDeploymentStructure> CLOSED {
+    (  $<GrossDeploymentStructure_tes> (  &<DeploymentEntity_tes> ;
+          rdf:type [ <DeploymentEntity> ] ?
+       ) ;
+       rdf:type [ <GrossDeploymentStructure> ]
+    )
+}
+
+<Homogeneity> CLOSED {
+    (  $<Homogeneity_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ?
+       ) ;
+       rdf:type [ <Homogeneity> ] ?
+    )
+}
+
+<IndividualSystem>  (
+    CLOSED {
+       (  $<IndividualSystem_tes> (  &<SystemicEntity_tes> ;
+             rdf:type [ <SystemicEntity> ] ? ;
+             &<ThingWithTaxon_tes> ;
+             rdf:type [ <ThingWithTaxon> ] ? ;
+             <in_taxon> @<SystemTaxon> *
+          ) ;
+          rdf:type [ <IndividualSystem> ]
+       )
+    } OR @<Case>
+)
+
+<InformationContentEntity>  (
+    @<ConfidenceLevel> OR @<Dataset> OR @<DatasetDistribution> OR @<EvidenceType> OR @<Publication>
+)
+
+<InformationContentEntity_struct> {
+    (  $<InformationContentEntity_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          <license> @metatype:String ? ;
+          <rights> @metatype:String ? ;
+          <format> @metatype:String ? ;
+          <creation_date> @metatype:Date ?
+       ) ;
+       rdf:type [ <InformationContentEntity> ]
+    )
+}
+
+<Inheritance> CLOSED {
+    (  $<Inheritance_tes> (  &<SystemAttribute_tes> ;
+          rdf:type [ <SystemAttribute> ] ?
+       ) ;
+       rdf:type [ <Inheritance> ] ?
+    )
+}
+
+<KernelInterrupt> CLOSED {
+    (  $<KernelInterrupt_tes> (  &<NoncodingKernelServicetype_tes> ;
+          rdf:type [ <NoncodingKernelServicetype> ] ?
+       ) ;
+       rdf:type [ <KernelInterrupt> ]
+    )
+}
+
+<KernelMessage> CLOSED {
+    (  $<KernelMessage_tes> (  &<NoncodingKernelServicetype_tes> ;
+          rdf:type [ <NoncodingKernelServicetype> ] ?
+       ) ;
+       rdf:type [ <KernelMessage> ]
+    )
+}
+
+<KernelServicetype>  (
+    CLOSED {
+       (  $<KernelServicetype_tes> (  &<Componentserviceinstance_tes> ;
+             rdf:type [ <Componentserviceinstance> ] ? ;
+             &<ServicetypeMixin_tes> ;
+             rdf:type [ <ServicetypeMixin> ] ? ;
+             <synonym> @<LabelType> * ;
+             <xref> @<IriType> *
+          ) ;
+          rdf:type [ <KernelServicetype> ]
+       )
+    } OR @<KernelServicetypeIsoform> OR @<NoncodingKernelServicetype>
+)
+
+<KernelServicetypeIsoform> CLOSED {
+    (  $<KernelServicetypeIsoform_tes> (  &<KernelServicetype_tes> ;
+          rdf:type [ <KernelServicetype> ] ? ;
+          &<ServicetypeIsoformMixin_tes> ;
+          rdf:type [ <ServicetypeIsoformMixin> ] ?
+       ) ;
+       rdf:type [ <KernelServicetypeIsoform> ]
+    )
+}
+
+<LifecycleStage> CLOSED {
+    (  $<LifecycleStage_tes> (  &<SystemicEntity_tes> ;
+          rdf:type [ <SystemicEntity> ] ? ;
+          &<ThingWithTaxon_tes> ;
+          rdf:type [ <ThingWithTaxon> ] ? ;
+          <in_taxon> @<SystemTaxon> *
+       ) ;
+       rdf:type [ <LifecycleStage> ]
+    )
+}
+
+<MacrooperationalComplexMixin> CLOSED {
+    (  $<MacrooperationalComplexMixin_tes> (  &<MacrooperationalMachineMixin_tes> ;
+          rdf:type [ <MacrooperationalMachineMixin> ] ?
+       ) ;
+       rdf:type [ <MacrooperationalComplexMixin> ] ?
+    )
+}
+
+<MacrooperationalMachineMixin>  (
+    @<ComponentserviceOrServicetype> OR @<MacrooperationalComplexMixin>
+)
+
+<MacrooperationalMachineMixin_struct> {
+    (  $<MacrooperationalMachineMixin_tes> <name> @<SymbolType> ? ;
+       rdf:type [ <MacrooperationalMachineMixin> ] ?
+    )
+}
+
+<MacrooperationalMachineMixinToComponentAssociation> CLOSED {
+    (  $<MacrooperationalMachineMixinToComponentAssociation_tes> (  &<FunctionalAssociation_tes> ;
+          rdf:type [ <FunctionalAssociation> ] ? ;
+          <object> @<Component>
+       ) ;
+       rdf:type [ <MacrooperationalMachineMixinToComponentAssociation> ]
+    )
+}
+
+<MacrooperationalMachineMixinToComputationalProcessAssociation> CLOSED {
+    (  $<MacrooperationalMachineMixinToComputationalProcessAssociation_tes> (  &<FunctionalAssociation_tes> ;
+          rdf:type [ <FunctionalAssociation> ] ? ;
+          <object> @<ComputationalProcess>
+       ) ;
+       rdf:type [ <MacrooperationalMachineMixinToComputationalProcessAssociation> ]
+    )
+}
+
+<MacrooperationalMachineMixinToEntityAssociationMixin> {
+    (  $<MacrooperationalMachineMixinToEntityAssociationMixin_tes> <subject> @<NamedThing> ;
+       rdf:type [ <MacrooperationalMachineMixinToEntityAssociationMixin> ] ?
+    )
+}
+
+<MacrooperationalMachineMixinToOperationalActivityAssociation> CLOSED {
+    (  $<MacrooperationalMachineMixinToOperationalActivityAssociation_tes> (  &<FunctionalAssociation_tes> ;
+          rdf:type [ <FunctionalAssociation> ] ? ;
+          <object> @<OperationalActivity>
+       ) ;
+       rdf:type [ <MacrooperationalMachineMixinToOperationalActivityAssociation> ]
+    )
+}
+
+<MessagePassing> CLOSED {
+    (  $<MessagePassing_tes> (  &<Bitstream_tes> ;
+          rdf:type [ <Bitstream> ] ?
+       ) ;
+       rdf:type [ <MessagePassing> ]
+    )
+}
+
+<MicroserviceArchitecturalStyle> CLOSED {
+    (  $<MicroserviceArchitecturalStyle_tes> (  &<ComputationalArchitecturalStyle_tes> ;
+          rdf:type [ <ComputationalArchitecturalStyle> ] ?
+       ) ;
+       rdf:type [ <MicroserviceArchitecturalStyle> ] ?
+    )
+}
+
+<ModelToErrorAssociationMixin> {
+    (  $<ModelToErrorAssociationMixin_tes> (  <subject> @<NamedThing> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <ModelToErrorAssociationMixin> ] ?
+    )
+}
+
+<MonomericVariant> CLOSED {
+    (  $<MonomericVariant_tes> (  &<SequenceVariant_tes> ;
+          rdf:type [ <SequenceVariant> ] ?
+       ) ;
+       rdf:type [ <MonomericVariant> ]
+    )
+}
+
+<MortalityOutcome> CLOSED {
+    (  $<MortalityOutcome_tes> (  &<Death_tes> ;
+          rdf:type [ <Death> ] ? ;
+          &<Outcome_tes> ;
+          rdf:type [ <Outcome> ] ?
+       ) ;
+       rdf:type [ <MortalityOutcome> ]
+    )
+}
+
+<NamedThing>  (
+    CLOSED {
+       (  $<NamedThing_tes> (  &<Entity_tes> ;
+             rdf:type [ <Entity> ] ? ;
+             <category> @<NamedThing> +
+          ) ;
+          rdf:type [ <NamedThing> ]
+       )
+    } OR @<Activity> OR @<AdministrativeEntity> OR @<ComputationalEntity> OR @<CyberEntity> OR @<Device> OR @<EmpiricalEntity> OR
+    @<InformationContentEntity> OR @<OntologyClass> OR @<Phenomenon> OR @<PlanetaryEntity> OR @<Procedure> OR @<Repairing>
+)
+
+<NoncodingKernelServicetype>  (
+    CLOSED {
+       (  $<NoncodingKernelServicetype_tes> (  &<KernelServicetype_tes> ;
+             rdf:type [ <KernelServicetype> ] ?
+          ) ;
+          rdf:type [ <NoncodingKernelServicetype> ]
+       )
+    } OR @<KernelInterrupt> OR @<KernelMessage>
+)
+
+<Notification> CLOSED {
+    (  $<Notification_tes> (  &<OperationalEntity_tes> ;
+          rdf:type [ <OperationalEntity> ] ? ;
+          &<Cluster_tes> ;
+          rdf:type [ <Cluster> ] ? ;
+          <has_data> @<Data> * ;
+          <has_control_actor> @<ControlActor> *
+       ) ;
+       rdf:type [ <Notification> ]
+    )
+}
+
+<NotificationComponent>  (
+    CLOSED {
+       (  $<NotificationComponent_tes> (  &<ControlActor_tes> ;
+             rdf:type [ <ControlActor> ] ?
+          ) ;
+          rdf:type [ <NotificationComponent> ]
+       )
+    } OR @<Awareness> OR @<Data> OR @<EnvironmentalNotificationContaminant>
+)
+
+<ObservableArchitecturalStyle> CLOSED {
+    (  $<ObservableArchitecturalStyle_tes> (  &<ComputationalArchitecturalStyle_tes> ;
+          rdf:type [ <ComputationalArchitecturalStyle> ] ?
+       ) ;
+       rdf:type [ <ObservableArchitecturalStyle> ] ?
+    )
+}
+
+<ObservableFeature>  (
+    CLOSED {
+       (  $<ObservableFeature_tes> (  &<ErrorOrObservableFeature_tes> ;
+             rdf:type [ <ErrorOrObservableFeature> ] ?
+          ) ;
+          rdf:type [ <ObservableFeature> ]
+       )
+    } OR @<BehavioralFeature> OR @<EmpiricalFinding>
+)
+
+<ObservableQuality> CLOSED {
+    (  $<ObservableQuality_tes> (  &<SystemAttribute_tes> ;
+          rdf:type [ <SystemAttribute> ] ?
+       ) ;
+       rdf:type [ <ObservableQuality> ] ?
+    )
+}
+
+<Occurrent>  (
+    {
+       (  $<Occurrent_tes> (  &<CyberEssenceOrOccurrent_tes> ;
+             rdf:type [ <CyberEssenceOrOccurrent> ] ?
+          ) ;
+          rdf:type [ <Occurrent> ] ?
+       )
+    } OR @<ActivityAndBehavior>
+)
+
+<OfflineMaintenance>  (
+    CLOSED {
+       (  $<OfflineMaintenance_tes> (  &<EmpiricalIntervention_tes> ;
+             rdf:type [ <EmpiricalIntervention> ] ?
+          ) ;
+          rdf:type [ <OfflineMaintenance> ]
+       )
+    } OR @<OfflineMaintenanceOutcome>
+)
+
+<OfflineMaintenanceOutcome> CLOSED {
+    (  $<OfflineMaintenanceOutcome_tes> (  &<OfflineMaintenance_tes> ;
+          rdf:type [ <OfflineMaintenance> ] ? ;
+          &<Outcome_tes> ;
+          rdf:type [ <Outcome> ] ?
+       ) ;
+       rdf:type [ <OfflineMaintenanceOutcome> ]
+    )
+}
+
+<Onset> CLOSED {
+    (  $<Onset_tes> (  &<EmpiricalCourse_tes> ;
+          rdf:type [ <EmpiricalCourse> ] ?
+       ) ;
+       rdf:type [ <Onset> ] ?
+    )
+}
+
+<OntologyClass>  (
+    CLOSED {
+       (  $<OntologyClass_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ?
+          ) ;
+          rdf:type [ <OntologyClass> ]
+       )
+    } OR @<ComponentserviceOntologyClass> OR @<RelationshipType> OR @<SystemTaxon> OR @<TaxonomicRank>
+)
+
+<OperationalActivity> CLOSED {
+    (  $<OperationalActivity_tes> (  &<ComputationalProcessOrActivity_tes> ;
+          rdf:type [ <ComputationalProcessOrActivity> ] ? ;
+          &<Occurrent_tes> ;
+          rdf:type [ <Occurrent> ] ? ;
+          <has_input> @<ControlActor> * ;
+          <has_output> @<ControlActor> * ;
+          <enabled_by> @<MacrooperationalMachineMixin> *
+       ) ;
+       rdf:type [ <OperationalActivity> ]
+    )
+}
+
+<OperationalEntity>  (
+    CLOSED {
+       (  $<OperationalEntity_tes> (  &<ComputationalEntity_tes> ;
+             rdf:type [ <ComputationalEntity> ] ? ;
+             &<ThingWithTaxon_tes> ;
+             rdf:type [ <ThingWithTaxon> ] ? ;
+             &<CyberEssence_tes> ;
+             rdf:type [ <CyberEssence> ] ? ;
+             <in_taxon> @<SystemTaxon> *
+          ) ;
+          rdf:type [ <OperationalEntity> ]
+       )
+    } OR @<AdministrativeOperation> OR @<ComponentserviceFamily> OR @<ControlActor> OR @<Notification> OR @<WorkloadEntity>
+)
+
+<OperationalEntityToEntityAssociationMixin>  (
+    @<AdministrativeOperationalToEntityAssociationMixin> OR @<OrchestrationToEntityAssociationMixin>
+)
+
+<OperationalEntityToEntityAssociationMixin_struct> {
+    (  $<OperationalEntityToEntityAssociationMixin_tes> <subject> @<OperationalEntity> ;
+       rdf:type [ <OperationalEntityToEntityAssociationMixin> ] ?
+    )
+}
+
+<OrchestrationExposure>  (
+    CLOSED {
+       (  $<OrchestrationExposure_tes> (  &<ControlActor_tes> ;
+             rdf:type [ <ControlActor> ] ? ;
+             &<ExposureEvent_tes> ;
+             rdf:type [ <ExposureEvent> ] ? ;
+             <timepoint> @<TimeType> ?
+          ) ;
+          rdf:type [ <OrchestrationExposure> ]
+       )
+    } OR @<ComplexOrchestrationExposure>
+)
+
+<OrchestrationToComponentserviceAssociation> CLOSED {
+    (  $<OrchestrationToComponentserviceAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<OrchestrationToEntityAssociationMixin_tes> ;
+          rdf:type [ <OrchestrationToEntityAssociationMixin> ] ? ;
+          <object> @<ComponentserviceOrServicetype>
+       ) ;
+       rdf:type [ <OrchestrationToComponentserviceAssociation> ]
+    )
+}
+
+<OrchestrationToEntityAssociationMixin> {
+    (  $<OrchestrationToEntityAssociationMixin_tes> (  &<OperationalEntityToEntityAssociationMixin_tes> ;
+          rdf:type [ <OperationalEntityToEntityAssociationMixin> ] ? ;
+          <subject> @<ControlActor>
+       ) ;
+       rdf:type [ <OrchestrationToEntityAssociationMixin> ] ?
+    )
+}
+
+<OrchestrationToErrorOrObservableFeatureAssociation> CLOSED {
+    (  $<OrchestrationToErrorOrObservableFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<OrchestrationToEntityAssociationMixin_tes> ;
+          rdf:type [ <OrchestrationToEntityAssociationMixin> ] ? ;
+          &<EntityToErrorOrObservableFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToErrorOrObservableFeatureAssociationMixin> ] ? ;
+          <object> @<ErrorOrObservableFeature>
+       ) ;
+       rdf:type [ <OrchestrationToErrorOrObservableFeatureAssociation> ]
+    )
+}
+
+<OrchestrationToOrchestrationAssociation>  (
+    CLOSED {
+       (  $<OrchestrationToOrchestrationAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             &<OrchestrationToEntityAssociationMixin_tes> ;
+             rdf:type [ <OrchestrationToEntityAssociationMixin> ] ? ;
+             <object> @<ControlActor>
+          ) ;
+          rdf:type [ <OrchestrationToOrchestrationAssociation> ]
+       )
+    } OR @<OrchestrationToOrchestrationDerivationAssociation>
+)
+
+<OrchestrationToOrchestrationDerivationAssociation> CLOSED {
+    (  $<OrchestrationToOrchestrationDerivationAssociation_tes> (  &<OrchestrationToOrchestrationAssociation_tes> ;
+          rdf:type [ <OrchestrationToOrchestrationAssociation> ] ? ;
+          <catalyst_qualifier> @<MacrooperationalMachineMixin> * ;
+          <subject> @<ControlActor> ;
+          <object> @<ControlActor> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <OrchestrationToOrchestrationDerivationAssociation> ]
+    )
+}
+
+<OrchestrationToPathwayAssociation> CLOSED {
+    (  $<OrchestrationToPathwayAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<OrchestrationToEntityAssociationMixin_tes> ;
+          rdf:type [ <OrchestrationToEntityAssociationMixin> ] ? ;
+          <object> @<Pathway>
+       ) ;
+       rdf:type [ <OrchestrationToPathwayAssociation> ]
+    )
+}
+
+<Outcome> {
+    (  $<Outcome_tes> rdf:type . * ;
+       rdf:type [ <Outcome> ] ?
+    )
+}
+
+<PairwiseComponentserviceToComponentserviceInteraction>  (
+    CLOSED {
+       (  $<PairwiseComponentserviceToComponentserviceInteraction_tes> (  &<ComponentserviceToComponentserviceAssociation_tes> ;
+             rdf:type [ <ComponentserviceToComponentserviceAssociation> ] ? ;
+             <predicate> @<PredicateType> ;
+             <relation> @metatype:Uriorcurie
+          ) ;
+          rdf:type [ <PairwiseComponentserviceToComponentserviceInteraction> ]
+       )
+    } OR @<PairwiseOperationallyInteraction>
+)
+
+<PairwiseOperationallyInteraction> CLOSED {
+    (  $<PairwiseOperationallyInteraction_tes> (  &<PairwiseComponentserviceToComponentserviceInteraction_tes> ;
+          rdf:type [ <PairwiseComponentserviceToComponentserviceInteraction> ] ? ;
+          <interacting_tasks_category> @<OntologyClass> ? ;
+          <subject> @<OperationalEntity> ;
+          <predicate> @<PredicateType> ;
+          <relation> @metatype:Uriorcurie ;
+          <object> @<OperationalEntity>
+       ) ;
+       rdf:type [ <PairwiseOperationallyInteraction> ]
+    )
+}
+
+<PathognomonicityQuantifier> {
+    (  $<PathognomonicityQuantifier_tes> (  &<SpecificityQuantifier_tes> ;
+          rdf:type [ <SpecificityQuantifier> ] ?
+       ) ;
+       rdf:type [ <PathognomonicityQuantifier> ] ?
+    )
+}
+
+<Pathway> CLOSED {
+    (  $<Pathway_tes> (  &<ComputationalProcess_tes> ;
+          rdf:type [ <ComputationalProcess> ] ?
+       ) ;
+       rdf:type [ <Pathway> ]
+    )
+}
+
+<Phenomenon> CLOSED {
+    (  $<Phenomenon_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          &<Occurrent_tes> ;
+          rdf:type [ <Occurrent> ] ?
+       ) ;
+       rdf:type [ <Phenomenon> ]
+    )
+}
+
+<PlanetaryEntity>  (
+    CLOSED {
+       (  $<PlanetaryEntity_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ?
+          ) ;
+          rdf:type [ <PlanetaryEntity> ]
+       )
+    } OR @<EnvironmentalFeature> OR @<EnvironmentalProcess> OR @<GeographicLocation>
+)
+
+<PopulationOfIndividualSystems>  (
+    CLOSED {
+       (  $<PopulationOfIndividualSystems_tes> (  &<SystemicEntity_tes> ;
+             rdf:type [ <SystemicEntity> ] ? ;
+             &<ThingWithTaxon_tes> ;
+             rdf:type [ <ThingWithTaxon> ] ? ;
+             <in_taxon> @<SystemTaxon> *
+          ) ;
+          rdf:type [ <PopulationOfIndividualSystems> ]
+       )
+    } OR @<StudyPopulation>
+)
+
+<PopulationToPopulationAssociation> CLOSED {
+    (  $<PopulationToPopulationAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <subject> @<PopulationOfIndividualSystems> ;
+          <object> @<PopulationOfIndividualSystems> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <PopulationToPopulationAssociation> ]
+    )
+}
+
+<Power> CLOSED {
+    (  $<Power_tes> (  &<ControlActor_tes> ;
+          rdf:type [ <ControlActor> ] ?
+       ) ;
+       rdf:type [ <Power> ]
+    )
+}
+
+<Procedure> CLOSED {
+    (  $<Procedure_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          &<ActivityAndBehavior_tes> ;
+          rdf:type [ <ActivityAndBehavior> ] ?
+       ) ;
+       rdf:type [ <Procedure> ]
+    )
+}
+
+<Publication>  (
+    CLOSED {
+       (  $<Publication_tes> (  &<InformationContentEntity_tes> ;
+             rdf:type [ <InformationContentEntity> ] ? ;
+             <authors> @metatype:String * ;
+             <pages> @metatype:String * ;
+             <summary> @metatype:String ? ;
+             <keywords> @metatype:String * ;
+             <sumo_terms> @metatype:Uriorcurie * ;
+             <xref> @<IriType> * ;
+             <name> @<LabelType> ? ;
+             <type> @metatype:String
+          ) ;
+          rdf:type [ <Publication> ]
+       )
+    } OR @<Article> OR @<Book> OR @<BookChapter> OR @<Serial>
+)
+
+<QuantityValue> CLOSED {
+    (  $<QuantityValue_tes> (  &<Annotation_tes> ;
+          rdf:type [ <Annotation> ] ? ;
+          <has_unit> @<Unit> ? ;
+          <has_numeric_value> @metatype:Double ?
+       ) ;
+       rdf:type [ <QuantityValue> ] ?
+    )
+}
+
+<ReagentTargetedComponentservice> CLOSED {
+    (  $<ReagentTargetedComponentservice_tes> (  &<WorkloadEntity_tes> ;
+          rdf:type [ <WorkloadEntity> ] ?
+       ) ;
+       rdf:type [ <ReagentTargetedComponentservice> ]
+    )
+}
+
+<RelationshipQuantifier>  (
+    @<FrequencyQuantifier> OR @<SensitivityQuantifier> OR @<SpecificityQuantifier>
+)
+
+<RelationshipQuantifier_struct> {
+    (  $<RelationshipQuantifier_tes> rdf:type . * ;
+       rdf:type [ <RelationshipQuantifier> ] ?
+    )
+}
+
+<RelationshipType> CLOSED {
+    (  $<RelationshipType_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
+       ) ;
+       rdf:type [ <RelationshipType> ]
+    )
+}
+
+<Repairing> CLOSED {
+    (  $<Repairing_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          <has_administrative_operation> @<AdministrativeOperation> * ;
+          <has_device> @<Device> * ;
+          <has_procedure> @<Procedure> * ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <Repairing> ]
+    )
+}
+
+<ResourceSample> CLOSED {
+    (  $<ResourceSample_tes> (  &<CyberEntity_tes> ;
+          rdf:type [ <CyberEntity> ] ? ;
+          &<SubjectOfInvestigation_tes> ;
+          rdf:type [ <SubjectOfInvestigation> ] ?
+       ) ;
+       rdf:type [ <ResourceSample> ]
+    )
+}
+
+<ResourceSampleDerivationAssociation> CLOSED {
+    (  $<ResourceSampleDerivationAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <subject> @<ResourceSample> ;
+          <object> @<NamedThing> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <ResourceSampleDerivationAssociation> ]
+    )
+}
+
+<ResourceSampleToEntityAssociationMixin> {
+    (  $<ResourceSampleToEntityAssociationMixin_tes> <subject> @<ResourceSample> ;
+       rdf:type [ <ResourceSampleToEntityAssociationMixin> ] ?
+    )
+}
+
+<ResourceSampleToErrorOrObservableFeatureAssociation> CLOSED {
+    (  $<ResourceSampleToErrorOrObservableFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<ResourceSampleToEntityAssociationMixin_tes> ;
+          rdf:type [ <ResourceSampleToEntityAssociationMixin> ] ? ;
+          &<EntityToErrorOrObservableFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToErrorOrObservableFeatureAssociationMixin> ] ?
+       ) ;
+       rdf:type [ <ResourceSampleToErrorOrObservableFeatureAssociation> ]
+    )
+}
+
+<SensitivityQuantifier> {
+    (  $<SensitivityQuantifier_tes> (  &<RelationshipQuantifier_tes> ;
+          rdf:type [ <RelationshipQuantifier> ] ?
+       ) ;
+       rdf:type [ <SensitivityQuantifier> ] ?
+    )
+}
+
+<SequenceAssociation>  (
+    CLOSED {
+       (  $<SequenceAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ?
+          ) ;
+          rdf:type [ <SequenceAssociation> ]
+       )
+    } OR @<ServiceSequenceLocalization>
+)
+
+<SequenceFeatureRelationship>  (
+    CLOSED {
+       (  $<SequenceFeatureRelationship_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             <subject> @<WorkloadEntity> ;
+             <object> @<WorkloadEntity>
+          ) ;
+          rdf:type [ <SequenceFeatureRelationship> ]
+       )
+    } OR @<ComponentserviceToServicetypeRelationship> OR @<ComponentserviceinstanceToComponentserviceRelationship> OR
+    @<DaemonToComponentserviceinstanceRelationship>
+)
+
+<SequenceVariant>  (
+    CLOSED {
+       (  $<SequenceVariant_tes> (  &<WorkloadEntity_tes> ;
+             rdf:type [ <WorkloadEntity> ] ? ;
+             <has_componentservice> @<Componentservice> * ;
+             <has_computational_sequence> @<ComputationalSequence> ?
+          ) ;
+          rdf:type [ <SequenceVariant> ]
+       )
+    } OR @<MonomericVariant>
+)
+
+<SequenceVariantModulatesRepairingAssociation> {
+    (  $<SequenceVariantModulatesRepairingAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <subject> @<SequenceVariant> ;
+          <object> @<Repairing>
+       ) ;
+       rdf:type [ <SequenceVariantModulatesRepairingAssociation> ]
+    )
+}
+
+<Serial> CLOSED {
+    (  $<Serial_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ? ;
+          <iso_abbreviation> @metatype:String ? ;
+          <volume> @metatype:String ? ;
+          <issue> @metatype:String ? ;
+          <type> @metatype:String
+       ) ;
+       rdf:type [ <Serial> ]
+    )
+}
+
+<ServiceBackgroundExposure> CLOSED {
+    (  $<ServiceBackgroundExposure_tes> (  &<WorkloadEntity_tes> ;
+          rdf:type [ <WorkloadEntity> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          &<ComponentserviceGroupingMixin_tes> ;
+          rdf:type [ <ComponentserviceGroupingMixin> ] ? ;
+          <timepoint> @<TimeType> ? ;
+          <has_componentservice_or_servicetype> @<Componentservice> *
+       ) ;
+       rdf:type [ <ServiceBackgroundExposure> ]
+    )
+}
+
+<ServiceSequenceLocalization> CLOSED {
+    (  $<ServiceSequenceLocalization_tes> (  &<SequenceAssociation_tes> ;
+          rdf:type [ <SequenceAssociation> ] ? ;
+          <start_interbase_coordinate> @metatype:Integer ? ;
+          <end_interbase_coordinate> @metatype:Integer ? ;
+          <workload_build> @metatype:String ? ;
+          <strand> @metatype:String ? ;
+          <phase> @metatype:String ? ;
+          <subject> @<WorkloadEntity> ;
+          <object> @<WorkloadEntity> ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <ServiceSequenceLocalization> ]
+    )
+}
+
+<Serviceinstance>  (
+    CLOSED {
+       (  $<Serviceinstance_tes> (  &<WorkloadEntity_tes> ;
+             rdf:type [ <WorkloadEntity> ] ? ;
+             &<ServicetypeMixin_tes> ;
+             rdf:type [ <ServicetypeMixin> ] ? ;
+             <synonym> @<LabelType> * ;
+             <xref> @<IriType> *
+          ) ;
+          rdf:type [ <Serviceinstance> ]
+       )
+    } OR @<ServiceinstanceIsoform>
+)
+
+<ServiceinstanceIsoform> CLOSED {
+    (  $<ServiceinstanceIsoform_tes> (  &<Serviceinstance_tes> ;
+          rdf:type [ <Serviceinstance> ] ? ;
+          &<ServicetypeIsoformMixin_tes> ;
+          rdf:type [ <ServicetypeIsoformMixin> ] ?
+       ) ;
+       rdf:type [ <ServiceinstanceIsoform> ]
+    )
+}
+
+<ServicetypeIsoformMixin> {
+    (  $<ServicetypeIsoformMixin_tes> (  &<ServicetypeMixin_tes> ;
+          rdf:type [ <ServicetypeMixin> ] ?
+       ) ;
+       rdf:type [ <ServicetypeIsoformMixin> ] ?
+    )
+}
+
+<ServicetypeMixin>  (
+    {
+       (  $<ServicetypeMixin_tes> (  &<ComponentserviceOrServicetype_tes> ;
+             rdf:type [ <ComponentserviceOrServicetype> ] ? ;
+             <synonym> @<LabelType> * ;
+             <xref> @<IriType> *
+          ) ;
+          rdf:type [ <ServicetypeMixin> ] ?
+       )
+    } OR @<ServicetypeIsoformMixin>
+)
+
+<Serviceunit> CLOSED {
+    (  $<Serviceunit_tes> (  &<DeploymentEntity_tes> ;
+          rdf:type [ <DeploymentEntity> ] ?
+       ) ;
+       rdf:type [ <Serviceunit> ]
+    )
+}
+
+<Serviceunittype> CLOSED {
+    (  $<Serviceunittype_tes> (  &<WorkloadEntity_tes> ;
+          rdf:type [ <WorkloadEntity> ] ? ;
+          <has_homogeneity> @<Homogeneity> ?
+       ) ;
+       rdf:type [ <Serviceunittype> ]
+    )
+}
+
+<ServiceunittypeAsAModelOfErrorAssociation> CLOSED {
+    (  $<ServiceunittypeAsAModelOfErrorAssociation_tes> (  &<ServiceunittypeToErrorAssociation_tes> ;
+          rdf:type [ <ServiceunittypeToErrorAssociation> ] ? ;
+          &<ModelToErrorAssociationMixin_tes> ;
+          rdf:type [ <ModelToErrorAssociationMixin> ] ? ;
+          &<EntityToErrorAssociationMixin_tes> ;
+          rdf:type [ <EntityToErrorAssociationMixin> ] ? ;
+          <subject> @<Serviceunittype>
+       ) ;
+       rdf:type [ <ServiceunittypeAsAModelOfErrorAssociation> ]
+    )
+}
+
+<ServiceunittypeToComponentserviceAssociation> CLOSED {
+    (  $<ServiceunittypeToComponentserviceAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Serviceunittype> ;
+          <object> @<Componentservice>
+       ) ;
+       rdf:type [ <ServiceunittypeToComponentserviceAssociation> ]
+    )
+}
+
+<ServiceunittypeToEntityAssociationMixin> {
+    (  $<ServiceunittypeToEntityAssociationMixin_tes> <subject> @<Serviceunittype> ;
+       rdf:type [ <ServiceunittypeToEntityAssociationMixin> ] ?
+    )
+}
+
+<ServiceunittypeToErrorAssociation>  (
+    CLOSED {
+       (  $<ServiceunittypeToErrorAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             &<ServiceunittypeToEntityAssociationMixin_tes> ;
+             rdf:type [ <ServiceunittypeToEntityAssociationMixin> ] ? ;
+             &<EntityToErrorAssociationMixin_tes> ;
+             rdf:type [ <EntityToErrorAssociationMixin> ] ? ;
+             <subject> @<NamedThing> ;
+             <predicate> @<PredicateType> ;
+             <object> @<NamedThing> ;
+             <frequency_qualifier> @<FrequencyValue> ? ;
+             <severity_qualifier> @<SeverityValue> ? ;
+             <onset_qualifier> @<Onset> ?
+          ) ;
+          rdf:type [ <ServiceunittypeToErrorAssociation> ]
+       )
+    } OR @<ServiceunittypeAsAModelOfErrorAssociation>
+)
+
+<ServiceunittypeToObservableFeatureAssociation> CLOSED {
+    (  $<ServiceunittypeToObservableFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToObservableFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToObservableFeatureAssociationMixin> ] ? ;
+          &<ServiceunittypeToEntityAssociationMixin_tes> ;
+          rdf:type [ <ServiceunittypeToEntityAssociationMixin> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Serviceunittype> ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ? ;
+          <architectural_style_qualifier> @<ComputationalArchitecturalStyle> ?
+       ) ;
+       rdf:type [ <ServiceunittypeToObservableFeatureAssociation> ]
+    )
+}
+
+<ServiceunittypeToServiceunittypePartAssociation> CLOSED {
+    (  $<ServiceunittypeToServiceunittypePartAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Serviceunittype> ;
+          <object> @<Serviceunittype>
+       ) ;
+       rdf:type [ <ServiceunittypeToServiceunittypePartAssociation> ]
+    )
+}
+
+<ServiceunittypeToVariantAssociation> CLOSED {
+    (  $<ServiceunittypeToVariantAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Serviceunittype> ;
+          <object> @<SequenceVariant>
+       ) ;
+       rdf:type [ <ServiceunittypeToVariantAssociation> ]
+    )
+}
+
+<SeverityValue> CLOSED {
+    (  $<SeverityValue_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ?
+       ) ;
+       rdf:type [ <SeverityValue> ] ?
+    )
+}
+
+<SocioeconomicAttribute> CLOSED {
+    (  $<SocioeconomicAttribute_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ?
+       ) ;
+       rdf:type [ <SocioeconomicAttribute> ] ?
+    )
+}
+
+<SocioeconomicExposure> CLOSED {
+    (  $<SocioeconomicExposure_tes> (  &<Behavior_tes> ;
+          rdf:type [ <Behavior> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          <has_attribute> @<SocioeconomicAttribute> + ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <SocioeconomicExposure> ]
+    )
+}
+
+<SocioeconomicOutcome> CLOSED {
+    (  $<SocioeconomicOutcome_tes> (  &<Behavior_tes> ;
+          rdf:type [ <Behavior> ] ? ;
+          &<Outcome_tes> ;
+          rdf:type [ <Outcome> ] ?
+       ) ;
+       rdf:type [ <SocioeconomicOutcome> ]
+    )
+}
+
+<SpecificityQuantifier>  (
+    {
+       (  $<SpecificityQuantifier_tes> (  &<RelationshipQuantifier_tes> ;
+             rdf:type [ <RelationshipQuantifier> ] ?
+          ) ;
+          rdf:type [ <SpecificityQuantifier> ] ?
+       )
+    } OR @<PathognomonicityQuantifier>
+)
+
+<StudyPopulation>  (
+    CLOSED {
+       (  $<StudyPopulation_tes> (  &<PopulationOfIndividualSystems_tes> ;
+             rdf:type [ <PopulationOfIndividualSystems> ] ?
+          ) ;
+          rdf:type [ <StudyPopulation> ]
+       )
+    } OR @<Cohort>
+)
+
+<SubjectOfInvestigation> {
+    (  $<SubjectOfInvestigation_tes> rdf:type . * ;
+       rdf:type [ <SubjectOfInvestigation> ] ?
+    )
+}
+
+<SystemAttribute>  (
+    CLOSED {
+       (  $<SystemAttribute_tes> (  &<Attribute_tes> ;
+             rdf:type [ <Attribute> ] ?
+          ) ;
+          rdf:type [ <SystemAttribute> ] ?
+       )
+    } OR @<Inheritance> OR @<ObservableQuality>
+)
+
+<SystemTaxon>  (
+    CLOSED {
+       (  $<SystemTaxon_tes> (  &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
+             <has_taxonomic_rank> @<TaxonomicRank> ? ;
+             <subclass_of> @<SystemTaxon> *
+          ) ;
+          rdf:type [ <SystemTaxon> ]
+       )
+    } OR @<BioticExposure>
+)
+
+<SystemicEntity>  (
+    @<ComponentType> OR @<DeploymentEntity> OR @<IndividualSystem> OR @<LifecycleStage> OR @<PopulationOfIndividualSystems>
+)
+
+<SystemicEntity_struct> {
+    (  $<SystemicEntity_tes> (  &<ComputationalEntity_tes> ;
+          rdf:type [ <ComputationalEntity> ] ? ;
+          <has_attribute> @<Attribute> *
+       ) ;
+       rdf:type [ <SystemicEntity> ]
+    )
+}
+
+<SystemicEntityAsAModelOfErrorAssociation> CLOSED {
+    (  $<SystemicEntityAsAModelOfErrorAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<ModelToErrorAssociationMixin_tes> ;
+          rdf:type [ <ModelToErrorAssociationMixin> ] ? ;
+          &<EntityToErrorAssociationMixin_tes> ;
+          rdf:type [ <EntityToErrorAssociationMixin> ] ? ;
+          <subject> @<SystemicEntity> ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ?
+       ) ;
+       rdf:type [ <SystemicEntityAsAModelOfErrorAssociation> ]
+    )
+}
+
+<TaxonomicRank> CLOSED {
+    (  $<TaxonomicRank_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
+       ) ;
+       rdf:type [ <TaxonomicRank> ]
+    )
+}
+
+<ThingWithTaxon> {
+    (  $<ThingWithTaxon_tes> <in_taxon> @<SystemTaxon> * ;
+       rdf:type [ <ThingWithTaxon> ] ?
+    )
+}
+
+<VariantAsAModelOfErrorAssociation> CLOSED {
+    (  $<VariantAsAModelOfErrorAssociation_tes> (  &<VariantToErrorAssociation_tes> ;
+          rdf:type [ <VariantToErrorAssociation> ] ? ;
+          &<ModelToErrorAssociationMixin_tes> ;
+          rdf:type [ <ModelToErrorAssociationMixin> ] ? ;
+          &<EntityToErrorAssociationMixin_tes> ;
+          rdf:type [ <EntityToErrorAssociationMixin> ] ? ;
+          <subject> @<SequenceVariant>
+       ) ;
+       rdf:type [ <VariantAsAModelOfErrorAssociation> ]
+    )
+}
+
+<VariantToComponentserviceAssociation>  (
+    CLOSED {
+       (  $<VariantToComponentserviceAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             &<VariantToEntityAssociationMixin_tes> ;
+             rdf:type [ <VariantToEntityAssociationMixin> ] ? ;
+             <object> @<Componentservice> ;
+             <predicate> @<PredicateType>
+          ) ;
+          rdf:type [ <VariantToComponentserviceAssociation> ]
+       )
+    } OR @<VariantToComponentserviceAvailabilityAssociation>
+)
+
+<VariantToComponentserviceAvailabilityAssociation> CLOSED {
+    (  $<VariantToComponentserviceAvailabilityAssociation_tes> (  &<VariantToComponentserviceAssociation_tes> ;
+          rdf:type [ <VariantToComponentserviceAssociation> ] ? ;
+          &<ComponentserviceAvailabilityMixin_tes> ;
+          rdf:type [ <ComponentserviceAvailabilityMixin> ] ? ;
+          <predicate> @<PredicateType> ;
+          <quantifier_qualifier> @<OntologyClass> ? ;
+          <availability_site> @<DeploymentEntity> ? ;
+          <stage_qualifier> @<LifecycleStage> ? ;
+          <observable_state> @<ErrorOrObservableFeature> ?
+       ) ;
+       rdf:type [ <VariantToComponentserviceAvailabilityAssociation> ]
+    )
+}
+
+<VariantToEntityAssociationMixin> {
+    (  $<VariantToEntityAssociationMixin_tes> <subject> @<SequenceVariant> ;
+       rdf:type [ <VariantToEntityAssociationMixin> ] ?
+    )
+}
+
+<VariantToErrorAssociation>  (
+    CLOSED {
+       (  $<VariantToErrorAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             &<VariantToEntityAssociationMixin_tes> ;
+             rdf:type [ <VariantToEntityAssociationMixin> ] ? ;
+             &<EntityToErrorAssociationMixin_tes> ;
+             rdf:type [ <EntityToErrorAssociationMixin> ] ? ;
+             <subject> @<NamedThing> ;
+             <predicate> @<PredicateType> ;
+             <object> @<NamedThing> ;
+             <frequency_qualifier> @<FrequencyValue> ? ;
+             <severity_qualifier> @<SeverityValue> ? ;
+             <onset_qualifier> @<Onset> ?
+          ) ;
+          rdf:type [ <VariantToErrorAssociation> ]
+       )
+    } OR @<VariantAsAModelOfErrorAssociation>
+)
+
+<VariantToObservableFeatureAssociation> CLOSED {
+    (  $<VariantToObservableFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<VariantToEntityAssociationMixin_tes> ;
+          rdf:type [ <VariantToEntityAssociationMixin> ] ? ;
+          &<EntityToObservableFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToObservableFeatureAssociationMixin> ] ? ;
+          <subject> @<SequenceVariant> ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <severity_qualifier> @<SeverityValue> ? ;
+          <onset_qualifier> @<Onset> ? ;
+          <architectural_style_qualifier> @<ComputationalArchitecturalStyle> ?
+       ) ;
+       rdf:type [ <VariantToObservableFeatureAssociation> ]
+    )
+}
+
+<VariantToPopulationAssociation> CLOSED {
+    (  $<VariantToPopulationAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<VariantToEntityAssociationMixin_tes> ;
+          rdf:type [ <VariantToEntityAssociationMixin> ] ? ;
+          &<FrequencyQuantifier_tes> ;
+          rdf:type [ <FrequencyQuantifier> ] ? ;
+          &<FrequencyQualifierMixin_tes> ;
+          rdf:type [ <FrequencyQualifierMixin> ] ? ;
+          <subject> @<SequenceVariant> ;
+          <object> @<PopulationOfIndividualSystems> ;
+          <has_quotient> @metatype:Double ? ;
+          <has_count> @metatype:Integer ? ;
+          <has_total> @metatype:Integer ? ;
+          <has_percentage> @metatype:Double ? ;
+          <frequency_qualifier> @<FrequencyValue> ?
+       ) ;
+       rdf:type [ <VariantToPopulationAssociation> ]
+    )
+}
+
+<Variantcomponentservicetype> CLOSED {
+    (  $<Variantcomponentservicetype_tes> (  &<WorkloadEntity_tes> ;
+          rdf:type [ <WorkloadEntity> ] ?
+       ) ;
+       rdf:type [ <Variantcomponentservicetype> ]
+    )
+}
+
+<Workload> CLOSED {
+    (  $<Workload_tes> (  &<WorkloadEntity_tes> ;
+          rdf:type [ <WorkloadEntity> ] ?
+       ) ;
+       rdf:type [ <Workload> ]
+    )
+}
+
+<WorkloadEntity>  (
+    CLOSED {
+       (  $<WorkloadEntity_tes> (  &<OperationalEntity_tes> ;
+             rdf:type [ <OperationalEntity> ] ? ;
+             <has_computational_sequence> @<ComputationalSequence> ?
+          ) ;
+          rdf:type [ <WorkloadEntity> ]
+       )
+    } OR @<CodingSequence> OR @<Componentserviceinstance> OR @<Daemon> OR @<ReagentTargetedComponentservice> OR @<SequenceVariant>
+    OR @<ServiceBackgroundExposure> OR @<Serviceinstance> OR @<Serviceunittype> OR @<Variantcomponentservicetype> OR @<Workload>
+)
+
+
+

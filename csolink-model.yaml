@@ -3,7 +3,7 @@ name: Csolink-Model
 description: Entity and association taxonomy and datamodel for computer services data
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
-# todo: rr, XAPI, gpi
+# todo: rr, XAPI
 
 # Version should be kept in sync with primary Git repository release tag
 version: 0.0.0
@@ -124,13 +124,13 @@ prefixes:
   ACMJOURNALS: 'https://dl.acm.org/action/doSearch?ConceptID=118230&AllField='    ### acm Digital library journals ###
   AML: 'https://w3id.org/i40/aml#'    # Automation machine learning
   csolink: 'https://w3id.org/csolink/vocab/'        # ok
-  biolinkml: 'https://w3id.org/biolink/biolinkml/' # ok
+  biolinkml: 'https://w3id.org/biolink/biolinkml/'  # ok
   CORR: 'https://arxiv.org/corr'  # Computing-Research Repository
   CNCF: 'https://landscape.cncf.io/selected='    # CNCF project signature
   COAR_ACCESS: 'http://vocabularies.coar-repositories.org/documentation/access_rights/'  # Controlled Vocabulary for Access Rights
   COAR_RESOURCE: 'http://vocabularies.coar-repositories.org/documentation/resource_types/'  # Controlled Vocabulary for Resource Type Genres
   COAR_VERSION: 'http://vocabularies.coar-repositories.org/documentation/version_types/'    # Controlled Vocabulary for Version Types
-  CSO: 'https://cso.kmi.open.ac.uk/topics/' # Computer Science Ontology (CSO)
+  CSO: 'https://cso.kmi.open.ac.uk/topics/'  # Computer Science Ontology (CSO)
   CVE: 'https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword='   # Common Vulnerabilities and Exposures
   DockerHub: 'https://hub.docker.com/'  # Docker Hub
   DID: 'https://www.w3.org/TR/did-core/#'   # Decentralized Identifiers (DIDs)
@@ -175,12 +175,13 @@ prefixes:
   XAPI: 'http://ns.inria.fr/ludo/v1/docs/xapi.html#'   # Ludo xAPI
   MAID: 'https://academic.microsoft.com/#/detail/'   # Microsoft Academic ID
   MOBI: 'http://schema.mobivoc.org/#'    # MobVoc: open mobility vocab.
-  NOSQL: ' http://purl.org/db/nosql#'    # NoSQL
+  NOSQL: 'http://purl.org/db/nosql#'    # NoSQL
   OCRM: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/ecrm%23'    # Openlink eCRM Ontology
   OCO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/components%23'    # Openlink Component Ontology
   openvocab: 'https://vocab.org/open/#'    # Open Vocab
   OSO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/software%23'  # Openlink sw Ontology
   OMG-SPECS: 'https://www.omg.org/spec/'   # Object Management Group Specifications
+  OM: 'http://www.ontology-of-units-of-measure.org/resource/om-2/'
   ORCID: 'https://orcid.org/'    # Open Researcher and Contributor ID
   PATO: 'http://purl.obolibrary.org/obo/pato#'  # Observable Quality: properties
   pav: 'http://purl.org/pav/'    # Provenance, Authoring and Versioning
@@ -199,7 +200,7 @@ prefixes:
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='    # database of peer-reviewed literature
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'       # Semantic knowledge representation ....
   SIO: 'http://semanticscience.org/resource/SIO_'   # Semanticscience Integrated Ontology
-  sosa: ' http://www.w3.org/ns/sosa/'
+  sosa: 'http://www.w3.org/ns/sosa/'
   ssn: 'https://www.w3.org/TR/vocab-ssn/#'   # Semantic sensor netowrk ontology
   ssn-system: 'http://www.w3.org/ns/ssn/systems/'   #
   sumo-wn: 'http://sigma.ontologyportal.org:8080/sigma/WordNet.jsp?POS=0&word='    # sumo wordnet
@@ -490,8 +491,7 @@ types:
       - sumo:UnitOfMeasureMultiplier
       - sumo:UnitOfTemperature
       - sumo:UnitOfVolume
-    in_subset:
-      - WIKIDATA_PROPERTY:P8111 # recommended unit of measurement
+      - WIKIDATA_PROPERTY:P8111  # recommended unit of measurement
 
   time type:
     typeof: time
@@ -554,7 +554,6 @@ slots:
       - CDAO:has_Remaining_Coordinate_List
       - CDAO:has_State
       - CDAO:has_Element
-      - CIO:has_confidence:element
       - CTRL:hasApplicationLogic
       - CTRL:hasInput
       - CTRL:hasMedium
@@ -927,7 +926,7 @@ slots:
 ## --------------------
 
   node property:
-    aliases: [ 'entity property', ]
+    aliases: [ 'entity property',]
     description: >-
       A grouping for any property that holds between a node and a value
     domain: named thing
@@ -949,7 +948,7 @@ slots:
       - dct:identifier
       - EDAM-DATA:0842  # identifier
       - EFO:id
-      - gpi:DB_Object_ID
+      # DB_Object_ID
       - MAID:154504017
       - REPR:id
       - schema:identifier
@@ -1016,7 +1015,7 @@ slots:
       - IAO:0006011   # may be identical to
     exact_mappings:
       - dct:type
-      - gpi:DB_Object_Type
+      # DB_Object_Type
       - IAO:0000219    # denotes
       - NCIT:C25284  # type
       - OCRM:type
@@ -1065,7 +1064,7 @@ slots:
       - schema:CategoryCode
 
   name:
-    aliases: [ 'label', 'display name', 'title' ]
+    aliases: [ 'label', 'display name', 'title']
     description: >-
       A human-readable name for an attribute or entity.
     range: label type
@@ -1081,7 +1080,7 @@ slots:
       - CSO:named_entity
     exact_mappings:
       - CSO:named_entity
-      - gpi:DB_Object_Name
+      # DB_Object_Name
       - gr:name
       - OM:name
       - REPR:name
@@ -1145,7 +1144,7 @@ slots:
     exact_mappings:
       - SIO:000105    # symbol
       - IAO:0000028   # symbol
-      - gpi:DB_Object_Symbol
+      # DB_Object_Symbol
       - gvp:Symbol
       - MAID:128361363   # symbol
       - OM:alternativeSymbol
@@ -1172,7 +1171,7 @@ slots:
       - NCIT:C52469    # synonym
       - WIKIDATA_PROPERTY:P1420   # taxon synonym
     narrow_mappings:
-      - gpi:DB_Object_Synonyms
+      # DB_Object_Synonyms
       - EXO:hasExactSynonym
       - EXO:hasRelatedSynonym
       - IAO:0000136    # is about
@@ -1219,7 +1218,7 @@ slots:
       - WIKIDATA:Q1302249    # cross-reference
     narrow_mappings:
       - dwc:identificationReferences
-      - gpi:DB_Xrefs
+      # DB_Xrefs
       - gr:relatedWebService
       - NCIT:hasDbXref
       - EDAM:repository
@@ -1287,7 +1286,7 @@ slots:
     domain: agent
     range: uriorcurie
     multivalued: true
-    exact_mapping:
+    exact_mappings:
       - NCIT:C25412   # affiliation
       - schema:affiliation
       - SIO:000173    # affiliation
@@ -1472,7 +1471,7 @@ slots:
     narrow_mappings:
       - schema:softwareVersion
       - MAID:198140048           # software version number
-    related:
+    related_mappings:
       - WIKIDATA_PROPERTY:P348   # software version id
 
   license:
@@ -1491,8 +1490,8 @@ slots:
       - WIKIDATA_PROPERTY:Q334661   # MIT
       - WIKIDATA_PROPERTY:Q192897   # GLGPL
       - WIKIDATA_PROPERTY:Q284742   # Creative Commons
-      - WIKIDATA_PROPERTY:Q13785927 # Apache 2.0
-      - WIKIDATA_PROPERTY:Q3238057  # Proprietary license
+      - WIKIDATA_PROPERTY:Q13785927  # Apache 2.0
+      - WIKIDATA_PROPERTY:Q3238057   # Proprietary license
 
   rights:
     is_a: node property
@@ -1576,7 +1575,7 @@ slots:
       - WIKIDATA_PROPERTY:P1433
       - sumo:Publication
     narrow_mappings:
-      - GSSO:bookEdition
+      # bookEdition
       - schema:PublicationIssue
 
   iso abbreviation:
@@ -1705,7 +1704,7 @@ slots:
     multivalued: true
 
   has homogeneity:
-    alias: ['effectively homogeneous',]
+    # effectively homogeneous
     is_a: node property
     domain: workload entity
     range: homogeneity
@@ -2055,7 +2054,7 @@ slots:
       holds between two classes where the domain class is a super class of the range class
     domain: ontology class
     range: ontology class
-    multivalued: True
+    multivalued: true
     inverse: subclass of
     in_subset:
       - translator_minimal
@@ -2084,7 +2083,7 @@ slots:
       holds between two classes where the domain class is a specialization of the range class
     domain: ontology class
     range: ontology class
-    multivalued: True
+    multivalued: true
     in_subset:
       - translator_minimal
     inverse: superclass of
@@ -2189,7 +2188,6 @@ slots:
       - WIKIDATA:Q42415624    # inexact match
     narrow_mappings:
       - OBO:xref
-      - oboformat:xref
       - sumo:sibling
 
   exact match:
@@ -2261,10 +2259,10 @@ slots:
       - csrc:Provider
       - schema:provider
     narrow_mappings:
-      - Service_Provider
-      - Third_party_Providers
-      - computer_provider_or_provider
-      - computer_Service_Provider
+      - CSO:Service_Provider
+      - CSO:Third_party_Providers
+      - CSO:computer_provider_or_provider
+      - CSO:computer_Service_Provider
 
   publisher:
     is_a: contributor
@@ -2392,7 +2390,7 @@ slots:
     range: operational entity
     in_subset:
       - translator_minimal
-    related_mappins:
+    related_mappings:
       - sumo:connects
     exact_mappings:
       - sumo:targetInAttack
@@ -2619,7 +2617,7 @@ slots:
       - sumo:publishes
     exact_mappings:
       - RO:0003003    # increases expression of
-    narrrow_mappings:
+    narrow_mappings:
       - RO:0011008    # increases by expression quantity of
 
   decreases availability of:
@@ -2918,7 +2916,7 @@ slots:
   increases updates rate of:
     description: >-
       holds between a operational entity and a workload entity where the action or effect of the operational entity increases the rate of update of the workload entity within a system of interest
-    is_a: affects update rate of
+    is_a: affects updates rate of
     in_subset:
       - translator_minimal
     domain: operational entity
@@ -2929,7 +2927,7 @@ slots:
   decreases updates rate of:
     description: >-
       holds between a operational entity and a workload entity where the action or effect of the operational entity decreases the rate of update of the workload entity within a system of interest
-    is_a: affects update rate of
+    is_a: affects updates rate of
     in_subset:
       - translator_minimal
     domain: operational entity
@@ -3232,6 +3230,8 @@ slots:
 
   regulated by, process to process:
     is_a: affected by
+    domain: occurrent
+    range: occurrent
     inverse: regulates, process to process
 
   positively regulates, process to process:
@@ -3531,7 +3531,7 @@ slots:
     range: error or observable feature
     in_subset:
       - translator_minimal
-    inverse: condition associated wtih componentservice
+    inverse: condition associated with componentservice
     exact_mappings: []
     broad_mappings: []
     narrow_mappings: []
@@ -3724,7 +3724,7 @@ slots:
     description: >-
       TBD
     is_a: repaired by
-    inverse: approved to treat
+    inverse: approved to repair
 
   prevents:
     is_a: affects risk for
@@ -3877,7 +3877,7 @@ slots:
       # gene_instance_has_associated_expression_model
       # available_in
 
-  unavailabile in:
+  unavailable in:
     is_a: related to
     description: >-
       holds between an deployment entity and componentservice or servicetype that is available there
@@ -3927,8 +3927,7 @@ slots:
       # :site_of
     exact_mappings: []
       # occurs_in
-    narrow_mappings: []
-      # occurs_in
+    narrow_mappings:
       - geolink:isProgramOf
       # :site_of
       - LOINC:has_imaged_location
@@ -3988,15 +3987,15 @@ slots:
       # inherent_location_of
 
   similar to:
-      is_a: related to
-      description: >-
-        holds between an entity and some other entity with similar features.
-      in_subset:
-        - translator_minimal
-      symmetric: true
-      exact_mappings:
-        - RO:HOM0000000    # in similarity relationship with? don't understand this identifier, but I think it's equivalent
-        - SO:similar_to               #equivalent
+    is_a: related to
+    description: >-
+      holds between an entity and some other entity with similar features.
+    in_subset:
+      - translator_minimal
+    symmetric: true
+    exact_mappings:
+      - RO:HOM0000000    # in similarity relationship with? don't understand this identifier, but I think it's equivalent
+      - SO:similar_to               #equivalent
 
   orchestrationly similar to:
     is_a: similar to
@@ -4215,8 +4214,8 @@ slots:
       #:has_serviceinstance
       # has_reaction
       - RO:0004007    # has primary input or output
-      - error has role in disruption of
-      - error has role in disfunction of
+      # error has role in disruption of
+      # error has role in disfunction of
       # :has_indirect_device
       # :has_procedure_device
       # :has_recipient_category
@@ -4613,7 +4612,7 @@ slots:
       # Definition of this term is more generic than direct cyber operationally interactions:
       # A is connected to B iff there exists a fiat, resource or temporal path between A and B.
       - SIO:000203    # is connected to
-    narrow_mappings: []
+    narrow_mappings:
       - RO:0002578    # directly regulates
       - SWO:0000131   # directly preceded by
       - SWO:0000132   # directly followed by
@@ -4628,8 +4627,8 @@ slots:
     narrow_mappings:
       - gr:availabilityStarts
       - gr:availabilityEnds
-      - schema:schema:availabilityStarts
-      - schema:schema:availabilityEnds
+      - schema:availabilityStarts
+      - schema:availabilityEnds
 
   has variant part:
     is_a: has part
@@ -4689,7 +4688,7 @@ slots:
     domain: sequence variant
     range: componentservice
     exact_mappings: []
-    broad_mappingis:
+    broad_mappings: []
       # Term definition broader than nonsense sequence: A sequence variant whereby
       # the componentservice has diminished or abolished function.
 
@@ -4741,8 +4740,8 @@ slots:
     is_a: related to
     related_mappings:
       - RO:0004019    # disease has basis in
-    broad_mappings:
-      - APOLLO_SV:00000543    # has basis in
+    broad_mappings: []
+      # 00000543    # has basis in
     narrow_mappings: []
 
   # These may be pushable to causal relationships, but seem important for clarity
@@ -4758,7 +4757,6 @@ slots:
     broad_mappings:
       - csrc:adverse_consequence
     exact_mappings:
-      - Aeolus:0000001
       - OAE:0002616    # adverse event preceded by
 
   contraindicated for:
@@ -4835,7 +4833,7 @@ slots:
     broad_mappings:
       - sumo:lacks
     exact_mappings:
-      - INO:0000139    # lacks part
+      - OBO:INO_0000139    # lacks part
     narrow_mappings:
       - CSO:incomplete_information_systems
 
@@ -4906,9 +4904,9 @@ slots:
       This slot is deprecated in favor of 'id' slot.
     deprecated_element_has_exact_replacement: id
     description: >-
-        A unique identifier for an association
+      A unique identifier for an association
     in_subset:
-        - translator_minimal
+      - translator_minimal
     domain: association
     alias: id
 
@@ -5036,7 +5034,7 @@ slots:
     id_prefixes:
       - RO
       - SIO
-    exact_match:
+    exact_mappings:
       - gvp:aat2900_miscellaneous_relationship
       - skos:relation
       - sumo:Relation
@@ -5171,7 +5169,7 @@ slots:
     #### move ?  ###
     related_mappings:
       - csrc:stage
-    exact_state:
+    exact_mappings:
       - csrc:State
       - ssn-system:Condition
       - WIKIDATA:Q599031    # system state
@@ -5361,6 +5359,8 @@ classes:
       - EDAM-FORMAT
       - EDAM-OPERATION
       - EDAM-TOPIC
+    in_subset:
+      - samples
     exact_mappings:
       - csrc:attribute
       - SIO:000614    # attribute
@@ -5438,18 +5438,12 @@ classes:
       - sumo:publishes
       - sumo:validityPeriod
       - sumo:VirtualAddress
-    in_subset:
-      - samples
 
   attribute type:
     ### split from 'has attribute type'  ####
     description: >-
       A property or characteristic type of an entity.
       For example, an apple may have properties types such as color type, shape type, age type, crispiness type.
-    domain: attribute
-    range: ontology class
-    multivalued: false
-    required: false
     in_subset:
       - samples
     narrow_mappings:
@@ -5833,8 +5827,8 @@ classes:
     is_a: dataset
     slots:
       - has dataset
-      - version of
-      - distribution
+      - ingest date
+      - has distribution
 
   distribution level:
     is_a: dataset version
@@ -5945,7 +5939,7 @@ classes:
       - geolink:Document
       - IAO:0000013    # journal article
     id_prefixes:
-      - AMCDL_JOURNALS
+      - ACMJOURNALS
     in_subset:
       - system_model_database
 
@@ -6554,7 +6548,7 @@ classes:
       - csrc:Behavioral_Outcome
       - SAN:ActuatorInput
       - SAN:ActuatorOutput
-      - TEDDY:0000083    # temporal behaviour
+      # 0000083    # temporal behaviour
 
   death:
     is_a: computational process
@@ -6647,7 +6641,7 @@ classes:
   power:
     is_a: control actor
     broad_mappings:
-      - SRAO:0000252    # power engineering
+      # SRAO:0000252    # power engineering
       - ssn-system:OperatingPowerRange
       - sumo:PowerGeneration
     exact_mappings:
@@ -6655,7 +6649,7 @@ classes:
       - REPR:Power
       - sumo:Power
       - WIKIDATA:Q204157    # power supply
-    narrow_supply:
+    narrow_mappings:
       - CSO:high_power_lasers
       - CSO:electric_power_supplies_to_apparatus
       - CSO:transmission_power
@@ -6683,10 +6677,10 @@ classes:
     related_mappings:
       - dwc:resourceID
       - SAN:isConsumedBy
-    broad_mappings:
-      - SDGIO:00010059   # resource consumption
+    broad_mappings: []
+      # SDGIO:00010059   # resource consumption
     exact_mappings:
-      - SDGIO:00000011   # use of a resource
+      # SDGIO:00000011   # use of a resource
     narrow_mappings:
       - CSO:power_consumed
       - csrc:cyber_resource
@@ -6699,7 +6693,7 @@ classes:
       - csrc:Storage
       - MAID:70437156  # pooling
       - NCIT:C19012    # resource sharing
-      - SDGIO:00010055    # domestic resource consumption
+      # SDGIO:00010055    # domestic resource consumption
 
   administrative operation:
     is_a: operational entity
@@ -7286,7 +7280,7 @@ classes:
       - XXXX
 
   gross deployment structure:
-    aliases: ['workload', 'application',]
+    aliases: ['workload', 'application']
     is_a: deployment entity
     close_mappings:
       - WIKIDATA:Q5260674    # deployment flowchart
@@ -7340,7 +7334,7 @@ classes:
       - OSO:hasComponentType
       - schema:serviceType
     exact_mappings: []
-    id_prefixes: [] # todo
+    id_prefixes: []   # todo
     in_subset:
       - system_model_database
 
@@ -7349,7 +7343,6 @@ classes:
     description: >-
       The controlling operational servicetype of a single componentservice locus.
       ServiceType product are either serviceinstances or supervisor tasks
-    is_a: componentservice or servicetype
     mixin: true
     slots:
       - synonym
@@ -7406,7 +7399,7 @@ classes:
       - system_model_database
 
   componentserviceinstance:
-    is_a: servicetype
+    is_a: workload entity
     description: >-
       The unit of service workload the component is capable of providing or protecting.
     broad_mappings:
@@ -7512,7 +7505,7 @@ classes:
     description: >-
       A servicetype that is composed of a chain of instruction sequences
       and is produced by translation of kernel message
-    is_a: servicetype
+    is_a: workload entity
     mixins:
       - servicetype mixin
     aliases: ['si']
@@ -7522,7 +7515,7 @@ classes:
       - sumo:restartable
     id_prefixes: []    # todo
     in_subset:
-        - system_model_database
+      - system_model_database
 
   serviceinstance isoform:
     aliases: ['proteoform']
@@ -7663,7 +7656,7 @@ classes:
       - system_model_database
 
   monomeric variant:
-    aliases: ['monomeric variant','monomeric polymorphism']
+    aliases: ['monomeric variant', 'monomeric polymorphism']
     is_a: sequence variant
     description: >-
       A single monomeric position in the service monomeric variants are single monomeric positions in service DNA at
@@ -7983,7 +7976,7 @@ classes:
       - csrc:Emergency_Repair_Disk
 
   biotic exposure:
-    aliases: ['viral exposure',]
+    aliases: ['viral exposure']
     is_a: system taxon
     mixins:
       - exposure event
@@ -8357,7 +8350,7 @@ classes:
         subproperty_of: operationally interacts with
       relation:
         values_from:
-          - RO 
+          - RO
         description: "interaction relationship type"
         examples: []
       object:
@@ -8603,7 +8596,7 @@ classes:
       subject:
         range: error
         description: "error class"
-        values_from: ['ncit',]
+        values_from: ['ncit']
         examples: []
 
   entity to exposure event association mixin:
@@ -9344,7 +9337,7 @@ classes:
         range: workload entity  ## todo serviceinstance
       object:
         aliases: ['reference']
-        range: workload entity ## typically a container use monochrom
+        range: workload entity  # typically a container
       predicate:
         subproperty_of: has sequence location
     slots:
@@ -9365,7 +9358,7 @@ classes:
       subject:
         range: workload entity  ## todo serviceinstance
       object:
-        range: workload entity ## typically a container
+        range: workload entity  # typically a container
 
   componentserviceinstance to componentservice relationship:
     is_a: sequence feature relationship
@@ -9391,7 +9384,7 @@ classes:
       subject:
         range: componentservice
       object:
-        range: servicetype
+        range: servicetype mixin
       predicate:
         subproperty_of: has servicetype
 
@@ -9477,4 +9470,4 @@ classes:
         description: >-
           the structure at an earlier time
       predicate:
-         subproperty_of: develops from
+        subproperty_of: develops from
