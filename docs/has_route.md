@@ -8,7 +8,7 @@ layout: default
 # Slot: has_route
 
 
-the process that results in the stressor coming into direct contact with the receptor
+the process that results in the stressor coming into direct contact with the gateway
 
 URI: [csolink:has_route](https://w3id.org/csolink/vocab/has_route)
 
@@ -31,7 +31,20 @@ URI: [csolink:has_route](https://w3id.org/csolink/vocab/has_route)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | ExO:0000055 |
-| **Narrow Mappings:** | | LOINC:has_pharmaceutical_route |
-|  | | SNOMED:has_dose_form_intended_site |
-|  | | SNOMED:has_route_of_administration |
+|  | | WIKIDATA:Q1322323 |
+| **Close Mappings:** | | sumo:pathInSystem |
+| **Narrow Mappings:** | | csrc:trusted_path |
+|  | | sumo:ContinuousPath |
+|  | | sumo:ComputerPath |
+|  | | sumo:routeBetween |
+|  | | sumo:routeInSystem |
+|  | | sumo:routeEnd |
+|  | | sumo:routeStart |
+| **Broad Mappings:** | | csrc:access |
+|  | | CTRL:isConnectedTo |
+| **Related Mappings:** | | CSO:route_discovery |
+|  | | MAID:2780248821 |
+|  | | MAID:181822070 |
+|  | | MAID:184896649 |
+|  | | MAID:195780805 |
 

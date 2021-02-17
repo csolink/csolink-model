@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+holds between any two named thing entities. For example, correlated_with holds between a error or observable feature and a measurable operation entity that is used as an indicator of the presence or state of the error or feature.
 
 URI: [csolink:correlated_with](https://w3id.org/csolink/vocab/correlated_with)
 
@@ -25,9 +25,9 @@ URI: [csolink:correlated_with](https://w3id.org/csolink/vocab/correlated_with)
 
 ## Children
 
- *  [biomarker for](biomarker_for.md)
- *  [coexpressed with](coexpressed_with.md)
- *  [has biomarker](has_biomarker.md)
+ *  [coavailable with](coavailable_with.md)
+ *  [has marker](has_marker.md)
+ *  [marker for](marker_for.md)
  *  [negatively correlated with](negatively_correlated_with.md)
  *  [positively correlated with](positively_correlated_with.md)
 
@@ -41,13 +41,11 @@ URI: [csolink:correlated_with](https://w3id.org/csolink/vocab/correlated_with)
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002610 |
 |  | | PATO:correlates_with |
-| **Narrow Mappings:** | | LOINC:associated_with |
-|  | | NCIT:is_associated_disease_of |
-|  | | NCIT:is_cytogenetic_abnormality_of_disease |
-|  | | ORPHA:317345 |
-|  | | PDQ:associated_disease |
-|  | | RO:0004029 |
-|  | | RTXKG1:associated_with_disease |
-|  | | SNOMED:associated_with |
-|  | | SNOMED:has_associated_finding |
+| **Related Mappings:** | | csrc:Association |
+|  | | csrc:Information_Systems_Audit_and_Control_Association |
+|  | | MAID:79714647 |
+|  | | sumo:associateWithStatus |
+|  | | sumo:associatedFunctionality |
+|  | | LOINC:associated_with |
+|  | | MAID:79714647 |
 

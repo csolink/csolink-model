@@ -8,13 +8,13 @@ layout: default
 # Slot: end_interbase_coordinate
 
 
-The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
+The position at which the subject workload entity ends on the container or other entity to which it is located on.
 
 URI: [csolink:end_interbase_coordinate](https://w3id.org/csolink/vocab/end_interbase_coordinate)
 
 ## Domain and Range
 
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
+[ServiceSequenceLocalization](ServiceSequenceLocalization.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
 
 ## Parents
 
@@ -25,4 +25,4 @@ URI: [csolink:end_interbase_coordinate](https://w3id.org/csolink/vocab/end_inter
 
 ## Used by
 
- * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
+ * [ServiceSequenceLocalization](ServiceSequenceLocalization.md)

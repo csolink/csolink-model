@@ -36,5 +36,7 @@ URI: [csolink:exact_match](https://w3id.org/csolink/vocab/exact_match)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | skos:exactMatch |
+|  | | WIKIDATA:Q39893449 |
 |  | | WIKIDATA:P2888 |
+| **Related Mappings:** | | sumo:exactCardinality |
 

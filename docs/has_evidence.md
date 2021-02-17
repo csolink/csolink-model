@@ -31,4 +31,7 @@ URI: [csolink:has_evidence](https://w3id.org/csolink/vocab/has_evidence)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | RO:0002558 |
+|  | | SIO:000772 |
+| **Broad Mappings:** | | csrc:evidence |
+|  | | sumo:evidence |
 

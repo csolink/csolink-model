@@ -25,12 +25,18 @@ URI: [csolink:symbol](https://w3id.org/csolink/vocab/symbol)
 
 ## Used by
 
- * [Gene](Gene.md)
+ * [Componentservice](Componentservice.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | alliancegenome:symbol |
-|  | | gpi:DB_Object_Symbol |
+| **Exact Mappings:** | | SIO:000105 |
+|  | | IAO:0000028 |
+|  | | gvp:Symbol |
+|  | | MAID:128361363 |
+|  | | OM:alternativeSymbol |
+|  | | WIKIDATA_PROPERTY:P4878 |
+| **Close Mappings:** | | skos:notation |
+| **Narrow Mappings:** | | CSO:data_symbols |
 

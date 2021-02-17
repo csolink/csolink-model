@@ -1,37 +1,38 @@
 ---
-parent: Node Properties
+parent: Predicates
 title: csolink:has_active_ingredient
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: has_active_ingredient
+# Relation: has_active_ingredient
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-one or more chemical substance which are the active ingredient(s) of a drug
+holds between a administrative operation and a control actor in which the latter is a part of the former, and is a computationally active component
 
 URI: [csolink:has_active_ingredient](https://w3id.org/csolink/vocab/has_active_ingredient)
 
 ## Domain and Range
 
-[Drug](Drug.md) ->  <sub>0..*</sub> [ChemicalSubstance](ChemicalSubstance.md)
+[AdministrativeOperation](AdministrativeOperation.md) ->  <sub>0..*</sub> [ControlActor](ControlActor.md)
 
 ## Parents
 
- *  is_a: [node property](node_property.md)
+ *  is_a: [has part](has_part.md)
 
 ## Children
 
 
 ## Used by
 
- * [Drug](Drug.md)
- * [DrugExposure](DrugExposure.md)
- * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA:Q912807 |
+| **Mappings:** | | RO:0002248 |
+| **In Subsets:** | | translator_minimal |
 

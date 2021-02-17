@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
+holds between two componentservices or servicetypes that are part of (or code for servicetypes that are part of) in the same macrooperational complex mixin
 
 URI: [csolink:in_complex_with](https://w3id.org/csolink/vocab/in_complex_with)
 
 ## Domain and Range
 
-[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..*</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
+[ComponentserviceOrServicetype](ComponentserviceOrServicetype.md) ->  <sub>0..*</sub> [ComponentserviceOrServicetype](ComponentserviceOrServicetype.md)
 
 ## Parents
 
@@ -34,6 +34,4 @@ URI: [csolink:in_complex_with](https://w3id.org/csolink/vocab/in_complex_with)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Broad Mappings:** | | SIO:010285 |
-| **Related Mappings:** | | SIO:010497 |
 

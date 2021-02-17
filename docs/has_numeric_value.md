@@ -35,4 +35,29 @@ URI: [csolink:has_numeric_value](https://w3id.org/csolink/vocab/has_numeric_valu
 | --- | --- | --- |
 | **In Subsets:** | | samples |
 | **Exact Mappings:** | | qud:quantityValue |
+| **Narrow Mappings:** | | CTRL:Quantity |
+|  | | gr:weight |
+|  | | gr:width |
+|  | | sumo:age |
+|  | | sumo:diameter |
+|  | | sumo:duration |
+|  | | sumo:FiniteQuantity |
+|  | | sumo:InfiniteQuantity |
+|  | | sumo:length |
+|  | | sumo:memorySize |
+|  | | sumo:netAmount |
+|  | | sumo:netWorth |
+|  | | sumo:publishedPrice |
+|  | | sumo:Quantity |
+|  | | sumo:QuantityChange |
+|  | | sumo:radius |
+|  | | sumo:totalFacilityTypeInArea |
+|  | | sumo:unitNumber |
+|  | | sumo:unitPrice |
+|  | | gr:weight |
+|  | | gr:width |
+| **Broad Mappings:** | | NCIT:C81274 |
+|  | | schema:Number |
+|  | | qud:numericValue |
+|  | | sumo:number |
 

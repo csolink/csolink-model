@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two entities that are considered a skos:closeMatch to one another
+a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. administrative operation as a type of control entity versus administrative operation as a type of role borne by a control entity).
 
 URI: [csolink:close_match](https://w3id.org/csolink/vocab/close_match)
 
@@ -36,13 +36,9 @@ URI: [csolink:close_match](https://w3id.org/csolink/vocab/close_match)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | skos:closeMatch |
-|  | | SEMMEDDB:SAME_AS |
-|  | | SEMMEDDB:same_as |
-| **Narrow Mappings:** | | CHEBI:is_enantiomer_of |
-|  | | CHEBI:is_tautomer_of |
-|  | | MEDDRA:classified_as |
-|  | | OBO:xref |
-|  | | oboformat:xref |
-|  | | RXNORM:has_quantified_form |
-|  | | UMLS:SY |
+|  | | WIKIDATA:Q42415624 |
+| **Narrow Mappings:** | | OBO:xref |
+|  | | sumo:sibling |
+| **Broad Mappings:** | | csrc:Similarity |
+|  | | gr:isSimilarTo |
 

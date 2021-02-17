@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest
+holds between two operational entities where the action or effect of one increases the amount of the other within a system of interest
 
 URI: [csolink:increases_abundance_of](https://w3id.org/csolink/vocab/increases_abundance_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -34,6 +34,7 @@ URI: [csolink:increases_abundance_of](https://w3id.org/csolink/vocab/increases_a
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:increases_abundance_of |
-| **Related Mappings:** | | UBERGRAPH:is_increase_of |
+| **Broad Mappings:** | | sumo:Increasing |
+| **Related Mappings:** | | RO:0003003 |
+|  | | RO:0011008 |
 

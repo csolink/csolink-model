@@ -28,16 +28,16 @@ URI: [csolink:synonym](https://w3id.org/csolink/vocab/synonym)
 
 ## Used by
 
- * [RNAProduct](RNAProduct.md)
- * [RNAProductIsoform](RNAProductIsoform.md)
- * [Gene](Gene.md)
- * [GeneProduct](GeneProduct.md)
- * [MicroRNA](MicroRNA.md)
- * [NoncodingRNAProduct](NoncodingRNAProduct.md)
- * [Protein](Protein.md)
- * [ProteinIsoform](ProteinIsoform.md)
- * [SiRNA](SiRNA.md)
- * [Transcript](Transcript.md)
+ * [Componentservice](Componentservice.md)
+ * [KernelInterrupt](KernelInterrupt.md)
+ * [KernelMessage](KernelMessage.md)
+ * [KernelServicetype](KernelServicetype.md)
+ * [KernelServicetypeIsoform](KernelServicetypeIsoform.md)
+ * [NoncodingKernelServicetype](NoncodingKernelServicetype.md)
+ * [Serviceinstance](Serviceinstance.md)
+ * [ServiceinstanceIsoform](ServiceinstanceIsoform.md)
+ * [ServicetypeIsoformMixin](ServicetypeIsoformMixin.md)
+ * [ServicetypeMixin](ServicetypeMixin.md)
 
 ## Other properties
 
@@ -45,15 +45,15 @@ URI: [csolink:synonym](https://w3id.org/csolink/vocab/synonym)
 | --- | --- | --- |
 | **Aliases:** | | alias |
 | **In Subsets:** | | translator_minimal |
-| **Narrow Mappings:** | | skos:altLabel |
-|  | | gff3:Alias |
-|  | | alliancegenome:synonyms |
-|  | | gpi:DB_Object_Synonyms |
-|  | | oboInOwl:hasExactSynonym |
-|  | | oboInOwl:hasNarrowSynonym |
-|  | | oboInOwl:hasBroadSynonym |
-|  | | oboInOwl:hasRelatedSynonym |
-|  | | HANCESTRO:0330 |
+| **Exact Mappings:** | | MAID:8034284 |
+|  | | NCIT:C52469 |
+|  | | WIKIDATA_PROPERTY:P1420 |
+| **Narrow Mappings:** | | EXO:hasExactSynonym |
+|  | | EXO:hasRelatedSynonym |
 |  | | IAO:0000136 |
-|  | | RXNORM:has_tradename |
+|  | | MAID:2778121785 |
+|  | | OM:unofficialLabel |
+|  | | OM:unofficialAbbreviation |
+|  | | skos:altLabel |
+| **Broad Mappings:** | | dct:alternative |
 

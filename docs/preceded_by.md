@@ -35,8 +35,6 @@ URI: [csolink:preceded_by](https://w3id.org/csolink/vocab/preceded_by)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | BFO:0000062 |
-| **Narrow Mappings:** | | FMA:transforms_from |
-|  | | RO:0002087 |
+| **Narrow Mappings:** | | RO:0002087 |
 |  | | RO:0002285 |
-| **Broad Mappings:** | | GENEPIO:0001739 |
 

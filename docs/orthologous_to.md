@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-a homology relationship between entities (typically genes) that diverged after a speciation event.
+a homology relationship between entities (typically componentservices) that diverged after a speciation event.
 
 URI: [csolink:orthologous_to](https://w3id.org/csolink/vocab/orthologous_to)
 

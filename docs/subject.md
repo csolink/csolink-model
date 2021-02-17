@@ -8,7 +8,7 @@ layout: default
 # Slot: subject
 
 
-connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+connects an association to the subject of the association. For example, in a componentservice-to-observability association, the componentservice is subject and observability is object.
 
 URI: [csolink:subject](https://w3id.org/csolink/vocab/subject)
 
@@ -25,22 +25,22 @@ URI: [csolink:subject](https://w3id.org/csolink/vocab/subject)
 
 ## Used by
 
+ * [AdministrativeOperationalToComponentserviceAssociation](AdministrativeOperationalToComponentserviceAssociation.md)
  * [Association](Association.md)
- * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
- * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md)
- * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
- * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)
- * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
- * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
- * [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md)
- * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md)
- * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
- * [DrugToGeneAssociation](DrugToGeneAssociation.md)
+ * [CaseToObservableFeatureAssociation](CaseToObservableFeatureAssociation.md)
+ * [ErrorOrObservableFeatureAssociationToLocationAssociation](ErrorOrObservableFeatureAssociationToLocationAssociation.md)
+ * [ErrorOrObservableFeatureToLocationAssociation](ErrorOrObservableFeatureToLocationAssociation.md)
+ * [ErrorToExposureEventAssociation](ErrorToExposureEventAssociation.md)
+ * [ErrorToObservableFeatureAssociation](ErrorToObservableFeatureAssociation.md)
  * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)
- * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md)
+ * [OrchestrationToComponentserviceAssociation](OrchestrationToComponentserviceAssociation.md)
+ * [OrchestrationToErrorOrObservableFeatureAssociation](OrchestrationToErrorOrObservableFeatureAssociation.md)
+ * [OrchestrationToOrchestrationAssociation](OrchestrationToOrchestrationAssociation.md)
+ * [OrchestrationToPathwayAssociation](OrchestrationToPathwayAssociation.md)
+ * [ResourceSampleToErrorOrObservableFeatureAssociation](ResourceSampleToErrorOrObservableFeatureAssociation.md)
  * [SequenceAssociation](SequenceAssociation.md)
- * [VariantToGeneAssociation](VariantToGeneAssociation.md)
- * [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md)
+ * [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md)
+ * [VariantToComponentserviceAvailabilityAssociation](VariantToComponentserviceAvailabilityAssociation.md)
 
 ## Other properties
 
@@ -49,6 +49,20 @@ URI: [csolink:subject](https://w3id.org/csolink/vocab/subject)
 | **Local names:** | | annotation subject (ga4gh) |
 |  | | node with outgoing relationship (neo4j) |
 | **Mappings:** | | rdf:subject |
-| **Exact Mappings:** | | owl:annotatedSource |
-|  | | OBAN:association_has_subject |
+| **Exact Mappings:** | | csrc:subject |
+|  | | dct:subject |
+|  | | foaf:topic |
+|  | | gvp:subject |
+|  | | NCIT:C48910 |
+|  | | owl:annotatedSource |
+|  | | WIKIDATA:Q164573 |
+| **Narrow Mappings:** | | AML:hasProjectTitle |
+|  | | csrc:data_subjects |
+|  | | csrc:Subject_in_a_certificate |
+|  | | csrc:Subject_Certification_Authority |
+|  | | MAID:2992860105 |
+|  | | schema:guidelineSubject |
+|  | | schema:subject_headings |
+|  | | sumo:Proposition |
+| **Related Mappings:** | | schema:about |
 

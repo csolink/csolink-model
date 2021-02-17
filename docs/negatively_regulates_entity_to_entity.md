@@ -17,7 +17,7 @@ URI: [csolink:negatively_regulates_entity_to_entity](https://w3id.org/csolink/vo
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -38,8 +38,6 @@ URI: [csolink:negatively_regulates_entity_to_entity](https://w3id.org/csolink/vo
 |  | | activity directly negatively regulates activity of (ro) |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002449 |
-| **Narrow Mappings:** | | SEMMEDDB:INHIBITS |
-|  | | SEMMEDDB:inhibits |
-|  | | hetio:DOWNREGULATES_AdG |
-|  | | hetio:DOWNREGULATES_DdG |
+| **Narrow Mappings:** | | sumo:hinders |
+|  | | sumo:inhibits |
 

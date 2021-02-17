@@ -8,13 +8,13 @@ layout: default
 # Slot: strand
 
 
-The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+TBD
 
 URI: [csolink:strand](https://w3id.org/csolink/vocab/strand)
 
 ## Domain and Range
 
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>OPT</sub> [String](types/String.md)
+[ServiceSequenceLocalization](ServiceSequenceLocalization.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -25,4 +25,4 @@ URI: [csolink:strand](https://w3id.org/csolink/vocab/strand)
 
 ## Used by
 
- * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
+ * [ServiceSequenceLocalization](ServiceSequenceLocalization.md)

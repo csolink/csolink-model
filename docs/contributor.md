@@ -35,5 +35,11 @@ URI: [csolink:contributor](https://w3id.org/csolink/vocab/contributor)
 |  |  |  |
 | --- | --- | --- |
 | **Comments:** | | This is a grouping for predicates relating entities to their associated contributors realizing them |
-| **Exact Mappings:** | | dcterms:contributor |
+| **Exact Mappings:** | | dct:contributor |
+|  | | schema:contributor |
+|  | | sumo:contributor |
+|  | | WIKIDATA_PROPERTY:P767 |
+| **Close Mappings:** | | geolink:isContributorOf |
+| **Narrow Mappings:** | | csrc:Dictionary_Contributor |
+|  | | gvp:contributorAlternatePreferred |
 

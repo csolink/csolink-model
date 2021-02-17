@@ -8,13 +8,13 @@ layout: default
 # Relation: is_sequence_variant_of
 
 
-holds between a sequence variant and a genomic entity
+holds between a sequence variant and a workload entity
 
 URI: [csolink:is_sequence_variant_of](https://w3id.org/csolink/vocab/is_sequence_variant_of)
 
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [GenomicEntity](GenomicEntity.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [WorkloadEntity](WorkloadEntity.md)
 
 ## Parents
 
@@ -22,22 +22,13 @@ URI: [csolink:is_sequence_variant_of](https://w3id.org/csolink/vocab/is_sequence
 
 ## Children
 
- *  [is frameshift variant of](is_frameshift_variant_of.md)
  *  [is missense variant of](is_missense_variant_of.md)
  *  [is nearby variant of](is_nearby_variant_of.md)
  *  [is non coding variant of](is_non_coding_variant_of.md)
  *  [is nonsense variant of](is_nonsense_variant_of.md)
+ *  [is protocol variant of](is_protocol_variant_of.md)
  *  [is splice site variant of](is_splice_site_variant_of.md)
  *  [is synonymous variant of](is_synonymous_variant_of.md)
 
 ## Used by
-
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Narrow Mappings:** | | NCIT:gene_product_sequence_variation_encoded_by_gene_mutant |
-|  | | NCIT:gene_product_variant_of_gene_product |
-|  | | OMIM:allelic_variant_of |
 

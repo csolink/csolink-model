@@ -30,3 +30,16 @@ URI: [csolink:keywords](https://w3id.org/csolink/vocab/keywords)
  * [BookChapter](BookChapter.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | schema:keywords |
+| **Close Mappings:** | | csrc:keyword |
+|  | | sumo:keyName |
+|  | | WIKIDATA:Q1072684 |
+| **Narrow Mappings:** | | MAID:169168650 |
+|  | | MAID:2988412617 |
+|  | | MAID:2780288562 |
+

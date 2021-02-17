@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest
+holds between two operational entities where the action or effect of one increases the activity of the other within a system of interest
 
 URI: [csolink:increases_activity_of](https://w3id.org/csolink/vocab/increases_activity_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -34,26 +34,14 @@ URI: [csolink:increases_activity_of](https://w3id.org/csolink/vocab/increases_ac
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:increases_activity_of |
-| **Narrow Mappings:** | | GAMMA:activator |
-|  | | GAMMA:partial_agonist |
-|  | | GAMMA:agonist |
-|  | | GAMMA:opener |
-|  | | GAMMA:positive_allosteric_modulator |
-|  | | GAMMA:positive_modulator |
-|  | | GAMMA:inducer |
-|  | | GAMMA:potentiator |
-|  | | GAMMA:stimulator |
-|  | | CHEMBL.MECHANISM:agonist |
-|  | | CHEMBL.MECHANISM:opener |
-|  | | CHEMBL.MECHANISM:partial_agonist |
-|  | | CHEMBL.MECHANISM:positive_allosteric_modulator |
-|  | | CHEMBL.MECHANISM:positive_modulator |
-|  | | DGIdb:agonist |
-|  | | DGIdb:partial_agonist |
-|  | | DGIdb:inducer |
-|  | | DGIdb:positive_allosteric_modulator |
-|  | | DGIdb:stimulator |
-| **Related Mappings:** | | GAMMA:ec50 |
-|  | | GAMMA:ac50 |
+| **Narrow Mappings:** | | CSO:active_mode |
+|  | | geolink:isSchedulerOf |
+|  | | schema:ActivateAction |
+|  | | ssn:Stimulus |
+|  | | sumo:Excitment |
+|  | | sumo:starts |
+|  | | sumo:Stimulant |
+|  | | sumo:visual_stimulus |
+|  | | WIKIDATA:Q4114622 |
+| **Related Mappings:** | | sumo:actionTendency |
 

@@ -25,9 +25,9 @@ URI: [csolink:interacts_with](https://w3id.org/csolink/vocab/interacts_with)
 
 ## Children
 
+ *  [cyber interaction with](cyber_interaction_with.md)
  *  [directly interacts with](directly_interacts_with.md)
- *  [genetically interacts with](genetically_interacts_with.md)
- *  [physically interacts with](physically_interacts_with.md)
+ *  [service interacts with](service_interacts_with.md)
 
 ## Used by
 
@@ -38,8 +38,39 @@ URI: [csolink:interacts_with](https://w3id.org/csolink/vocab/interacts_with)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002434 |
-| **Narrow Mappings:** | | RO:0002103 |
-|  | | RO:0002120 |
-|  | | RO:0002130 |
-|  | | SEMMEDDB:complicates |
+| **Close Mappings:** | | schema:InteractAction |
+| **Narrow Mappings:** | | AML:contains |
+|  | | CTRL:isConnectedTo |
+|  | | CTRL:isSupervisedBy |
+|  | | csrc:system |
+|  | | NCIT:has_target |
+|  | | SAN:actsOn |
+|  | | SAN:consumes |
+|  | | SAN:impacts |
+|  | | SAN:isImpactedUponBy |
+|  | | SAN:isPropertyOf |
+|  | | sosa:actsOnProperty |
+|  | | gr:offers |
+|  | | gr:owns |
+|  | | gr:predecessorOf |
+|  | | gr:seeks |
+|  | | gr:includes |
+|  | | sumo:disapproves |
+|  | | sumo:discovers |
+|  | | sumo:dislikes |
+|  | | sumo:displayedUpon |
+|  | | sumo:distrusts |
+|  | | sumo:engineers |
+|  | | sumo:entails |
+|  | | sumo:exploits |
+|  | | sumo:faces |
+|  | | sumo:follows |
+|  | | sumo:involvedInEvent |
+|  | | sumo:links |
+|  | | sumo:needs |
+|  | | sumo:providesDestination |
+|  | | sumo:publishes |
+|  | | SWO:0000082 |
+|  | | SWO:0000150 |
+|  | | SWO:0000741 |
 

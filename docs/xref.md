@@ -28,21 +28,21 @@ URI: [csolink:xref](https://w3id.org/csolink/vocab/xref)
 
 ## Used by
 
- * [RNAProduct](RNAProduct.md)
- * [RNAProductIsoform](RNAProductIsoform.md)
  * [Article](Article.md)
  * [Book](Book.md)
  * [BookChapter](BookChapter.md)
- * [Gene](Gene.md)
- * [GeneProduct](GeneProduct.md)
- * [MicroRNA](MicroRNA.md)
- * [NoncodingRNAProduct](NoncodingRNAProduct.md)
- * [Protein](Protein.md)
- * [ProteinIsoform](ProteinIsoform.md)
+ * [Componentservice](Componentservice.md)
+ * [KernelInterrupt](KernelInterrupt.md)
+ * [KernelMessage](KernelMessage.md)
+ * [KernelServicetype](KernelServicetype.md)
+ * [KernelServicetypeIsoform](KernelServicetypeIsoform.md)
+ * [NoncodingKernelServicetype](NoncodingKernelServicetype.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
- * [SiRNA](SiRNA.md)
- * [Transcript](Transcript.md)
+ * [Serviceinstance](Serviceinstance.md)
+ * [ServiceinstanceIsoform](ServiceinstanceIsoform.md)
+ * [ServicetypeIsoformMixin](ServicetypeIsoformMixin.md)
+ * [ServicetypeMixin](ServicetypeMixin.md)
 
 ## Other properties
 
@@ -52,6 +52,9 @@ URI: [csolink:xref](https://w3id.org/csolink/vocab/xref)
 |  | | Dbxref |
 |  | | DbXref |
 | **In Subsets:** | | translator_minimal |
-| **Narrow Mappings:** | | gff3:Dbxref |
-|  | | gpi:DB_Xrefs |
+| **Exact Mappings:** | | WIKIDATA:Q1302249 |
+| **Narrow Mappings:** | | dwc:identificationReferences |
+|  | | gr:relatedWebService |
+|  | | NCIT:hasDbXref |
+|  | | EDAM:repository |
 

@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Uri
+title: https://w3id.org/csolink/vocab/biolinkml:types/Uri
 layout: default
 ---
 
-# Type: Uri
+# Type: https://w3id.org/csolink/vocab/biolinkml:types/Uri
 
 
 a complete URI
 
-URI: [metatype:Uri](https://csolink.github.io/csolinkml/docs/types/Uri)
+URI: [https://w3id.org/csolink/vocab/biolinkml:types/Uri](https://w3id.org/csolink/vocab/biolinkml:types/Uri)
 
 |  |  |  |
 | --- | --- | --- |

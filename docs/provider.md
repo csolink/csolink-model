@@ -8,7 +8,7 @@ layout: default
 # Relation: provider
 
 
-person, group, organization or project that provides a piece of information (e.g. a knowledge association).
+service, person, group, organization or project that provides a piece of information (e.g. a knowledge association).
 
 URI: [csolink:provider](https://w3id.org/csolink/vocab/provider)
 
@@ -24,4 +24,17 @@ URI: [csolink:provider](https://w3id.org/csolink/vocab/provider)
 
 
 ## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | csrc:Provider |
+|  | | schema:provider |
+| **Close Mappings:** | | csrc:supplier |
+| **Narrow Mappings:** | | CSO:Service_Provider |
+|  | | CSO:Third_party_Providers |
+|  | | CSO:computer_provider_or_provider |
+|  | | CSO:computer_Service_Provider |
 

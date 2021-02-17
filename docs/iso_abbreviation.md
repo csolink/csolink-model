@@ -8,7 +8,7 @@ layout: default
 # Slot: iso_abbreviation
 
 
-Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
+Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/systems/online-systems/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
 
 URI: [csolink:iso_abbreviation](https://w3id.org/csolink/vocab/iso_abbreviation)
 

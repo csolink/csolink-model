@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Datetime
+title: https://w3id.org/csolink/vocab/biolinkml:types/Datetime
 layout: default
 ---
 
-# Type: Datetime
+# Type: https://w3id.org/csolink/vocab/biolinkml:types/Datetime
 
 
 The combination of a date and time
 
-URI: [metatype:Datetime](https://csolink.github.io/csolinkml/docs/types/Datetime)
+URI: [https://w3id.org/csolink/vocab/biolinkml:types/Datetime](https://w3id.org/csolink/vocab/biolinkml:types/Datetime)
 
 |  |  |  |
 | --- | --- | --- |

@@ -14,7 +14,7 @@ URI: [csolink:created_with](https://w3id.org/csolink/vocab/created_with)
 
 ## Domain and Range
 
-[SourceFile](SourceFile.md) ->  <sub>OPT</sub> [String](types/String.md)
+[Dataset](Dataset.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -31,4 +31,7 @@ URI: [csolink:created_with](https://w3id.org/csolink/vocab/created_with)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | pav:createdWith |
+| **Close Mappings:** | | AML:wasGeneratedBy |
+|  | | prov:wasGeneratedBy |
+| **Broad Mappings:** | | gvp:aat2325_created_by |
 

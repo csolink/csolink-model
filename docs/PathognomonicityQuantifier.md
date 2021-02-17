@@ -8,7 +8,7 @@ layout: default
 # Class: PathognomonicityQuantifier
 
 
-A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+A relationship quantifier between a variant or symptom and a error, which is high when the presence of the feature implies the existence of the error
 
 URI: [csolink:PathognomonicityQuantifier](https://w3id.org/csolink/vocab/PathognomonicityQuantifier)
 

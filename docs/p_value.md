@@ -30,7 +30,6 @@ URI: [csolink:p_value](https://w3id.org/csolink/vocab/p_value)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | OBI:0000175 |
-|  | | NCIT:C44185 |
+| **Exact Mappings:** | | NCIT:C44185 |
 |  | | EDAM-DATA:1669 |
 

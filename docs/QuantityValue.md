@@ -8,7 +8,7 @@ layout: default
 # Class: QuantityValue
 
 
-A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
+A value of an attribute that is quantitative and measurable, available as a combination of a unit and a numeric value
 
 URI: [csolink:QuantityValue](https://w3id.org/csolink/vocab/QuantityValue)
 

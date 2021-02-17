@@ -8,13 +8,13 @@ layout: default
 # Relation: is_non_coding_variant_of
 
 
-holds between a sequence variant and a gene, where the variant does not affect the coding sequence
+holds between a sequence variant and a componentservice, where the variant does not affect the coding sequence
 
 URI: [csolink:is_non_coding_variant_of](https://w3id.org/csolink/vocab/is_non_coding_variant_of)
 
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Gene](Gene.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Componentservice](Componentservice.md)
 
 ## Parents
 
@@ -24,16 +24,4 @@ URI: [csolink:is_non_coding_variant_of](https://w3id.org/csolink/vocab/is_non_co
 
 
 ## Used by
-
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | GAMMA:0000103 |
-| **Narrow Mappings:** | | SNPEFF:3_prime_UTR_variant |
-|  | | SNPEFF:5_prime_UTR_variant |
-|  | | SNPEFF:5_prime_UTR_premature_start_codon_gain_variant |
-|  | | SNPEFF:non_coding_transcript_exon_variant |
-|  | | SNPEFF:intron_variant |
 

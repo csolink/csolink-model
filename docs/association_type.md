@@ -8,7 +8,7 @@ layout: default
 # Slot: association_type _(deprecated)_
 
 
-connects an association to the category of association (e.g. gene to phenotype)
+connects an association to the category of association (e.g. componentservice to observability)
 
 URI: [csolink:association_type](https://w3id.org/csolink/vocab/association_type)
 

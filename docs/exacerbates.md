@@ -8,13 +8,13 @@ layout: default
 # Relation: exacerbates
 
 
-A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
+A relationship between an entity (e.g. a orchestration, environmental exposure, or some form of service variation) and a condition (a observability or error), where the presence of the entity worsens some or all aspects of the condition.
 
 URI: [csolink:exacerbates](https://w3id.org/csolink/vocab/exacerbates)
 
 ## Domain and Range
 
-[BiologicalEntity](BiologicalEntity.md) ->  <sub>0..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[ComputationalEntity](ComputationalEntity.md) ->  <sub>0..*</sub> [ErrorOrObservableFeature](ErrorOrObservableFeature.md)
 
 ## Parents
 
@@ -31,5 +31,4 @@ URI: [csolink:exacerbates](https://w3id.org/csolink/vocab/exacerbates)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | RO:0003309 |
-|  | | CTD:therapeutic |
 

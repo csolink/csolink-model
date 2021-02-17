@@ -36,6 +36,7 @@ URI: [csolink:summary](https://w3id.org/csolink/vocab/summary)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | abstract |
-| **Exact Mappings:** | | dcterms:abstract |
+| **Exact Mappings:** | | dct:abstract |
+|  | | sumo:Summary |
 |  | | WIKIDATA:Q333291 |
 

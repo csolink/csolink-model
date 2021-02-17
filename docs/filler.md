@@ -25,3 +25,13 @@ URI: [csolink:filler](https://w3id.org/csolink/vocab/filler)
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | NCIT:C28284 |
+|  | | sumo:fills |
+| **Narrow Mappings:** | | sumo:completelyFills |
+|  | | sumo:partiallyFills |
+

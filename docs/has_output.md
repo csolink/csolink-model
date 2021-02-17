@@ -31,13 +31,15 @@ URI: [csolink:has_output](https://w3id.org/csolink/vocab/has_output)
  * [Behavior](Behavior.md)
  * [BehavioralExposure](BehavioralExposure.md)
  * [BehavioralOutcome](BehavioralOutcome.md)
- * [BiologicalProcess](BiologicalProcess.md)
- * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
+ * [ComputationalProcess](ComputationalProcess.md)
+ * [ComputationalProcessOrActivity](ComputationalProcessOrActivity.md)
+ * [CyberProcess](CyberProcess.md)
  * [Death](Death.md)
+ * [FaultyProcess](FaultyProcess.md)
+ * [FaultyProcessExposure](FaultyProcessExposure.md)
+ * [FaultyProcessOutcome](FaultyProcessOutcome.md)
  * [MortalityOutcome](MortalityOutcome.md)
- * [PathologicalProcess](PathologicalProcess.md)
  * [Pathway](Pathway.md)
- * [PhysiologicalProcess](PhysiologicalProcess.md)
  * [SocioeconomicExposure](SocioeconomicExposure.md)
  * [SocioeconomicOutcome](SocioeconomicOutcome.md)
 
@@ -49,13 +51,8 @@ URI: [csolink:has_output](https://w3id.org/csolink/vocab/has_output)
 | **Exact Mappings:** | | RO:0002234 |
 | **Close Mappings:** | | RO:0002353 |
 |  | | RO:0002354 |
-|  | | RTXKG1:output_of |
-| **Narrow Mappings:** | | NCIT:biological_process_has_result_anatomy |
-|  | | OBI:0000299 |
-|  | | PathWhiz:has_right_element |
-|  | | RO:0002296 |
+| **Narrow Mappings:** | | RO:0002296 |
 |  | | RO:0002297 |
-|  | | RO:0002298 |
 |  | | RO:0002299 |
 |  | | RO:0002588 |
 |  | | RO:0004008 |

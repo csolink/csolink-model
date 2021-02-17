@@ -8,7 +8,7 @@ layout: default
 # Type: PredicateType
 
 
-A CURIE from the csolink related_to hierarchy. For example, csolink:related_to, csolink:causes, csolink:treats.
+A CURIE from the csolink related_to hierarchy. For example, csolink:related_to, csolink:causes, csolink:repairs.
 
 URI: [csolink:PredicateType](https://w3id.org/csolink/vocab/PredicateType)
 

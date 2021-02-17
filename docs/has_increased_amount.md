@@ -30,5 +30,5 @@ URI: [csolink:has_increased_amount](https://w3id.org/csolink/vocab/has_increased
 
 |  |  |  |
 | --- | --- | --- |
-| **Narrow Mappings:** | | CL:has_high_plasma_membrane_amount |
+| **Exact Mappings:** | | sumo:Increasing |
 

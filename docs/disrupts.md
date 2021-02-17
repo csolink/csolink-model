@@ -34,10 +34,8 @@ URI: [csolink:disrupts](https://w3id.org/csolink/vocab/disrupts)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | SEMMEDDB:DISRUPTS |
-|  | | SEMMEDDB:disrupts |
-|  | | CHEMBL.MECHANISM:disrupting_agent |
-| **Narrow Mappings:** | | RO:0004024 |
-|  | | RO:0004025 |
-|  | | RTXKG1:disease_causes_disruption_of |
+| **Exact Mappings:** | | sumo:deprivesNorm |
+|  | | NCIT:C25486 |
+| **Narrow Mappings:** | | CSO:ddos_attack |
+|  | | CSO:single_event_upsets |
 

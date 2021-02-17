@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two genes or gene products that are part of in the same biological pathway
+holds between two componentservice or servicetypes that are part of in the same computational pathway
 
 URI: [csolink:in_pathway_with](https://w3id.org/csolink/vocab/in_pathway_with)
 
 ## Domain and Range
 
-[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..*</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
+[ComponentserviceOrServicetype](ComponentserviceOrServicetype.md) ->  <sub>0..*</sub> [ComponentserviceOrServicetype](ComponentserviceOrServicetype.md)
 
 ## Parents
 
@@ -34,5 +34,5 @@ URI: [csolink:in_pathway_with](https://w3id.org/csolink/vocab/in_pathway_with)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Related Mappings:** | | SIO:010532 |
+| **Narrow Mappings:** | | sumo:between |
 

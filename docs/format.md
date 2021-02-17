@@ -29,21 +29,30 @@ URI: [csolink:format](https://w3id.org/csolink/vocab/format)
  * [Book](Book.md)
  * [BookChapter](BookChapter.md)
  * [ConfidenceLevel](ConfidenceLevel.md)
- * [DataFile](DataFile.md)
- * [DataSet](DataSet.md)
- * [DataSetSummary](DataSetSummary.md)
- * [DataSetVersion](DataSetVersion.md)
+ * [Dataset](Dataset.md)
+ * [DatasetDistribution](DatasetDistribution.md)
+ * [DatasetSummary](DatasetSummary.md)
+ * [DatasetVersion](DatasetVersion.md)
  * [DistributionLevel](DistributionLevel.md)
  * [EvidenceType](EvidenceType.md)
  * [InformationContentEntity](InformationContentEntity.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
- * [SourceFile](SourceFile.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | dcterms:format |
+| **Exact Mappings:** | | dct:format |
+|  | | NCIT:C42761 |
+|  | | sumo:format |
+|  | | SWO:0004002 |
+| **Narrow Mappings:** | | CSO:storage_formats |
+|  | | MAID:88006597 |
+|  | | MAID:2778734103 |
+|  | | MAID:2780416260 |
+|  | | REPR:ImageFormat |
+|  | | schema:fileFormat |
 |  | | WIKIDATA_PROPERTY:P2701 |
+|  | | WIKIDATA:Q935809 |
 

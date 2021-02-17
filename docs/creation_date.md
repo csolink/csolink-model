@@ -29,22 +29,29 @@ URI: [csolink:creation_date](https://w3id.org/csolink/vocab/creation_date)
  * [Book](Book.md)
  * [BookChapter](BookChapter.md)
  * [ConfidenceLevel](ConfidenceLevel.md)
- * [DataFile](DataFile.md)
- * [DataSet](DataSet.md)
- * [DataSetSummary](DataSetSummary.md)
- * [DataSetVersion](DataSetVersion.md)
+ * [Dataset](Dataset.md)
+ * [DatasetDistribution](DatasetDistribution.md)
+ * [DatasetSummary](DatasetSummary.md)
+ * [DatasetVersion](DatasetVersion.md)
  * [DistributionLevel](DistributionLevel.md)
  * [EvidenceType](EvidenceType.md)
  * [InformationContentEntity](InformationContentEntity.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
- * [SourceFile](SourceFile.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | publication date |
-| **Exact Mappings:** | | dcterms:createdOn |
+| **Exact Mappings:** | | dct:createdOn |
+|  | | schema:dateCreated |
+|  | | dwc:dateIdentified |
+|  | | schema:datePublished |
+|  | | sumo:dateEstablished |
 |  | | WIKIDATA_PROPERTY:P577 |
+| **Narrow Mappings:** | | dwc:eventDate |
+|  | | dwc:verbatimEventDate |
+|  | | dwc:relationshipEstablishedDate |
+| **Broad Mappings:** | | sumo:date |
 

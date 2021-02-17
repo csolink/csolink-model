@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a process and a physical entity, where the physical entity executes the process
+holds between a process and a cyber entity, where the cyber entity executes the process
 
 URI: [csolink:enabled_by](https://w3id.org/csolink/vocab/enabled_by)
 
 ## Domain and Range
 
-[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..*</sub> [PhysicalEntity](PhysicalEntity.md)
+[ComputationalProcessOrActivity](ComputationalProcessOrActivity.md) ->  <sub>0..*</sub> [CyberEntity](CyberEntity.md)
 
 ## Parents
 
@@ -31,13 +31,15 @@ URI: [csolink:enabled_by](https://w3id.org/csolink/vocab/enabled_by)
  * [Behavior](Behavior.md)
  * [BehavioralExposure](BehavioralExposure.md)
  * [BehavioralOutcome](BehavioralOutcome.md)
- * [BiologicalProcess](BiologicalProcess.md)
- * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
+ * [ComputationalProcess](ComputationalProcess.md)
+ * [ComputationalProcessOrActivity](ComputationalProcessOrActivity.md)
+ * [CyberProcess](CyberProcess.md)
  * [Death](Death.md)
+ * [FaultyProcess](FaultyProcess.md)
+ * [FaultyProcessExposure](FaultyProcessExposure.md)
+ * [FaultyProcessOutcome](FaultyProcessOutcome.md)
  * [MortalityOutcome](MortalityOutcome.md)
- * [PathologicalProcess](PathologicalProcess.md)
  * [Pathway](Pathway.md)
- * [PhysiologicalProcess](PhysiologicalProcess.md)
  * [SocioeconomicExposure](SocioeconomicExposure.md)
  * [SocioeconomicOutcome](SocioeconomicOutcome.md)
 

@@ -8,13 +8,13 @@ layout: default
 # Relation: contraindicated_for
 
 
-Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
+Holds between a administrative operational and a error or observability, such that a service with that error should not be repaired with the administrative operation.
 
 URI: [csolink:contraindicated_for](https://w3id.org/csolink/vocab/contraindicated_for)
 
 ## Domain and Range
 
-[Drug](Drug.md) ->  <sub>0..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[AdministrativeOperation](AdministrativeOperation.md) ->  <sub>0..*</sub> [ErrorOrObservableFeature](ErrorOrObservableFeature.md)
 
 ## Parents
 
@@ -30,6 +30,5 @@ URI: [csolink:contraindicated_for](https://w3id.org/csolink/vocab/contraindicate
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | DrugCentral:0000001 |
-|  | | RTXKG1:contraindicated_for |
+| **Exact Mappings:** | | NCIT:C37933 |
 

@@ -8,13 +8,13 @@ layout: default
 # Slot: stage_qualifier
 
 
-stage during which gene or protein expression of takes place.
+stage during which componentservice or serviceinstance availability of takes place.
 
 URI: [csolink:stage_qualifier](https://w3id.org/csolink/vocab/stage_qualifier)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [LifeStage](LifeStage.md)
+[Association](Association.md) ->  <sub>OPT</sub> [LifecycleStage](LifecycleStage.md)
 
 ## Parents
 
@@ -25,13 +25,13 @@ URI: [csolink:stage_qualifier](https://w3id.org/csolink/vocab/stage_qualifier)
 
 ## Used by
 
- * [GeneExpressionMixin](GeneExpressionMixin.md)
- * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
- * [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md)
+ * [ComponentserviceAvailabilityMixin](ComponentserviceAvailabilityMixin.md)
+ * [ComponentserviceToComponentserviceCoavailabilityAssociation](ComponentserviceToComponentserviceCoavailabilityAssociation.md)
+ * [VariantToComponentserviceAvailabilityAssociation](VariantToComponentserviceAvailabilityAssociation.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='UBERON:0000069', description='larval stage') |
+| **Examples:** | | Example(value='sumo:startupOf', description='startup') |
 

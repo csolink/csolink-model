@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest
+holds between two operational entities where the action or effect of one decreases the amount of the other within a system of interest
 
 URI: [csolink:decreases_abundance_of](https://w3id.org/csolink/vocab/decreases_abundance_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -34,6 +34,10 @@ URI: [csolink:decreases_abundance_of](https://w3id.org/csolink/vocab/decreases_a
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:decreases_abundance_of |
-| **Related Mappings:** | | UBERGRAPH:is_decrease_of |
+| **Broad Mappings:** | | sumo:Decreasing |
+| **Related Mappings:** | | OM:usesQuantity |
+|  | | RO:0003002 |
+|  | | RO:0011007 |
+|  | | SIO:000499 |
+|  | | SIO:010296 |
 

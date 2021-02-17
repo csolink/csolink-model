@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a physical entity and a process, where the physical entity executes the process
+holds between a cyber entity and a process, where the cyber entity executes the process
 
 URI: [csolink:enables](https://w3id.org/csolink/vocab/enables)
 
 ## Domain and Range
 
-[PhysicalEntity](PhysicalEntity.md) ->  <sub>0..*</sub> [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
+[CyberEntity](CyberEntity.md) ->  <sub>0..*</sub> [ComputationalProcessOrActivity](ComputationalProcessOrActivity.md)
 
 ## Parents
 
@@ -35,5 +35,4 @@ URI: [csolink:enables](https://w3id.org/csolink/vocab/enables)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002327 |
-|  | | GO:enables |
 

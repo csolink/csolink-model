@@ -35,11 +35,14 @@ URI: [csolink:contributes_to](https://w3id.org/csolink/vocab/contributes_to)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RO:0002326 |
-|  | | GO:contributes_to |
+| **Exact Mappings:** | | geolink:isContributorOf |
+|  | | RO:0002326 |
+|  | | sumo:increasesLikelihood |
 | **Close Mappings:** | | IDO:0000664 |
-| **Narrow Mappings:** | | CTD:marker_mechanism |
-|  | | MONDO:predisposes_towards |
+| **Narrow Mappings:** | | gvp:contributorAlternatePreferred |
 |  | | RO:0002255 |
 |  | | RO:0003304 |
+|  | | RO:0003306 |
+|  | | RO:0003305 |
+|  | | RO:0003302 |
 

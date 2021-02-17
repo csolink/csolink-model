@@ -30,5 +30,9 @@ URI: [csolink:editor](https://w3id.org/csolink/vocab/editor)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA_PROPERTY:P98 |
+| **Exact Mappings:** | | schema:editor |
+|  | | sumo:editor |
+|  | | WIKIDATA_PROPERTY:P98 |
+| **Narrow Mappings:** | | MAID:3018282236 |
+| **Related Mappings:** | | geolink:isEditorOf |
 

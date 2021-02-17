@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA
+holds between a operational entity and an kernel message where the action or effect of the operational entity impacts the splicing of the kernel message
 
 URI: [csolink:affects_splicing_of](https://w3id.org/csolink/vocab/affects_splicing_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [Transcript](Transcript.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [Componentserviceinstance](Componentserviceinstance.md)
 
 ## Parents
 
@@ -36,6 +36,4 @@ URI: [csolink:affects_splicing_of](https://w3id.org/csolink/vocab/affects_splici
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:affects_RNA_splicing |
-| **Broad Mappings:** | | CTD:affects_splicing_of |
 

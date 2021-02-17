@@ -14,7 +14,7 @@ URI: [csolink:negatively_regulated_by_entity_to_entity](https://w3id.org/csolink
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 

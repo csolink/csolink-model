@@ -32,4 +32,10 @@ URI: [csolink:has_count](https://w3id.org/csolink/vocab/has_count)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | LOINC:has_count |
+|  | | dwc:individualCount |
+|  | | SIO:000900 |
+| **Narrow Mappings:** | | IAO:0000596 |
+|  | | sumo:memberCount |
+|  | | sumo:memberTypeCount |
+| **Broad Mappings:** | | sumo:Counting |
 

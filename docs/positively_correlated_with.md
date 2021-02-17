@@ -34,5 +34,4 @@ URI: [csolink:positively_correlated_with](https://w3id.org/csolink/vocab/positiv
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:positivecorrelation |
 

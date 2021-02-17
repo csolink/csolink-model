@@ -35,15 +35,16 @@ URI: [csolink:superclass_of](https://w3id.org/csolink/vocab/superclass_of)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | WIKIDATA:Q66088480 |
-|  | | CHEMBL.MECHANISM:superset_of |
-|  | | GO:inverse_isa |
-|  | | MESH:inverse_isa |
-|  | | RXNORM:inverse_isa |
-|  | | VANDF:inverse_isa |
-| **Narrow Mappings:** | | NCIT:cdrh_parent_of |
+| **Close Mappings:** | | gr:predecessorOf |
+|  | | ssn:hasSubSystem |
+| **Narrow Mappings:** | | geolink:isOwnerOf |
+|  | | gvp:ulan1512_parent_of |
+|  | | NCIT:cdrh_parent_of |
 |  | | NCIT:ctcae_5_parent_of |
 |  | | NCIT:subset_includes_concept |
-|  | | OMIM:has_manifestation |
-|  | | SNOMED:has_basic_dose_form |
-|  | | UMLS:RB |
+|  | | schema:parentitem |
+|  | | sumo:parentcompany |
+| **Broad Mappings:** | | CDAO:has_Descendants |
+|  | | gvp:aat2833_ancestor_of |
+|  | | sumo:initiallyContainsPart |
 

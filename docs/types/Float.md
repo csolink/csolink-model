@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Float
+title: https://w3id.org/csolink/vocab/biolinkml:types/Float
 layout: default
 ---
 
-# Type: Float
+# Type: https://w3id.org/csolink/vocab/biolinkml:types/Float
 
 
 A real number that conforms to the xsd:float specification
 
-URI: [metatype:Float](https://csolink.github.io/csolinkml/docs/types/Float)
+URI: [https://w3id.org/csolink/vocab/biolinkml:types/Float](https://w3id.org/csolink/vocab/biolinkml:types/Float)
 
 |  |  |  |
 | --- | --- | --- |

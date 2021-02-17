@@ -34,13 +34,16 @@ URI: [csolink:has_unit](https://w3id.org/csolink/vocab/has_unit)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | samples |
-| **Exact Mappings:** | | qud:unit |
+| **Exact Mappings:** | | AML:hasUnit |
+|  | | CTRL:unit |
+|  | | CTRL:hasUnit |
 |  | | IAO:0000039 |
+|  | | OCRM:hasUnit |
+|  | | OM:hasUnit |
+|  | | qud:unit |
+|  | | SIO:000221 |
+|  | | sumo:UnitFn |
 | **Close Mappings:** | | EFO:0001697 |
-|  | | OBO:uo#is_unit_of |
-| **Narrow Mappings:** | | SNOMED:has_concentration_strength_denominator_unit |
-|  | | SNOMED:has_concentration_strength_numerator_unit |
-|  | | SNOMED:has_presentation_strength_denominator_unit |
-|  | | SNOMED:has_presentation_strength_numerator_unit |
-|  | | SNOMED:has_unit_of_presentation |
+|  | | UO:is_unit_of |
+| **Narrow Mappings:** | | gr:hasUnitOfMeasurement |
 

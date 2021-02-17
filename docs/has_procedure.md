@@ -8,7 +8,7 @@ layout: default
 # Slot: has_procedure
 
 
-connects an entity to one or more (medical) procedures
+connects an entity to one or more (engineering) procedures
 
 URI: [csolink:has_procedure](https://w3id.org/csolink/vocab/has_procedure)
 
@@ -25,4 +25,4 @@ URI: [csolink:has_procedure](https://w3id.org/csolink/vocab/has_procedure)
 
 ## Used by
 
- * [Treatment](Treatment.md)
+ * [Repairing](Repairing.md)

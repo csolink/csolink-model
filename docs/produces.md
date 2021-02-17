@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
+holds between a resource entity and a servicetype that is generated through the intentional actions or functioning of the resource entity
 
 URI: [csolink:produces](https://w3id.org/csolink/vocab/produces)
 
@@ -35,11 +35,7 @@ URI: [csolink:produces](https://w3id.org/csolink/vocab/produces)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0003000 |
+|  | | schema:produces |
+|  | | sumo:produced |
 |  | | WIKIDATA_PROPERTY:P1056 |
-|  | | SEMMEDDB:PRODUCES |
-|  | | SEMMEDDB:produces |
-| **Narrow Mappings:** | | NCIT:biological_process_has_result_chemical_or_drug |
-|  | | SNOMED:has_process_output |
-|  | | SNOMED:specimen_procedure_of |
-| **Related Mappings:** | | GOREL:0001010 |
 

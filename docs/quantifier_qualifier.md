@@ -33,6 +33,5 @@ URI: [csolink:quantifier_qualifier](https://w3id.org/csolink/vocab/quantifier_qu
 | **Narrow Mappings:** | | LOINC:analyzes |
 |  | | LOINC:measured_by |
 |  | | LOINC:property_of |
-|  | | SEMMEDDB:measures |
-|  | | UMLS:measures |
+|  | | sumo:Measuring |
 

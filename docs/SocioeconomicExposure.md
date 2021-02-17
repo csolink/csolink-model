@@ -15,7 +15,7 @@ URI: [csolink:SocioeconomicExposure](https://w3id.org/csolink/vocab/Socioeconomi
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicAttribute]%3Chas%20attribute%201..%2A-++[SocioeconomicExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[SocioeconomicExposure]uses%20-.-%3E[ExposureEvent],[Behavior]%5E-[SocioeconomicExposure],[SocioeconomicAttribute],[PhysicalEntity],[NamedThing],[ExposureEvent],[Behavior],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicAttribute]%3Chas%20attribute%201..%2A-++[SocioeconomicExposure%7Ctimepoint:time_type%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[SocioeconomicExposure]uses%20-.-%3E[ExposureEvent],[Behavior]%5E-[SocioeconomicExposure],[SocioeconomicAttribute],[NamedThing],[ExposureEvent],[CyberEntity],[Behavior],[Agent])
 
 ---
 
@@ -26,7 +26,7 @@ URI: [csolink:SocioeconomicExposure](https://w3id.org/csolink/vocab/Socioeconomi
 
 ## Uses Mixins
 
- *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+ *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an system that influences one or more observability of that system, potentially mediated by serviceunits
 
 ## Referenced by class
 
@@ -39,11 +39,11 @@ URI: [csolink:SocioeconomicExposure](https://w3id.org/csolink/vocab/Socioeconomi
  * [socioeconomic exposure➞has attribute](socioeconomic_exposure_has_attribute.md)  <sub>1..*</sub>
     * range: [SocioeconomicAttribute](SocioeconomicAttribute.md)
 
-### Inherited from biological process or activity:
+### Inherited from computational process or activity:
 
  * [enabled by](enabled_by.md)  <sub>0..*</sub>
-    * Description: holds between a process and a physical entity, where the physical entity executes the process
-    * range: [PhysicalEntity](PhysicalEntity.md)
+    * Description: holds between a process and a cyber entity, where the cyber entity executes the process
+    * range: [CyberEntity](CyberEntity.md)
     * in subsets: (translator_minimal)
 
 ### Inherited from entity:
@@ -60,16 +60,12 @@ URI: [csolink:SocioeconomicExposure](https://w3id.org/csolink/vocab/Socioeconomi
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the csolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a csolink model class URI.
-This field is multi-valued. It should include values for ancestors of the csolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in csolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
+This field is multi-valued. It should include values for ancestors of the csolink class; for example, a serviceinstance such as Shh would have category values `bl:Interface`, `bl:ComponentTypeProduct`, `bl:ComponentTypeEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink.
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -79,7 +75,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
  * [provided by](provided_by.md)  <sub>0..*</sub>
-    * Description: connects an association to the agent (person, organization or group) that provided it
+    * Description: connects an association to the agent (service, organization or group) that provided it
     * range: [Agent](Agent.md)
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any entity to an attribute
@@ -91,6 +87,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [timepoint](timepoint.md)  <sub>OPT</sub>
     * Description: a point in time
     * range: [TimeType](types/TimeType.md)
+
+### Inherited from macrooperational machine mixin:
+
+ * [macrooperational machine mixin➞name](macrooperational_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: componentservices are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from named thing:
 

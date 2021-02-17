@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:String
+title: https://w3id.org/csolink/vocab/biolinkml:types/String
 layout: default
 ---
 
-# Type: String
+# Type: https://w3id.org/csolink/vocab/biolinkml:types/String
 
 
 A character string
 
-URI: [metatype:String](https://csolink.github.io/csolinkml/docs/types/String)
+URI: [https://w3id.org/csolink/vocab/biolinkml:types/String](https://w3id.org/csolink/vocab/biolinkml:types/String)
 
 |  |  |  |
 | --- | --- | --- |

@@ -35,5 +35,9 @@ URI: [csolink:model_of](https://w3id.org/csolink/vocab/model_of)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0003301 |
-| **Narrow Mappings:** | | FOODON:00001301 |
+| **Narrow Mappings:** | | CSO:equivalent_circuit_model |
+|  | | MAID:66024118 |
+|  | | NCIT:C142622 |
+|  | | WIKIDATA:Q392811 |
+| **Broad Mappings:** | | sumo:models |
 

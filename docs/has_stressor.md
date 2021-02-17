@@ -8,7 +8,7 @@ layout: default
 # Slot: has_stressor
 
 
-the process or entity that the receptor is being exposed to
+the process or entity that the gateway is being exposed to
 
 URI: [csolink:has_stressor](https://w3id.org/csolink/vocab/has_stressor)
 
@@ -32,4 +32,8 @@ URI: [csolink:has_stressor](https://w3id.org/csolink/vocab/has_stressor)
 | --- | --- | --- |
 | **Aliases:** | | has stimulus |
 | **Exact Mappings:** | | ExO:0000000 |
+|  | | MAID:125370674 |
+| **Close Mappings:** | | sumo:Pressure |
+|  | | WIKIDATA:Q1527480 |
+| **Broad Mappings:** | | SAN:Situation |
 

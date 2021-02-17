@@ -30,5 +30,9 @@ URI: [csolink:related_condition](https://w3id.org/csolink/vocab/related_conditio
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | GENO:0000790 |
+| **Narrow Mappings:** | | csrc:Predisposing_Condition |
+|  | | CSO:post-conditions |
+|  | | CSO:preconditioners |
+| **Broad Mappings:** | | ssn-system:Condition |
+| **Related Mappings:** | | sumo:relatedEvent |
 

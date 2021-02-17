@@ -30,5 +30,10 @@ URI: [csolink:has_not_completed](https://w3id.org/csolink/vocab/has_not_complete
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | CL:has_not_completed |
+| **Exact Mappings:** | | WIKIDATA:Q20734200 |
+| **Close Mappings:** | | IAO:0000125 |
+| **Narrow Mappings:** | | SWO:9000067 |
+|  | | WIKIDATA:Q2910675 |
+| **Related Mappings:** | | CSO:incomplete_information_systems |
+|  | | SWO:9000067 |
 

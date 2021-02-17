@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between entities that overlap in their extents (materials or processes)
+holds between entities that overlap in their extents (resources or processes)
 
 URI: [csolink:overlaps](https://w3id.org/csolink/vocab/overlaps)
 
@@ -37,9 +37,4 @@ URI: [csolink:overlaps](https://w3id.org/csolink/vocab/overlaps)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002131 |
-| **Narrow Mappings:** | | BSPO:0005001 |
-|  | | CHEMBL.MECHANISM:overlaps_with |
-|  | | RO:0002100 |
-|  | | RO:0002102 |
-|  | | RO:0002433 |
 

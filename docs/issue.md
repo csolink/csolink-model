@@ -32,5 +32,6 @@ URI: [csolink:issue](https://w3id.org/csolink/vocab/issue)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA_PROPERTY:P433 |
+| **Exact Mappings:** | | schema:PublicationIssue |
+|  | | WIKIDATA_PROPERTY:P433 |
 

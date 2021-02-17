@@ -17,7 +17,7 @@ URI: [csolink:regulates_entity_to_entity](https://w3id.org/csolink/vocab/regulat
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -40,5 +40,4 @@ URI: [csolink:regulates_entity_to_entity](https://w3id.org/csolink/vocab/regulat
 |  | | activity directly regulates activity of (ro) |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002448 |
-| **Narrow Mappings:** | | WIKIDATA_PROPERTY:P128 |
 

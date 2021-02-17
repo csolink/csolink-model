@@ -33,5 +33,9 @@ URI: [csolink:longitude](https://w3id.org/csolink/vocab/longitude)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | wgs:long |
+| **Exact Mappings:** | | MAID:2780554747 |
+|  | | schema:longtitude |
+|  | | sumo:Longitude |
+|  | | wgs:long |
+|  | | WIKIDATA:Q36477 |
 

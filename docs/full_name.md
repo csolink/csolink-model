@@ -25,3 +25,16 @@ URI: [csolink:full_name](https://w3id.org/csolink/vocab/full_name)
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | sumo:conventionalLongName |
+|  | | sumo:fullName |
+|  | | sumo:localLongName |
+| **Close Mappings:** | | sumo:humanName |
+| **Narrow Mappings:** | | sumo:fullNameIndexOrder |
+| **Broad Mappings:** | | REPR:name |
+|  | | NCIT:C42614 |
+

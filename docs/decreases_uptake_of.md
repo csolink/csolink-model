@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
+holds between two operational entities where the action or effect of one decreases the rate of uptake of the other into of a serviceunit, computehost, or application
 
 URI: [csolink:decreases_uptake_of](https://w3id.org/csolink/vocab/decreases_uptake_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -34,6 +34,4 @@ URI: [csolink:decreases_uptake_of](https://w3id.org/csolink/vocab/decreases_upta
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:decreases_uptake_of |
-| **Broad Mappings:** | | CTD:decreases_import |
 

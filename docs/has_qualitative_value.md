@@ -28,24 +28,32 @@ URI: [csolink:has_qualitative_value](https://w3id.org/csolink/vocab/has_qualitat
 ## Used by
 
  * [Attribute](Attribute.md)
- * [BiologicalSex](BiologicalSex.md)
- * [ClinicalAttribute](ClinicalAttribute.md)
- * [ClinicalCourse](ClinicalCourse.md)
- * [ClinicalMeasurement](ClinicalMeasurement.md)
- * [ClinicalModifier](ClinicalModifier.md)
+ * [ComputationalArchitecturalStyle](ComputationalArchitecturalStyle.md)
+ * [EmpiricalAttribute](EmpiricalAttribute.md)
+ * [EmpiricalCourse](EmpiricalCourse.md)
+ * [EmpiricalMeasurement](EmpiricalMeasurement.md)
+ * [EmpiricalModifier](EmpiricalModifier.md)
  * [FrequencyValue](FrequencyValue.md)
- * [GenotypicSex](GenotypicSex.md)
+ * [Homogeneity](Homogeneity.md)
  * [Inheritance](Inheritance.md)
+ * [MicroserviceArchitecturalStyle](MicroserviceArchitecturalStyle.md)
+ * [ObservableArchitecturalStyle](ObservableArchitecturalStyle.md)
+ * [ObservableQuality](ObservableQuality.md)
  * [Onset](Onset.md)
- * [OrganismAttribute](OrganismAttribute.md)
- * [PhenotypicSex](PhenotypicSex.md)
  * [SeverityValue](SeverityValue.md)
  * [SocioeconomicAttribute](SocioeconomicAttribute.md)
- * [Zygosity](Zygosity.md)
+ * [SystemAttribute](SystemAttribute.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | samples |
+| **Close Mappings:** | | schema:QualitativeValue |
+|  | | sumo:greaterThanByQuality |
+| **Narrow Mappings:** | | AML:hasAttributeValue |
+|  | | IAO:0000221 |
+|  | | gr:hasMaxValue |
+|  | | gr:hasMinValue |
+|  | | SIO:000216 |
 

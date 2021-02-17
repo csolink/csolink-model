@@ -8,7 +8,7 @@ layout: default
 # Slot: affiliation
 
 
-a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
+a professional relationship between one provider (x) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
 
 URI: [csolink:affiliation](https://w3id.org/csolink/vocab/affiliation)
 
@@ -26,3 +26,13 @@ URI: [csolink:affiliation](https://w3id.org/csolink/vocab/affiliation)
 ## Used by
 
  * [Agent](Agent.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | NCIT:C25412 |
+|  | | schema:affiliation |
+|  | | SIO:000173 |
+|  | | WIKIDATA_PROPERTY:P1268 |
+

@@ -14,7 +14,7 @@ URI: [csolink:regulated_by_entity_to_entity](https://w3id.org/csolink/vocab/regu
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 

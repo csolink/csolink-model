@@ -8,13 +8,13 @@ layout: default
 # Relation: ameliorates
 
 
-A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
+A relationship between an entity (e.g. a serviceunittype, service variation, orchestration, or environmental exposure) and a condition (a observability or error), where the presence of the entity reduces or eliminates some or all aspects of the condition.
 
 URI: [csolink:ameliorates](https://w3id.org/csolink/vocab/ameliorates)
 
 ## Domain and Range
 
-[BiologicalEntity](BiologicalEntity.md) ->  <sub>0..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[ComputationalEntity](ComputationalEntity.md) ->  <sub>0..*</sub> [ErrorOrObservableFeature](ErrorOrObservableFeature.md)
 
 ## Parents
 
@@ -22,7 +22,7 @@ URI: [csolink:ameliorates](https://w3id.org/csolink/vocab/ameliorates)
 
 ## Children
 
- *  [treats](treats.md)
+ *  [repairs](repairs.md)
 
 ## Used by
 

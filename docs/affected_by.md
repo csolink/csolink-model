@@ -28,3 +28,10 @@ URI: [csolink:affected_by](https://w3id.org/csolink/vocab/affected_by)
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | SIO:001159 |
+

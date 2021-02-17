@@ -35,5 +35,7 @@ URI: [csolink:colocalizes_with](https://w3id.org/csolink/vocab/colocalizes_with)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:00002325 |
-|  | | GO:colocalizes_with |
+| **Narrow Mappings:** | | RO:0002224 |
+|  | | RO:0002230 |
+| **Broad Mappings:** | | WIKIDATA:Q3453571 |
 

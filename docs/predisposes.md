@@ -34,6 +34,5 @@ URI: [csolink:predisposes](https://w3id.org/csolink/vocab/predisposes)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | SEMMEDDB:PREDISPOSES |
-|  | | SEMMEDDB:predisposes |
+| **Related Mappings:** | | sumo:precondition |
 

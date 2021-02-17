@@ -18,7 +18,7 @@ WIKIDATA:Q427626
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]-%20has%20taxonomic%20rank%200..1%3E[TaxonomicRank%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OntologyClass]%5E-[TaxonomicRank],[OrganismTaxon],[OntologyClass],[NamedThing],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SystemTaxon]-%20has%20taxonomic%20rank%200..1%3E[TaxonomicRank%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[OntologyClass]%5E-[TaxonomicRank],[SystemTaxon],[OntologyClass],[NamedThing],[Attribute],[Agent])
 
 ---
 
@@ -34,7 +34,7 @@ WIKIDATA:Q427626
 ## Referenced by class
 
  *  **None** *[has taxonomic rank](has_taxonomic_rank.md)*  <sub>OPT</sub>  **[TaxonomicRank](TaxonomicRank.md)**
- *  **[OrganismTaxon](OrganismTaxon.md)** *[organism taxon➞has taxonomic rank](organism_taxon_has_taxonomic_rank.md)*  <sub>OPT</sub>  **[TaxonomicRank](TaxonomicRank.md)**
+ *  **[SystemTaxon](SystemTaxon.md)** *[system taxon➞has taxonomic rank](system_taxon_has_taxonomic_rank.md)*  <sub>OPT</sub>  **[TaxonomicRank](TaxonomicRank.md)**
 
 ## Attributes
 
@@ -53,16 +53,12 @@ WIKIDATA:Q427626
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the csolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a csolink model class URI.
-This field is multi-valued. It should include values for ancestors of the csolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in csolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
+This field is multi-valued. It should include values for ancestors of the csolink class; for example, a serviceinstance such as Shh would have category values `bl:Interface`, `bl:ComponentTypeProduct`, `bl:ComponentTypeEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink.
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -72,12 +68,18 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
  * [provided by](provided_by.md)  <sub>0..*</sub>
-    * Description: connects an association to the agent (person, organization or group) that provided it
+    * Description: connects an association to the agent (service, organization or group) that provided it
     * range: [Agent](Agent.md)
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
+
+### Inherited from macrooperational machine mixin:
+
+ * [macrooperational machine mixin➞name](macrooperational_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: componentservices are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from named thing:
 

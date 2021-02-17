@@ -25,9 +25,9 @@ URI: [csolink:similar_to](https://w3id.org/csolink/vocab/similar_to)
 
 ## Children
 
- *  [chemically similar to](chemically_similar_to.md)
  *  [homologous to](homologous_to.md)
  *  [model of](model_of.md)
+ *  [orchestrationly similar to](orchestrationly_similar_to.md)
 
 ## Used by
 

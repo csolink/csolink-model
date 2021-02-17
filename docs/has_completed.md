@@ -30,6 +30,8 @@ URI: [csolink:has_completed](https://w3id.org/csolink/vocab/has_completed)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | CL:has_completed |
-|  | | RTXKG1:has_completed |
+| **Exact Mappings:** | | schema:Completed |
+| **Narrow Mappings:** | | csrc:Turing_complete |
+|  | | gvp:estEnd |
+| **Related Mappings:** | | sumo:finishes |
 

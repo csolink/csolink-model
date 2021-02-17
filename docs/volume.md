@@ -33,5 +33,6 @@ URI: [csolink:volume](https://w3id.org/csolink/vocab/volume)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA_PROPERTY:P478 |
+| **Exact Mappings:** | | schema:PublicationVolume |
+|  | | WIKIDATA_PROPERTY:P478 |
 

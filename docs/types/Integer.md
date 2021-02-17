@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Integer
+title: https://w3id.org/csolink/vocab/biolinkml:types/Integer
 layout: default
 ---
 
-# Type: Integer
+# Type: https://w3id.org/csolink/vocab/biolinkml:types/Integer
 
 
 An integer
 
-URI: [metatype:Integer](https://csolink.github.io/csolinkml/docs/types/Integer)
+URI: [https://w3id.org/csolink/vocab/biolinkml:types/Integer](https://w3id.org/csolink/vocab/biolinkml:types/Integer)
 
 |  |  |  |
 | --- | --- | --- |

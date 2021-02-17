@@ -35,14 +35,11 @@ URI: [csolink:precedes](https://w3id.org/csolink/vocab/precedes)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | BFO:0000063 |
-|  | | SEMMEDDB:PRECEDES |
-|  | | SEMMEDDB:precedes |
-|  | | SNOMED:occurs_before |
 | **Close Mappings:** | | RO:0002263 |
 |  | | RO:0002264 |
-| **Narrow Mappings:** | | FMA:transforms_into |
-|  | | RO:0002090 |
+| **Narrow Mappings:** | | RO:0002090 |
 |  | | RO:0002411 |
 |  | | RO:0002412 |
+|  | | IAO:0000424 |
 | **Broad Mappings:** | | WIKIDATA_PROPERTY:P156 |
 

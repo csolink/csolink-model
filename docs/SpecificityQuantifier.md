@@ -26,7 +26,7 @@ URI: [csolink:SpecificityQuantifier](https://w3id.org/csolink/vocab/SpecificityQ
 
 ## Children
 
- * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+ * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a error, which is high when the presence of the feature implies the existence of the error
 
 ## Referenced by class
 

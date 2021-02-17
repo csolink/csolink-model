@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+holds between two operational entities where the action or effect of one decreases the susceptibility of a computational entity or system (e.g. a system, serviceunit, component, macrooperational machine mixin, computational or faulty process) to the other
 
 URI: [csolink:decreases_response_to](https://w3id.org/csolink/vocab/decreases_response_to)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -34,7 +34,4 @@ URI: [csolink:decreases_response_to](https://w3id.org/csolink/vocab/decreases_re
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:decreases_response_to |
-| **Narrow Mappings:** | | CTD:decreases_response_to_substance |
-|  | | GAMMA:desensitize_the_target |
 

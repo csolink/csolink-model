@@ -8,7 +8,7 @@ layout: default
 # Relation: directly_interacts_with
 
 
-Holds between molecular entities that physically and directly interact with each other
+Holds between operational entities that cyberly and directly interact with each other
 
 URI: [csolink:directly_interacts_with](https://w3id.org/csolink/vocab/directly_interacts_with)
 
@@ -30,30 +30,11 @@ URI: [csolink:directly_interacts_with](https://w3id.org/csolink/vocab/directly_i
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | chembio:interacts |
-|  | | CTD:interacts_with |
-|  | | GAMMA:interacts_with |
-| **Narrow Mappings:** | | PHAROS:drug_targets |
-|  | | DRUGBANK:chelator |
-|  | | GAMMA:antibody_binding |
-|  | | GAMMA:pharmacological_chaperone |
-|  | | GAMMA:releasing_agent |
-|  | | GAMMA:pharmacological_chaperone |
-|  | | GAMMA:releasing_agent |
-|  | | GAMMA:binder |
-|  | | GAMMA:binding |
-|  | | GAMMA:ligand |
-|  | | GAMMA:cofactor |
-|  | | GAMMA:multitarget |
-|  | | GAMMA:chaperone |
-|  | | GAMMA:component |
-|  | | GAMMA:adduct |
-|  | | GAMMA:antibody |
-|  | | CTD:affects_binding |
-|  | | DGIdb:binder |
-|  | | DGIdb:cofactor |
+| **Exact Mappings:** | | RO:0002578 |
+|  | | SWO:0000131 |
+|  | | SWO:0000132 |
+| **Narrow Mappings:** | | RO:0002578 |
+|  | | SWO:0000131 |
+|  | | SWO:0000132 |
 | **Broad Mappings:** | | SIO:000203 |
-| **Related Mappings:** | | GAMMA:kd |
-|  | | GAMMA:kb |
-|  | | GAMMA:potency |
 

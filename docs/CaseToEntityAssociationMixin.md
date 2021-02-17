@@ -15,14 +15,14 @@ URI: [csolink:CaseToEntityAssociationMixin](https://w3id.org/csolink/vocab/CaseT
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Case]%3Csubject%201..1-%20[CaseToEntityAssociationMixin],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToEntityAssociationMixin],[CaseToPhenotypicFeatureAssociation],[Case])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Case]%3Csubject%201..1-%20[CaseToEntityAssociationMixin],[CaseToObservableFeatureAssociation]uses%20-.-%3E[CaseToEntityAssociationMixin],[CaseToObservableFeatureAssociation],[Case])
 
 ---
 
 
 ## Mixin for
 
- * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
+ * [CaseToObservableFeatureAssociation](CaseToObservableFeatureAssociation.md) (mixin)  - An association between a case (e.g. individual patient) and a observable feature in which the individual has or has had the observability.
 
 ## Referenced by class
 

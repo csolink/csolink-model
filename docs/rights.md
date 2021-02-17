@@ -29,20 +29,22 @@ URI: [csolink:rights](https://w3id.org/csolink/vocab/rights)
  * [Book](Book.md)
  * [BookChapter](BookChapter.md)
  * [ConfidenceLevel](ConfidenceLevel.md)
- * [DataFile](DataFile.md)
- * [DataSet](DataSet.md)
- * [DataSetSummary](DataSetSummary.md)
- * [DataSetVersion](DataSetVersion.md)
+ * [Dataset](Dataset.md)
+ * [DatasetDistribution](DatasetDistribution.md)
+ * [DatasetSummary](DatasetSummary.md)
+ * [DatasetVersion](DatasetVersion.md)
  * [DistributionLevel](DistributionLevel.md)
  * [EvidenceType](EvidenceType.md)
  * [InformationContentEntity](InformationContentEntity.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
- * [SourceFile](SourceFile.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | dcterms:rights |
+| **Exact Mappings:** | | dct:rights |
+|  | | WIKIDATA:Q780687 |
+| **Narrow Mappings:** | | CSO:access_rights |
+|  | | CSO:cyber_rights |
 

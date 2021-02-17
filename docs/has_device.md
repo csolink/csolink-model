@@ -8,7 +8,7 @@ layout: default
 # Slot: has_device
 
 
-connects an entity to one or more (medical) devices
+connects an entity to one or more (engineering) devices
 
 URI: [csolink:has_device](https://w3id.org/csolink/vocab/has_device)
 
@@ -25,4 +25,11 @@ URI: [csolink:has_device](https://w3id.org/csolink/vocab/has_device)
 
 ## Used by
 
- * [Treatment](Treatment.md)
+ * [Repairing](Repairing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | OCRM:hasDevice |
+

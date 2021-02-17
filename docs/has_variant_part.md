@@ -8,7 +8,7 @@ layout: default
 # Relation: has_variant_part
 
 
-holds between a genomic entity and a genotypic entity that is a sub-component of it
+holds between a workload entity and a microservice entity that is a subset of it
 
 URI: [csolink:has_variant_part](https://w3id.org/csolink/vocab/has_variant_part)
 
@@ -30,5 +30,9 @@ URI: [csolink:has_variant_part](https://w3id.org/csolink/vocab/has_variant_part)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | GENO:0000382 |
+| **Narrow Mappings:** | | SIO:000273 |
+|  | | SIO:000974 |
+|  | | SIO:000369 |
+|  | | SIO:000053 |
+|  | | SIO:000972 |
 

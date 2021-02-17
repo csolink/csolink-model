@@ -8,13 +8,13 @@ layout: default
 # Relation: causes_adverse_event
 
 
-holds between a drug and a disease or phenotype that can be caused by the drug
+holds between a administrative operationa and a error or observability that can be caused by the administrative operation
 
 URI: [csolink:causes_adverse_event](https://w3id.org/csolink/vocab/causes_adverse_event)
 
 ## Domain and Range
 
-[Drug](Drug.md) ->  <sub>0..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[AdministrativeOperation](AdministrativeOperation.md) ->  <sub>0..*</sub> [ErrorOrObservableFeature](ErrorOrObservableFeature.md)
 
 ## Parents
 
@@ -30,5 +30,6 @@ URI: [csolink:causes_adverse_event](https://w3id.org/csolink/vocab/causes_advers
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | Aeolus:0000001 |
+| **Exact Mappings:** | | OAE:0002616 |
+| **Broad Mappings:** | | csrc:adverse_consequence |
 

@@ -28,28 +28,36 @@ URI: [csolink:has_quantitative_value](https://w3id.org/csolink/vocab/has_quantit
 ## Used by
 
  * [Attribute](Attribute.md)
- * [BiologicalSex](BiologicalSex.md)
- * [ClinicalAttribute](ClinicalAttribute.md)
- * [ClinicalCourse](ClinicalCourse.md)
- * [ClinicalMeasurement](ClinicalMeasurement.md)
- * [ClinicalModifier](ClinicalModifier.md)
+ * [ComputationalArchitecturalStyle](ComputationalArchitecturalStyle.md)
+ * [EmpiricalAttribute](EmpiricalAttribute.md)
+ * [EmpiricalCourse](EmpiricalCourse.md)
+ * [EmpiricalMeasurement](EmpiricalMeasurement.md)
+ * [EmpiricalModifier](EmpiricalModifier.md)
  * [FrequencyValue](FrequencyValue.md)
- * [GenotypicSex](GenotypicSex.md)
+ * [Homogeneity](Homogeneity.md)
  * [Inheritance](Inheritance.md)
+ * [MicroserviceArchitecturalStyle](MicroserviceArchitecturalStyle.md)
+ * [ObservableArchitecturalStyle](ObservableArchitecturalStyle.md)
+ * [ObservableQuality](ObservableQuality.md)
  * [Onset](Onset.md)
- * [OrganismAttribute](OrganismAttribute.md)
- * [PhenotypicSex](PhenotypicSex.md)
  * [SeverityValue](SeverityValue.md)
  * [SocioeconomicAttribute](SocioeconomicAttribute.md)
- * [Zygosity](Zygosity.md)
+ * [SystemAttribute](SystemAttribute.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | samples |
-| **Exact Mappings:** | | qud:quantityValue |
-| **Narrow Mappings:** | | SNOMED:has_concentration_strength_numerator_value |
-|  | | SNOMED:has_presentation_strength_denominator_value |
-|  | | SNOMED:has_presentation_strength_numerator_value |
+| **Exact Mappings:** | | CTRL:hasQuantity |
+|  | | gr:QuantitativeValue |
+|  | | OM:hasQuantity |
+|  | | qud:quantityValue |
+|  | | schema:QuantitativeValue |
+|  | | WIKIDATA:Q17627912 |
+| **Narrow Mappings:** | | gr:QuantitativeValueFloat |
+|  | | gr:QuantitativeValueInteger |
+|  | | OM:hasBaseQuantity |
+|  | | OM:hasDerivedQuantity |
+| **Broad Mappings:** | | NCIT:C70589 |
 

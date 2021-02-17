@@ -25,17 +25,31 @@ URI: [csolink:timepoint](https://w3id.org/csolink/vocab/timepoint)
 
 ## Used by
 
+ * [AdministrativeOperationalExposure](AdministrativeOperationalExposure.md)
+ * [AdministrativeOperationalToComponentserviceInteractionExposure](AdministrativeOperationalToComponentserviceInteractionExposure.md)
  * [BehavioralExposure](BehavioralExposure.md)
  * [BioticExposure](BioticExposure.md)
- * [ChemicalExposure](ChemicalExposure.md)
- * [ComplexChemicalExposure](ComplexChemicalExposure.md)
- * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md)
- * [DrugExposure](DrugExposure.md)
- * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md)
+ * [ComplexOrchestrationExposure](ComplexOrchestrationExposure.md)
  * [EnvironmentalExposure](EnvironmentalExposure.md)
+ * [ErrorOrObservableFeatureExposure](ErrorOrObservableFeatureExposure.md)
  * [ExposureEvent](ExposureEvent.md)
- * [GenomicBackgroundExposure](GenomicBackgroundExposure.md)
+ * [FaultyDeploymentExposure](FaultyDeploymentExposure.md)
+ * [FaultyProcessExposure](FaultyProcessExposure.md)
  * [GeographicExposure](GeographicExposure.md)
  * [GeographicLocationAtTime](GeographicLocationAtTime.md)
+ * [OrchestrationExposure](OrchestrationExposure.md)
+ * [Repairing](Repairing.md)
+ * [ServiceBackgroundExposure](ServiceBackgroundExposure.md)
  * [SocioeconomicExposure](SocioeconomicExposure.md)
- * [Treatment](Treatment.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | sumo:TimePoint |
+|  | | WIKIDATA_PROPERTY:P585 |
+| **Narrow Mappings:** | | dwc:eventTime |
+|  | | SAN:ActuatingTime |
+|  | | sosa:phenomenonTime |
+|  | | sosa:resultTime |
+

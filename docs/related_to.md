@@ -24,6 +24,8 @@ URI: [csolink:related_to](https://w3id.org/csolink/vocab/related_to)
  *  [affected by](affected_by.md)
  *  [affects](affects.md)
  *  [affects risk for](affects_risk_for.md)
+ *  [available in](available_in.md)
+ *  [broad match](broad_match.md)
  *  [caused by](caused_by.md)
  *  [close match](close_match.md)
  *  [coexists with](coexists_with.md)
@@ -34,19 +36,16 @@ URI: [csolink:related_to](https://w3id.org/csolink/vocab/related_to)
  *  [derives from](derives_from.md)
  *  [derives into](derives_into.md)
  *  [develops from](develops_from.md)
- *  [disease has basis in](disease_has_basis_in.md)
- *  [expressed in](expressed_in.md)
- *  [expresses](expresses.md)
- *  [genetic association](genetic_association.md)
+ *  [error has basis in](error_has_basis_in.md)
  *  [has completed](has_completed.md)
  *  [has decreased amount](has_decreased_amount.md)
- *  [has gene product](has_gene_product.md)
  *  [has increased amount](has_increased_amount.md)
- *  [has molecular consequence](has_molecular_consequence.md)
  *  [has not completed](has_not_completed.md)
+ *  [has observability](has_observability.md)
+ *  [has operational consequence](has_operational_consequence.md)
  *  [has participant](has_participant.md)
- *  [has phenotype](has_phenotype.md)
  *  [has sequence location](has_sequence_location.md)
+ *  [has servicetype](has_servicetype.md)
  *  [in linkage disequilibrium with](in_linkage_disequilibrium_with.md)
  *  [in taxon](in_taxon.md)
  *  [interacts with](interacts_with.md)
@@ -55,6 +54,7 @@ URI: [csolink:related_to](https://w3id.org/csolink/vocab/related_to)
  *  [located in](located_in.md)
  *  [location of](location_of.md)
  *  [manifestation of](manifestation_of.md)
+ *  [narrow match](narrow_match.md)
  *  [occurs in](occurs_in.md)
  *  [overlaps](overlaps.md)
  *  [participates in](participates_in.md)
@@ -62,11 +62,13 @@ URI: [csolink:related_to](https://w3id.org/csolink/vocab/related_to)
  *  [produced by](produced_by.md)
  *  [produces](produces.md)
  *  [related condition](related_condition.md)
+ *  [repaired by](repaired_by.md)
+ *  [service association](service_association.md)
  *  [similar to](similar_to.md)
  *  [subclass of](subclass_of.md)
  *  [superclass of](superclass_of.md)
  *  [temporally related to](temporally_related_to.md)
- *  [treated by](treated_by.md)
+ *  [unavailable in](unavailable_in.md)
 
 ## Used by
 
@@ -75,62 +77,43 @@ URI: [csolink:related_to](https://w3id.org/csolink/vocab/related_to)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | skos:relatedMatch |
-|  | | SEMMEDDB:ASSOCIATED_WITH |
-|  | | SEMMEDDB:associated_with |
-|  | | UMLS:related_to |
-| **Narrow Mappings:** | | SEMMEDDB:compared_with |
-|  | | SEMMEDDB:higher_than |
-|  | | SEMMEDDB:lower_than |
+| **Exact Mappings:** | | csrc:Association |
+|  | | gvp:aat2000_related_to |
+|  | | skos:relatedMatch |
+|  | | schema:relatedTo |
+|  | | schema:isRelatedTo |
+|  | | SIO:000001 |
+|  | | sumo:relatedTo |
+| **Close Mappings:** | | dwc:ResourceRelationship |
+|  | | MAID:98691003 |
+| **Narrow Mappings:** | | AML:contains |
 |  | | BFO:0000054 |
-|  | | UBERON_CORE:protects |
-|  | | GOREL:0002005 |
-|  | | GOREL:0012006 |
-|  | | BFO:0000068 |
-|  | | BFO:0000069 |
-|  | | BTO:related_to |
-|  | | CHEBI:is_conjugate_acid_of |
-|  | | CHEBI:is_conjugate_base_of |
-|  | | CPT:has_add_on_code |
-|  | | CPT:mapped_to |
+|  | | CSO:semantic_relatedness |
+|  | | csrc:Relatively_prime |
+|  | | CTRL:isConnectedTo |
+|  | | CTRL:isSupervisedBy |
+|  | | CTRL:supervises |
+|  | | dct:isReferencedBy |
+|  | | dct:isReplacedBy |
+|  | | dct:isRequiredBy |
+|  | | dwc:identifiedBy |
 |  | | EFO:0006351 |
-|  | | FMA:connected_to |
-|  | | FMA:continuous_with |
-|  | | FMA:homonym_of |
-|  | | FMA:related_developmental_entity_of |
-|  | | GO:ends_during |
-|  | | GO:happens_during |
-|  | | GO:inverse_ends_during |
-|  | | GOREL:0002005 |
-|  | | GOREL:0012006 |
-|  | | HCPCS:mapped_to |
-|  | | HMDB:disease |
-|  | | HMDB:has_protein_association |
-|  | | IAO:0000136 |
-|  | | LOINC:has_answer |
-|  | | LOINC:has_challenge |
-|  | | LOINC:has_evaluation |
-|  | | LOINC:mapped_to |
-|  | | LOINC:mth_has_expanded_form |
-|  | | MESH:RO |
-|  | | MESH:has_mapping_qualifier |
-|  | | MESH:mapped_to |
-|  | | MONDO:disease_shares_features_of |
-|  | | NCIT:disease_may_have_associated_disease |
-|  | | NCIT:human_disease_maps_to_eo_disease |
-|  | | NCIT:is_abnormal_cell_of_disease |
+|  | | gr:closes |
+|  | | gr:offers |
+|  | | gr:opens |
+|  | | gr:owns |
+|  | | gr:predecessorOf |
+|  | | gr:seeks |
+|  | | gr:includes |
+|  | | gvp:aat2000_reflects |
+|  | | MAID:79714647 |
 |  | | NCIT:is_related_to_endogenous_product |
-|  | | OBO:core#connected_to |
-|  | | OBO:core#innervated_by |
-|  | | OBO:envo#has_increased_levels_of |
-|  | | OBO:has_role |
-|  | | OBO:nbo#is_about |
-|  | | OBOREL:0000053 |
 |  | | PATO:decreased_in_magnitude_relative_to |
 |  | | PATO:has_cross_section |
 |  | | PATO:has_relative_magnitude |
 |  | | PATO:increased_in_magnitude_relative_to |
 |  | | PATO:reciprocal_of |
+|  | | RO:0002337 |
 |  | | RO:0000052 |
 |  | | RO:0002001 |
 |  | | RO:0002002 |
@@ -156,44 +139,136 @@ URI: [csolink:related_to](https://w3id.org/csolink/vocab/related_to)
 |  | | RO:0002349 |
 |  | | RO:0002356 |
 |  | | RO:0002371 |
-|  | | RO:0002372 |
-|  | | RO:0002373 |
 |  | | RO:0002374 |
 |  | | RO:0002385 |
 |  | | RO:0002387 |
 |  | | RO:0002451 |
 |  | | RO:0002494 |
 |  | | RO:0002495 |
-|  | | RO:0002568 |
 |  | | RO:0002573 |
-|  | | RO:0004026 |
-|  | | RO:0004027 |
 |  | | RO:0009001 |
 |  | | RO:0009004 |
-|  | | RTXKG1:functionally_related_to |
-|  | | RXNORM:has_form |
-|  | | RXNORM:reformulated_to |
-|  | | SNOMED:has_associated_morphology |
-|  | | SNOMED:has_associated_procedure |
-|  | | SNOMED:has_direct_morphology |
-|  | | SNOMED:has_disposition |
-|  | | SNOMED:has_indirect_morphology |
-|  | | SNOMED:has_modification |
-|  | | SNOMED:has_procedure_morphology |
-|  | | SNOMED:has_specimen_source_morphology |
-|  | | SNOMED:inheres_in |
-|  | | SNOMED:is_interpreted_by |
-|  | | SNOMED:relative_to_part_of |
-|  | | UBERON:synapsed_by |
-|  | | UMLS:RO |
-|  | | UMLS:RQ |
-|  | | UMLS:class_code_classified_by |
-|  | | UMLS:exhibited_by |
-|  | | UMLS:has_context_binding |
-|  | | UMLS:has_form |
-|  | | UMLS:has_mapping_qualifier |
-|  | | UMLS:larger_than |
-|  | | UMLS:mapped_to |
-|  | | UMLS:owning_section_of |
-| **Broad Mappings:** | | owl:topObjectProperty |
+|  | | SAN:actsOn |
+|  | | SAN:isPropertyOf |
+|  | | SAN:controlledBy |
+|  | | SAN:isImpactedUponBy |
+|  | | SAN:isActedUponBy |
+|  | | schema:branchOf |
+|  | | schema:founder |
+|  | | schema:greater |
+|  | | schema:lesser |
+|  | | schema:userLikes |
+|  | | SIO:000699 |
+|  | | SIO:000733 |
+|  | | SIO:000734 |
+|  | | SIO:000735 |
+|  | | SIO:000774 |
+|  | | SIO:000207 |
+|  | | SIO:000248 |
+|  | | SIO:000202 |
+|  | | sosa:implements |
+|  | | sosa:isActedOnBy |
+|  | | sosa:isFeatureOfInterestOf |
+|  | | sosa:isHostedBy |
+|  | | sosa:isObservedBy |
+|  | | sosa:isObservedBy |
+|  | | sosa:actsOnProperty |
+|  | | ssn:isPropertyOf |
+|  | | ssn:isProxyFor |
+|  | | sosa:sensor |
+|  | | sumo:Above |
+|  | | sumo:actedIn |
+|  | | sumo:Adjacent |
+|  | | sumo:associateWithStatus |
+|  | | sumo:associatedFunctionality |
+|  | | sumo:Below |
+|  | | sumo:benefits |
+|  | | sumo:between |
+|  | | sumo:connects |
+|  | | sumo:covers |
+|  | | sumo:during |
+|  | | sumo:enjoys |
+|  | | sumo:employs |
+|  | | sumo:enemy |
+|  | | sumo:increasesLikelihood |
+|  | | sumo:inScopeOfInterest |
+|  | | sumo:inList |
+|  | | sumo:inside |
+|  | | sumo:managedBy |
+|  | | sumo:nearOrientation |
+|  | | sumo:orbits |
+|  | | sumo:overlapsPartially |
+|  | | sumo:overlapsSpatially |
+|  | | sumo:relatedTo |
+|  | | sumo:relative |
+|  | | sumo:RelationalAttribute |
+|  | | ssn:wasOriginatedBy |
+|  | | uberon:protects |
+|  | | BFO:0000068 |
+|  | | BFO:0000069 |
+|  | | BTO:related_to |
+|  | | schema:addOn |
+|  | | EFO:0006351 |
+|  | | gvp:aat2805_contextualized_in |
+|  | | gvp:tgn3103_located_on |
+|  | | gvp:ulan1000_related_to |
+|  | | gvp:ulan2778_owner_of |
+|  | | schema:connectedTo |
+|  | | sumo:conjugate |
+|  | | IAO:0000136 |
+|  | | PATO:decreased_in_magnitude_relative_to |
+|  | | PATO:has_cross_section |
+|  | | PATO:has_relative_magnitude |
+|  | | PATO:increased_in_magnitude_relative_to |
+|  | | PATO:reciprocal_of |
+|  | | RO:0000052 |
+|  | | RO:0002001 |
+|  | | RO:0002002 |
+|  | | RO:0002008 |
+|  | | RO:0002150 |
+|  | | RO:0002159 |
+|  | | RO:0002176 |
+|  | | RO:0002177 |
+|  | | RO:0002178 |
+|  | | RO:0002179 |
+|  | | RO:0002314 |
+|  | | RO:0002322 |
+|  | | RO:0002328 |
+|  | | RO:0002332 |
+|  | | RO:0002338 |
+|  | | RO:0002339 |
+|  | | RO:0002341 |
+|  | | RO:0002342 |
+|  | | RO:0002344 |
+|  | | RO:0002348 |
+|  | | RO:0002349 |
+|  | | RO:0002356 |
+|  | | RO:0002371 |
+|  | | RO:0002374 |
+|  | | RO:0002385 |
+|  | | RO:0002451 |
+|  | | RO:0002494 |
+|  | | RO:0002495 |
+|  | | RO:0002573 |
+|  | | RO:0009001 |
+|  | | RO:0009004 |
+|  | | sosa:usedProcedure |
+|  | | ssn:detects |
+|  | | sumo:displayedUpon |
+|  | | sumo:hostedOn |
+|  | | sumo:hostOf |
+|  | | sumo:initiallyContainsPart |
+|  | | sumo:interiorPart |
+|  | | sumo:Increasing |
+|  | | sumo:parallel |
+|  | | sumo:runningOn |
+|  | | sumo:runsOn |
+|  | | sumo:underlier |
+|  | | sumo:Working |
+|  | | WIKIDATA:Q1360012 |
+| **Broad Mappings:** | | ECO:0000041 |
+|  | | owl:topObjectProperty |
+|  | | gvp:aat2900_miscellaneous_relationship |
+|  | | schema:isSimilarTo |
+|  | | SWO:topObjectProperty |
 

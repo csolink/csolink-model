@@ -25,3 +25,12 @@ URI: [csolink:has_confidence_level](https://w3id.org/csolink/vocab/has_confidenc
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | CIO:has_confidence_level |
+|  | | csrc:Confidence_interval |
+|  | | MAID:44249647 |
+

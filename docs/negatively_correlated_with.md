@@ -34,5 +34,4 @@ URI: [csolink:negatively_correlated_with](https://w3id.org/csolink/vocab/negativ
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:negativecorrelation |
 

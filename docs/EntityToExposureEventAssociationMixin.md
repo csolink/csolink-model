@@ -15,14 +15,14 @@ URI: [csolink:EntityToExposureEventAssociationMixin](https://w3id.org/csolink/vo
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent],[ExposureEvent]%3Cobject%201..1-++[EntityToExposureEventAssociationMixin],[DiseaseToExposureEventAssociation]uses%20-.-%3E[EntityToExposureEventAssociationMixin],[DiseaseToExposureEventAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent],[ExposureEvent]%3Cobject%201..1-++[EntityToExposureEventAssociationMixin],[ErrorToExposureEventAssociation]uses%20-.-%3E[EntityToExposureEventAssociationMixin],[ErrorToExposureEventAssociation])
 
 ---
 
 
 ## Mixin for
 
- * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) (mixin)  - An association between an exposure event and a disease.
+ * [ErrorToExposureEventAssociation](ErrorToExposureEventAssociation.md) (mixin)  - An association between an exposure event and a error.
 
 ## Referenced by class
 

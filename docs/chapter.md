@@ -31,5 +31,7 @@ URI: [csolink:chapter](https://w3id.org/csolink/vocab/chapter)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA:Q1980247 |
+| **Exact Mappings:** | | schema:Chapter |
+|  | | sumo:Chapter |
+|  | | WIKIDATA:Q1980247 |
 

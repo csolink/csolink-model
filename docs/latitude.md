@@ -33,5 +33,11 @@ URI: [csolink:latitude](https://w3id.org/csolink/vocab/latitude)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | wgs:lat |
+| **Exact Mappings:** | | MAID:122523270 |
+|  | | schema:latitude |
+|  | | sumo:Latitude |
+|  | | wgs:lat |
+|  | | WIKIDATA:Q34027 |
+| **Narrow Mappings:** | | MAID:18101618 |
+|  | | MAID:2993248092 |
 

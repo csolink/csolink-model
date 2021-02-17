@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Ncname
+title: https://w3id.org/csolink/vocab/biolinkml:types/Ncname
 layout: default
 ---
 
-# Type: Ncname
+# Type: https://w3id.org/csolink/vocab/biolinkml:types/Ncname
 
 
 Prefix part of CURIE
 
-URI: [metatype:Ncname](https://csolink.github.io/csolinkml/docs/types/Ncname)
+URI: [https://w3id.org/csolink/vocab/biolinkml:types/Ncname](https://w3id.org/csolink/vocab/biolinkml:types/Ncname)
 
 |  |  |  |
 | --- | --- | --- |

@@ -15,14 +15,14 @@ URI: [csolink:SubjectOfInvestigation](https://w3id.org/csolink/vocab/SubjectOfIn
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[MaterialSample])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[ResourceSample]uses%20-.-%3E[SubjectOfInvestigation],[ResourceSample])
 
 ---
 
 
 ## Mixin for
 
- * [MaterialSample](MaterialSample.md) (mixin)  - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
+ * [ResourceSample](ResourceSample.md) (mixin)  - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a event) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 
 ## Referenced by class
 

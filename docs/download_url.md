@@ -31,5 +31,5 @@ URI: [csolink:download_url](https://w3id.org/csolink/vocab/download_url)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | dcterms:downloadURL |
+| **Mappings:** | | dcat:downloadURL |
 

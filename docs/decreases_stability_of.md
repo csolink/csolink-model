@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest
+holds between two operational entities where the action or effect of one decreases the stability of the other within a system of interest
 
 URI: [csolink:decreases_stability_of](https://w3id.org/csolink/vocab/decreases_stability_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -34,5 +34,4 @@ URI: [csolink:decreases_stability_of](https://w3id.org/csolink/vocab/decreases_s
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:decreases_stability_of |
 

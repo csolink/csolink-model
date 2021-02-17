@@ -30,5 +30,6 @@ URI: [csolink:chi_squared_statistic](https://w3id.org/csolink/vocab/chi_squared_
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | STATO:0000030 |
+| **Exact Mappings:** | | MAID:66924754 |
+|  | | STATO:0000030 |
 

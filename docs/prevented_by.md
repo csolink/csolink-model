@@ -8,7 +8,7 @@ layout: default
 # Relation: prevented_by
 
 
-holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.
+holds between a potential outcome of which the likelihood was reduced by the system or use of an entity.
 
 URI: [csolink:prevented_by](https://w3id.org/csolink/vocab/prevented_by)
 

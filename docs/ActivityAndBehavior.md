@@ -8,7 +8,7 @@ layout: default
 # Class: ActivityAndBehavior
 
 
-Activity or behavior of any independent integral living, organization or mechanical actor in the world
+Activity or behavior of any independent integral healthy, organization or mechanical actor in the world
 
 URI: [csolink:ActivityAndBehavior](https://w3id.org/csolink/vocab/ActivityAndBehavior)
 
@@ -39,5 +39,5 @@ URI: [csolink:ActivityAndBehavior](https://w3id.org/csolink/vocab/ActivityAndBeh
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | UMLSSG:ACTI |
+| **Broad Mappings:** | | dct:behavior |
 

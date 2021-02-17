@@ -31,4 +31,5 @@ URI: [csolink:pages](https://w3id.org/csolink/vocab/pages)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | WIKIDATA_PROPERTY:P304 |
+| **Narrow Mappings:** | | sumo:Page |
 

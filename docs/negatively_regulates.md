@@ -14,7 +14,7 @@ URI: [csolink:negatively_regulates](https://w3id.org/csolink/vocab/negatively_re
 
 ## Domain and Range
 
-[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md) ->  <sub>OPT</sub> [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)
+[CyberEssenceOrOccurrent](CyberEssenceOrOccurrent.md) ->  <sub>OPT</sub> [CyberEssenceOrOccurrent](CyberEssenceOrOccurrent.md)
 
 ## Parents
 
@@ -32,14 +32,8 @@ URI: [csolink:negatively_regulates](https://w3id.org/csolink/vocab/negatively_re
 | --- | --- | --- |
 | **Comments:** | | This is a grouping for negative process-process and entity-entity regulation. |
 | **Exact Mappings:** | | RO:0004035 |
-|  | | GO:negatively_regulates |
-| **Close Mappings:** | | GO:negatively_regulated_by |
-| **Narrow Mappings:** | | CHEMBL.MECHANISM:blocker |
-|  | | CHEMBL.MECHANISM:inhibitor |
-|  | | CHEMBL.MECHANISM:negative_allosteric_modulator |
-|  | | CHEMBL.MECHANISM:negative_modulator |
-|  | | GO:acts_upstream_of_negative_effect |
-|  | | GO:acts_upstream_of_or_within_negative_effect |
-|  | | RO:0002630 |
+|  | | RO:0002212 |
+|  | | SIO:001402 |
+| **Narrow Mappings:** | | RO:0002630 |
 | **Broad Mappings:** | | RO:0004033 |
 

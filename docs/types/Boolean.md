@@ -1,17 +1,18 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Boolean
+title: https://w3id.org/csolink/vocab/biolinkml:types/Boolean
 layout: default
 ---
 
-# Type: Boolean
+# Type: https://w3id.org/csolink/vocab/biolinkml:types/Boolean
 
 
 A binary (true or false) value
 
-URI: [metatype:Boolean](https://csolink.github.io/csolinkml/docs/types/Boolean)
+URI: [https://w3id.org/csolink/vocab/biolinkml:types/Boolean](https://w3id.org/csolink/vocab/biolinkml:types/Boolean)
 
 |  |  |  |
 | --- | --- | --- |
 | Root (builtin) type | | **Bool** |
+| Representation | | bool |

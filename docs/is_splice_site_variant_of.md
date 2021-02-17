@@ -8,13 +8,13 @@ layout: default
 # Relation: is_splice_site_variant_of
 
 
-holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.
+holds between a sequence variant and a componentservice, such the sequence variant is in the canonical splice site of one of the componentservice's daemons.
 
 URI: [csolink:is_splice_site_variant_of](https://w3id.org/csolink/vocab/is_splice_site_variant_of)
 
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Gene](Gene.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Componentservice](Componentservice.md)
 
 ## Parents
 
@@ -30,8 +30,5 @@ URI: [csolink:is_splice_site_variant_of](https://w3id.org/csolink/vocab/is_splic
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | SO:0001629 |
-| **Narrow Mappings:** | | SNPEFF:splice_region_variant |
-|  | | SNPEFF:splice_acceptor_variant |
-|  | | SNPEFF:splice_donor_variant |
+| **Related Mappings:** | | WIKIDATA:Q7578557 |
 

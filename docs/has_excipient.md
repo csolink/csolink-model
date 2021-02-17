@@ -1,37 +1,38 @@
 ---
-parent: Node Properties
+parent: Predicates
 title: csolink:has_excipient
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: has_excipient
+# Relation: has_excipient
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-one or more (generally inert) chemical substances which are formulated alongside the active ingredient of a drug
+holds between a administrative operation and a control actors in which the latter is a part of the former, and is a computationally inactive component
 
 URI: [csolink:has_excipient](https://w3id.org/csolink/vocab/has_excipient)
 
 ## Domain and Range
 
-[Drug](Drug.md) ->  <sub>0..*</sub> [ChemicalSubstance](ChemicalSubstance.md)
+[AdministrativeOperation](AdministrativeOperation.md) ->  <sub>0..*</sub> [ControlActor](ControlActor.md)
 
 ## Parents
 
- *  is_a: [node property](node_property.md)
+ *  is_a: [has part](has_part.md)
 
 ## Children
 
 
 ## Used by
 
- * [Drug](Drug.md)
- * [DrugExposure](DrugExposure.md)
- * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA:Q902638 |
+| **Mappings:** | | WIKIDATA:Q902638 |
+| **In Subsets:** | | translator_minimal |
 

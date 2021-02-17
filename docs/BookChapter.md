@@ -15,14 +15,14 @@ URI: [csolink:BookChapter](https://w3id.org/csolink/vocab/BookChapter)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing],[Publication]%5E-[BookChapter%7Cpublished_in:uriorcurie;volume:string%20%3F;chapter:string%20%3F;authors(i):string%20%2A;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;xref(i):iri_type%20%2A;id(i):string;name(i):label_type%20%3F;type(i):string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing],[Publication]%5E-[BookChapter%7Cpublished_in:uriorcurie;volume:string%20%3F;chapter:string%20%3F;authors(i):string%20%2A;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;sumo_terms(i):uriorcurie%20%2A;xref(i):iri_type%20%2A;id(i):string;name(i):label_type%20%3F;type(i):string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Csolink category subclasses.
+ *  is_a: [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed resources, either directly or in one of the Publication Csolink category subclasses.
 
 ## Referenced by class
 
@@ -33,7 +33,7 @@ URI: [csolink:BookChapter](https://w3id.org/csolink/vocab/BookChapter)
 ### Own
 
  * [book chapter➞published in](book_chapter_published_in.md)  <sub>REQ</sub>
-    * Description: The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.
+    * Description: The enclosing parent book containing the chapter should have industry-standard identifier from ISBN. - sumo:instrument
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [chapter](chapter.md)  <sub>OPT</sub>
     * Description: chapter of a book
@@ -53,16 +53,12 @@ URI: [csolink:BookChapter](https://w3id.org/csolink/vocab/BookChapter)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the csolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a csolink model class URI.
-This field is multi-valued. It should include values for ancestors of the csolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in csolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
+This field is multi-valued. It should include values for ancestors of the csolink class; for example, a serviceinstance such as Shh would have category values `bl:Interface`, `bl:ComponentTypeProduct`, `bl:ComponentTypeEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink.
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -72,7 +68,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
  * [provided by](provided_by.md)  <sub>0..*</sub>
-    * Description: connects an association to the agent (person, organization or group) that provided it
+    * Description: connects an association to the agent (service, organization or group) that provided it
     * range: [Agent](Agent.md)
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any entity to an attribute
@@ -99,7 +95,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from publication:
 
  * [authors](authors.md)  <sub>0..*</sub>
-    * Description: connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in csolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
+    * Description: connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation voicing the citation list of authorship which might typically otherwise be more completely documented in csolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
     * range: [String](types/String.md)
  * [publication➞pages](publication_pages.md)  <sub>0..*</sub>
     * Description: When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.
@@ -110,8 +106,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [keywords](keywords.md)  <sub>0..*</sub>
     * Description: keywords tagging a publication
     * range: [String](types/String.md)
- * [mesh terms](mesh_terms.md)  <sub>0..*</sub>
-    * Description: mesh terms tagging a publication
+ * [sumo terms](sumo_terms.md)  <sub>0..*</sub>
+    * Description: sumo terms tagging a publication
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [publication➞id](publication_id.md)  <sub>REQ</sub>
     * Description: Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.
@@ -120,13 +116,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * Description: the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
     * range: [LabelType](types/LabelType.md)
  * [publication➞type](publication_type.md)  <sub>REQ</sub>
-    * Description: Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of csolink:category csolink:OntologyClass.
+    * Description: Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of csolink:category csolink:OntologyClass.
     * range: [String](types/String.md)
 
 ### Domain for slot:
 
  * [book chapter➞published in](book_chapter_published_in.md)  <sub>REQ</sub>
-    * Description: The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.
+    * Description: The enclosing parent book containing the chapter should have industry-standard identifier from ISBN. - sumo:instrument
     * range: [Uriorcurie](types/Uriorcurie.md)
  * [chapter](chapter.md)  <sub>OPT</sub>
     * Description: chapter of a book
@@ -136,5 +132,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **In Subsets:** | | model_organism_database |
+| **In Subsets:** | | system_model_database |
 

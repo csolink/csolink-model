@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two biological entities that have common evolutionary origin
+holds between two computational entities that have common evolutionary service
 
 URI: [csolink:homologous_to](https://w3id.org/csolink/vocab/homologous_to)
 
@@ -37,9 +37,10 @@ URI: [csolink:homologous_to](https://w3id.org/csolink/vocab/homologous_to)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | in homology relationship with |
-| **Comments:** | | typically used to describe homology relationships between genes or gene products |
+| **Comments:** | | typically used to describe homology relationships between componentservices or servicetypes |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:HOM0000001 |
 |  | | SIO:010302 |
-| **Narrow Mappings:** | | UBERON_CORE:sexually_homologous_to |
+| **Broad Mappings:** | | GR:isSimilarTo |
+|  | | sumo:models |
 

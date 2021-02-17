@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest
+holds between two operational entities where the action or effect of one changes the localization of the other within a system of interest
 
 URI: [csolink:affects_localization_of](https://w3id.org/csolink/vocab/affects_localization_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -36,7 +36,11 @@ URI: [csolink:affects_localization_of](https://w3id.org/csolink/vocab/affects_lo
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:affects_localization_of |
-|  | | GOREL:0002003 |
-| **Related Mappings:** | | GAMMA:storage |
+| **Narrow Mappings:** | | CSO:distributed_localization |
+|  | | CSO:localization_algorithm |
+|  | | CSO:node_localization |
+|  | | CSO:object_localization |
+|  | | RO:0002313 |
+|  | | RO:0002339 |
+|  | | RO:0002338 |
 

@@ -31,4 +31,6 @@ URI: [csolink:published_in](https://w3id.org/csolink/vocab/published_in)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | WIKIDATA_PROPERTY:P1433 |
+|  | | sumo:Publication |
+| **Narrow Mappings:** | | schema:PublicationIssue |
 

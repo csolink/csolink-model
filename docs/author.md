@@ -30,6 +30,9 @@ URI: [csolink:author](https://w3id.org/csolink/vocab/author)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | dcterms:creator |
+| **Exact Mappings:** | | schema:author |
 |  | | WIKIDATA_PROPERTY:P50 |
+| **Close Mappings:** | | sumo:authors |
+| **Related Mappings:** | | dct:creator |
+|  | | geolink:isAuthorOf |
 

@@ -11,13 +11,13 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
+holds between two operational entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
 
 URI: [csolink:affects_transport_of](https://w3id.org/csolink/vocab/affects_transport_of)
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -36,8 +36,10 @@ URI: [csolink:affects_transport_of](https://w3id.org/csolink/vocab/affects_trans
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:affects_transport_of |
 | **Narrow Mappings:** | | RO:0002313 |
 |  | | RO:0002340 |
+|  | | RO:0002341 |
+|  | | RO:0002342 |
+|  | | RO:0002344 |
 |  | | RO:0002345 |
 

@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Date
+title: https://w3id.org/csolink/vocab/biolinkml:types/Date
 layout: default
 ---
 
-# Type: Date
+# Type: https://w3id.org/csolink/vocab/biolinkml:types/Date
 
 
 a date (year, month and day) in an idealized calendar
 
-URI: [metatype:Date](https://csolink.github.io/csolinkml/docs/types/Date)
+URI: [https://w3id.org/csolink/vocab/biolinkml:types/Date](https://w3id.org/csolink/vocab/biolinkml:types/Date)
 
 |  |  |  |
 | --- | --- | --- |

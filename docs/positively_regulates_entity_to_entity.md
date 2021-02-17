@@ -17,7 +17,7 @@ URI: [csolink:positively_regulates_entity_to_entity](https://w3id.org/csolink/vo
 
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+[OperationalEntity](OperationalEntity.md) ->  <sub>0..*</sub> [OperationalEntity](OperationalEntity.md)
 
 ## Parents
 
@@ -38,9 +38,7 @@ URI: [csolink:positively_regulates_entity_to_entity](https://w3id.org/csolink/vo
 |  | | activity directly positively regulates activity of (ro) |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002450 |
-| **Narrow Mappings:** | | SEMMEDDB:STIMULATES |
-|  | | SEMMEDDB:stimulates |
-|  | | hetio:UPREGULATES_AuG |
-|  | | hetio:UPREGULATES_DuG |
+| **Narrow Mappings:** | | ssn:Stimulus |
+|  | | sumo:Stimulant |
 | **Broad Mappings:** | | RO:0004034 |
 

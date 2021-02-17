@@ -8,13 +8,13 @@ layout: default
 # Relation: is_missense_variant_of
 
 
-holds between a gene  and a sequence variant, such the sequence variant results in a different amino acid sequence but where the length is preserved.
+holds between a componentservice  and a sequence variant, such the sequence variant results in a different instruction sequence but the serviceinstance is preserved.
 
 URI: [csolink:is_missense_variant_of](https://w3id.org/csolink/vocab/is_missense_variant_of)
 
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Gene](Gene.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Componentservice](Componentservice.md)
 
 ## Parents
 
@@ -24,14 +24,4 @@ URI: [csolink:is_missense_variant_of](https://w3id.org/csolink/vocab/is_missense
 
 
 ## Used by
-
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | SO:0001583 |
-|  | | SNPEFF:missense_variant |
-| **Narrow Mappings:** | | SNPEFF:initiator_codon_variant |
-|  | | SNPEFF:structural_interaction_variant |
 

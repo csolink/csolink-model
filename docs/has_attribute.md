@@ -27,176 +27,255 @@ None ->  <sub>0..*</sub> [Attribute](Attribute.md)
 
 ## Used by
 
- * [RNAProduct](RNAProduct.md)
- * [RNAProductIsoform](RNAProductIsoform.md)
  * [Activity](Activity.md)
  * [AdministrativeEntity](AdministrativeEntity.md)
+ * [AdministrativeOperation](AdministrativeOperation.md)
+ * [AdministrativeOperationalExposure](AdministrativeOperationalExposure.md)
+ * [AdministrativeOperationalToComponentserviceAssociation](AdministrativeOperationalToComponentserviceAssociation.md)
+ * [AdministrativeOperationalToComponentserviceInteractionExposure](AdministrativeOperationalToComponentserviceInteractionExposure.md)
  * [Agent](Agent.md)
- * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
- * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)
- * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)
  * [Article](Article.md)
  * [Association](Association.md)
+ * [Awareness](Awareness.md)
  * [Behavior](Behavior.md)
+ * [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md)
  * [BehavioralExposure](BehavioralExposure.md)
+ * [BehavioralFeature](BehavioralFeature.md)
  * [BehavioralOutcome](BehavioralOutcome.md)
- * [BiologicalEntity](BiologicalEntity.md)
- * [BiologicalProcess](BiologicalProcess.md)
- * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
  * [BioticExposure](BioticExposure.md)
+ * [Bitstream](Bitstream.md)
  * [Book](Book.md)
  * [BookChapter](BookChapter.md)
- * [Carbohydrate](Carbohydrate.md)
- * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
- * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
- * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md)
- * [ChemicalExposure](ChemicalExposure.md)
- * [ChemicalSubstance](ChemicalSubstance.md)
- * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md)
- * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)
- * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
- * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)
- * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
- * [ClinicalEntity](ClinicalEntity.md)
- * [ClinicalIntervention](ClinicalIntervention.md)
- * [ClinicalTrial](ClinicalTrial.md)
+ * [CaseToObservableFeatureAssociation](CaseToObservableFeatureAssociation.md)
  * [CodingSequence](CodingSequence.md)
- * [ComplexChemicalExposure](ComplexChemicalExposure.md)
+ * [ComplexOrchestrationExposure](ComplexOrchestrationExposure.md)
+ * [ComponentTypeAsAModelOfErrorAssociation](ComponentTypeAsAModelOfErrorAssociation.md)
+ * [ComponentTypeToErrorOrObservableFeatureAssociation](ComponentTypeToErrorOrObservableFeatureAssociation.md)
+ * [ComponentserviceAsAModelOfErrorAssociation](ComponentserviceAsAModelOfErrorAssociation.md)
+ * [ComponentserviceFamily](ComponentserviceFamily.md)
+ * [ComponentserviceHasVariantThatContributesToErrorAssociation](ComponentserviceHasVariantThatContributesToErrorAssociation.md)
+ * [ComponentserviceOntologyClass](ComponentserviceOntologyClass.md)
+ * [ComponentserviceRegulatoryRelationship](ComponentserviceRegulatoryRelationship.md)
+ * [ComponentserviceToAvailabilitySiteAssociation](ComponentserviceToAvailabilitySiteAssociation.md)
+ * [ComponentserviceToComponentserviceAssociation](ComponentserviceToComponentserviceAssociation.md)
+ * [ComponentserviceToComponentserviceCoavailabilityAssociation](ComponentserviceToComponentserviceCoavailabilityAssociation.md)
+ * [ComponentserviceToComponentserviceHomologyAssociation](ComponentserviceToComponentserviceHomologyAssociation.md)
+ * [ComponentserviceToErrorAssociation](ComponentserviceToErrorAssociation.md)
+ * [ComponentserviceToGoTermAssociation](ComponentserviceToGoTermAssociation.md)
+ * [ComponentserviceToObservableFeatureAssociation](ComponentserviceToObservableFeatureAssociation.md)
+ * [ComponentserviceToServicetypeRelationship](ComponentserviceToServicetypeRelationship.md)
+ * [Componentserviceinstance](Componentserviceinstance.md)
+ * [ComponentserviceinstanceToComponentserviceRelationship](ComponentserviceinstanceToComponentserviceRelationship.md)
+ * [ComputationalEntity](ComputationalEntity.md)
+ * [ComputationalProcess](ComputationalProcess.md)
+ * [ComputationalProcessOrActivity](ComputationalProcessOrActivity.md)
  * [ConfidenceLevel](ConfidenceLevel.md)
+ * [ConsumedResource](ConsumedResource.md)
  * [ContributorAssociation](ContributorAssociation.md)
- * [DataFile](DataFile.md)
- * [DataSet](DataSet.md)
- * [DataSetSummary](DataSetSummary.md)
- * [DataSetVersion](DataSetVersion.md)
+ * [ControlActor](ControlActor.md)
+ * [Controller](Controller.md)
+ * [CyberEntity](CyberEntity.md)
+ * [CyberProcess](CyberProcess.md)
+ * [Daemon](Daemon.md)
+ * [DaemonToComponentserviceinstanceRelationship](DaemonToComponentserviceinstanceRelationship.md)
+ * [Data](Data.md)
+ * [Dataset](Dataset.md)
+ * [DatasetDistribution](DatasetDistribution.md)
+ * [DatasetSummary](DatasetSummary.md)
+ * [DatasetVersion](DatasetVersion.md)
+ * [Datastream](Datastream.md)
  * [Death](Death.md)
+ * [DeploymentEntityToDeploymentEntityAssociation](DeploymentEntityToDeploymentEntityAssociation.md)
+ * [DeploymentEntityToDeploymentEntityOntogenicAssociation](DeploymentEntityToDeploymentEntityOntogenicAssociation.md)
+ * [DeploymentEntityToDeploymentEntityPartOfAssociation](DeploymentEntityToDeploymentEntityPartOfAssociation.md)
  * [Device](Device.md)
- * [Disease](Disease.md)
- * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
- * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
- * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md)
- * [DiseaseOrPhenotypicFeatureOutcome](DiseaseOrPhenotypicFeatureOutcome.md)
- * [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md)
- * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md)
- * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [DistributionLevel](DistributionLevel.md)
- * [Drug](Drug.md)
- * [DrugExposure](DrugExposure.md)
- * [DrugToGeneAssociation](DrugToGeneAssociation.md)
- * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md)
+ * [EmpiricalEntity](EmpiricalEntity.md)
+ * [EmpiricalIntervention](EmpiricalIntervention.md)
+ * [EmpiricalTrial](EmpiricalTrial.md)
  * [Entity](Entity.md)
  * [EnvironmentalExposure](EnvironmentalExposure.md)
  * [EnvironmentalFeature](EnvironmentalFeature.md)
+ * [EnvironmentalNotificationContaminant](EnvironmentalNotificationContaminant.md)
  * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [EpidemiologicalOutcome](EpidemiologicalOutcome.md)
+ * [Error](Error.md)
+ * [ErrorOrObservableFeature](ErrorOrObservableFeature.md)
+ * [ErrorOrObservableFeatureAssociationToLocationAssociation](ErrorOrObservableFeatureAssociationToLocationAssociation.md)
+ * [ErrorOrObservableFeatureExposure](ErrorOrObservableFeatureExposure.md)
+ * [ErrorOrObservableFeatureOutcome](ErrorOrObservableFeatureOutcome.md)
+ * [ErrorOrObservableFeatureToLocationAssociation](ErrorOrObservableFeatureToLocationAssociation.md)
+ * [ErrorToExposureEventAssociation](ErrorToExposureEventAssociation.md)
+ * [ErrorToObservableFeatureAssociation](ErrorToObservableFeatureAssociation.md)
  * [EvidenceType](EvidenceType.md)
- * [Exon](Exon.md)
- * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)
+ * [ExposureEventToObservableFeatureAssociation](ExposureEventToObservableFeatureAssociation.md)
  * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)
- * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
- * [Food](Food.md)
+ * [FaultyProcess](FaultyProcess.md)
+ * [FaultyProcessExposure](FaultyProcessExposure.md)
+ * [FaultyProcessOutcome](FaultyProcessOutcome.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
- * [Gene](Gene.md)
- * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
- * [GeneFamily](GeneFamily.md)
- * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
- * [GeneOntologyClass](GeneOntologyClass.md)
- * [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [GeneProduct](GeneProduct.md)
- * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)
- * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
- * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
- * [GeneToGeneAssociation](GeneToGeneAssociation.md)
- * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
- * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md)
- * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
- * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
- * [Genome](Genome.md)
- * [GenomicBackgroundExposure](GenomicBackgroundExposure.md)
- * [GenomicEntity](GenomicEntity.md)
- * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
- * [Genotype](Genotype.md)
- * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
- * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
- * [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)
- * [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)
- * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
- * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)
  * [GeographicExposure](GeographicExposure.md)
  * [GeographicLocation](GeographicLocation.md)
  * [GeographicLocationAtTime](GeographicLocationAtTime.md)
- * [Haplotype](Haplotype.md)
- * [Hospitalization](Hospitalization.md)
- * [HospitalizationOutcome](HospitalizationOutcome.md)
  * [InformationContentEntity](InformationContentEntity.md)
- * [MacromolecularComplex](MacromolecularComplex.md)
- * [MacromolecularMachine](MacromolecularMachine.md)
- * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md)
- * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md)
- * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)
- * [MaterialSample](MaterialSample.md)
- * [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md)
- * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md)
- * [Metabolite](Metabolite.md)
- * [MicroRNA](MicroRNA.md)
- * [MolecularActivity](MolecularActivity.md)
- * [MolecularEntity](MolecularEntity.md)
+ * [KernelInterrupt](KernelInterrupt.md)
+ * [KernelMessage](KernelMessage.md)
+ * [KernelServicetype](KernelServicetype.md)
+ * [KernelServicetypeIsoform](KernelServicetypeIsoform.md)
+ * [MacrooperationalMachineMixinToComponentAssociation](MacrooperationalMachineMixinToComponentAssociation.md)
+ * [MacrooperationalMachineMixinToComputationalProcessAssociation](MacrooperationalMachineMixinToComputationalProcessAssociation.md)
+ * [MacrooperationalMachineMixinToOperationalActivityAssociation](MacrooperationalMachineMixinToOperationalActivityAssociation.md)
+ * [MessagePassing](MessagePassing.md)
+ * [MonomericVariant](MonomericVariant.md)
  * [MortalityOutcome](MortalityOutcome.md)
  * [NamedThing](NamedThing.md)
- * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [NoncodingKernelServicetype](NoncodingKernelServicetype.md)
+ * [Notification](Notification.md)
+ * [NotificationComponent](NotificationComponent.md)
+ * [ObservableFeature](ObservableFeature.md)
+ * [OfflineMaintenance](OfflineMaintenance.md)
+ * [OfflineMaintenanceOutcome](OfflineMaintenanceOutcome.md)
  * [OntologyClass](OntologyClass.md)
- * [OrganismTaxon](OrganismTaxon.md)
- * [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md)
- * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md)
- * [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)
- * [PathologicalProcess](PathologicalProcess.md)
+ * [OperationalActivity](OperationalActivity.md)
+ * [OperationalEntity](OperationalEntity.md)
+ * [OrchestrationExposure](OrchestrationExposure.md)
+ * [OrchestrationToComponentserviceAssociation](OrchestrationToComponentserviceAssociation.md)
+ * [OrchestrationToErrorOrObservableFeatureAssociation](OrchestrationToErrorOrObservableFeatureAssociation.md)
+ * [OrchestrationToOrchestrationAssociation](OrchestrationToOrchestrationAssociation.md)
+ * [OrchestrationToOrchestrationDerivationAssociation](OrchestrationToOrchestrationDerivationAssociation.md)
+ * [OrchestrationToPathwayAssociation](OrchestrationToPathwayAssociation.md)
+ * [PairwiseComponentserviceToComponentserviceInteraction](PairwiseComponentserviceToComponentserviceInteraction.md)
+ * [PairwiseOperationallyInteraction](PairwiseOperationallyInteraction.md)
  * [Pathway](Pathway.md)
  * [Phenomenon](Phenomenon.md)
- * [PhenotypicFeature](PhenotypicFeature.md)
- * [PhysicalEntity](PhysicalEntity.md)
- * [PhysiologicalProcess](PhysiologicalProcess.md)
  * [PlanetaryEntity](PlanetaryEntity.md)
  * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)
+ * [Power](Power.md)
  * [Procedure](Procedure.md)
- * [ProcessedMaterial](ProcessedMaterial.md)
- * [Protein](Protein.md)
- * [ProteinIsoform](ProteinIsoform.md)
  * [Publication](Publication.md)
- * [ReagentTargetedGene](ReagentTargetedGene.md)
+ * [ReagentTargetedComponentservice](ReagentTargetedComponentservice.md)
  * [RelationshipType](RelationshipType.md)
+ * [Repairing](Repairing.md)
+ * [ResourceSample](ResourceSample.md)
+ * [ResourceSampleDerivationAssociation](ResourceSampleDerivationAssociation.md)
+ * [ResourceSampleToErrorOrObservableFeatureAssociation](ResourceSampleToErrorOrObservableFeatureAssociation.md)
  * [SequenceAssociation](SequenceAssociation.md)
  * [SequenceFeatureRelationship](SequenceFeatureRelationship.md)
  * [SequenceVariant](SequenceVariant.md)
- * [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)
+ * [SequenceVariantModulatesRepairingAssociation](SequenceVariantModulatesRepairingAssociation.md)
  * [Serial](Serial.md)
- * [SiRNA](SiRNA.md)
- * [Snv](Snv.md)
+ * [ServiceBackgroundExposure](ServiceBackgroundExposure.md)
+ * [ServiceSequenceLocalization](ServiceSequenceLocalization.md)
+ * [Serviceinstance](Serviceinstance.md)
+ * [ServiceinstanceIsoform](ServiceinstanceIsoform.md)
+ * [Serviceunittype](Serviceunittype.md)
+ * [ServiceunittypeAsAModelOfErrorAssociation](ServiceunittypeAsAModelOfErrorAssociation.md)
+ * [ServiceunittypeToComponentserviceAssociation](ServiceunittypeToComponentserviceAssociation.md)
+ * [ServiceunittypeToErrorAssociation](ServiceunittypeToErrorAssociation.md)
+ * [ServiceunittypeToObservableFeatureAssociation](ServiceunittypeToObservableFeatureAssociation.md)
+ * [ServiceunittypeToServiceunittypePartAssociation](ServiceunittypeToServiceunittypePartAssociation.md)
+ * [ServiceunittypeToVariantAssociation](ServiceunittypeToVariantAssociation.md)
  * [SocioeconomicOutcome](SocioeconomicOutcome.md)
- * [SourceFile](SourceFile.md)
+ * [SystemTaxon](SystemTaxon.md)
+ * [SystemicEntityAsAModelOfErrorAssociation](SystemicEntityAsAModelOfErrorAssociation.md)
  * [TaxonomicRank](TaxonomicRank.md)
- * [Transcript](Transcript.md)
- * [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)
- * [Treatment](Treatment.md)
- * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)
- * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
- * [VariantToGeneAssociation](VariantToGeneAssociation.md)
- * [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md)
- * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
+ * [VariantAsAModelOfErrorAssociation](VariantAsAModelOfErrorAssociation.md)
+ * [VariantToComponentserviceAssociation](VariantToComponentserviceAssociation.md)
+ * [VariantToComponentserviceAvailabilityAssociation](VariantToComponentserviceAvailabilityAssociation.md)
+ * [VariantToErrorAssociation](VariantToErrorAssociation.md)
+ * [VariantToObservableFeatureAssociation](VariantToObservableFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+ * [Variantcomponentservicetype](Variantcomponentservicetype.md)
+ * [Workload](Workload.md)
+ * [WorkloadEntity](WorkloadEntity.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | samples |
-| **Exact Mappings:** | | SIO:000008 |
-| **Close Mappings:** | | OBI:0001927 |
-| **Narrow Mappings:** | | OBAN:association_has_subject_property |
-|  | | OBAN:association_has_object_property |
-|  | | CPT:has_possibly_included_panel_element |
-|  | | DRUGBANK:category |
+| **Exact Mappings:** | | AML:hasAttribute |
+|  | | CTRL:hasParameter |
+|  | | ssn:hasProperty |
+|  | | SIO:000008 |
+| **Close Mappings:** | | sumo:hasVariable |
+|  | | sumo:property |
+| **Narrow Mappings:** | | AML:hasAttributeName |
+|  | | AML:hasDescription |
+|  | | AML:hasICID |
+|  | | AML:hasName |
+|  | | AML:hasProject |
+|  | | AML:hasUnit |
+|  | | AML:hasSchemaVersion |
+|  | | AML:hasVersionSUC |
+|  | | AML:hasWriterVersion |
+|  | | schema:hasPart |
+|  | | CDAO:has_Character |
+|  | | CDAO:has_Root |
+|  | | CDAO:has_First_Coordinate_Item |
+|  | | CDAO:has_Coordinate |
+|  | | CDAO:has_Change_Component |
+|  | | CDAO:has_Datum |
+|  | | CDAO:has_Node |
+|  | | CDAO:has_Annotation |
+|  | | CDAO:has_Remaining_Coordinate_List |
+|  | | CDAO:has_State |
+|  | | CDAO:has_Element |
+|  | | CTRL:hasApplicationLogic |
+|  | | CTRL:hasInput |
+|  | | CTRL:hasMedium |
+|  | | CTRL:hasOutput |
+|  | | CTRL:isConnectedTo |
+|  | | CTRL:isSupervisedBy |
+|  | | dct:hasPart |
+|  | | dct:hasFormat |
+|  | | dct:hasVersion |
 |  | | EFO:is_executed_in |
-|  | | HANCESTRO:0301 |
+|  | | EFO:0006351 |
+|  | | geolink:hasAuthoritativeDigitalRepository |
+|  | | geolink:hasRelatedSample |
+|  | | geolink:hasAffiliation |
+|  | | geolink:hasAuthor |
+|  | | geolink:hasCollector |
+|  | | geolink:hasContact |
+|  | | geolink:hasContributor |
+|  | | geolink:hasCollectionEndDate |
+|  | | geolink:hasCollectionStartDate |
+|  | | geolink:hasCreator |
+|  | | geolink:hasDataset |
+|  | | geolink:hasEditor |
+|  | | geolink:hasEducator |
+|  | | geolink:hasFirstAppearance |
+|  | | geolink:hasIdentifierScheme |
+|  | | geolink:hasObserver |
+|  | | geolink:hasObservationArea |
+|  | | geolink:hasOwner |
+|  | | geolink:hasParticipant |
+|  | | geolink:hasParticipationEndTime |
+|  | | geolink:hasParticipationStartTime |
+|  | | geolink:hasPart |
+|  | | geolink:hasPublicationDate |
+|  | | geolink:hasRegistrationDate |
+|  | | geolink:hasStartDate |
+|  | | geolink:hasRepository |
+|  | | geolink:hasRightsHolder |
+|  | | geolink:hasScheduler |
+|  | | geolink:hasTimeStamp |
+|  | | geolink:hasVendor |
+|  | | gr:hasBusinessFunction |
+|  | | gr:hasBrand |
+|  | | gr:hasCurrency |
+|  | | gr:hasEligibleQuantity |
+|  | | gr:hasGlobalLocationNumber |
+|  | | gr:hasInventoryLevel |
+|  | | gr:hasManufacturer |
+|  | | gr:hasMakeAndModel |
+|  | | gr:hasNext |
+|  | | gr:hasPrevious |
+|  | | gr:hasUnitOfMeasurement |
+|  | | gr:hasValue |
+|  | | IAO:0000039 |
+|  | | IAO:0000407 |
 |  | | LOINC:has_action_guidance |
 |  | | LOINC:has_adjustment |
 |  | | LOINC:has_aggregation_view |
@@ -211,59 +290,130 @@ None ->  <sub>0..*</sub> [Attribute](Attribute.md)
 |  | | LOINC:has_time_aspect |
 |  | | LOINC:has_time_modifier |
 |  | | LOINC:has_timing_of |
-|  | | NCIT:disease_is_grade |
-|  | | NCIT:disease_is_stage |
-|  | | NCIT:eo_disease_has_property_or_attribute |
-|  | | NCIT:has_data_element |
-|  | | NCIT:has_pharmaceutical_administration_method |
-|  | | NCIT:has_pharmaceutical_basic_dose_form |
-|  | | NCIT:has_pharmaceutical_intended_site |
-|  | | NCIT:has_pharmaceutical_release_characteristics |
-|  | | NCIT:has_pharmaceutical_state_of_matter |
-|  | | NCIT:has_pharmaceutical_transformation |
 |  | | NCIT:is_qualified_by |
 |  | | NCIT:qualifier_applies_to |
+|  | | NCIT:has_data_element |
 |  | | NCIT:role_has_domain |
 |  | | NCIT:role_has_range |
-|  | | OBO:INO_0000154 |
-|  | | OBO:hancestro_0308 |
-|  | | OMIM:has_inheritance_type |
-|  | | ORPHA:C016 |
-|  | | ORPHA:C017 |
+|  | | NCIT:C62618 |
+|  | | OCRM:hasCategory |
+|  | | OCRM:hasCaseCategory |
+|  | | OM:hasPhenomenon |
+|  | | OSO:hasApplicationName |
+|  | | OSO:hasBuildDate |
+|  | | OSO:hasComponent |
+|  | | OSO:hasComponentMode |
+|  | | OSO:hasComponentType |
+|  | | OSO:hasOperatingSystem |
+|  | | RO:0002002 |
 |  | | RO:0000053 |
 |  | | RO:0000086 |
 |  | | RO:0000087 |
-|  | | SNOMED:has_access |
-|  | | SNOMED:has_clinical_course |
-|  | | SNOMED:has_count_of_base_of_active_ingredient |
-|  | | SNOMED:has_dose_form_administration_method |
-|  | | SNOMED:has_dose_form_release_characteristic |
-|  | | SNOMED:has_dose_form_transformation |
-|  | | SNOMED:has_finding_context |
-|  | | SNOMED:has_finding_informer |
-|  | | SNOMED:has_inherent_attribute |
-|  | | SNOMED:has_intent |
-|  | | SNOMED:has_interpretation |
-|  | | SNOMED:has_laterality |
-|  | | SNOMED:has_measurement_method |
-|  | | SNOMED:has_method |
-|  | | SNOMED:has_priority |
-|  | | SNOMED:has_procedure_context |
-|  | | SNOMED:has_process_duration |
-|  | | SNOMED:has_property |
-|  | | SNOMED:has_revision_status |
-|  | | SNOMED:has_scale_type |
-|  | | SNOMED:has_severity |
-|  | | SNOMED:has_specimen |
-|  | | SNOMED:has_state_of_matter |
-|  | | SNOMED:has_subject_relationship_context |
-|  | | SNOMED:has_surgical_approach |
-|  | | SNOMED:has_technique |
-|  | | SNOMED:has_temporal_context |
-|  | | SNOMED:has_time_aspect |
-|  | | SNOMED:has_units |
-|  | | UMLS:has_structural_class |
-|  | | UMLS:has_supported_concept_property |
-|  | | UMLS:has_supported_concept_relationship |
-|  | | UMLS:may_be_qualified_by |
+|  | | RO:0002520 |
+|  | | RO:0002018 |
+|  | | RO:0002017 |
+|  | | RO:0002013 |
+|  | | RO:0002016 |
+|  | | RO:0002025 |
+|  | | RO:0002521 |
+|  | | RO:0002348 |
+|  | | RO:0002566 |
+|  | | RO:0002002 |
+|  | | RO:0002338 |
+|  | | RO:0002339 |
+|  | | RO:0002573 |
+|  | | RO:0009001 |
+|  | | RO:0009004 |
+|  | | SAN:hasActuatingCapability |
+|  | | SAN:hasActuatingProperty |
+|  | | SAN:hasDateTime |
+|  | | SAN:hasEffect |
+|  | | SAN:hasWriter |
+|  | | SIO:000011 |
+|  | | SIO:000586 |
+|  | | SIO:001277 |
+|  | | SIO:000671 |
+|  | | SIO:000312 |
+|  | | SIO:000552 |
+|  | | SIO:000420 |
+|  | | SIO:000253 |
+|  | | SIO:000132 |
+|  | | SIO:000255 |
+|  | | SIO:000008 |
+|  | | SIO:000364 |
+|  | | SIO:000230 |
+|  | | SIO:000235 |
+|  | | SIO:000234 |
+|  | | SIO:000228 |
+|  | | SIO:000229 |
+|  | | SIO:000900 |
+|  | | SIO:000905 |
+|  | | SIO:000221 |
+|  | | SIO:000225 |
+|  | | SIO:000223 |
+|  | | SIO:000217 |
+|  | | SIO:000291 |
+|  | | SIO:000054 |
+|  | | SIO:000059 |
+|  | | SIO:000028 |
+|  | | SIO:000139 |
+|  | | SIO:000772 |
+|  | | SIO:000641 |
+|  | | SIO:000635 |
+|  | | SIO:000066 |
+|  | | SIO:001279 |
+|  | | SIO:000300 |
+|  | | SIO:001278 |
+|  | | SIO:000680 |
+|  | | SIO:000681 |
+|  | | SIO:000679 |
+|  | | SIO:000673 |
+|  | | SIO:000369 |
+|  | | SIO:000053 |
+|  | | SIO:000972 |
+|  | | SIO:000971 |
+|  | | SIO:000273 |
+|  | | SIO:000644 |
+|  | | SIO:000974 |
+|  | | SIO:000553 |
+|  | | SIO:000145 |
+|  | | SWO:0004000 |
+|  | | sosa:hasFeatureOfInterest |
+|  | | sosa:hasSample |
+|  | | ssn:hasSubSystem |
+|  | | ssn:isProxyFor |
+|  | | ssn-system:hasSystemCapability |
+|  | | ssn-system:hasSystemProperty |
+|  | | ssn-system:hasOperatingRange |
+|  | | ssn-system:hasOperatingProperty |
+|  | | ssn-system:hasSurvivalRange |
+|  | | ssn-system:hasSurvivalProperty |
+|  | | ssn-system:inCondition |
+|  | | sumo:hasAcrossVariable |
+|  | | sumo:hasAccount |
+|  | | sumo:hasAward |
+|  | | sumo:hasDependency |
+|  | | sumo:hasDimension |
+|  | | sumo:hasExpertise |
+|  | | sumo:hasGUEState |
+|  | | sumo:hasOccupation |
+|  | | sumo:hasPurpose |
+|  | | sumo:hasPurposeForAgent |
+|  | | sumo:hasSkill |
+|  | | sumo:hasThroughVariable |
+|  | | sumo:hasUniform |
+|  | | sumo:hasVariable |
+|  | | sumo:holdsRight |
+|  | | SWO:9001002 |
+|  | | SWO:0004001 |
+|  | | SWO:9000067 |
+|  | | SWO:0004002 |
+|  | | SWO:0000087 |
+|  | | SWO:0000086 |
+|  | | SWO:0004004 |
+|  | | SWO:0000741 |
+|  | | SWO:0004002 |
+|  | | SWO:3000054 |
+|  | | SWO:0004000 |
+| **Broad Mappings:** | | CDAO:0000178 |
 

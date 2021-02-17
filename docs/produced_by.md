@@ -31,4 +31,9 @@ URI: [csolink:produced_by](https://w3id.org/csolink/vocab/produced_by)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | RO:0003001 |
+|  | | ssn:wasOriginatedBy |
+|  | | sumo:issuedBy |
+| **Close Mappings:** | | AML:wasGeneratedBy |
+|  | | prov:wasGeneratedBy |
+|  | | prov:wasInformedBy |
 

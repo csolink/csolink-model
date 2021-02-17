@@ -8,7 +8,7 @@ layout: default
 # Slot: systematic_synonym
 
 
-more commonly used for gene symbols in yeast
+a word with the same or very similar meanings
 
 URI: [csolink:systematic_synonym](https://w3id.org/csolink/vocab/systematic_synonym)
 
@@ -30,5 +30,7 @@ URI: [csolink:systematic_synonym](https://w3id.org/csolink/vocab/systematic_syno
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | GOP:systematic_synonym |
+| **Mappings:** | | SIO:000122 |
+| **Narrow Mappings:** | | WIKIDATA_PROPERTY:P1420 |
+| **Broad Mappings:** | | sumo:synonymousExternalConcept |
 

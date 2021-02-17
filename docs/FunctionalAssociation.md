@@ -8,14 +8,14 @@ layout: default
 # Class: FunctionalAssociation
 
 
-An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
+An association between a macrooperational machine mixin (componentservice, servicetype or complex of servicetypes) and either a operational activity, a computational process or a component location in which a function is executed.
 
 URI: [csolink:FunctionalAssociation](https://w3id.org/csolink/vocab/FunctionalAssociation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachine],[GeneToGoTermAssociation],[GeneOntologyClass],[GeneOntologyClass]%3Cobject%201..1-%20[FunctionalAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MacromolecularMachine]%3Csubject%201..1-%20[FunctionalAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[Association]%5E-[FunctionalAssociation],[Attribute],[Association],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacrooperationalMachineMixinToOperationalActivityAssociation],[MacrooperationalMachineMixinToComputationalProcessAssociation],[MacrooperationalMachineMixinToComponentAssociation],[MacrooperationalMachineMixin],[ComponentserviceOntologyClass]%3Cobject%201..1-%20[FunctionalAssociation%7Cpredicate(i):predicate_type;relation(i):uriorcurie;negated(i):boolean%20%3F;type(i):string%20%3F;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[MacrooperationalMachineMixin]%3Csubject%201..1-++[FunctionalAssociation],[FunctionalAssociation]%5E-[MacrooperationalMachineMixinToOperationalActivityAssociation],[FunctionalAssociation]%5E-[MacrooperationalMachineMixinToComputationalProcessAssociation],[FunctionalAssociation]%5E-[MacrooperationalMachineMixinToComponentAssociation],[FunctionalAssociation]%5E-[ComponentserviceToGoTermAssociation],[Association]%5E-[FunctionalAssociation],[ComponentserviceToGoTermAssociation],[ComponentserviceOntologyClass],[Attribute],[Association],[Agent])
 
 ---
 
@@ -26,10 +26,10 @@ URI: [csolink:FunctionalAssociation](https://w3id.org/csolink/vocab/FunctionalAs
 
 ## Children
 
- * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
- * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
- * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
- * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+ * [ComponentserviceToGoTermAssociation](ComponentserviceToGoTermAssociation.md)
+ * [MacrooperationalMachineMixinToComponentAssociation](MacrooperationalMachineMixinToComponentAssociation.md) - A functional association between a macrooperational machine mixin (componentservice, servicetype or complex) and a component (as represented in the GO component branch), where the entity carries out its function in the component
+ * [MacrooperationalMachineMixinToComputationalProcessAssociation](MacrooperationalMachineMixinToComputationalProcessAssociation.md) - A functional association between a macrooperational machine mixin (componentservice, servicetype or complex) and a computational process or pathway (as represented in the GO computational process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+ * [MacrooperationalMachineMixinToOperationalActivityAssociation](MacrooperationalMachineMixinToOperationalActivityAssociation.md) - A functional association between a macrooperational machine mixin (componentservice, servicetype or complex) and a operational activity (as represented in the GO operational function branch), where the entity carries out the activity, or contributes to its execution
 
 ## Referenced by class
 
@@ -40,25 +40,22 @@ URI: [csolink:FunctionalAssociation](https://w3id.org/csolink/vocab/FunctionalAs
 ### Own
 
  * [functional association➞object](functional_association_object.md)  <sub>REQ</sub>
-    * Description: class describing the activity, process or localization of the gene product
-    * range: [GeneOntologyClass](GeneOntologyClass.md)
-    * Example:    
-    * Example:    
+    * Description: class describing the activity, process or localization of the servicetype
+    * range: [ComponentserviceOntologyClass](ComponentserviceOntologyClass.md)
  * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
-    * Description: gene, product or macromolecular complex that has the function associated with the GO term
-    * range: [MacromolecularMachine](MacromolecularMachine.md)
-    * Example:    
+    * Description: componentservice, servicetype or macrooperational complex that has the function associated with the GO term
+    * range: [MacrooperationalMachineMixin](MacrooperationalMachineMixin.md)
 
 ### Inherited from association:
 
  * [subject](subject.md)  <sub>REQ</sub>
-    * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+    * Description: connects an association to the subject of the association. For example, in a componentservice-to-observability association, the componentservice is subject and observability is object.
     * range: [NamedThing](NamedThing.md)
  * [predicate](predicate.md)  <sub>REQ</sub>
     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
     * range: [PredicateType](types/PredicateType.md)
  * [object](object.md)  <sub>REQ</sub>
-    * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+    * Description: connects an association to the object of the association. For example, in a componentservice-to-observability association, the componentservice is subject and observability is object.
     * range: [NamedThing](NamedThing.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.
@@ -92,16 +89,12 @@ URI: [csolink:FunctionalAssociation](https://w3id.org/csolink/vocab/FunctionalAs
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the csolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a csolink model class URI.
-This field is multi-valued. It should include values for ancestors of the csolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in csolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
+This field is multi-valued. It should include values for ancestors of the csolink class; for example, a serviceinstance such as Shh would have category values `bl:Interface`, `bl:ComponentTypeProduct`, `bl:ComponentTypeEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink.
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -111,21 +104,24 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
  * [provided by](provided_by.md)  <sub>0..*</sub>
-    * Description: connects an association to the agent (person, organization or group) that provided it
+    * Description: connects an association to the agent (service, organization or group) that provided it
     * range: [Agent](Agent.md)
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from macrooperational machine mixin:
+
+ * [macrooperational machine mixin➞name](macrooperational_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: componentservices are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
+
 ### Domain for slot:
 
  * [functional association➞object](functional_association_object.md)  <sub>REQ</sub>
-    * Description: class describing the activity, process or localization of the gene product
-    * range: [GeneOntologyClass](GeneOntologyClass.md)
-    * Example:    
-    * Example:    
+    * Description: class describing the activity, process or localization of the servicetype
+    * range: [ComponentserviceOntologyClass](ComponentserviceOntologyClass.md)
  * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
-    * Description: gene, product or macromolecular complex that has the function associated with the GO term
-    * range: [MacromolecularMachine](MacromolecularMachine.md)
-    * Example:    
+    * Description: componentservice, servicetype or macrooperational complex that has the function associated with the GO term
+    * range: [MacrooperationalMachineMixin](MacrooperationalMachineMixin.md)

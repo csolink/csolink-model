@@ -8,13 +8,13 @@ layout: default
 # Relation: is_synonymous_variant_of
 
 
-holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
+holds between a sequence variant and a componentservice, such the sequence variant is in the coding sequence of the componentservice, but results in the same instruction sequence
 
 URI: [csolink:is_synonymous_variant_of](https://w3id.org/csolink/vocab/is_synonymous_variant_of)
 
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Gene](Gene.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Componentservice](Componentservice.md)
 
 ## Parents
 
@@ -24,14 +24,4 @@ URI: [csolink:is_synonymous_variant_of](https://w3id.org/csolink/vocab/is_synony
 
 
 ## Used by
-
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | SO:0001819 |
-|  | | SNPEFF:synonymous_variant |
-| **Narrow Mappings:** | | SNPEFF:start_retained |
-|  | | SNPEFF:stop_retained_variant |
 

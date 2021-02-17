@@ -14,7 +14,7 @@ URI: [csolink:negatively_regulated_by](https://w3id.org/csolink/vocab/negatively
 
 ## Domain and Range
 
-[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md) ->  <sub>OPT</sub> [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)
+[CyberEssenceOrOccurrent](CyberEssenceOrOccurrent.md) ->  <sub>OPT</sub> [CyberEssenceOrOccurrent](CyberEssenceOrOccurrent.md)
 
 ## Parents
 

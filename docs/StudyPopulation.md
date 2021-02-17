@@ -8,25 +8,25 @@ layout: default
 # Class: StudyPopulation
 
 
-A group of people banded together or treated as a group as participants in a research study.
+A group of individuals banded together or repaired as a group as participants in a research study.
 
 URI: [csolink:StudyPopulation](https://w3id.org/csolink/vocab/StudyPopulation)
 
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[StudyPopulation%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[Cohort],[PopulationOfIndividualOrganisms]%5E-[StudyPopulation],[PopulationOfIndividualOrganisms],[OrganismTaxon],[NamedThing],[Cohort],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[SystemTaxon],[StudyPopulation%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F]%5E-[Cohort],[PopulationOfIndividualSystems]%5E-[StudyPopulation],[PopulationOfIndividualSystems],[NamedThing],[Cohort],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
+ *  is_a: [PopulationOfIndividualSystems](PopulationOfIndividualSystems.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, services, observabilitys.
 
 ## Children
 
- * [Cohort](Cohort.md) - A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
+ * [Cohort](Cohort.md) - A group of individuals banded together or repaired as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 
 ## Referenced by class
 
@@ -48,16 +48,12 @@ URI: [csolink:StudyPopulation](https://w3id.org/csolink/vocab/StudyPopulation)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the csolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a csolink model class URI.
-This field is multi-valued. It should include values for ancestors of the csolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in csolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
+This field is multi-valued. It should include values for ancestors of the csolink class; for example, a serviceinstance such as Shh would have category values `bl:Interface`, `bl:ComponentTypeProduct`, `bl:ComponentTypeEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink.
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -67,29 +63,35 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
  * [provided by](provided_by.md)  <sub>0..*</sub>
-    * Description: connects an association to the agent (person, organization or group) that provided it
+    * Description: connects an association to the agent (service, organization or group) that provided it
     * range: [Agent](Agent.md)
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
+### Inherited from macrooperational machine mixin:
+
+ * [macrooperational machine mixin➞name](macrooperational_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: componentservices are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
+
 ### Inherited from named thing:
 
  * [named thing➞category](named_thing_category.md)  <sub>1..*</sub>
     * range: [NamedThing](NamedThing.md)
 
-### Inherited from organismal entity:
+### Inherited from systemic entity:
 
- * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..*</sub>
-    * Description: may often be an organism attribute
+ * [systemic entity➞has attribute](systemic_entity_has_attribute.md)  <sub>0..*</sub>
+    * Description: may often be an system attribute
     * range: [Attribute](Attribute.md)
 
 ### Inherited from thing with taxon:
 
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-    * range: [OrganismTaxon](OrganismTaxon.md)
+    * range: [SystemTaxon](SystemTaxon.md)
     * in subsets: (translator_minimal)
 
 ## Other properties

@@ -15,14 +15,14 @@ URI: [csolink:CodingSequence](https://w3id.org/csolink/vocab/CodingSequence)
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[GenomicEntity],[GenomicEntity]%5E-[CodingSequence%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[WorkloadEntity],[SystemTaxon],[NamedThing],[WorkloadEntity]%5E-[CodingSequence%7Chas_computational_sequence(i):computational_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[Attribute],[Agent])
 
 ---
 
 
 ## Parents
 
- *  is_a: [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+ *  is_a: [WorkloadEntity](WorkloadEntity.md) - An entity that can either be directly located on a workload (componentservice, componentserviceinstance, daemon, regulatory region) or is encoded in a workload (serviceinstance)
 
 ## Referenced by class
 
@@ -44,16 +44,12 @@ URI: [csolink:CodingSequence](https://w3id.org/csolink/vocab/CodingSequence)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the csolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a csolink model class URI.
-This field is multi-valued. It should include values for ancestors of the csolink class; for example, a protein such as Shh would have category values `bl:Protein`, `bl:GeneProduct`, `bl:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in csolink. Here we would have categories {bl:GenomicEntity, bl:MolecularEntity, bl:NamedThing}
+This field is multi-valued. It should include values for ancestors of the csolink class; for example, a serviceinstance such as Shh would have category values `bl:Interface`, `bl:ComponentTypeProduct`, `bl:ComponentTypeEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific csolink class, or potentially to a class more specific than something in csolink.
     * range: [CategoryType](types/CategoryType.md)
     * in subsets: (translator_minimal)
  * [type](type.md)  <sub>OPT</sub>
     * range: [String](types/String.md)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for an attribute or entity.
-    * range: [LabelType](types/LabelType.md)
-    * in subsets: (translator_minimal,samples)
  * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of an entity
     * range: [NarrativeText](types/NarrativeText.md)
@@ -63,18 +59,18 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     * range: [LabelType](types/LabelType.md)
     * in subsets: (translator_minimal)
  * [provided by](provided_by.md)  <sub>0..*</sub>
-    * Description: connects an association to the agent (person, organization or group) that provided it
+    * Description: connects an association to the agent (service, organization or group) that provided it
     * range: [Agent](Agent.md)
  * [has attribute](has_attribute.md)  <sub>0..*</sub>
     * Description: connects any entity to an attribute
     * range: [Attribute](Attribute.md)
     * in subsets: (samples)
 
-### Inherited from genomic entity:
+### Inherited from macrooperational machine mixin:
 
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-    * Description: connects a genomic feature to its sequence
-    * range: [BiologicalSequence](types/BiologicalSequence.md)
+ * [macrooperational machine mixin➞name](macrooperational_machine_mixin_name.md)  <sub>OPT</sub>
+    * Description: componentservices are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
+    * range: [SymbolType](types/SymbolType.md)
 
 ### Inherited from named thing:
 
@@ -85,13 +81,87 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-    * range: [OrganismTaxon](OrganismTaxon.md)
+    * range: [SystemTaxon](SystemTaxon.md)
     * in subsets: (translator_minimal)
+
+### Inherited from workload entity:
+
+ * [has computational sequence](has_computational_sequence.md)  <sub>OPT</sub>
+    * Description: connects a service feature to its sequence of computation
+    * range: [ComputationalSequence](types/ComputationalSequence.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | SO:0000316 |
-|  | | SIO:001390 |
+| **Exact Mappings:** | | MAID:11413529 |
+|  | | schema:algorithm |
+|  | | sumo:coding |
+| **Close Mappings:** | | MAID:179518139 |
+|  | | MAID:199360897 |
+| **Narrow Mappings:** | | csrc:Packet_Binary_Convolutional_Coding |
+|  | | CSO:image_coding |
+|  | | CSO:signal_encoding |
+|  | | CSO:iterative_decoding |
+|  | | CSO:network_coding |
+|  | | CSO:video_coding |
+|  | | CSO:precoding |
+|  | | CSO:channel_coding |
+|  | | CSO:scalable_video_coding |
+|  | | CSO:space_time_block_coding |
+|  | | CSO:space-time_coding |
+|  | | CSO:distributed_video_coding |
+|  | | CSO:audio_coding |
+|  | | CSO:wyner-ziv_coding |
+|  | | CSO:adaptive_modulation_and_coding |
+|  | | CSO:linear_pre-coding |
+|  | | CSO:transcoding |
+|  | | CSO:multiview_video_coding |
+|  | | CSO:distributed_source_coding |
+|  | | CSO:joint_source-channel_coding |
+|  | | CSO:huffman_coding |
+|  | | CSO:viterbi_decoding |
+|  | | CSO:source_coding |
+|  | | CSO:multiple_description_coding |
+|  | | CSO:scalable_coding |
+|  | | CSO:turbo_coding |
+|  | | CSO:lossy_coding |
+|  | | CSO:lossless_image_coding |
+|  | | CSO:lossless_coding |
+|  | | CSO:lossy_source_coding |
+|  | | CSO:transform_coding |
+|  | | CSO:advanced_video_coding |
+|  | | CSO:high-efficiency_video_coding |
+|  | | CSO:entropy_coding |
+|  | | CSO:belief_propagation_decoding |
+|  | | CSO:binary_coding |
+|  | | CSO:random_linear_network_coding |
+|  | | CSO:linear_network_coding |
+|  | | CSO:arithmetic_coding |
+|  | | CSO:source_channel_coding |
+|  | | CSO:channel_coding_scheme |
+|  | | CSO:orthogonal_space_time_block_coding |
+|  | | CSO:physical-layer_network_coding |
+|  | | CSO:convolutional_coding |
+|  | | CSO:linear_predictive_coding |
+|  | | CSO:source_and_channel_coding |
+|  | | CSO:random_network_coding |
+|  | | CSO:h.264_video_coding |
+|  | | CSO:super-position_coding |
+|  | | CSO:video_transcoding |
+|  | | CSO:slepian-wolf_coding |
+|  | | CSO:soft_decision_decoding |
+|  | | CSO:coding_scheme |
+|  | | CSO:decoding_complexity |
+|  | | CSO:distributed_space-time_coding |
+|  | | CSO:3d_video_coding |
+|  | | CSO:analog_network_coding |
+|  | | CSO:ldpc_coding |
+|  | | CSO:distributed_coding |
+|  | | CSO:erasure_coding |
+|  | | CSO:channel_decoding |
+|  | | CSO:concatenated_coding |
+|  | | CSO:wireless_network_coding |
+|  | | CSO:dirty_paper_coding |
+| **Broad Mappings:** | | MAID:177212765 |
 

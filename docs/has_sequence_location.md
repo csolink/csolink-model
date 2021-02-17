@@ -8,13 +8,13 @@ layout: default
 # Relation: has_sequence_location
 
 
-holds between two genomic entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
+holds between two service entities when the subject can be localized in sequence coordinates on the object. For example, between an daemon and a container/namespace.
 
 URI: [csolink:has_sequence_location](https://w3id.org/csolink/vocab/has_sequence_location)
 
 ## Domain and Range
 
-[GenomicEntity](GenomicEntity.md) ->  <sub>0..*</sub> [GenomicEntity](GenomicEntity.md)
+[WorkloadEntity](WorkloadEntity.md) ->  <sub>0..*</sub> [WorkloadEntity](WorkloadEntity.md)
 
 ## Parents
 
@@ -30,5 +30,6 @@ URI: [csolink:has_sequence_location](https://w3id.org/csolink/vocab/has_sequence
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | faldo:location |
+| **Exact Mappings:** | | SIO:000145 |
+| **Narrow Mappings:** | | CSO:fault_location |
 

@@ -25,4 +25,4 @@ URI: [csolink:sequence_variant_qualifier](https://w3id.org/csolink/vocab/sequenc
 
 ## Used by
 
- * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
+ * [ComponentserviceHasVariantThatContributesToErrorAssociation](ComponentserviceHasVariantThatContributesToErrorAssociation.md)

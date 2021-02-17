@@ -30,5 +30,5 @@ URI: [csolink:has_decreased_amount](https://w3id.org/csolink/vocab/has_decreased
 
 |  |  |  |
 | --- | --- | --- |
-| **Narrow Mappings:** | | CL:has_low_plasma_membrane_amount |
+| **Exact Mappings:** | | sumo:Decreasing |
 

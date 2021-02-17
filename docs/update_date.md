@@ -8,7 +8,7 @@ layout: default
 # Slot: update_date
 
 
-date on which an entity was updated. This can be applied to nodes or edges
+date on which an entity was migrated. This can be applied to nodes or edges
 
 URI: [csolink:update_date](https://w3id.org/csolink/vocab/update_date)
 
@@ -24,4 +24,17 @@ URI: [csolink:update_date](https://w3id.org/csolink/vocab/update_date)
 
 
 ## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | geolink:hasUpdateDate |
+|  | | geolink:hasLastUpdateDate |
+|  | | schema:dateModified |
+|  | | sumo:dateUsed |
+| **Narrow Mappings:** | | sumo:dateDissolved |
+|  | | sumo:dataProcessed |
+| **Broad Mappings:** | | sumo:date |
 

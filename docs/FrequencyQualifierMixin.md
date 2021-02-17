@@ -15,14 +15,14 @@ URI: [csolink:FrequencyQualifierMixin](https://w3id.org/csolink/vocab/FrequencyQ
 
 ---
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/[FrequencyValue],[FrequencyValue]%3Cfrequency%20qualifier%200..1-++[FrequencyQualifierMixin],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQualifierMixin],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiersMixin],[VariantToPopulationAssociation],[EntityToFeatureOrDiseaseQualifiersMixin])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/[FrequencyValue],[FrequencyValue]%3Cfrequency%20qualifier%200..1-++[FrequencyQualifierMixin],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQualifierMixin],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrErrorQualifiersMixin],[VariantToPopulationAssociation],[EntityToFeatureOrErrorQualifiersMixin])
 
 ---
 
 
 ## Children
 
- * [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations.
+ * [EntityToFeatureOrErrorQualifiersMixin](EntityToFeatureOrErrorQualifiersMixin.md) - Qualifiers for entity to error or observability associations.
 
 ## Mixin for
 
@@ -37,5 +37,5 @@ URI: [csolink:FrequencyQualifierMixin](https://w3id.org/csolink/vocab/FrequencyQ
 ### Own
 
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+    * Description: a qualifier used in a observable association to state how frequent the observability is observed in the subject
     * range: [FrequencyValue](FrequencyValue.md)

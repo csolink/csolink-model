@@ -8,13 +8,13 @@ layout: default
 # Relation: is_nonsense_variant_of
 
 
-holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon
+holds between a sequence variant and a componentservice, such the sequence variant results in a premature sequence stop.
 
 URI: [csolink:is_nonsense_variant_of](https://w3id.org/csolink/vocab/is_nonsense_variant_of)
 
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Gene](Gene.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Componentservice](Componentservice.md)
 
 ## Parents
 
@@ -24,12 +24,4 @@ URI: [csolink:is_nonsense_variant_of](https://w3id.org/csolink/vocab/is_nonsense
 
 
 ## Used by
-
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | SNPEFF:stop_gained |
-| **Broad Mappings:** | | SO:0002054 |
 

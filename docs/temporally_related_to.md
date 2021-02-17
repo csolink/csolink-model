@@ -32,7 +32,6 @@ URI: [csolink:temporally_related_to](https://w3id.org/csolink/vocab/temporally_r
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | SNOMED:temporally_related_to |
 | **Narrow Mappings:** | | RO:0002082 |
 |  | | RO:0002083 |
 |  | | RO:0002092 |
@@ -47,4 +46,14 @@ URI: [csolink:temporally_related_to](https://w3id.org/csolink/vocab/temporally_r
 |  | | RO:0002493 |
 |  | | RO:0002496 |
 |  | | RO:0002497 |
+|  | | schema:temporalCoverage |
+|  | | sumo:meetsTemporally |
+|  | | sumo:meetsSpatially |
+|  | | sumo:holdsDuring |
+|  | | sumo:locatedAtTime |
+|  | | sumo:overlapsTemporally |
+|  | | sumo:temporallyBetween |
+|  | | sumo:temporallyBetweenOrEqual |
+|  | | sumo:temporalPart |
+|  | | sumo:loggedInDuring |
 

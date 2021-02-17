@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Uriorcurie
+title: https://w3id.org/csolink/vocab/biolinkml:types/Uriorcurie
 layout: default
 ---
 
-# Type: Uriorcurie
+# Type: https://w3id.org/csolink/vocab/biolinkml:types/Uriorcurie
 
 
 a URI or a CURIE
 
-URI: [metatype:Uriorcurie](https://csolink.github.io/csolinkml/docs/types/Uriorcurie)
+URI: [https://w3id.org/csolink/vocab/biolinkml:types/Uriorcurie](https://w3id.org/csolink/vocab/biolinkml:types/Uriorcurie)
 
 |  |  |  |
 | --- | --- | --- |
