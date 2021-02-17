@@ -7,7 +7,7 @@ nav_order: 5
 
 # Maintaining the Csolink Model
 
-The Csolink Model is under constant development with new classes and slots being added on a monthly basis. The main driver for the model is the NCATS Biomedical Data Translator.
+The Csolink Model is under constant development with new classes and slots being added on a monthly basis.
 
 This rapid development of the model may cause tools that directly depend on the model to break. To avoid such a scenario any tool that uses Csolink Model YAML (or it artifacts) must pin to a particular release. A full list of releases can be found on [GitHub](https://github.com/csolink/csolink-model/releases)
 

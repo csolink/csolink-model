@@ -1,8 +1,0 @@
-digraph {
-	graph [bb="0,0,150.79,36"];
-	node [label="\N"];
-	"attribute type"	[height=0.5,
-		label="attribute type",
-		pos="75.393,18",
-		width=2.0943];
-}

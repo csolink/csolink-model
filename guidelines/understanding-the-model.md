@@ -7,7 +7,7 @@ nav_order: 1
 
 # Understanding the Csolink Model
 
-Csolink Model is a high-level data model built to provide a schema for representing compulogical and biomedical knowledge. The model itself is agnostic to the graph formalism used to represent knowledge. i.e. You can use Csolink Model as a schema for labelled property graphs (Neo4j) or for edge labelled graphs (RDF). 
+Csolink Model is a high-level data model built to provide a schema for representing compulogical and systems knowledge. The model itself is agnostic to the graph formalism used to represent knowledge. i.e. You can use Csolink Model as a schema for labelled property graphs (Neo4j) or for edge labelled graphs (RDF). 
 
 Csolink Model was built with the following aims:
 - Bridge between labelled property graphs and edge labelled graphs
