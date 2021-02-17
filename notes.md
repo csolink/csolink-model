@@ -13,6 +13,14 @@ Python `dataclasses` library.
 The standard approach is to install Python 3.7+ on your machine (see: [http://python.org/]() for details).
 
 
+## Github Actions
+
+Three `Actions secrets` are used by csolink pull request workflows:
+
+- API_TOKEN
+- WORKFLOW_EMAIL
+- WORKFLOW_USERNAME
+
 ## Generate artifacts
 
 All artifact generation is driven by the Makefile:
