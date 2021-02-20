@@ -1,0 +1,111 @@
+id: http://example.org/sample/organization
+name: organization
+specification: https://biolink.github.io/biolinkml/SPECIFICATION
+
+# keys are prefixes, values are URI bases
+# --
+prefixes:
+  biolinkml: https://w3id.org/biolink/biolinkml/
+  ex: https://example.org/example-schema#
+  wgs: http://www.w3.org/2003/01/geo/wgs84_pos
+  qud: http://qudt.org/1.1/schema/qudt#
+
+default_prefix: ex
+
+# ordered list of prefixcommon biocontexts to be fetched
+# to resolve id prefixes and inline prefix variables
+# see: https://github.com/prefixcommons/biocontext/tree/master/registry
+# is: rdf rdfs owl xsd dc dcterms faldo foaf oa idot void prov dcat
+# --
+default_curi_maps:
+  - semweb_context
+
+# prefixes from public standard global namespaces used
+# in the model (e.g. rdf) are indicated
+# --
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+
+# standard types
+imports:
+  - biolinkml:types
+
+subsets: ...
+
+# Main schema follows
+types:
+  yearCount:
+    base: int
+    uri: xsd:int
+  string:
+    base: str
+    uri: xsd:string
+
+classes:
+
+  organization:
+    slots:
+      - id
+      - name
+      - has boss
+
+  employee:
+    description: A person
+    slots:
+      - id
+      - first name
+      - last name
+      - aliases
+      - age in years
+    slot_usage:
+      last name:
+        required: true
+
+  manager:
+    description: An employee who manages others
+    is_a: employee
+    slots:
+      - has employees
+
+# Slots are properties that can be assigned to classes. The
+# set of slots available are defined in a slot dictionary,
+# declared at the schema level. Each key in the dictionary
+# is the slot name. The slot name must be unique.
+# --
+slots:
+  id:
+    description: Unique identifier of a person
+    identifier: true
+
+  name:
+    description: human readable name
+    range: string
+
+  aliases:
+    is_a: name
+    description: An alternative name
+    multivalued: true
+
+  first name:
+    is_a: name
+    description: The first name of a person
+
+  last name:
+    is_a: name
+    description: The last name of a person
+
+  age in years:
+    description: The age of a person if living or age of death if not
+    range: yearCount
+
+  has employees:
+    range: employee
+    multivalued: true
+    inlined: true
+
+  has boss:
+    range: manager
+    inlined: true
