@@ -226,7 +226,13 @@ prefixes:
   SAF: 'https://opensaf.sourceforge.io/SAI-Overview-B.05.03.AL.pdf'   # overview
   SAFAISAMF: 'https://opensaf.sourceforge.io/SAI-AIS-AMF-B.04.01.AL.pdf'  # Service Availability Management
 
+# ordered list of prefixcommon biocontexts to be fetched
+# to resolve id prefixes and inline prefix variables
+# see: https://github.com/prefixcommons/biocontext/tree/master/registry
+# is: rdf rdfs owl xsd dc dcterms faldo foaf oa idot void prov dcat
+# --
 default_prefix: csolink
+
 default_range: string
 
 # 2. The following prefix maps are retrieved from the
@@ -238,6 +244,8 @@ default_curi_maps:
   - semweb_context
 
 # The following 'standard' prefixes are also used.
+# Prefixes from public standard global namespaces
+# used in the model (e.g. rdf) are indicated.
 emit_prefixes:
   - rdf
   - rdfs
@@ -272,6 +280,9 @@ subsets:
 ## TYPES
 ## ------------
 
+# Main schema follows
+#
+# standard types
 imports:
   - biolinkml:types
 
@@ -508,6 +519,11 @@ types:
 ## ------------
 ## SLOTS
 ## ------------
+
+# Slots are properties that can be assigned to classes. The
+# set of slots available are defined in a slot dictionary,
+# declared at the schema level. Each key in the dictionary
+# is the slot name. The slot name must be unique.
 
 slots:
 
