@@ -2,6 +2,7 @@ id: https://w3id.org/csolink/csolink-model
 name: Csolink-Model
 description: Entity and association taxonomy and datamodel for computer services data
 license: https://creativecommons.org/publicdomain/zero/1.0/
+specification: https://biolink.github.io/biolinkml/SPECIFICATION
 
 # todo: rr, XAPI
 
