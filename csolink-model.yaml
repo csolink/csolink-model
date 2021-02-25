@@ -4,8 +4,6 @@ description: Entity and association taxonomy and datamodel for computer services
 license: https://creativecommons.org/publicdomain/zero/1.0/
 specification: https://biolink.github.io/biolinkml/SPECIFICATION
 
-# todo: rr, XAPI
-
 # Version should be kept in sync with primary Git repository release tag
 version: 0.0.0
 
@@ -126,105 +124,57 @@ prefixes:
   AML: 'https://w3id.org/i40/aml#'    # Automation machine learning
   csolink: 'https://w3id.org/csolink/vocab/'        # ok
   biolinkml: 'https://w3id.org/biolink/biolinkml/'  # ok
-  CORR: 'https://arxiv.org/corr'  # Computing-Research Repository
-  CNCF: 'https://landscape.cncf.io/selected='    # CNCF project signature
-  COAR_ACCESS: 'http://vocabularies.coar-repositories.org/documentation/access_rights/'  # Controlled Vocabulary for Access Rights
   COAR_RESOURCE: 'http://vocabularies.coar-repositories.org/documentation/resource_types/'  # Controlled Vocabulary for Resource Type Genres
-  COAR_VERSION: 'http://vocabularies.coar-repositories.org/documentation/version_types/'    # Controlled Vocabulary for Version Types
   CSO: 'https://cso.kmi.open.ac.uk/topics/'  # Computer Science Ontology (CSO)
-  CVE: 'https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword='   # Common Vulnerabilities and Exposures
-  DockerHub: 'https://hub.docker.com/'  # Docker Hub
-  DID: 'https://www.w3.org/TR/did-core/#'   # Decentralized Identifiers (DIDs)
   dct: 'http://purl.org/dc/terms/'
   dcat: 'http://www.w3.org/ns/dcat#'  # Data Catalog Vocabulary (DCAT)
-  DCMI: 'http://purl.org/dc/elements/1.1/'    # see dcterms
-  DMCC: 'http://cookingbigdata.com/linkeddata/dmcc-schema/documentation/#'  # Data Mining Cloud Computing
-  DNB: 'https://d-nb.info/gnd/'  # Deutsche Nationalbibliothek
-  DPN: 'http://purl.org/dpn#'      # Data provider node ontolgy
-  DPS: 'http://purl.org/dpn/services#'  # Data provider node services ontology
-  CCDM: 'http://cookingbigdata.com/linkeddata/ccdm#'    # Data mining cloud Computing
-  CCINSTANCES: 'http://cookingbigdata.com/linkeddata/ccinstances#'    # Instances Cloud Computing
-  CCPRICING: 'http://cookingbigdata.com/linkeddata/ccpricing#'    # Pricing cloud Computing
-  CCREGIONS: 'http://cookingbigdata.com/linkeddata/ccregions#'    # regions cloud Computing
-  CCSLA: 'http://cookingbigdata.com/linkeddata/ccsla#'  # Service Level Agreement for Cloud Computing
   csrc: 'https://csrc.nist.gov/glossary/term'    # Computer Security Resource Center
   CTRL: 'https://w3id.org/ibp/CTRLont#'  # control domain
-  doi: 'https://doi.org/'  # Digital object identities
   dwc: 'https://dwc.tdwg.org/terms/#dc:'    # Darwin core
   ECO: 'https://evidenceontology.org/term/'     # Evidence Conclusion ontology
-  ECTO: 'http://purl.obolibrary.org/obo/ECTO_'    # Physical Environmental exposures
   EDAM: 'http://edamontology.org/'
   EDAM-DATA: 'http://edamontology.org/data_'
   EDAM-FORMAT: 'http://edamontology.org/format_'
   EDAM-OPERATION: 'http://edamontology.org/operation_'
   EDAM-TOPIC: 'http://edamontology.org/topic_'
   EFO: 'http://www.ebi.ac.uk/efo/'      # Experimental Facors ontology
-  ExO: 'http://purl.obolibrary.org/obo/ExO_'    # Exposure ontology
+  EXO: 'http://purl.obolibrary.org/obo/ExO_'    # Exposure ontology
   foaf: 'http://xmlns.com/foaf/0.1/'   # Friend of a Friend Vocabulary Specification
-  foldoc: 'https://foldoc.org/'     # Free Online Dictionary of-Computing
   geolink: 'http://schema.geolink.org/1.0/base/main.html#'  # Geolink base ontology
-  GOIotP: 'http://inter-iot.eu/GOIoTP#'    # ComponentTyperal Ontology IoTP
   gr: 'http://purl.org/goodrelations/v1#'  # Good relations
   GSID: 'https://scholar.google.com/citations?user='    # Google Scholar ID
   gvp: 'http://vocab.getty.edu/ontology#'  # Getty Vocab
-  IOTM3L: 'http://smart-ics.ee.surrey.ac.uk/ontology/fiesta-iot/doc#'   # IoT, M3 Lite
   isbn: 'https://grp.isbn-international.org/content/using-register'  # ISBN register
-  isni: 'https://isni.org/isni/'   # International Standard Name Identifier
-  issn: 'https://portal.issn.org/resource/ISSN/'   # International Standard Serial Number
   LOINC: 'http://loinc.org/rdf/'        # health measurements, observations, standards
-  LOV: 'https://lov.linkeddata.es/dataset/lov/terms?q='    # Linked Open Vocabularies
-  XAPI: 'http://ns.inria.fr/ludo/v1/docs/xapi.html#'   # Ludo xAPI
   MAID: 'https://academic.microsoft.com/#/detail/'   # Microsoft Academic ID
-  MOBI: 'http://schema.mobivoc.org/#'    # MobVoc: open mobility vocab.
-  NOSQL: 'http://purl.org/db/nosql#'    # NoSQL
   OCRM: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/ecrm%23'    # Openlink eCRM Ontology
   OCO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/components%23'    # Openlink Component Ontology
   openvocab: 'https://vocab.org/open/#'    # Open Vocab
   OSO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/software%23'  # Openlink sw Ontology
-  OMG-SPECS: 'https://www.omg.org/spec/'   # Object Management Group Specifications
   OM: 'http://www.ontology-of-units-of-measure.org/resource/om-2/'
   ORCID: 'https://orcid.org/'    # Open Researcher and Contributor ID
   PATO: 'http://purl.obolibrary.org/obo/pato#'  # Observable Quality: properties
   pav: 'http://purl.org/pav/'    # Provenance, Authoring and Versioning
-  PeeringDb: 'https://www.peeringdb.com/ix/'   # peering exchanges
-  PeeringDb_fac: 'https://www.peeringdb.com/fac/'   # peering exchange facility
-  PeeringDb_peers: 'https://www.peeringdb.com/net/'   # peering exchange peers
   prov: 'http://www.w3.org/ns/prov#'    # Provenance
   qud: 'http://qudt.org/1.1/schema/qudt#'    # Quantities, Units, Dimensions, Types
   RO: 'http://purl.obolibrary.org/obo/RO_'     # Relations ontology
   REPR: 'https://w3id.org/reproduceme#'      # reproduce me
   ResearchID: 'https://publons.com/researcher/'   # publications
   rr: 'https://www.w3.org/ns/r2rml#'    # DB to RDF Mapping Language Schema
-  RTXKG1: 'http://kg1endpoint.rtx.ai/'
   SAN: 'https://www.irit.fr/recherches/MELODI/ontologies/SAN'   # System Actuator device
   schema: 'https://schema.org/'    # W3C schema
   ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='    # database of peer-reviewed literature
-  SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'       # Semantic knowledge representation ....
   SIO: 'http://semanticscience.org/resource/SIO_'   # Semanticscience Integrated Ontology
   sosa: 'http://www.w3.org/ns/sosa/'
   ssn: 'https://www.w3.org/TR/vocab-ssn/#'   # Semantic sensor netowrk ontology
   ssn-system: 'http://www.w3.org/ns/ssn/systems/'   #
   sumo-wn: 'http://sigma.ontologyportal.org:8080/sigma/WordNet.jsp?POS=0&word='    # sumo wordnet
   sumo: 'http://sigma.ontologyportal.org:8080/sigma/TreeView.jsp?flang=SUO-KIF&kb=SUMO&simple=yes&term='    # sumo kb terms
-  UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'    # deployment criteria, structure, function, developmental lineage
-  # The UMLS Semantic types and groups namespaces don't have a directly
-  # resolvable Base URI, but we point to a pair of sensible web documents
-  UMLSSC: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#'
-  UMLSSG: 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#'
-  UMLSST: 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#'
   UO: 'https://www.ebi.ac.uk/ols/ontologies/uo'  # Units of measurement ontology
   WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'    # Basic Geo (WGS84 lat/long) Vocabulary
-
-  ## links to webpage (not individual term) ##
-  CNTT: 'https://cntt-n.github.io/CNTT/doc/common/glossary.html#1.1'         # Telecom cloud
-  GEANT: 'https://wiki.geant.org/display/OAV/OAV+Terminology+and+Glossary'   # Orchestration Automation Virtualization (Oav)
-  ETSINFV: 'https://www.etsi.org/deliver/etsi_gr/NFV/001_099/003/01.05.01_60/gr_NFV003v010501p.pdf'   # ETSI NFV main terminology
-  ETSINFV-MANO: 'https://nfvwiki.etsi.org/index.php?title=API_specifications#API_conventions'   # Mang. and Orchestration
-  ONAP: 'https://wiki.onap.org/display/DW/Glossary'    # orchestration, management, and automation of network and edge
-  SAF: 'https://opensaf.sourceforge.io/SAI-Overview-B.05.03.AL.pdf'   # overview
-  SAFAISAMF: 'https://opensaf.sourceforge.io/SAI-AIS-AMF-B.04.01.AL.pdf'  # Service Availability Management
+  XAPI: 'http://ns.inria.fr/ludo/v1/docs/xapi.html#'   # Ludo xAPI
 
 # ordered list of prefixcommon biocontexts to be fetched
 # to resolve id prefixes and inline prefix variables
