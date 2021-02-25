@@ -1,0 +1,51 @@
+# Prefixes for future consideration
+
+prefixes:
+  CCDM: 'http://cookingbigdata.com/linkeddata/ccdm#'    # Data mining cloud Computing
+  CCINSTANCES: 'http://cookingbigdata.com/linkeddata/ccinstances#'    # Instances Cloud Computing
+  CCPRICING: 'http://cookingbigdata.com/linkeddata/ccpricing#'    # Pricing cloud Computing
+  CCREGIONS: 'http://cookingbigdata.com/linkeddata/ccregions#'    # regions cloud Computing
+  CCSLA: 'http://cookingbigdata.com/linkeddata/ccsla#'  # Service Level Agreement for Cloud Computing
+  COAR_ACCESS: 'http://vocabularies.coar-repositories.org/documentation/access_rights/'  # Controlled Vocabulary for A
+ccess Rights
+  COAR_VERSION: 'http://vocabularies.coar-repositories.org/documentation/version_types/'    # Controlled Vocabulary fo
+r Version Types
+  CORR: 'https://arxiv.org/corr'  # Computing-Research Repository
+  CNCF: 'https://landscape.cncf.io/selected='    # CNCF project signature
+  CVE: 'https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword='   # Common Vulnerabilities and Exposures
+  DCMI: 'http://purl.org/dc/elements/1.1/'    # see dcterms
+  DID: 'https://www.w3.org/TR/did-core/#'   # Decentralized Identifiers (DIDs)
+  DockerHub: 'https://hub.docker.com/'  # Docker Hub
+  DMCC: 'http://cookingbigdata.com/linkeddata/dmcc-schema/documentation/#'  # Data Mining Cloud Computing
+  DNB: 'https://d-nb.info/gnd/'  # Deutsche Nationalbibliothek
+  doi: 'https://doi.org/'  # Digital object identities
+  DPN: 'http://purl.org/dpn#'      # Data provider node ontolgy
+  DPS: 'http://purl.org/dpn/services#'  # Data provider node services ontology
+  ECTO: 'http://purl.obolibrary.org/obo/ECTO_'    # Physical Environmental exposures
+  foldoc: 'https://foldoc.org/'     # Free Online Dictionary of-Computing
+  GOIotP: 'http://inter-iot.eu/GOIoTP#'    # IoT
+  IOTM3L: 'http://smart-ics.ee.surrey.ac.uk/ontology/fiesta-iot/doc#'   # IoT, M3 Lite
+  isni: 'https://isni.org/isni/'   # International Standard Name Identifier
+  issn: 'https://portal.issn.org/resource/ISSN/'   # International Standard Serial Number
+  LOV: 'https://lov.linkeddata.es/dataset/lov/terms?q='    # Linked Open Vocabularies
+  MOBI: 'http://schema.mobivoc.org/#'    # MobVoc: open mobility vocab.
+  NOSQL: 'http://purl.org/db/nosql#'    # NoSQL
+  OMG-SPECS: 'https://www.omg.org/spec/'   # Object Management Group Specifications
+  PeeringDb: 'https://www.peeringdb.com/ix/'   # peering exchanges
+  PeeringDb_fac: 'https://www.peeringdb.com/fac/'   # peering exchange facility
+  PeeringDb_peers: 'https://www.peeringdb.com/net/'   # peering exchange peers
+  RTXKG1: 'http://kg1endpoint.rtx.ai/'
+  SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'       # Semantic knowledge representation ....
+  UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'    # deployment criteria, structure, function, developmen
+tal lineage
+  ## links to webpage (not individual term) ##
+  CNTT: 'https://cntt-n.github.io/CNTT/doc/common/glossary.html#1.1'         # Telecom cloud
+  GEANT: 'https://wiki.geant.org/display/OAV/OAV+Terminology+and+Glossary'   # Orchestration Automation Virtualization
+ (Oav)
+  ETSINFV: 'https://www.etsi.org/deliver/etsi_gr/NFV/001_099/003/01.05.01_60/gr_NFV003v010501p.pdf'   # ETSI NFV main
+terminology
+  ETSINFV-MANO: 'https://nfvwiki.etsi.org/index.php?title=API_specifications#API_conventions'   # Mang. and Orchestrat
+ion
+  ONAP: 'https://wiki.onap.org/display/DW/Glossary'    # orchestration, management, and automation of network and edge
+  SAF: 'https://opensaf.sourceforge.io/SAI-Overview-B.05.03.AL.pdf'   # overview
+  SAFAISAMF: 'https://opensaf.sourceforge.io/SAI-AIS-AMF-B.04.01.AL.pdf'  # Service Availability Management
