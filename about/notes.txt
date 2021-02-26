@@ -1,6 +1,7 @@
 # Prefixes for future consideration
 
 prefixes:
+  bibframe: 'https://id.loc.gov/ontologies/bibframe.html#'
   CCDM: 'http://cookingbigdata.com/linkeddata/ccdm#'    # Data mining cloud Computing
   CCINSTANCES: 'http://cookingbigdata.com/linkeddata/ccinstances#'    # Instances Cloud Computing
   CCPRICING: 'http://cookingbigdata.com/linkeddata/ccpricing#'    # Pricing cloud Computing
@@ -28,12 +29,14 @@ r Version Types
   isni: 'https://isni.org/isni/'   # International Standard Name Identifier
   issn: 'https://portal.issn.org/resource/ISSN/'   # International Standard Serial Number
   LOV: 'https://lov.linkeddata.es/dataset/lov/terms?q='    # Linked Open Vocabularies
+  madsrdf: 'https://id.loc.gov/ontologies/madsrdf/v1.html#'
   MOBI: 'http://schema.mobivoc.org/#'    # MobVoc: open mobility vocab.
   NOSQL: 'http://purl.org/db/nosql#'    # NoSQL
   OMG-SPECS: 'https://www.omg.org/spec/'   # Object Management Group Specifications
   PeeringDb: 'https://www.peeringdb.com/ix/'   # peering exchanges
   PeeringDb_fac: 'https://www.peeringdb.com/fac/'   # peering exchange facility
   PeeringDb_peers: 'https://www.peeringdb.com/net/'   # peering exchange peers
+  premis: 'https://id.loc.gov/ontologies/premis.html#'
   RTXKG1: 'http://kg1endpoint.rtx.ai/'
   SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'       # Semantic knowledge representation ....
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'    # deployment criteria, structure, function, developmen
