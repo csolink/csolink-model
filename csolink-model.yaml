@@ -125,7 +125,7 @@ prefixes:
   AML: 'https://w3id.org/i40/aml#'    # Automation machine learning
   csolink: 'https://w3id.org/csolink/vocab/'        # ok
   biolinkml: 'https://w3id.org/biolink/biolinkml/'  # ok
-  COAR_RESOURCE: 'http://vocabularies.coar-repositories.org/documentation/resource_types/'  # Controlled Vocab/ResType
+  COAR_RESOURCE: 'http://vocabularies.coar-repositories.org/documentation/resource_types/'  # Controld Vocab/ResType
   CSO: 'https://cso.kmi.open.ac.uk/topics/'  # Computer Science Ontology (CSO)
   dct: 'http://purl.org/dc/terms/'
   dcat: 'http://www.w3.org/ns/dcat#'  # Data Catalog Vocabulary (DCAT)
@@ -147,31 +147,28 @@ prefixes:
   GSID: 'https://scholar.google.com/citations?user='    # Google Scholar ID
   gvp: 'http://vocab.getty.edu/ontology#'  # Getty Vocab
   isbn: 'https://grp.isbn-international.org/content/using-register'  # ISBN register
-  LOINC: 'http://loinc.org/rdf/'        # health measurements, observations, standards
+  LOINC: 'http://loinc.org/rdf/'    # health measurements, observations, standards
   LCSH: 'http://id.loc.gov/authorities/subjects/'  # Library of congress subject headings
   LCSH_PUB: 'http://id.loc.gov/vocabulary/mgovtpubtype/'   # lcsh publication type
   MAID: 'https://academic.microsoft.com/#/detail/'   # Microsoft Academic ID
-  OCRM: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/ecrm%23'  # Openlink eCRM Onto
-  OCO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/components%23'  # Openlink Component Onto
   openvocab: 'https://vocab.org/open/#'    # Open Vocab
-  OSO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/software%23'  # Openlink sw Onto
   OM: 'http://www.ontology-of-units-of-measure.org/resource/om-2/'
-  ORCID: 'https://orcid.org/'    # Open Researcher and Contributor ID
+  ORCID: 'https://orcid.org/'  # Open Researcher and Contributor ID
   PATO: 'http://purl.obolibrary.org/obo/pato#'  # Observable Quality: properties
-  pav: 'http://purl.org/pav/'    # Provenance, Authoring and Versioning
-  prov: 'http://www.w3.org/ns/prov#'    # Provenance
-  qud: 'http://qudt.org/1.1/schema/qudt#'    # Quantities, Units, Dimensions, Types
-  RO: 'http://purl.obolibrary.org/obo/RO_'     # Relations ontology
-  REPR: 'https://w3id.org/reproduceme#'      # reproduce me
+  pav: 'http://purl.org/pav/'  # Provenance, Authoring and Versioning
+  prov: 'http://www.w3.org/ns/prov#'  # Provenance
+  qud: 'http://qudt.org/1.1/schema/qudt#'   # Quantities, Units, Dimensions, Types
+  RO: 'http://purl.obolibrary.org/obo/RO_'  # Relations ontology
+  REPR: 'https://w3id.org/reproduceme#'     # reproduce me
   ResearchID: 'https://publons.com/researcher/'   # publications
   rr: 'https://www.w3.org/ns/r2rml#'    # DB to RDF Mapping Language Schema
-  SAN: 'https://www.irit.fr/recherches/MELODI/ontologies/SAN'   # System Actuator device
+  SAN: 'https://www.irit.fr/recherches/MELODI/ontologies/SAN'  # System Actuator device
   schema: 'https://schema.org/'    # W3C schema
-  ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='    # database of peer-reviewed literature
+  ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='  # database of peer-reviewed literature
   SIO: 'http://semanticscience.org/resource/SIO_'   # Semanticscience Integrated Ontology
   sosa: 'http://www.w3.org/ns/sosa/'
   ssn: 'https://www.w3.org/TR/vocab-ssn/#'   # Semantic sensor netowrk ontology
-  ssn-system: 'http://www.w3.org/ns/ssn/systems/'   #
+  ssn-system: 'http://www.w3.org/ns/ssn/systems/'
   sumo-wn: 'http://sigma.ontologyportal.org:8080/sigma/WordNet.jsp?POS=0&word='    # sumo wordnet
   sumo: 'http://sigma.ontologyportal.org:8080/sigma/TreeView.jsp?flang=SUO-KIF&kb=SUMO&simple=yes&term='  # sumo kb
   UO: 'https://www.ebi.ac.uk/ols/ontologies/uo'  # Units of measurement ontology
@@ -600,15 +597,7 @@ slots:
       - NCIT:role_has_domain
       - NCIT:role_has_range
       - NCIT:C62618   # single, computer programming object attribute
-      - OCRM:hasCategory
-      - OCRM:hasCaseCategory
       - OM:hasPhenomenon
-      - OSO:hasApplicationName
-      - OSO:hasBuildDate
-      - OSO:hasComponent
-      - OSO:hasComponentMode
-      - OSO:hasComponentType
-      - OSO:hasOperatingSystem
       - RO:0002002    # has boundary
       - RO:0000053    # bearer of
       - RO:0000086    # has quality
@@ -771,10 +760,6 @@ slots:
       - geolink:isRightsHolderOf
       - LOINC:has_modality_type
       - LOINC:has_view_type
-      - OSO:hasDataAccessProtocolType
-      - OSO:hasComponentType
-      - OSO:hasOperatingSystemType
-      - OSO:hasDataAccessProtocolType
       - sosa:isFeatureOfInterestOf
       - sosa:isResultOf
       - sumo:havePartTypes
@@ -881,7 +866,6 @@ slots:
       - CTRL:unit
       - CTRL:hasUnit
       - IAO:0000039    # has unit
-      - OCRM:hasUnit
       - OM:hasUnit
       - qud:unit
       - SIO:000221  # has unit
@@ -989,7 +973,6 @@ slots:
       # DB_Object_Type
       - IAO:0000219    # denotes
       - NCIT:C25284  # type
-      - OCRM:type
       - schema:type
       - SWO:type
       - sumo:Class
@@ -1001,7 +984,6 @@ slots:
       - dwc:measurementType
       - GR:typeOfGood
       - IAO:0000411   # is denotator type
-      - OCRM:SubType
       - sumo:hardwareType
       - WIKIDATA:Q190087  # data type
 
@@ -1025,13 +1007,9 @@ slots:
     required: true
     exact_mappings:
       - gr:category
-      - OCRM:category
-      - OSO:Category
       - schema:category
     narrow_mappings:
       - CSO:access_category
-      - OCRM:CaseCategory
-      - OSO:ComponentCategory
       - schema:CategoryCode
 
   name:
@@ -1722,8 +1700,7 @@ slots:
       connects an entity to one or more (engineering) devices
     range: device
     multivalued: true
-    exact_mappings:
-      - OCRM:hasDevice
+    exact_mappings: []
 
   has procedure:
     is_a: node property
@@ -6413,7 +6390,9 @@ classes:
     description: >-
       Either an individual operational activity, or a collection
       of causally connected operational activities
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - csrc
     slots:
       - has input
       - has output
@@ -6445,7 +6424,17 @@ classes:
       - geolink:hasOperator
       - sumo:LogicalOperator
     exact_mappings: []
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   computational process:
     is_a: computational process or activity
@@ -6473,7 +6462,17 @@ classes:
       - SIO:000006     # process
     narrow_mappings:
       - CSO:route_discovery_process
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   pathway:
     is_a: computational process
@@ -6485,7 +6484,17 @@ classes:
       - csrc:trusted_path
       - sumo:ContinuousPath
       - sumo:ComputerPath
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   cyber process:
     aliases: ['system function']
@@ -6501,7 +6510,17 @@ classes:
       # cluster or Servicegroup Function
       # Component Function
       # ComponentType Product Template Function
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   behavior:
     is_a: computational process
@@ -6641,7 +6660,17 @@ classes:
       - schema:enginePower
       - sumo:PowerSource
       - WIKIDATA:Q3972    # power supply unit
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   consumed resource:
     is_a: control actor
@@ -6723,7 +6752,17 @@ classes:
       - WIKIDATA:Q920419    # upgrade
       - WIKIDATA:Q1253258   # downgrade
       - WIKIDATA:Q395307    # rollback
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   ## Notification
 
@@ -6993,7 +7032,17 @@ classes:
       - CSO:individual_service
       - csrc:Real_Time_Location_System
       - NCIT:C16464    # computer
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   population of individual systems:
     description: >-
@@ -7014,7 +7063,17 @@ classes:
       - WIKIDATA:Q851990  # population group
     narrow_mappings:
       - sumo:PopulationFn
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
     in_subset:
       - system_model_database
 
@@ -7249,9 +7308,7 @@ classes:
       - sumo:partTypes
     exact_mappings:
       - MAID:2909890325    # component type
-      - OSO:hasComponentType
-      - OSO:ComponentCategory
-      - OCO:hasComponentType
+      # hasComponentType
       - sumo:componentDataID
     narrow_mappings:
       - csrc:Component_schema
@@ -7296,7 +7353,17 @@ classes:
       Frequently an identifier for one will be used as proxy for another
     is_a: macrooperational machine mixin
     mixin: true
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   componentservice:
     description: >-
@@ -7311,10 +7378,19 @@ classes:
       - xref
     broad_mappings:
       - csrc:Resource_Type
-      - OSO:hasComponentType
       - schema:serviceType
     exact_mappings: []
-    id_prefixes: []   # todo
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
     in_subset:
       - system_model_database
 
@@ -7328,7 +7404,17 @@ classes:
       - synonym
       - xref
     exact_mappings: []
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   servicetype isoform mixin:
     description: >-
@@ -7343,7 +7429,17 @@ classes:
   macrooperational complex mixin:
     is_a: macrooperational machine mixin
     exact_mappings: []
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
     in_subset:
       - system_model_database
 
@@ -7389,7 +7485,17 @@ classes:
       - sumo:instance
     exact_mappings:
       - csrc:Proximity_Services
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
     in_subset:
       - system_model_database
 
@@ -7493,7 +7599,17 @@ classes:
       - sumo:instance
       - sumo:process
       - sumo:restartable
-    id_prefixes: []    # todo
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
     in_subset:
       - system_model_database
 
@@ -7505,14 +7621,34 @@ classes:
       reference serviceinstance.
     mixins:
       - servicetype isoform mixin
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   kernel servicetype:
     is_a: componentserviceinstance
     mixins:
       - servicetype mixin
     exact_mappings: []
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
 
   kernel servicetype isoform:
     is_a: kernel servicetype
@@ -7525,13 +7661,33 @@ classes:
 
   noncoding kernel servicetype:
     is_a: kernel servicetype
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
     exact_mappings: []
 
   kernel message:
     is_a: noncoding kernel servicetype
     exact_mappings: []
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
     in_subset:
       - system_model_database
 
@@ -7541,7 +7697,17 @@ classes:
       TBD
     is_a: noncoding kernel servicetype
     exact_mappings: []
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
     in_subset:
       - system_model_database
 
@@ -7560,8 +7726,18 @@ classes:
       - componentservice grouping mixin
     description: >-
       any grouping of multiple componentservices or servicetypes related by common descent
-    id_prefixes: []
+    id_prefixes:
       # note: may be better to introduce a serviceinstance domain/family
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
     in_subset:
       - system_model_database
 
@@ -7580,7 +7756,17 @@ classes:
       - has homogeneity
     broad_mappings:
       - sumo:controlGroup
-    id_prefixes: []
+    id_prefixes:
+      - CSO
+      - CTRL
+      - csrc
+      - CVE
+      - MAID
+      - NCIT
+      - REPR
+      - RO
+      - SIO
+      - SAN
     in_subset:
       - system_model_database
 
