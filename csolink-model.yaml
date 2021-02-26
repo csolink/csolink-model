@@ -105,6 +105,7 @@ version: 0.0.0
 ## [n]ucleotide = [m]onomeric[u]nit
 ## [s]nv = [m]onomer[v]ariant
 
+
 ## ------------
 ## PREFIXES
 ## ------------
@@ -119,17 +120,18 @@ version: 0.0.0
 #
 #------
 prefixes:
-  ACMBOOKS: 'https://dl.acm.org/action/doSearch?SeriesKey=acmbooks&AllField='  ## acm Digital library books
-  ACMJOURNALS: 'https://dl.acm.org/action/doSearch?ConceptID=118230&AllField='    ### acm Digital library journals ###
+  ACMBOOKS: 'https://dl.acm.org/action/doSearch?SeriesKey=acmbooks&AllField='  # acm Digital library books
+  ACMJOURNALS: 'https://dl.acm.org/action/doSearch?ConceptID=118230&AllField='   # acm Digital library journals
   AML: 'https://w3id.org/i40/aml#'    # Automation machine learning
   csolink: 'https://w3id.org/csolink/vocab/'        # ok
   biolinkml: 'https://w3id.org/biolink/biolinkml/'  # ok
-  COAR_RESOURCE: 'http://vocabularies.coar-repositories.org/documentation/resource_types/'  # Controlled Vocabulary for Resource Type Genres
+  COAR_RESOURCE: 'http://vocabularies.coar-repositories.org/documentation/resource_types/'  # Controlled Vocab/ResType
   CSO: 'https://cso.kmi.open.ac.uk/topics/'  # Computer Science Ontology (CSO)
   dct: 'http://purl.org/dc/terms/'
   dcat: 'http://www.w3.org/ns/dcat#'  # Data Catalog Vocabulary (DCAT)
   csrc: 'https://csrc.nist.gov/glossary/term'    # Computer Security Resource Center
   CTRL: 'https://w3id.org/ibp/CTRLont#'  # control domain
+  CVE: 'https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword='   # Common Vulnerabilities and Exposures
   dwc: 'https://dwc.tdwg.org/terms/#dc:'    # Darwin core
   ECO: 'https://evidenceontology.org/term/'     # Evidence Conclusion ontology
   EDAM: 'http://edamontology.org/'
@@ -146,11 +148,13 @@ prefixes:
   gvp: 'http://vocab.getty.edu/ontology#'  # Getty Vocab
   isbn: 'https://grp.isbn-international.org/content/using-register'  # ISBN register
   LOINC: 'http://loinc.org/rdf/'        # health measurements, observations, standards
+  LCSH: 'http://id.loc.gov/authorities/subjects/'  # Library of congress subject headings
+  LCSH_PUB: 'http://id.loc.gov/vocabulary/mgovtpubtype/'   # lcsh publication type
   MAID: 'https://academic.microsoft.com/#/detail/'   # Microsoft Academic ID
-  OCRM: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/ecrm%23'    # Openlink eCRM Ontology
-  OCO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/components%23'    # Openlink Component Ontology
+  OCRM: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/ecrm%23'  # Openlink eCRM Onto
+  OCO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/components%23'  # Openlink Component Onto
   openvocab: 'https://vocab.org/open/#'    # Open Vocab
-  OSO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/software%23'  # Openlink sw Ontology
+  OSO: 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/software%23'  # Openlink sw Onto
   OM: 'http://www.ontology-of-units-of-measure.org/resource/om-2/'
   ORCID: 'https://orcid.org/'    # Open Researcher and Contributor ID
   PATO: 'http://purl.obolibrary.org/obo/pato#'  # Observable Quality: properties
@@ -169,10 +173,10 @@ prefixes:
   ssn: 'https://www.w3.org/TR/vocab-ssn/#'   # Semantic sensor netowrk ontology
   ssn-system: 'http://www.w3.org/ns/ssn/systems/'   #
   sumo-wn: 'http://sigma.ontologyportal.org:8080/sigma/WordNet.jsp?POS=0&word='    # sumo wordnet
-  sumo: 'http://sigma.ontologyportal.org:8080/sigma/TreeView.jsp?flang=SUO-KIF&kb=SUMO&simple=yes&term='    # sumo kb terms
+  sumo: 'http://sigma.ontologyportal.org:8080/sigma/TreeView.jsp?flang=SUO-KIF&kb=SUMO&simple=yes&term='  # sumo kb
   UO: 'https://www.ebi.ac.uk/ols/ontologies/uo'  # Units of measurement ontology
   WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
-  WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
+  WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'    # Basic Geo (WGS84 lat/long) Vocabulary
   XAPI: 'http://ns.inria.fr/ludo/v1/docs/xapi.html#'   # Ludo xAPI
 
@@ -1638,14 +1642,14 @@ slots:
       - MAID:2988412617   # keyword search
       - MAID:2780288562   # keyword extraction
 
-  sumo terms:
+  lcsh terms:
     is_a: node property
     description: >-
-      sumo terms tagging a publication
+      lcsh terms tagging a publication
     domain: publication
     range: uriorcurie
     values_from:
-      - sumo
+      - LCSH
     multivalued: true
 
   ## computing
@@ -5587,7 +5591,8 @@ classes:
   ontology class:
     is_a: named thing
     description: "a concept or class in an ontology, vocabulary or thesaurus"
-    id_prefixes: []
+    id_prefixes:
+      - LCSH
 
   relationship type:
     is_a: ontology class
@@ -5639,7 +5644,7 @@ classes:
     narrow_mappings: []
     id_prefixes:
       - NCBITaxon
-      - sumo
+      - LCSH
     in_subset:
       - system_model_database
 
@@ -5857,7 +5862,7 @@ classes:
       - pages
       - summary
       - keywords
-      - sumo terms
+      - lcsh terms
       - xref
     # In addition to embedded slots, instances of 'contributor association'
     # may be used to more extensively document publisher, editor and author details
@@ -5889,6 +5894,7 @@ classes:
           documented in the graph as a concept node of csolink:category csolink:OntologyClass.
         values_from:  # Not sure which takes precedence, if any...
           - dctypes
+          - LCSH_PUB
           - COAR_RESOURCE
           - WIKIDATA
       pages:
@@ -6602,7 +6608,9 @@ classes:
       - sumo:managedBy
       - sumo:operator
       - WIKIDATA:Q85850438    # data plane
-    id_prefixes: []
+    id_prefixes:
+      - CTRL
+      - LCSH
     in_subset:
       - system_model_database
 
@@ -7084,9 +7092,11 @@ classes:
       - STATO:0000242   # statistical error
       - WIKIDATA:Q3847033    # error
       # disorder
-    id_prefixes: []
-      # sumo
-      # NCIT
+    id_prefixes:
+      - CVE
+      - LCSH
+      - NCIT
+      - schema
     in_subset:
       - system_model_database
 
@@ -7122,8 +7132,9 @@ classes:
       - WIKIDATA:Q813912    # state/condition
       - WIKIDATA:Q169872    # symptom
       - WIKIDATA:Q1207505    # quality
-    id_prefixes: []
-      # sumo
+    id_prefixes:
+      - CVE
+      - LCSH
     in_subset:
       - system_model_database
 
@@ -7160,8 +7171,8 @@ classes:
       # Cloud Location or Region
       - csrc:Java_Platform_Enterprise_Edition
       - csrc:Platform_as_a_Service
-    id_prefixes: []
-      # sumo
+    id_prefixes:
+      - LCSH
       # NCIT
     in_subset:
       - system_model_database
@@ -7190,9 +7201,9 @@ classes:
     narrow_mappings:
       - csrc:Class_of_Service
       - csrc:Service_Agent
-    id_prefixes: []
+    id_prefixes:
       # NCIT
-      # sumo
+      - LCSH
 
   component:
     aliases: ['component type', 'bounded context']
@@ -7224,8 +7235,8 @@ classes:
       - SIO:000171    # document component
       - WIKIDATA:Q11653    # electronic element
       - WIKIDATA:Q839546   # machine element
-    id_prefixes: []
-      # sumo
+    id_prefixes:
+      - LCSH
       # NCIT
 
   component type:
@@ -7258,7 +7269,8 @@ classes:
       - WIKIDATA:Q2297740    # software deployment
       # "Deployment Structure"
     narrow_mappings: []
-    id_prefixes: []
+    id_prefixes:
+      - LCSH
 
   ## Workload Entity mixins
 
