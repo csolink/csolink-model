@@ -4834,7 +4834,6 @@ slots:
       - WIKIDATA_PROPERTY:P1542    # has effect
     narrow_mappings: []
 
-
 ## --------------------
 ## ASSOCIATION SLOTS
 ## --------------------
@@ -6818,7 +6817,10 @@ classes:
     slots:
       - has data
     id_prefixes:
-      # cyber_signaldb.compound
+      - sumo
+      - csrc
+      - NCIT
+      - CSO
     broad_mappings:
       - sumo:NetworkMessaging
       - sumo:internet_traffic
